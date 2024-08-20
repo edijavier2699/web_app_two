@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+  
+/* css for the margin in desktop and mobiles screen  */
+  
+  .heroVideoBackground,.featuresSection, .faqSection,.footerSection, .navbar{
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+  @media (max-width:640px) {
+    .heroVideoBackground,.featuresSection, .faqSection,.footerSection, .navbar{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+  
+  
+  
+  
+  

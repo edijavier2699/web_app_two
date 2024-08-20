@@ -1,0 +1,11 @@
+.heroVideoBackground{
+    height: calc(100vh - 80px);
+    margin-left: 70px;
+    margin-right: 70px;
+}
+@media (max-width:640px) {
+    .heroVideoBackground{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
