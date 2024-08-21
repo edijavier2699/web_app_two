@@ -4,12 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-djangorestframework = "*"
+django = "*"
 django-cors-headers = "*"
-python-decouple = "*"
+djangorestframework = "*"
+django-decouple = "*"
 psycopg2-binary = "*"
+certifi = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.12"
+python_version = "3.9"
