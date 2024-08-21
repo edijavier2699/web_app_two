@@ -1,13 +1,28 @@
 import React from 'react';
 import '../styles/StepsTimeLine.css';
 import StepBar from '../assets/stepBar.svg';
-import heroVideo from '../assets/video/showCaseVideo.mp4';
+import workFlow from "../assets/workFlow.svg"
 
 // Define the type for each step item
 interface Step {
     id: number;
     title: string;
     description: string;
+}
+
+interface StepsCardProps {
+    title: string;
+    description: string;
+  }
+
+export const StepsCard: React.FC<StepsCardProps> = ({ title, description }) => {
+    return(
+        <article className='text-left'>
+            <img alt='' src={workFlow} className='h-16 w-16 border-2 border-[#375B0B]  bg-[#121212] rounded-full'/>
+            <h4 className='font-bold text-[#C8E870]'>{title}</h4>
+            <p className='text-[#EBFABE]'>{description}</p>
+        </article>
+    )
 }
 
 // Define the type for the component props if needed (not required here as there are no props)
@@ -37,8 +52,8 @@ export const StepsTimeLine: React.FC = () => {
     ];
 
     return (
-        <section className="stepsTimeLineBackimg text-white">
-            <div className="flex flex-col lg:flex-row">
+        <section className="stepsTimeLineBackimg md:px-[80px] text-white">
+            <header className="flex flex-col lg:flex-row">
                 <div className="w-full lg:w-1/2 p-8">
                     <p className="font-bold text-[#A0CC28]">How It Works</p>
                     <h2 className="text-4xl md:text-7xl font-medium">
@@ -56,19 +71,61 @@ export const StepsTimeLine: React.FC = () => {
                         </article>
                     ))}
                 </div>
-            </div>
-            <div className="flex justify-center px-[20px] mx-auto py-10 md:py-[100px]">
-                <video
-                    className="object-cover rounded-3xl border-4 md:border-8 border-[#D0D5DD] w-full md:w-[70%] h-full"
-                    autoPlay
-                    muted
-                    loop
-                    preload="metadata"
-                >
-                    <source src={heroVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+            </header>
+            <main className="bg-[#121212] p-[56px] border-2 border-[#375B0B] rounded-2xl relative">
+                <div className='flex flex-row justify-between'>
+                    <p className='text-[#82A621] font-semibold'>How We Operate</p>
+                    <p className='w-[20%] text-[#98A2B3]'>
+                        SPV* <br />
+                        A special purpose vehicle (SPV) is a subsidiary created for a specific business purpose, often used in structured finance, joint ventures, property deals, or to isolate risks and assets from the parent company.
+                    </p>
+                </div>
+
+                <div className="relative">
+                    <div className='absolute top-1/4 left-0 right-0'>
+                        <hr className='border-t-2 border-dotted border-[#375B0B] mx-auto w-full' />
+                    </div>
+
+                    <div className="grid grid-cols-4 gap-4 my-[64px] relative z-10 ">
+                        <div className="col-start-1 col-span-1 text-center">
+                            <StepsCard 
+                                title="Create Partnerships"
+                                description="How we create partnerships with developers, how we find valuable property and so on."
+                            />
+                        </div>
+                        <div className="col-start-3 col-span-1 text-center">
+                            <StepsCard 
+                                title="Create Partnerships"
+                                description="How we create partnerships with developers, how we find valuable property and so on."
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="relative">
+                    <div className='absolute top-1/4 left-0 right-0 z-0'>
+                        <hr className='border-t-2 border-dotted border-[#375B0B] mx-auto w-[77%] float-left' />
+                    </div>
+
+                    <div className="grid grid-cols-4 gap-4 mt-4 mb-[80px] relative z-10">
+                        <div className="col-start-2 col-span-1 text-center">
+                            <StepsCard 
+                                title="Create Partnerships"
+                                description="How we create partnerships with developers, how we find valuable property and so on."
+                            />
+                        </div>
+                        <div className="col-start-4 col-span-1 text-center">
+                            <StepsCard 
+                                title="Create Partnerships"
+                                description="How we create partnerships with developers, how we find valuable property and so on."
+                            />
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer className="flex justify-center px-[20px] mx-auto py-10 md:py-[100px]">
+                <img className='workflowImage'  alt='workflow-representation' src={workFlow} />
+            </footer>
         </section>
     );
 };
