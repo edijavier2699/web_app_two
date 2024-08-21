@@ -4,10 +4,12 @@
 
   
 /* css for the margin in desktop and mobiles screen  */
-  
+  /* *{
+    border: 1px solid red ;
+  } */
   .heroVideoBackground,.featuresSection, .faqSection,.footerSection, .navbar{
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 80px;
+    margin-right: 80px;
   }
   @media (max-width:640px) {
     .heroVideoBackground,.featuresSection, .faqSection,.footerSection, .navbar{
@@ -15,6 +17,12 @@
       margin-right: 20px;
     }
   }
+
+
+  /*
+    #C8E870 primary 500 
+   
+   */
   
   
   
