@@ -144,10 +144,12 @@ CORS_ALLOWED_HEADERS = ['Authorization', 'Content-Type']
 
 #EMAIL SETTINGS
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Servidor SMTP de Gmail
-EMAIL_PORT = 587  # Usualmente 587 para TLS, 465 para SSL, o 25
-EMAIL_USE_TLS = True  # Cambia a True si estás usando TLS
-EMAIL_USE_SSL = False  # Cambia a True si estás usando SSL
-EMAIL_HOST_USER = 'eddy.javiieer@gmail.com'  # Tu dirección de correo electrónico
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'eddy.javiieer@gmail.com'
 EMAIL_HOST_PASSWORD = 'mpet jxgy fccd cnby'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Usualmente el mismo que EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
