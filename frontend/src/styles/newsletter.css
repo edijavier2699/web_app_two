@@ -3,13 +3,6 @@
     background-image: url('../assets/desktop_newsletter_img.png');
     background-size: cover;
     background-position: center;
-    width: 90%;
-    margin: 0 auto;
+
   }
   
-@media (max-width:640px) {
-  .newsletter-bg{
-    width: 92%;
-  }
-  
-}

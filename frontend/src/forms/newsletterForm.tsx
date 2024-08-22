@@ -64,11 +64,11 @@ export const NewsletterForm: React.FC = () => {
     
 
     return (
-        <div className="flex flex-col items-center">
+        <div>
             <form
                 onSubmit={handleOnSubmit}
                 ref={form}
-                className="flex flex-col sm:flex-row items-center justify-center w-full max-w-screen-md mx-auto p-4 space-y-4 sm:space-y-0 sm:space-x-4"
+                className="flex flex-col sm:flex-row"
             >
                 <label htmlFor="userEmail" className="hidden">
                     Email
@@ -81,12 +81,12 @@ export const NewsletterForm: React.FC = () => {
                     value={formData.userEmail}
                     onChange={handleOnChange}
                     placeholder="Enter your email"
-                    className="flex-grow w-full rounded-md border-0 py-3 px-4 text-lg placeholder:text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="rounded-md mb-[12px] md:mb-[0px] border-0 md:w-[363px]  py-3 px-4 text-lg placeholder:text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
 
                 <button
                     type="submit"
-                    className="bg-[#F2F4F7] w-full text-black rounded-md py-3 px-5 text-lg font-medium hover:bg-[#C8E870] focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
+                    className="bg-[#F2F4F7] md:w-[185px] md:ml-4 text-black rounded-md py-3 px-5 text-lg font-medium hover:bg-[#C8E870] focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
                 >
                     Subscribe
                 </button>

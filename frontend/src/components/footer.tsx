@@ -1,11 +1,36 @@
 // Footer.tsx
 import React from 'react';
+import Logo from "../assets/logo.png"
 
 export const Footer: React.FC = () => {
     return (
         <section className="text-[#667085] footerSection font-medium mt-[130px] px-4 sm:px-6 lg:px-8">
-            {/* Brands section */}
-            <div className="flex flex-col items-center space-y-7 mb-[70px]">
+            <div className='flex  md:justify-end'>
+                <img alt='logo' className='h-16' src={Logo} />
+            </div>
+            <hr className="border-gray-300" />
+            {/* Links section */}
+            <div className="flex flex-col sm:flex-row justify-between mt-[35px] mb-[70px] px-4">
+                <span className="text-sm text-center sm:text-left">
+                    @2024 Tokunize. All rights reserved.
+                </span>
+                <ul className="flex flex-wrap justify-center sm:justify-end space-x-4 text-sm mt-4 sm:mt-0">
+                    <li><a href="#" className="hover:text-blue-500">Privacy Policy</a></li>
+                    <li><a href="#" className="hover:text-blue-500">Terms of Service</a></li>
+                    <li><a href="#" className="hover:text-blue-500">Cookies Settings</a></li>
+                </ul>
+            </div>
+        </section>
+    );
+};
+
+
+
+
+
+
+
+{/* <div className="flex flex-col items-center space-y-7 mb-[70px]">
                 <p className="text-lg text-center sm:text-xl">
                     Trusted by the world's best companies
                 </p>
@@ -35,19 +60,4 @@ export const Footer: React.FC = () => {
                         <span className="hidden sm:inline">Command+R</span>
                     </li>
                 </ul>
-            </div>
-            <hr className="border-gray-300" />
-            {/* Links section */}
-            <div className="flex flex-col sm:flex-row justify-between mt-[35px] mb-[70px] px-4">
-                <span className="text-sm text-center sm:text-left">
-                    @2024 Tokunize. All rights reserved.
-                </span>
-                <ul className="flex flex-wrap justify-center sm:justify-end space-x-4 text-sm mt-4 sm:mt-0">
-                    <li><a href="#" className="hover:text-blue-500">Privacy Policy</a></li>
-                    <li><a href="#" className="hover:text-blue-500">Terms of Service</a></li>
-                    <li><a href="#" className="hover:text-blue-500">Cookies Settings</a></li>
-                </ul>
-            </div>
-        </section>
-    );
-};
+            </div> */}
