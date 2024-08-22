@@ -68,7 +68,7 @@ export const NewsletterForm: React.FC = () => {
             <form
                 onSubmit={handleOnSubmit}
                 ref={form}
-                className="flex flex-col sm:flex-row"
+                className="flex flex-col md:flex-row"
             >
                 <label htmlFor="userEmail" className="hidden">
                     Email

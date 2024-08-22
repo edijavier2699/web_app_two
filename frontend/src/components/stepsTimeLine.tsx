@@ -22,7 +22,7 @@ export const StepsCard: React.FC<StepsCardProps> = ({ title, description }) => {
         <article className='text-center flex flex-col items-center justify-center z-3 sm:text-left'>
             <img alt='' src={workFlow} className='h-16 w-16 mb-2 border-2 border-[#375B0B]  bg-[#121212] rounded-full'/>
             <h4 className='font-bold text-[#C8E870]'>{title}</h4>
-            <p className='text-[#EBFABE]'>{description}</p>
+            <p className='text-[#EBFABE] lg:w-[70%] '>{description}</p>
         </article>
     )
 }
@@ -33,25 +33,26 @@ export const StepsTimeLine: React.FC = () => {
     const steps: Step[] = [
         {
             id: 1,
-            title: "Find the right properties",
-            description: "Our collaboration with developers allows us to meticulously handpick new residential developer properties. Our research team performs thorough due diligence, evaluating each property by focusing on strategic value, potential returns, and comprehensive market analysis."
+            title: "Secure Rental Income",
+            description: "We partner with property owners to guarantee rental income, backed by thorough research and due diligence."
         },
         {
             id: 2,
-            title: "Break it Down",
-            description: "We then make these properties accessible by dividing them into smaller, affordable shares. This way, you don't need a lot of money to start."
+            title: "Convert to Tradeable Tokens",
+            description: "We turn guaranteed rental income into digital tokens, representing a portion of the property's future income."
         },
         {
             id: 3,
-            title: "You Buy, Sell and Earn Rent",
-            description: "Our collaboration with developers allows us to meticulously handpick new residential developer properties. Our research team performs thorough due diligence, evaluating each property by focusing on strategic value, potential returns, and comprehensive market analysis."
+            title: "Buy and Earn Passive Income",
+            description: "Buy tokens on our marketplace in just a few clicks and earn monthly passive income, without the hassle of property management."
         },
         {
             id: 4,
-            title: "Sell when the time is right",
-            description: "We then make these properties accessible by dividing them into smaller, affordable shares. This way, you don't need a lot of money to start."
+            title: "Sell or Hold",
+            description: "Sell your tokens anytime or hold them to continue earning passive income, all within our secure and user-friendly platform."
         }
     ];
+    
 
     return (
         <section className="stepsTimeLineBackimg px-[20px] sm:px-[80px] py-[72px] md:py-[112px] text-white">
@@ -59,7 +60,7 @@ export const StepsTimeLine: React.FC = () => {
                 <div className="w-full lg:w-1/2  mb-[80px]">
                     <p className="font-bold text-[#A0CC28] mb-5">How It Works</p>
                     <h2 className="text-4xl md:text-7xl font-medium">
-                        Own Property <br /> Shares: Secure, <br /> Profitable and <br /> Hassle-Free
+                        Invest in Rental <br />  Properties,  <br /> Without the Headache
                     </h2>
                 </div>
                 <div className="w-full lg:w-1/2">
@@ -75,60 +76,56 @@ export const StepsTimeLine: React.FC = () => {
                 </div>
             </header>
             <main className="bg-[#121212] p-[56px] border-2 border-[#375B0B] rounded-2xl relative">
-    <div className="flex flex-col sm:flex-row justify-between">
-        <p className="text-[#82A621] font-semibold mb-4 sm:mb-0">How We Operate</p>
-        <p className="hidden lg:block lg:w-[40%] text-[#98A2B3]">
-        SPV* <br />
-        A special purpose vehicle (SPV) is a subsidiary created for a specific business purpose, often used in structured finance, joint ventures, property deals, or to isolate risks and assets from the parent company.
-        </p>
-    </div>
-    <div className='relative'>
-    <div className="absolute block lg:hidden inset-0 flex justify-center z-0">
-        <div className="w-[2px] bg-[#375B0B] border-dotted h-full"></div>
-    </div>
-    <div className="relative">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 relative z-10">
-            <div className="col-start-1 col-span-1 text-center w-full z-4 bg-[#121212]">
-                <StepsCard 
-                    title="Create Partnerships"
-                    description="How we create partnerships with developers, how we find valuable property and so on."
-                />
-            </div>
-            <div className="col-start-1 lg:col-start-3 col-span-1 text-center w-full  bg-[#121212] mt-[60px]">
-                <StepsCard 
-                    title="Create Partnerships"
-                    description="How we create partnerships with developers, how we find valuable property and so on."
-                />
-            </div>
-        </div>
-    </div>
+                <div className="flex flex-col sm:flex-row justify-between">
+                    <p className="text-[#82A621] font-semibold mb-4 sm:mb-0">How We Operate</p>
+                    <p className="hidden lg:block lg:w-[40%] text-[#98A2B3]">
+                    SPV* <br />
+                    A special purpose vehicle (SPV) is a subsidiary created for a specific business purpose, often used in structured finance, joint ventures, property deals, or to isolate risks and assets from the parent company.
+                    </p>
+                </div>
+                <div className='relative'>
+                <div className="absolute block lg:hidden inset-0 flex justify-center z-0">
+                    <div className="w-[2px] bg-[#375B0B] border-dotted h-full"></div>
+                </div>
+                <div className="relative">
+                    <div className="grid xl:space-x-4 relative z-10">
+                        <div className="col-start-1 lg:col-start-2 col-span-1 text-center w-full bg-[#121212] mt-[60px]">
+                            <StepsCard 
+                                title="Create Partnerships"
+                                description="We collaborate with property owners to secure a guaranteed income stream in exchange for instant liquidity."
+                            />
+                        </div>
+                        <div className="col-start-1 lg:col-start-4 col-span-1 text-center w-full bg-[#121212] mt-[60px] ">
+                            <StepsCard 
+                                title="Establish a Secure Structure"
+                                description="We create a Special Purpose Vehicle (SPV) to hold the rental income paid in, ensuring a secure and transparent investment structure."
+                            />
+                        </div>
+                    </div>
+                </div>
 
-    <div className="relative">
-        <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 relative z-10">
-            <div className="col-start-1 lg:col-start-2 col-span-1 text-center w-full bg-[#121212] mt-[60px]">
-                <StepsCard 
-                    title="Create Partnerships"
-                    description="How we create partnerships with developers, how we find valuable property and so on."
-                />
-            </div>
-            <div className="col-start-1 lg:col-start-4 col-span-1 text-center w-full bg-[#121212] mt-[60px] ">
-                <StepsCard 
-                    title="Create Partnerships"
-                    description="How we create partnerships with developers, how we find valuable property and so on."
-                />
-            </div>
-        </div>
-    </div>
-</div>
-
- 
-
-    
-    <p className="w-full lg:hidden mt-[40px] text-[#98A2B3]">
-            SPV* <br />
-            A special purpose vehicle (SPV) is a subsidiary created for a specific business purpose, often used in structured finance, joint ventures, property deals, or to isolate risks and assets from the parent company.
-        </p>
-</main>
+                <div className="relative">
+                    <div className="grid grid-cols-1 xl:space-x-4 relative z-10">
+                        <div className="col-start-1  lg:col-start-2 col-span-1 text-center w-full bg-[#121212] mt-[60px]">
+                            <StepsCard 
+                                title="Tokenize the SPV"
+                                description="We tokenize the SPV, which means we create digital tokens that represent ownership of the guaranteed income stream."
+                            />
+                        </div>
+                        <div className="col-start-1 lg:col-start-4 col-span-1 text-center w-full bg-[#121212] mt-[60px] ">
+                            <StepsCard 
+                                title="List on Our Platform"
+                                description="We list the digital tokens on our platform, making it easy for you to invest in and trade income streams."
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>                
+            <p className="w-full lg:hidden mt-[40px] text-[#98A2B3]">
+                SPV* <br />
+                A special purpose vehicle (SPV) is a subsidiary created for a specific business purpose, often used in structured finance, joint ventures, property deals, or to isolate risks and assets from the parent company.
+            </p>
+            </main>
 
             <footer className="flex justify-center px-[20px] mx-auto py-10 md:py-[100px]">
                 <Lottie

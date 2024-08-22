@@ -16,7 +16,6 @@ import {
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
-import { useToast } from "@/components/ui/use-toast"
 
 
 // Form schema with validation rules
@@ -37,7 +36,7 @@ const FormSchema = z.object({
 })
 
 export const ContactForm = () => {
-  const {toast}  = useToast()
+  
     
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -51,15 +50,7 @@ export const ContactForm = () => {
   })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log("wwwwww");
-    
-    toast({
-        title: "Scheduled: Catch up ",
-        description: "Friday, February 10, 2023 at 5:57 PM",
-        action: (
-          <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
-        ),
-      })
+     
   }
 
   return (

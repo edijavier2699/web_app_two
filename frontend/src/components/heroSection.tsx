@@ -2,10 +2,14 @@ import React from 'react';
 import heroVideo from '../assets/video/hero-video-origial.mp4';
 import '../styles/heroSection.css';
 import { Input } from './ui/input';
+import { useToast } from "@/components/ui/use-toast"
+
 import { Button } from './ui/button';
 import { NewsletterForm } from '@/forms/newsletterForm';
 
 export const HeroSection: React.FC = () => {
+  const { toast } = useToast()
+
   return (
     <div className="relative my-5 mx-[20px] md:mx-[80px] rounded overflow-hidden heroVideoBackground">
       {/* Video Background */}
@@ -30,10 +34,6 @@ export const HeroSection: React.FC = () => {
               Earn passive income, without the hefty price tag. Invest in rental properties, securely and easily.
             </p>
             <NewsletterForm />
-            {/* <div className="flex flex-col md:flex-row  md:space-x-2 ">
-              <Input type="email" className=" mb-[8px] md:mb-[0px]  md:w-[363px]" placeholder="Enter your email address" />
-              <Button type="submit" className=" md:w-[185px] bg-[#F2F4F7] text-[#121212]">Join The Waitlist</Button>
-            </div> */}
           </div>
         </div>
       </div>

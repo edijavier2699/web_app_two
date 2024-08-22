@@ -69,7 +69,7 @@ const Benefit: React.FC<BenefitItem> = ({ value, description }) => {
 const Benefits: React.FC = () => {
     const benefits: BenefitItem[] = [
         { value: '8%', description: 'MAX. annual return' },
-        { value: '$50M', description: 'Funded in real estate' },
+        { value: '1% Fee', description: ' Low fees to maximize your earnings' },
         { value: '4K+', description: 'Global customers' }
     ];
 
@@ -77,9 +77,9 @@ const Benefits: React.FC = () => {
         <section className="flex flex-col items-center py-10 px-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">Maximise Your Property Investments</h2>
             <p className="font-medium text-base md:text-lg text-[#667085] mb-8 text-center">
-                All the tools you need to invest, earn, and grow your real estate portfolio
+                All the tools you need to invest, earn, and grow your investment portfolio
             </p>
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex flex-col md:flex-row justify-center gap-6">
                 {benefits.map((benefit, index) => (
                     <Benefit
                         key={index}

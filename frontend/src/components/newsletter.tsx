@@ -10,7 +10,7 @@ export const Newsletter: React.FC = () => {
             <p className=" sm:text-lg mb-[46px] sm:mb-[24px] md:text-[20px]  text-center">
                 Stay up to date with Tokunize. Update, invest, learn and more.
             </p>
-            <div className="sm:mx-auto">
+            <div className="md:mx-auto">
                 <NewsletterForm />
             </div>
         </section>
