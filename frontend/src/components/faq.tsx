@@ -58,35 +58,35 @@ export const FAQ: React.FC = () => {
     };
 
     return (
-        <section className="flex faqSection flex-col md:flex-row h-auto md:h-[700px] items-center py-8 md:py-16 space-y-6 md:space-y-0  mx-[20px] md:mx-[80px]">
-            <div className="w-full md:w-[35%]">
+        <section className="flex faqSection flex-col lg:flex-row h-auto md:h-[700px] items-center py-8 md:py-16 space-y-6 md:space-y-0  mx-[20px] md:mx-[80px]">
+            <div className="w-full lg:w-[35%]">
                 <h2 className="text-3xl md:text-6xl font-extrabold text-center md:text-left">
                     Your questions <br /> answered
                 </h2>
                 <ContactModal/>
             </div>
-            <div className="w-full md:w-[65%] space-y-4">
+            <div className="w-full lg:w-[65%] space-y-4">
                 <AccordionItem
-                    title="What is real estate investing?"
-                    content="We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."
+                    title="How do I earn rental income?"
+                    content="When you invest with us, you'll earn a share of the rental income from the property. We'll deposit the money directly into your account."
                     isOpen={openIndex === 1}
                     onClick={() => toggleOpen(1)}
                 />
                 <AccordionItem
-                    title="What is blockchain and how does it relate to my investment?"
-                    content="We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."
+                    title="Is my investment secure?"
+                    content="We are seeking authorisation from the Financial Conduct Authority (FCA) to ensure our platform meets the highest regulatory standards. This provides the most certainty for our investors."
                     isOpen={openIndex === 2}
                     onClick={() => toggleOpen(2)}
                 />
                 <AccordionItem
-                    title="What is the minimum investment amount?"
-                    content="We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."
+                    title=" How do I get started?"
+                    content=" We're excited to have you on board! Our marketplace is currently in development, but you can sign up for our waitlist to be the first to know when it goes live."
                     isOpen={openIndex === 3}
                     onClick={() => toggleOpen(3)}
                 />
                 <AccordionItem
-                    title="How do I earn rental income?"
-                    content="We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."
+                    title="What are digital tokens?"
+                    content="Digital tokens are digital assets that represent a portion of a property's rental income stream. They're created using blockchain technology and guarantee your share of the rental income."
                     isOpen={openIndex === 4}
                     onClick={() => toggleOpen(4)}
                 />

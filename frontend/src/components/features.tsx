@@ -7,18 +7,18 @@ export const Features: React.FC = () => {
             <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                 <FeaturesCard 
                     icon="Globe" 
-                    title="Transparent Investment Tracking"
-                    description="Provide real-time dashboards where you can monitor the performance of their investments"
+                    title=" See Your Money Grow"
+                    description="Get real-time updates on your rental income, so you can track your returns and make informed decisions."
                 />
                 <FeaturesCard 
                     icon="Chart" 
-                    title="Diversify and Minimise Risks"
-                    description="Spread your investments across multiple properties"
+                    title="Diversify with Ease"
+                    description="Spread your investments across multiple properties, reducing risk and increasing potential returns."
                 />
                 <FeaturesCard 
                     icon="Bolt" 
-                    title="Enhance Flexibility"
-                    description="Easily adjust your investments to suit changing needs"
+                    title="Invest on Your Terms"
+                    description="Buy and sell tokens easily, without the need for lawyers, paperwork, or hefty fees, so you can adapt to changing market conditions."
                 />
             </div>
         </section>
