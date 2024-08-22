@@ -58,7 +58,7 @@ const ReviewCard: React.FC<Review> = ({ reviewText, username, location, companyN
 // component to show a single benefit
 const Benefit: React.FC<BenefitItem> = ({ value, description }) => {
     return (
-        <article className="flex flex-col items-center px-4 py-4 border-r border-gray-150 last:border-r-0 w-full md:w-auto">
+        <article className="flex flex-col items-center px-4 py-4 md:border-r border-gray-150 last:border-r-0 w-full md:w-auto">
             <span className="text-[#A0CC28] font-extrabold text-5xl md:text-7xl">{value}</span>
             <p className="mt-2 text-lg md:text-xl text-[#667085] font-medium text-center">{description}</p>
         </article>

@@ -10,7 +10,7 @@ const Layout = () =>{
                 <Routes>
                     <Route element={<App/>} path="/"/>
                 </Routes>
-            </BrowserRouter>    
+            </BrowserRouter>  
         </div>
     )
 }

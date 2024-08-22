@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, ReactNode } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
-
+import { ContactModal } from './contactModal';
 // AccordionItem types
 interface AccordionItemProps {
     title: string;
@@ -58,14 +58,12 @@ export const FAQ: React.FC = () => {
     };
 
     return (
-        <section className="flex faqSection flex-col md:flex-row h-auto md:h-[700px] items-center py-8 md:py-16 space-y-6 md:space-y-0">
+        <section className="flex faqSection flex-col md:flex-row h-auto md:h-[700px] items-center py-8 md:py-16 space-y-6 md:space-y-0  mx-[20px] md:mx-[80px]">
             <div className="w-full md:w-[35%]">
                 <h2 className="text-3xl md:text-6xl font-extrabold text-center md:text-left">
                     Your questions <br /> answered
                 </h2>
-                <button className="bg-[#C8E870] text-black mt-6 md:mt-8 px-4 py-3 font-bold rounded hover:bg-[#A0CC28] w-full md:w-auto">
-                    Contact Us
-                </button>
+                <ContactModal/>
             </div>
             <div className="w-full md:w-[65%] space-y-4">
                 <AccordionItem

@@ -3,7 +3,7 @@ import { FeaturesCard } from './featuresCard'; // Importa correctamente el archi
 
 export const Features: React.FC = () => {
     return (
-        <section className="my-[60px] featuresSection">
+        <section className="my-[60px] featuresSection  mx-[20px] sm:mx-[80px]">
             <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                 <FeaturesCard 
                     icon="Globe" 
