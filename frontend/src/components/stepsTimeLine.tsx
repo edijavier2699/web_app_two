@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/StepsTimeLine.css';
+import '../styles/stepsTimeLine.css';
 import Lottie from 'react-lottie-player';
 import Animation from "../assets/animation.json"
 import diagram1 from "../assets/diagram_1.svg"
