@@ -73,7 +73,18 @@ export const ContactForm = () => {
         form.reset();
       }
     } catch (err) {
-      console.log(err); 
+      let errorMessage = "An unexpected error occurred.";
+  
+      // Verifica si err es una instancia de Error
+      if (err instanceof Error) {
+        errorMessage = err.message;
+      }
+  
+      toast({
+        title: "Subscription Error",
+        description: errorMessage,  
+        variant: "destructive",    
+      });
     }
   };
   

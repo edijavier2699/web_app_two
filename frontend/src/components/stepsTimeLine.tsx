@@ -25,7 +25,7 @@ interface StepsCardProps {
 
 export const StepsCard: React.FC<StepsCardProps> = ({ icon, title, description }) => {
     return (
-        <article className='text-center flex flex-col items-center bg-red-500 justify-center z-3 sm:text-left'>
+        <article className='text-center flex flex-col items-center  justify-center z-3 sm:text-left'>
             <img alt='diagram-image' src={icon} className='h-24 mb-3' />
             <h4 className='font-bold text-[#C8E870]'>{title}</h4>
             <p className='text-[#EBFABE] lg:w-[70%] '>{description}</p>
@@ -70,6 +70,7 @@ export const StepsTimeLine: React.FC = () => {
                         Invest in Rental <br />  Properties,  <br /> Without the Headache
                     </h2>
                 </div>
+                
                 <div className="w-full lg:w-1/2">
                     {steps.map((item) => (
                         <article key={item.id} className="mb-5 flex flex-row sm:flex-row p-2">

@@ -29,6 +29,7 @@ export const HeroSection: React.FC = () => {
               Earn passive income, without the hefty price tag. Invest in rental properties, securely and easily.
             </p>
             <NewsletterForm />
+
           </div>
         </div>
       </div>

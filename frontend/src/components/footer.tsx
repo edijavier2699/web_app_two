@@ -1,15 +1,26 @@
 // Footer.tsx
 import React from 'react';
-import Logo from "../assets/logo.png"
+import Logo from "../assets/logo.jpg"
+import Instagram from "../assets/insta_icon.svg"
+import Linkedin from "../assets/linkedin_icon.svg"
+import X from "../assets/x_twitter_icon.svg"
+import "../styles/footer.css"
 
 export const Footer: React.FC = () => {
     return (
-        <section className="text-[#667085] footerSection font-medium mt-[130px] px-4 sm:px-6 lg:px-8">
-            <div className='flex  md:justify-end'>
-                <img alt='logo' className='h-16' src={Logo} />
-            </div>
+        <section className="text-[#667085] footerSection font-medium mt-[80px] md:mt-[100px]  px-4 sm:px-6 lg:px-8">
             <hr className="border-gray-300" />
             {/* Links section */}
+            <div className='flex flew-row justify-between iconsContainer'>
+                <div className='flex flew-row '>
+                    <img alt='instagram-logo' src={Instagram}/>
+                    <img alt='instagram-logo' src={Linkedin}/>
+                    <img alt='instagram-logo' src={X}/>
+                </div>
+                <div className='logoContainerImg'>
+                    <img alt='instagram-logo' className='mt-3' src={Logo}/>
+                </div>
+            </div>
             <div className="flex flex-col sm:flex-row justify-between mt-[35px] mb-[70px] px-4">
                 <span className="text-sm text-center sm:text-left">
                     @2024 Tokunize. All rights reserved.

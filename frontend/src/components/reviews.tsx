@@ -70,7 +70,7 @@ const Benefits: React.FC = () => {
     const benefits: BenefitItem[] = [
         { value: '8%', description: 'MAX. annual return' },
         { value: '1% Fee', description: ' Low fees to maximize your earnings' },
-        { value: '4K+', description: 'Global customers' }
+        { value: 'Easy Use', description: 'Invest in real estate in just 3 clicks' }
     ];
 
     return (

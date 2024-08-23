@@ -2,11 +2,9 @@
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { NavigationItem } from '../types/types'; 
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.jpg";
 
 const navigation: NavigationItem[] = [
-  // { name: 'Learn', href: '#', current: false },
-  // { name: 'About Us', href: '#', current: false },
   { name: 'Contact Us', href: '#', current: true },
 ];
 
@@ -25,10 +23,10 @@ export const Navbar: React.FC = () => {
             <img
               alt="Your Company"
               src={Logo}
-              className="h-[80px] w-auto"
+              className="h-[50px]"
             />
           </div>
-          <div className="hidden sm:flex sm:items-center sm:justify-center rounded-md ">
+          <div className="hidden sm:flex sm:items-center sm:justify-center rounded-md">
             <div className="flex space-x-4">
               {navigation.map((item) => (
                 <a
@@ -36,8 +34,8 @@ export const Navbar: React.FC = () => {
                   href={item.href}
                   aria-current={item.current ? 'page' : undefined}
                   className={classNames(
-                    item.current ? 'bg-[#C8E870] text-black hover:bg-[#A0CC28]' : 'text-[#121212]',
-                    'rounded-md px-3 py-2 text-sm font-medium',
+                    item.current ? 'bg-[#C8E870] text-black' : 'text-[#121212] hover:bg-[#A0CC28] hover:text-white',
+                    'rounded-md px-9 py-2 text-lg font-medium duration-300 ease-in-out'
                   )}
                 >
                   {item.name}
@@ -48,7 +46,7 @@ export const Navbar: React.FC = () => {
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${menuOpen ? 'bg-white text-black' : 'text-black-700'}`}
+              className={`inline-flex items-center justify-center rounded-md px-5 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${menuOpen ? 'bg-white text-black' : 'text-black-700'}`}
             >
               <span className="sr-only">Open main menu</span>
               {menuOpen ? (
@@ -70,8 +68,8 @@ export const Navbar: React.FC = () => {
               href={item.href}
               aria-current={item.current ? 'page' : undefined}
               className={classNames(
-                item.current ? 'bg-[#F2F4F7] text-black' : 'text-black-300 hover:bg-gray-700 hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
+                item.current ? 'text-black hover:underline' : 'text-black-700 ',
+                'block px-3 py-2 text-base font-medium',
               )}
             >
               {item.name}

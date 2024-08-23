@@ -1,5 +1,7 @@
 import React, { useState, useRef, FormEvent, ChangeEvent } from "react";
 import axios from 'axios';
+import { useToast } from "@/components/ui/use-toast"
+import { ToastAction } from "@/components/ui/toast"
 
 // Define the type for form data
 interface FormData {
@@ -14,6 +16,8 @@ interface NewsletterFormState {
 }
 
 export const NewsletterForm: React.FC = () => {
+    const { toast } = useToast()  // Import useToast hook
+
     const form = useRef<HTMLFormElement>(null); // Type the ref with HTMLFormElement
     const [formData, setFormData] = useState<FormData>({
         userEmail: "",
@@ -32,6 +36,7 @@ export const NewsletterForm: React.FC = () => {
         e.preventDefault();
     
         const apiUrl = `${import.meta.env.VITE_BACKEND_URL}newsletter/api/subscribe/`;
+    
         try {
             const response = await axios.post(apiUrl, {
                 email: formData.userEmail
@@ -39,27 +44,41 @@ export const NewsletterForm: React.FC = () => {
     
             // Check if the response status is in the range of 200-299
             if (response.status >= 200 && response.status < 300) {
-                setSuccessMessage("Subscription successful!");
-                setErrorMessage(undefined);
+                toast({
+                    title: "Thank you for subscribing!",
+                    description: "You're now subscribed to our newsletter. Stay tuned for updates in your inbox!",
+                    action: (
+                      <ToastAction altText="Undo your subscription">Undo</ToastAction>
+                    ),
+                });
+                    
                 setFormData({ userEmail: "" });
             } else {
-                setErrorMessage("Failed to subscribe. Please try again."); // Handle other responses
+                // Default error message
+                throw new Error("Failed to subscribe. Please try again.");
             }
         } catch (error) {
-            //Debuggin  the errro on the browser
             console.error("Error submitting the form", error);
+    
+            let errorMessage = "An unexpected error occurred. Please try again.";
     
             if (axios.isAxiosError(error) && error.response) {
                 // Extract the error message from the response
                 const backendError = error.response.data;
-                
-                setErrorMessage(backendError.email || "Failed to subscribe. Please try again.");
-            } else {
-                setErrorMessage("An unexpected error occurred. Please try again."); // Handle unexpected errors
+                errorMessage = backendError.email || errorMessage;
             }
-            setSuccessMessage(undefined); // Clear success message if any
+    
+            toast({
+                title: "Subscription Error",
+                description: errorMessage,
+                variant: "destructive" // Use destructive for error toasts
+            });
+    
+            // Clear success message if any
+            setSuccessMessage(undefined);
         }
     };
+    
     
     
 
@@ -104,3 +123,96 @@ export const NewsletterForm: React.FC = () => {
         </div>
     );
 };
+
+
+
+
+
+// import { zodResolver } from "@hookform/resolvers/zod"
+// import { useForm } from "react-hook-form"
+// import { z } from "zod"
+// import { useToast } from "@/components/ui/use-toast"
+// import { ToastAction } from "@/components/ui/toast"
+// import { Button } from "@/components/ui/button"
+// import {
+//   Form,
+//   FormControl,
+//   FormField,
+//   FormItem,
+//   FormLabel,
+//   FormMessage,
+// } from "@/components/ui/form"
+// import { Input } from "@/components/ui/input"
+// import axios from 'axios';
+
+// // Form schema with validation rules
+// const FormSchema = z.object({
+//   email: z.string().email({
+//     message: "Please enter a valid email address.",
+//   })
+// })
+
+// export const NewsletterForm = () => {
+//   const { toast } = useToast()  // Import useToast hook
+//   const form = useForm<z.infer<typeof FormSchema>>({
+//     resolver: zodResolver(FormSchema),
+//     defaultValues: {
+//       email: "",
+//     },
+//   })
+
+//   // Modify the onSubmit function
+//   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
+//     const apiUrl = `${import.meta.env.VITE_BACKEND_URL}newsletter/api/subscribe/`;
+  
+//     try {
+//       const response = await axios.post(apiUrl, {
+//         email: data.email,
+//       });
+  
+//       if (response.status >= 200 && response.status < 300) {
+//         // Mostrar toast de éxito
+//         toast({
+//           title: "Thank you!",
+//           description: "We have received your message and will get back to you soon.",
+//           action: (
+//             <ToastAction altText="Undo your submission">Undo</ToastAction>
+//           ),
+//         });
+  
+//         form.reset();
+//       }
+//     } catch (err) {
+//       console.log(err); 
+//     }
+//   };
+  
+//   return (
+//     <Form {...form}>
+//       <div> 
+//         <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col md:flex-row items-start md:items-center">
+//           <FormField
+//             control={form.control}
+//             name="email"
+//             render={({ field }) => (
+//               <FormItem className="m-0">
+//                 <FormLabel className="hidden">Enter Your Email Address</FormLabel>
+//                 <FormControl>
+//                   <Input
+//                     className="mt-0 rounded-md mb-[12px] md:mb-0 border-0 md:w-[363px] py-3 px-4 text-lg placeholder:text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+//                     placeholder="Email address*"
+//                     {...field}
+//                   />
+//                 </FormControl>
+//                 <FormMessage />
+//               </FormItem>
+//             )}
+//           />
+//           <Button type="submit" className="bg-[#F2F4F7] md:w-[185px] md:ml-4 text-black rounded-md py-3 px-5 text-lg font-medium hover:bg-[#C8E870] focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2">
+//             Submit
+//           </Button>
+//         </form>
+//       </div>
+//     </Form>
+//   )
+// }
