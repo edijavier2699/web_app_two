@@ -5,9 +5,9 @@ import { NavigationItem } from '../types/types';
 import Logo from "../assets/logo.png";
 
 const navigation: NavigationItem[] = [
-  { name: 'Learn', href: '#', current: false },
-  { name: 'About Us', href: '#', current: false },
-  { name: 'How It Works', href: '#', current: true },
+  // { name: 'Learn', href: '#', current: false },
+  // { name: 'About Us', href: '#', current: false },
+  { name: 'Contact Us', href: '#', current: true },
 ];
 
 function classNames(...classes: string[]): string {

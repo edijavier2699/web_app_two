@@ -67,28 +67,35 @@ export const FAQ: React.FC = () => {
             </div>
             <div className="w-full lg:w-[65%] space-y-4">
                 <AccordionItem
-                    title="How do I earn rental income?"
-                    content="When you invest with us, you'll earn a share of the rental income from the property. We'll deposit the money directly into your account."
+                    title=" How do I get started?"
+                    content=" We're excited to have you on board! Our marketplace is currently in development, but you can sign up for our waitlist to be the first to know when it goes live."
                     isOpen={openIndex === 1}
                     onClick={() => toggleOpen(1)}
                 />
                 <AccordionItem
-                    title="Is my investment secure?"
-                    content="We are seeking authorisation from the Financial Conduct Authority (FCA) to ensure our platform meets the highest regulatory standards. This provides the most certainty for our investors."
+                    title="How do I earn rental income?"
+                    content="When you invest with us, you'll earn a share of the rental income from the property. We'll deposit the money directly into your account."
                     isOpen={openIndex === 2}
                     onClick={() => toggleOpen(2)}
                 />
                 <AccordionItem
-                    title=" How do I get started?"
-                    content=" We're excited to have you on board! Our marketplace is currently in development, but you can sign up for our waitlist to be the first to know when it goes live."
+                    title="Is my investment secure?"
+                    content="We are seeking authorisation from the Financial Conduct Authority (FCA) to ensure our platform meets the highest regulatory standards. This provides the most certainty for our investors."
                     isOpen={openIndex === 3}
                     onClick={() => toggleOpen(3)}
                 />
+                
                 <AccordionItem
                     title="What are digital tokens?"
                     content="Digital tokens are digital assets that represent a portion of a property's rental income stream. They're created using blockchain technology and guarantee your share of the rental income."
                     isOpen={openIndex === 4}
                     onClick={() => toggleOpen(4)}
+                />
+                <AccordionItem
+                    title="How do I sell my tokens?"
+                    content="We are acquiring the necessary authorisation to allow for a secondary marketplace, where you can buy and sell tokens with other investors. This will be available when our platform goes live."
+                    isOpen={openIndex === 5}
+                    onClick={() => toggleOpen(5)}
                 />
             </div>
         </section>
