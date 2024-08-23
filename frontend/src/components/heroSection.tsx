@@ -25,7 +25,7 @@ export const HeroSection: React.FC = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
               Unlock Real Estate Investing
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium mb-4">
+            <p className="l font-medium text-base sm:text-lg md:text-xl lg:text-2xl mb-4">
               Earn passive income, without the hefty price tag. Invest in rental properties, securely and easily.
             </p>
             <NewsletterForm />

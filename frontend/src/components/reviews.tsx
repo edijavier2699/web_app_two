@@ -59,8 +59,8 @@ interface BenefitItem {
 const Benefit: React.FC<BenefitItem> = ({ value, description }) => {
     return (
         <article className="flex flex-col items-center px-4 py-4 md:border-r border-gray-150 last:border-r-0 w-full md:w-auto">
-            <span className="text-[#A0CC28] font-extrabold text-5xl md:text-7xl">{value}</span>
-            <p className="mt-2 text-lg md:text-xl text-[#667085] font-medium text-center">{description}</p>
+            <h1><span className="text-[#A0CC28] font-extrabold text-5xl md:text-7xl">{value}</span></h1>
+            <p className="m mt-2 text-lg md:text-xl text-[#667085] font-semibold text-center">{description}</p>
         </article>
     );
 };
@@ -70,13 +70,13 @@ const Benefits: React.FC = () => {
     const benefits: BenefitItem[] = [
         { value: '8%', description: 'MAX. annual return' },
         { value: '1% Fee', description: ' Low fees to maximize your earnings' },
-        { value: 'Easy Use', description: 'Invest in real estate in just 3 clicks' }
+        { value: '3 Clicks', description: 'To invest in real estate' }
     ];
 
     return (
         <section className="flex flex-col items-center py-10 px-4">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Maximise Your Returns</h2>
-            <p className="font-medium text-base md:text-lg text-[#667085] mb-8">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Maximise Your Returns</h3>
+            <p className="m font-medium text-base md:text-lg text-[#667085] mb-8">
                 All the tools you need to invest, earn, and grow your investment portfolio
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-6">

@@ -52,7 +52,7 @@ export const Navbar: React.FC = () => {
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`inline-flex items-center justify-center rounded-md px-5 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${menuOpen ? 'bg-white text-black' : 'text-black-700'}`}
+              className={`button-navbar font-semibold inline-flex items-center justify-center rounded-md px-5 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${menuOpen ? 'bg-white text-black' : 'text-black-700'}`}
             >
               <span className="sr-only">Open main menu</span>
               {menuOpen ? (

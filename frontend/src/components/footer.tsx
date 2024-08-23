@@ -11,23 +11,24 @@ export const Footer: React.FC = () => {
         <section className="text-[#667085] footerSection font-medium mt-[80px] md:mt-[100px]  px-4 sm:px-6 lg:px-8">
             <hr className="border-gray-300" />
             {/* Links section */}
-            <div className='flex flew-row justify-between iconsContainer'>
+            <div className='flex flew-row justify-between items-center iconsContainer mt-3'>
                 <div className='flex flew-row '>
-                    <img alt='instagram-logo' src={Instagram}/>
-                    <img alt='instagram-logo' src={Linkedin}/>
-                    <img alt='instagram-logo' src={X}/>
+                    <img alt='instagram-logo' className='w-[40px] h-[40px]' src={Instagram}/>
+                    <img alt='instagram-logo' className='w-[40px] h-[40px]' src={Linkedin}/>
+                    <img alt='instagram-logo' className='w-[40px] h-[40px]' src={X}/>
                 </div>
                 <div className='logoContainerImg'>
-                    <img alt='instagram-logo' className='mt-3' src={Logo}/>
+                    <img alt='instagram-logo' className='w-[200px] h-[55px]' src={Logo}/>
                 </div>
             </div>
             <div className="flex flex-col sm:flex-row justify-between mt-[35px] mb-[70px] px-4">
-                <span className="text-sm text-center sm:text-left">
+                <p className='xs'><span className="text-sm text-center sm:text-left">
                     @2024 Tokunize. All rights reserved.
                 </span>
+                </p>
                 <ul className="flex flex-wrap justify-center sm:justify-end space-x-4 text-sm mt-4 sm:mt-0">
-                    <li><a href="#" className="hover:text-blue-500">Privacy Policy</a></li>
-                    <li><a href="#" className="hover:text-blue-500">Terms of Service</a></li>
+                    <li><a href="#" className="hover:text-blue-500 duration-300"><p className='xs'>Privacy Policy</p></a></li>
+                    <li><a href="#" className="hover:text-blue-500 duration-300"><p className='xs'>Terms of Service</p></a></li>
                 </ul>
             </div>
         </section>
