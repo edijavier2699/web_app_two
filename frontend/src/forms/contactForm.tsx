@@ -173,7 +173,7 @@ export const ContactForm = () => {
             )}
           />
 
-          <Button type="submit" className="w-full text-[#121212] bg-[#C8E870]">Submit</Button>
+          <Button type="submit" className="w-full text-[#121212] bg-[#C8E870] hover:bg-[#A0CC28]">Submit</Button>
         </form>
       </div>
     </Form>

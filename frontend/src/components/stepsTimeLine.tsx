@@ -105,17 +105,18 @@ export const StepsTimeLine: React.FC = () => {
                 </div>
             </header>
 
-            {/* Renderizar imagen de operation en pantallas grandes */}
+            {/* Image for big screens */}
             {isLargeScreen ? (
                 <div className="text-center my-[60px]">
                     <img alt='operation' src={operation} className='mx-auto'/>
                 </div>
             ) : (
                 <main className="bg-[#121212] p-[56px] border-2 border-[#375B0B] rounded-2xl relative">
-                    <div className='relative'>
-                    <div className="absolute block lg:hidden inset-0 flex justify-center z-0">
+                <div className='relative'>
+                    <div className="absolute h-[80%] lg:hidden inset-x-0 bottom-0 flex justify-center z-0">
                         <div className="w-[2px] bg-[#375B0B] border-dotted h-full"></div>
                     </div>
+
                     <div className="relative">
                         <div className="grid xl:space-x-4 relative z-10">
                             <div className="col-start-1 lg:col-start-2 col-span-1 text-center w-full bg-[#121212] mt-[60px]">

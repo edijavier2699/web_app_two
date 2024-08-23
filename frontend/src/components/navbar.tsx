@@ -1,11 +1,11 @@
-// Navbar.tsx
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { NavigationItem } from '../types/types'; 
 import Logo from "../assets/logo.jpg";
+import { ContactModal } from './contactModal';
 
 const navigation: NavigationItem[] = [
-  { name: 'Contact Us', href: '#', current: true },
+  { name: 'Contact Us', href:"#", current: false }, // No href needed, modal will handle this
 ];
 
 function classNames(...classes: string[]): string {
@@ -27,19 +27,25 @@ export const Navbar: React.FC = () => {
             />
           </div>
           <div className="hidden sm:flex sm:items-center sm:justify-center rounded-md">
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 items-center">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  aria-current={item.current ? 'page' : undefined}
-                  className={classNames(
-                    item.current ? 'bg-[#C8E870] text-black' : 'text-[#121212] hover:bg-[#A0CC28] hover:text-white',
-                    'rounded-md px-9 py-2 text-lg font-medium duration-300 ease-in-out'
-                  )}
-                >
-                  {item.name}
-                </a>
+                item.name === 'Contact Us' ? (
+                  <div key={item.name} className="flex h-full pb-7 items-center justify-center">
+                    <ContactModal />
+                  </div>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    aria-current={item.current ? 'page' : undefined}
+                    className={classNames(
+                      item.current ? 'bg-[#C8E870] text-black' : 'text-[#121212] hover:bg-[#A0CC28] hover:text-white',
+                      'rounded-md px-9 py-2 text-lg font-medium duration-300 ease-in-out'
+                    )}
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
             </div>
           </div>
@@ -63,17 +69,23 @@ export const Navbar: React.FC = () => {
       <div className={`absolute inset-x-0 top-[80px] z-30 ${menuOpen ? 'block bg-[#C8E870]' : 'hidden'} sm:hidden`}>
         <div className="space-y-1 px-2 pt-2 pb-3">
           {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              aria-current={item.current ? 'page' : undefined}
-              className={classNames(
-                item.current ? 'text-black hover:underline' : 'text-black-700 ',
-                'block px-3 py-2 text-base font-medium',
-              )}
-            >
-              {item.name}
-            </a>
+            item.name === 'Contact Us' ? (
+              <div key={item.name} className="flex items-center justify-start">
+                <ContactModal />
+              </div>
+            ) : (
+              <a
+                key={item.name}
+                href={item.href}
+                aria-current={item.current ? 'page' : undefined}
+                className={classNames(
+                  item.current ? 'text-black hover:underline' : 'text-black-700 ',
+                  'block px-3 py-2 text-base font-medium',
+                )}
+              >
+                {item.name}
+              </a>
+            )
           ))}
         </div>
       </div>
