@@ -57,7 +57,7 @@ export const StepsTimeLine: React.FC = () => {
     return (
         <section className="stepsTimeLineBackimg px-[20px] sm:px-[80px] py-[72px] md:py-[112px] text-white">
             <header className="flex flex-col lg:flex-row">
-                <div className="w-full lg:w-1/2  mb-[80px]">
+                <div className="w-full h-full lg:w-1/2  mb-[80px] sticky top-0 ">
                     <p className="font-bold text-[#A0CC28] mb-5">How It Works</p>
                     <h2 className="text-4xl md:text-7xl font-medium">
                         Invest in Rental <br />  Properties,  <br /> Without the Headache
