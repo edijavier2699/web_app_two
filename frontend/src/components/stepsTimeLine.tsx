@@ -8,6 +8,8 @@ import diagram1 from "../assets/diagram_1.svg"
 import diagram2 from "../assets/diagram_2.svg"
 import diagram3 from "../assets/diagram_3.svg"
 import diagramLogo from "../assets/diagram_logo.svg"
+import dot from "../assets/dot.svg"
+import line from "../assets/Line.png"
 
 // Define the type for each step item
 interface Step {
@@ -65,7 +67,7 @@ export const StepsTimeLine: React.FC = () => {
         <section className="stepsTimeLineBackimg px-[20px] sm:px-[80px] py-[72px] md:py-[112px] text-white">
             <header className="flex flex-col lg:flex-row">
                 <div className="w-full h-full lg:w-1/2  mb-[80px] lg:sticky lg:top-0 ">
-                    <p className="font-bold text-[#A0CC28] mb-5">How It Works</p>
+                    <p className="font-bold text-[#A0CC28] mb-5 mt-4">How It Works</p>
                     <h2 className="text-4xl md:text-7xl font-medium">
                         Invest in Rental <br />  Properties,  <br /> Without the Headache
                     </h2>
@@ -74,7 +76,11 @@ export const StepsTimeLine: React.FC = () => {
                 <div className="w-full lg:w-1/2">
                     {steps.map((item) => (
                         <article key={item.id} className="mb-5 flex flex-row sm:flex-row p-2">
-                            <img src={StepBar} alt="Step bar" className="mb-4 sm:mb-0 sm:mr-4" />
+                            <div className='flex flex-col top-0  items-center justify-start h-full'>
+                                <img alt='diagram-image' src={dot} className='h-24 mb-3 transform translate-y-[-25%] sm:translate-y-[-20%]' />
+                                <img alt='diagram-image' src={line} className=' lg:h-24 xl:h-16 w-1 mb-3 transform lg:translate-y-[-60%] xl:translate-y-[-90%] hidden lg:block' />
+                            </div>
+
                             <div>
                                 <h3 className="text-3xl sm:text-3xl font-bold mb-3">{item.title}</h3>
                                 <p className="font-light text-base sm:text-xl">{item.description}</p>
