@@ -1,9 +1,8 @@
-import React from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
+import { useToast } from "@/components/ui/use-toast"
 import { ToastAction } from "@/components/ui/toast"
-
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -16,17 +15,18 @@ import {
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
+import axios from 'axios';
 
 
 // Form schema with validation rules
 const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
   }),
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
-  phone: z.string().min(10, {
+  phone_number: z.string().min(10, {
     message: "Phone number must be at least 10 digits.",
   }),
   message: z.string().optional(), // No validation on length
@@ -36,34 +36,59 @@ const FormSchema = z.object({
 })
 
 export const ContactForm = () => {
-  
-    
+  const { toast } = useToast()  // Import useToast hook
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      username: "",
+      name: "",
       email: "",
-      phone: "",
+      phone_number: "",
       message: "",
       terms: false,
     },
   })
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-     
-  }
+  // Modify the onSubmit function
+  const onSubmit = async (data: z.infer<typeof FormSchema>) => {
+    const apiUrl = `${import.meta.env.VITE_BACKEND_URL}newsletter/contacted-clients/`;
+  
+    try {
+      const response = await axios.post(apiUrl, {
+        email: data.email,
+        name: data.name,
+        phone_number: data.phone_number,
+        user_message: data.message
+      });
+  
+      if (response.status >= 200 && response.status < 300) {
+        // Mostrar toast de éxito
+        toast({
+          title: "Thank you!",
+          description: "We have received your message and will get back to you soon.",
+          action: (
+            <ToastAction altText="Undo your submission">Undo</ToastAction>
+          ),
+        });
+  
+        form.reset();
+      }
+    } catch (err) {
+      console.log(err); 
+    }
+  };
+  
+  
 
   return (
     <Form {...form}>
-      {/* Ensure there's no <p> wrapping the <form> */}
-      <div> {/* Replacing any <p> with <div> */}
+      <div> 
         <form onSubmit={form.handleSubmit(onSubmit)} className="">
           <FormField
             control={form.control}
-            name="username"
+            name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="hidden">Username</FormLabel>
+                <FormLabel className="hidden">Name</FormLabel>
                 <FormControl>
                   <Input className="border-0" placeholder="First Name*" {...field} />
                 </FormControl>
@@ -88,7 +113,7 @@ export const ContactForm = () => {
 
           <FormField
             control={form.control}
-            name="phone"
+            name="phone_number"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="hidden">Phone Number</FormLabel>
