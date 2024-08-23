@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
             <img
               alt="Your Company"
               src={Logo}
-              className="h-[50px]"
+              className='w-[200px] h-[55px]'
             />
           </div>
           <div className="hidden sm:flex sm:items-center sm:justify-center rounded-md">
