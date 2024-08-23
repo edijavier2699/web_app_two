@@ -8,13 +8,6 @@ interface FormData {
     userEmail: string;
 }
 
-// Define the type for the component form state
-interface NewsletterFormState {
-    formData: FormData;
-    errorMessage?: string;
-    successMessage?: string;
-}
-
 export const NewsletterForm: React.FC = () => {
     const { toast } = useToast()  // Import useToast hook
 
@@ -22,7 +15,7 @@ export const NewsletterForm: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({
         userEmail: "",
     });
-    const [errorMessage, setErrorMessage] = useState<string | undefined>();
+    const [errorMessage] = useState<string | undefined>();
     const [successMessage, setSuccessMessage] = useState<string | undefined>();
 
     // Handle input changes
