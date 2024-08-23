@@ -75,8 +75,8 @@ const Benefits: React.FC = () => {
 
     return (
         <section className="flex flex-col items-center py-10 px-4">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">Maximise Your Returns</h2>
-            <p className="font-medium text-base md:text-lg text-[#667085] mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Maximise Your Returns</h2>
+            <p className="font-medium text-base md:text-lg text-[#667085] mb-8">
                 All the tools you need to invest, earn, and grow your investment portfolio
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-6">

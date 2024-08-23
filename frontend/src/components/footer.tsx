@@ -28,7 +28,6 @@ export const Footer: React.FC = () => {
                 <ul className="flex flex-wrap justify-center sm:justify-end space-x-4 text-sm mt-4 sm:mt-0">
                     <li><a href="#" className="hover:text-blue-500">Privacy Policy</a></li>
                     <li><a href="#" className="hover:text-blue-500">Terms of Service</a></li>
-                    <li><a href="#" className="hover:text-blue-500">Cookies Settings</a></li>
                 </ul>
             </div>
         </section>

@@ -139,7 +139,8 @@ export const StepsTimeLine: React.FC = () => {
             </p>
             </main>
 
-            <footer className="flex justify-center px-[20px] mx-auto py-10 md:py-[100px]">
+            <footer className="flex flex-col items-center justify-center px-[20px] mx-auto py-10 md:py-[100px]">
+                <h2 className='text-center mb-5 font-bold text-[30px]  sm:text-[40px] md:text-[60px] lg:text-[70px]'>Start Investing with Just a Small Amount</h2>
                 <Lottie
                     className="animatedVideo"
                     loop
@@ -147,6 +148,7 @@ export const StepsTimeLine: React.FC = () => {
                     play
                     style={{ width:"50%", height: "50%" }}
                 />
+                <h4 className='text-center mt-5 font-bold text-[30px]  sm:text-[40px] md:text-[60px] lg:text-[70px]'>Enjoy the Freedom to Buy and Sell Anytime</h4>
             </footer>
         </section>
     );
