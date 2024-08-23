@@ -100,12 +100,12 @@ export const NewsletterForm: React.FC = () => {
                     value={formData.userEmail}
                     onChange={handleOnChange}
                     placeholder="Enter your email"
-                    className="rounded-md mb-[12px] md:mb-[0px] border-0 md:w-[363px]  py-3 px-4 text-lg placeholder:text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="input-hero font-medium rounded-md mb-[12px] md:mb-[0px] border-0 md:w-[363px] py-3 px-4 text-lg placeholder:text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
 
                 <button
                     type="submit"
-                    className="bg-[#F2F4F7] md:w-[185px] md:ml-4 text-black rounded-md py-3 px-5 text-lg font-medium hover:bg-[#C8E870] focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
+                    className="button-hero bg-[#F2F4F7] md:w-[185px] md:ml-4 text-black rounded-md py-3 px-5 text-lg font-semibold hover:bg-[#C8E870] duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
                 >
                     Subscribe
                 </button>

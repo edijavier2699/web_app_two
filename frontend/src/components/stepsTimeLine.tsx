@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/StepsTimeLine.css';
-import StepBar from '../assets/stepBar.svg';
-import workFlow from "../assets/workFlow.svg"
 import Lottie from 'react-lottie-player';
 import Animation from "../assets/animation.json"
 import diagram1 from "../assets/diagram_1.svg"
@@ -82,7 +80,7 @@ export const StepsTimeLine: React.FC = () => {
         <section className="stepsTimeLineBackimg px-[20px] sm:px-[80px] py-[72px] md:py-[112px] text-white">
             <header className="flex flex-col lg:flex-row">
                 <div className="w-full h-full lg:w-1/2  mb-[80px] lg:sticky lg:top-0 ">
-                    <p className="font-bold text-[#A0CC28] mb-5 mt-4">How It Works</p>
+                    <p className="l font-semibold text-[#A0CC28] mb-5 mt-4">How It Works</p>
                     <h2 className="text-4xl md:text-7xl font-medium">
                         Invest in Rental <br />  Properties,  <br /> Without the Headache
                     </h2>
@@ -97,8 +95,8 @@ export const StepsTimeLine: React.FC = () => {
                             </div>
 
                             <div>
-                                <h3 className="text-3xl sm:text-3xl font-bold mb-3">{item.title}</h3>
-                                <p className="font-light text-base sm:text-xl">{item.description}</p>
+                                <h4 className="text-3xl sm:text-3xl font-bold mb-3">{item.title}</h4>
+                                <p className="s font-light text-base sm:text-xl">{item.description}</p>
                             </div>
                         </article>
                     ))}
@@ -163,7 +161,7 @@ export const StepsTimeLine: React.FC = () => {
             )}
 
             <footer className="flex flex-col items-center justify-center px-[20px] mx-auto py-10 md:py-[100px]">
-                <h2 className='text-center mb-5 font-bold text-[30px]  sm:text-[40px] md:text-[60px] lg:text-[70px]'>Start Investing with Just a Small Amount</h2>
+                <h2 className='text-center mb-5 font-bold text-[30px] sm:text-[40px] md:text-[60px] lg:text-[70px]'>Start Investing with Just a Small Amount</h2>
                 <Lottie
                     className="animatedVideo"
                     loop
@@ -171,7 +169,7 @@ export const StepsTimeLine: React.FC = () => {
                     play
                     style={{ width:"50%", height: "50%" }}
                 />
-                <h4 className='text-center mt-5 font-bold text-[30px]  sm:text-[40px] md:text-[60px] lg:text-[70px]'>Enjoy the Freedom to Buy and Sell Anytime</h4>
+                <h2 className='text-center mt-5 font-bold text-[30px] sm:text-[40px] md:text-[60px] lg:text-[70px]'>Enjoy the Freedom to Buy and Sell Anytime</h2>
             </footer>
         </section>
     );

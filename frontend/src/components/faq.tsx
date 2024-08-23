@@ -23,21 +23,22 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ title, content, is
 
     return (
         <div className="relative mb-3">
-            <h6 className="mb-0">
+            <h3 className=" font-bold mb-0">
                 <button
                     onClick={onClick}
                     className="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-lg group"
                 >
-                    <span className="text-lg sm:text-xl md:text-2xl">{title}</span>
-                    <span className="absolute right-0 pt-1 text-xs">
+                    <p className='l'><span className="text-[#121212] text-lg sm:text-xl md:text-2xl">{title}</span></p>
+                    <p className='s'><span className="absolute right-0 pt-1 font-medium text-xs">
                         {isOpen ? (
                             <ChevronDownIcon className="h-5 w-5 text-gray-500" />
                         ) : (
                             <ChevronUpIcon className="h-5 w-5 text-gray-500" />
                         )}
                     </span>
+                    </p>
                 </button>
-            </h6>
+            </h3>
             <div
                 style={{ maxHeight }}
                 className="overflow-hidden transition-max-height duration-500 ease-in-out"
@@ -60,8 +61,8 @@ export const FAQ: React.FC = () => {
     return (
         <section className="flex faqSection flex-col lg:flex-row h-auto md:h-[700px] items-center py-8 md:py-16 space-y-6 md:space-y-0  mx-[20px] md:mx-[80px]">
             <div className="w-full lg:w-[35%]">
-                <h2 className="text-3xl md:text-6xl font-extrabold text-left">
-                    Your questions answered
+                <h2 className="text-3xl md:text-6xl font-bold text-left">
+                    Your Questions, <br /> Answered
                 </h2>
                 <div className="w-[40%]">
                     <ContactModal/>

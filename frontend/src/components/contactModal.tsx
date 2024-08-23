@@ -13,7 +13,7 @@ export const ContactModal = () => {
     
     return (
         <Dialog >
-            <DialogTrigger className="bg-[#C8E870] text-black mt-6 md:mt-8 px-4 py-3 font-bold rounded hover:bg-[#A0CC28] w-full md:w-auto">
+            <DialogTrigger className="button-navbar bg-[#C8E870] text-black mt-6 md:mt-8 px-4 py-3 font-bold rounded hover:bg-[#A0CC28] w-full md:w-auto">
                 Contact Us
             </DialogTrigger>
             <DialogContent className="bg-[#F9FAFB]">

@@ -1,0 +1,85 @@
+/* typography.css */
+h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 5.25rem;
+    letter-spacing: -0.04rem;
+  }
+  
+  h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 3.75rem;
+    line-height: 4.5rem;
+    letter-spacing: -0.025rem;
+  }
+  
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    letter-spacing: -0.01rem;
+  }
+  
+  h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.875rem;
+    line-height: 2.3rem;
+    letter-spacing: -0.01rem;
+  }
+
+  /* typography.css */
+p.xl {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+  }
+  
+  p.l {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+  
+  p.m {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+  
+  p.s {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+  
+  p.xs {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+.button-navbar {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+  }
+
+.input-hero {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+  }
+
+.button-hero {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+  }

@@ -21,8 +21,8 @@ export const FeaturesCard = ({ icon, title, description }: FeaturesCardProps) =>
             <div className="flex items-center justify-center mb-4 bg-[#F4FAE2] p-1 rounded-full w-20 h-20">
                 {iconMap[icon]} 
             </div>
-            <h2 className="text-3xl font-bold text-[#121212]">{title}</h2>
-            <p className="text-gray-500 font-medium mt-2">{description}</p>
+            <h3 className="text-3xl font-bold text-[#121212]">{title}</h3>
+            <p className="s text-gray-500 mt-2">{description}</p>
         </article>
     );
 };
