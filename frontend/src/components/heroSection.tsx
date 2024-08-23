@@ -1,5 +1,5 @@
 import React from 'react';
-import heroVideo from '../assets/video/hero-video-origial.mp4';
+import heroVideo from '../assets/video/heroVideo.mp4';
 import '../styles/heroSection.css';
 import { NewsletterForm } from '@/forms/newsletterForm';
 
@@ -13,6 +13,8 @@ export const HeroSection: React.FC = () => {
         autoPlay
         muted
         loop
+        playsInline
+
       >
         <source src={heroVideo} type="video/mp4" />
         Your browser does not support the video tag.
