@@ -1,0 +1,26 @@
+.iconsContainer{
+    height: 50px;
+}
+
+.logoContainerImg{
+    height: 40px;
+    margin-right: 20px;
+}
+.logoContainerImg img{
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width:640px) {
+    .iconsContainer{
+        height: 40px;
+    }
+    .logoContainerImg{
+        height: 30px;
+        margin-right: 5px !important;
+    }
+    .logoContainerImg img{
+       margin-top: 10px !important;
+    }
+      
+}
