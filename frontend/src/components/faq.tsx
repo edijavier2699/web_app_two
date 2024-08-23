@@ -60,10 +60,12 @@ export const FAQ: React.FC = () => {
     return (
         <section className="flex faqSection flex-col lg:flex-row h-auto md:h-[700px] items-center py-8 md:py-16 space-y-6 md:space-y-0  mx-[20px] md:mx-[80px]">
             <div className="w-full lg:w-[35%]">
-                <h2 className="text-3xl md:text-6xl font-extrabold text-center md:text-left">
-                    Your questions <br /> answered
+                <h2 className="text-3xl md:text-6xl font-extrabold text-left">
+                    Your questions answered
                 </h2>
-                <ContactModal/>
+                <div className="w-[40%]">
+                    <ContactModal/>
+                </div>
             </div>
             <div className="w-full lg:w-[65%] space-y-4">
                 <AccordionItem
