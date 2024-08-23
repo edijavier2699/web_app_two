@@ -2,7 +2,6 @@ import React from 'react';
 import heroVideo from '../assets/video/hero-video-origial.mp4';
 import '../styles/heroSection.css';
 import { NewsletterForm } from '@/forms/newsletterForm';
-import { ToastSimple } from './toastSimple';
 
 export const HeroSection: React.FC = () => {
 
@@ -30,7 +29,6 @@ export const HeroSection: React.FC = () => {
               Earn passive income, without the hefty price tag. Invest in rental properties, securely and easily.
             </p>
             <NewsletterForm />
-            <ToastSimple />
           </div>
         </div>
       </div>

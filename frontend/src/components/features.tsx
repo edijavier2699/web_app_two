@@ -6,17 +6,17 @@ export const Features: React.FC = () => {
         <section className="my-[60px] featuresSection  mx-[20px] sm:mx-[80px]">
             <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                 <FeaturesCard 
-                    icon="Globe" 
+                    icon="Feature1" 
                     title=" See Your Money Grow"
                     description="Get real-time updates on your rental income, so you can track your returns and make informed decisions."
                 />
                 <FeaturesCard 
-                    icon="Chart" 
+                    icon="Feature2" 
                     title="Diversify with Ease"
                     description="Spread your investments across multiple properties, reducing risk and increasing potential returns."
                 />
                 <FeaturesCard 
-                    icon="Bolt" 
+                    icon="Feature3" 
                     title="Invest on Your Terms"
                     description="Buy and sell tokens easily, without the need for lawyers, paperwork, or hefty fees, so you can adapt to changing market conditions."
                 />
