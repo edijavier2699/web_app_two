@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/StepsTimeLine.css';
 import StepBar from '../assets/stepBar.svg';
 import workFlow from "../assets/workFlow.svg"
@@ -10,6 +10,7 @@ import diagram3 from "../assets/diagram_3.svg"
 import diagramLogo from "../assets/diagram_logo.svg"
 import dot from "../assets/dot.svg"
 import line from "../assets/Line.png"
+import operation from "../assets/operation.svg"
 
 // Define the type for each step item
 interface Step {
@@ -38,6 +39,20 @@ export const StepsCard: React.FC<StepsCardProps> = ({ icon, title, description }
 
 // Define the type for the component props if needed (not required here as there are no props)
 export const StepsTimeLine: React.FC = () => {
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+    // Check screen width on component mount and resize
+    useEffect(() => {
+        const handleResize = () => {
+            setIsLargeScreen(window.innerWidth > 1024);
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();  // Check on mount
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     // STEPS DATA
     const steps: Step[] = [
         {
@@ -89,61 +104,62 @@ export const StepsTimeLine: React.FC = () => {
                     ))}
                 </div>
             </header>
-            <main className="bg-[#121212] p-[56px] border-2 border-[#375B0B] rounded-2xl relative">
-                <div className="flex flex-col sm:flex-row justify-between">
-                    <p className="text-[#82A621] font-semibold mb-4 sm:mb-0">How We Operate</p>
-                    <p className="hidden lg:block lg:w-[40%] text-[#98A2B3]">
-                    SPV* <br />
-                    A special purpose vehicle (SPV) is a subsidiary created for a specific business purpose, often used in structured finance, joint ventures, property deals, or to isolate risks and assets from the parent company.
-                    </p>
+
+            {/* Renderizar imagen de operation en pantallas grandes */}
+            {isLargeScreen ? (
+                <div className="text-center my-[60px]">
+                    <img alt='operation' src={operation} className='mx-auto'/>
                 </div>
-                <div className='relative'>
-                <div className="absolute block lg:hidden inset-0 flex justify-center z-0">
-                    <div className="w-[2px] bg-[#375B0B] border-dotted h-full"></div>
-                </div>
-                <div className="relative">
-                    <div className="grid xl:space-x-4 relative z-10">
-                        <div className="col-start-1 lg:col-start-2 col-span-1 text-center w-full bg-[#121212] mt-[60px]">
-                            <StepsCard 
-                                icon={diagram1}
-                                title="Create Partnerships"
-                                description="We collaborate with property owners to secure a guaranteed income stream in exchange for instant liquidity."
-                            />
-                        </div>
-                        <div className="col-start-1 lg:col-start-4 col-span-1 text-center w-full bg-[#121212] mt-[60px] ">
-                            <StepsCard 
-                                icon={diagram2}
-                                title="Establish a Secure Structure"
-                                description="We create a Special Purpose Vehicle (SPV) to hold the rental income paid in, ensuring a secure and transparent investment structure."
-                            />
+            ) : (
+                <main className="bg-[#121212] p-[56px] border-2 border-[#375B0B] rounded-2xl relative">
+                    <div className='relative'>
+                    <div className="absolute block lg:hidden inset-0 flex justify-center z-0">
+                        <div className="w-[2px] bg-[#375B0B] border-dotted h-full"></div>
+                    </div>
+                    <div className="relative">
+                        <div className="grid xl:space-x-4 relative z-10">
+                            <div className="col-start-1 lg:col-start-2 col-span-1 text-center w-full bg-[#121212] mt-[60px]">
+                                <StepsCard 
+                                    icon={diagram1}
+                                    title="Create Partnerships"
+                                    description="We collaborate with property owners to secure a guaranteed income stream in exchange for instant liquidity."
+                                />
+                            </div>
+                            <div className="col-start-1 lg:col-start-4 col-span-1 text-center w-full bg-[#121212] mt-[60px] ">
+                                <StepsCard 
+                                    icon={diagram2}
+                                    title="Establish a Secure Structure"
+                                    description="We create a Special Purpose Vehicle (SPV) to hold the rental income paid in, ensuring a secure and transparent investment structure."
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div className="relative">
-                    <div className="grid grid-cols-1 xl:space-x-4 relative z-10">
-                        <div className="col-start-1  lg:col-start-2 col-span-1 text-center w-full bg-[#121212] mt-[60px]">
+                    <div className="relative">
+                        <div className="grid grid-cols-1 xl:space-x-4 relative z-10">
+                            <div className="col-start-1  lg:col-start-2 col-span-1 text-center w-full bg-[#121212] mt-[60px]">
+                                <StepsCard
+                                    icon={diagram3} 
+                                    title="Tokenize the SPV"
+                                    description="We tokenize the SPV, which means we create digital tokens that represent ownership of the guaranteed income stream."
+                                />
+                            </div>
+                            <div className="col-start-1 lg:col-start-4 col-span-1  w-full bg-[#121212] mt-[60px] ">
                             <StepsCard
-                                icon={diagram3} 
+                                icon={diagramLogo}
                                 title="Tokenize the SPV"
                                 description="We tokenize the SPV, which means we create digital tokens that represent ownership of the guaranteed income stream."
                             />
-                        </div>
-                        <div className="col-start-1 lg:col-start-4 col-span-1  w-full bg-[#121212] mt-[60px] ">
-                        <StepsCard
-                            icon={diagramLogo}
-                            title="Tokenize the SPV"
-                            description="We tokenize the SPV, which means we create digital tokens that represent ownership of the guaranteed income stream."
-                        />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>                
-            <p className="w-full lg:hidden mt-[40px] text-[#98A2B3]">
-                SPV* <br />
-                A special purpose vehicle (SPV) is a subsidiary created for a specific business purpose, often used in structured finance, joint ventures, property deals, or to isolate risks and assets from the parent company.
-            </p>
-            </main>
+                </div>                
+                <p className="w-full lg:hidden mt-[40px] text-[#98A2B3]">
+                    SPV* <br />
+                    A special purpose vehicle (SPV) is a subsidiary created for a specific business purpose, often used in structured finance, joint ventures, property deals, or to isolate risks and assets from the parent company.
+                </p>
+                </main>
+            )}
 
             <footer className="flex flex-col items-center justify-center px-[20px] mx-auto py-10 md:py-[100px]">
                 <h2 className='text-center mb-5 font-bold text-[30px]  sm:text-[40px] md:text-[60px] lg:text-[70px]'>Start Investing with Just a Small Amount</h2>
