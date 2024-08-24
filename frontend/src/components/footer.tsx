@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
             </div>
             <div className="flex flex-col sm:flex-row justify-between mt-[35px] mb-[70px] px-4">
                 <p className='xs'><span className="text-sm text-center sm:text-left">
-                    @2024 Tokunize. All rights reserved.
+                    @2024 Tokunize. All rights reserved .
                 </span>
                 </p>
                 <ul className="flex flex-wrap justify-center sm:justify-end space-x-4 text-sm mt-4 sm:mt-0">
