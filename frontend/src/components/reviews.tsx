@@ -59,7 +59,7 @@ interface BenefitItem {
 const Benefit: React.FC<BenefitItem> = ({ value, description }) => {
     return (
         <article className="flex flex-col items-center px-4 py-4 md:border-r border-gray-150 last:border-r-0 w-full md:w-auto">
-            <h1><span className="text-[#A0CC28] font-extrabold text-5xl md:text-7xl">{value}</span></h1>
+            <h1 className='text-[#A0CC28] font-extrabold text-5xl lg:text-7xl'>{value}</h1>
             <p className="m mt-2 text-lg md:text-xl text-[#667085] font-semibold text-center">{description}</p>
         </article>
     );
