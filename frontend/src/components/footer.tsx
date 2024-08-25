@@ -15,13 +15,19 @@ export const Footer: React.FC = () => {
                 <div className='flex flew-row '>
                     <ul className='flex space-x-4'>
                         <li className='iconContainer'>
-                            <img alt='linkedln-icon' src={Linkedin} />
+                            <a href='https://www.linkedin.com/company/tokunize/' target="_blank" rel="noopener noreferrer">
+                                <img alt='linkedin-icon' src={Linkedin} />
+                            </a>
                         </li>
                         <li className='iconContainer'>
-                            <img alt='instagram-icon' src={Instagram} />
+                            <a href='https://www.instagram.com/tokunize_official/' target="_blank" rel="noopener noreferrer">
+                                <img alt='instagram-icon' src={Instagram} />
+                            </a>
                         </li>
                         <li className='iconContainer'>
-                            <img alt='twitter-icon' src={X} />
+                            <a href='https://x.com/tokunize/' target="_blank" rel="noopener noreferrer">
+                                <img alt='twitter-icon' src={X} />
+                            </a>                        
                         </li>
                     </ul>
                 </div>
