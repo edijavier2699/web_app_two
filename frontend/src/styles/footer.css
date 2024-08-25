@@ -1,26 +1,28 @@
 .iconsContainer{
-    height: 50px;
 }
-
-.logoContainerImg{
+.iconContainer{
+    display: flex;
     height: 40px;
-    margin-right: 20px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
-.logoContainerImg img{
+.iconContainer img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
+}
+.logoContainerImg{
+    width: 150px;
+    height: 40px;
+    transform: translateY(-40%);
 }
 
-@media (max-width:640px) {
-    .iconsContainer{
-        height: 40px;
-    }
+@media (min-width:640px) {
     .logoContainerImg{
-        height: 30px;
-        margin-right: 5px !important;
+        width: 250px;
+        height: 65px;
+        transform: translateY(-40%);
     }
-    .logoContainerImg img{
-       margin-top: 10px !important;
-    }
-      
 }
