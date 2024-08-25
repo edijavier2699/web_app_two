@@ -1,6 +1,6 @@
 // Footer.tsx
 import React from 'react';
-import Logo from "../assets/logo.jpg"
+import Logo from "../assets/logo.png"
 import Instagram from "../assets/insta_icon.svg"
 import Linkedin from "../assets/linkedin_icon.svg"
 import X from "../assets/x_twitter_icon.svg"
@@ -13,19 +13,24 @@ export const Footer: React.FC = () => {
             {/* Links section */}
             <div className='flex flew-row justify-between items-center iconsContainer mt-3'>
                 <div className='flex flew-row '>
-                    <img alt='instagram-logo' className='w-[40px] h-[40px]' src={Instagram}/>
-                    <img alt='instagram-logo' className='w-[40px] h-[40px]' src={Linkedin}/>
-                    <img alt='instagram-logo' className='w-[40px] h-[40px]' src={X}/>
+                    <ul className='flex space-x-4'>
+                        <li className='iconContainer'>
+                            <img alt='linkedln-icon' src={Linkedin} />
+                        </li>
+                        <li className='iconContainer'>
+                            <img alt='instagram-icon' src={Instagram} />
+                        </li>
+                        <li className='iconContainer'>
+                            <img alt='twitter-icon' src={X} />
+                        </li>
+                    </ul>
                 </div>
                 <div className='logoContainerImg'>
-                    <img alt='instagram-logo' className='w-[200px] h-[55px]' src={Logo}/>
+                    <img alt='logo-icon' src={Logo} />
                 </div>
             </div>
             <div className="flex flex-col sm:flex-row justify-between mt-[35px] mb-[70px] px-4">
-                <p className='xs'><span className="text-sm text-center sm:text-left">
-                    @2024 Tokunize. All rights reserved .
-                </span>
-                </p>
+                <p className='xs text-center sm:text-left'>@2024 Tokunize. All rights reserved .</p>
                 <ul className="flex flex-wrap justify-center sm:justify-end space-x-4 text-sm mt-4 sm:mt-0">
                     <li><a href="#" className="hover:text-blue-500 duration-300"><p className='xs'>Privacy Policy</p></a></li>
                     <li><a href="#" className="hover:text-blue-500 duration-300"><p className='xs'>Terms of Service</p></a></li>
