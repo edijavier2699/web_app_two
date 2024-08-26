@@ -149,7 +149,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     'https://www.tokunize.com',  
-    'https://hammerhead-app-8yrok.ondigitalocean.app',  
+    # 'https://hammerhead-app-8yrok.ondigitalocean.app',  
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
