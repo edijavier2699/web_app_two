@@ -27,8 +27,19 @@ SECRET_KEY = 'django-insecure-wiwx%=6-#8b45fs1_3k=p2n4gz67o3v_02t9btwl!0$3fgj)-b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'clownfish-app-4beam.ondigitalocean.app',
+    'www.tokunize.com',
+    'tokunize.com',
+]
 
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://clownfish-app-4beam.ondigitalocean.app',  # Tu URL de DigitalOcean
+    'https://www.tokunize.com',  # Tu dominio personalizado con HTTPS
+    'https://tokunize.com',  # Versión sin 'www' también con HTTPS
+]
 
 # Application definition
 
@@ -137,7 +148,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',  # Sin la barra final '/'
+    'https://www.tokunize.com',  
+    'https://clownfish-app-4beam.ondigitalocean.app',  
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
