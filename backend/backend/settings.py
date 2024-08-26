@@ -95,11 +95,14 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DATABASE_NAME'),
-        'USER': config('DATABASE_USER'),
-        # 'PASSWORD': config('DATABASE_PASSWORD'),
-        'HOST': config('DATABASE_HOST', default='localhost'),
-        'PORT': config('DATABASE_PORT', default=5432, cast=int),
+        'NAME': 'db',
+        'USER': 'db',
+        'PASSWORD': 'AVNS_CCnODG4e0aOrhQdLri8',
+        'HOST': 'app-de9184ee-79e4-4d05-860e-815e0319bffc-do-user-17593416-0.k.db.ondigitalocean.com',
+        'PORT': 25060,
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
