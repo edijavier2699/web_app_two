@@ -28,9 +28,9 @@ SECRET_KEY = 'django-insecure-wiwx%=6-#8b45fs1_3k=p2n4gz67o3v_02t9btwl!0$3fgj)-b
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'clownfish-app-4beam.ondigitalocean.app',
     'www.tokunize.com',
     'tokunize.com',
+    'http://127.0.0.1:8000'
 ]
 
 
