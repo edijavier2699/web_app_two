@@ -30,13 +30,13 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'www.tokunize.com',
     'tokunize.com',
-    'http://127.0.0.1:8000'
+    'hammerhead-app-8yrok.ondigitalocean.app'
 ]
 
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://clownfish-app-4beam.ondigitalocean.app',  # Tu URL de DigitalOcean
+    'https://hammerhead-app-8yrok.ondigitalocean.app',  # Tu URL de DigitalOcean
     'https://www.tokunize.com',  # Tu dominio personalizado con HTTPS
     'https://tokunize.com',  # Versión sin 'www' también con HTTPS
 ]
@@ -149,7 +149,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     'https://www.tokunize.com',  
-    'https://clownfish-app-4beam.ondigitalocean.app',  
+    'https://hammerhead-app-8yrok.ondigitalocean.app',  
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
