@@ -30,13 +30,13 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'www.tokunize.com',
     'tokunize.com',
-    'http://127.0.0.1:8000'
+    'hammerhead-app-8yrok.ondigitalocean.app'
 ]
 
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://clownfish-app-4beam.ondigitalocean.app',  # Tu URL de DigitalOcean
+    'https://hammerhead-app-8yrok.ondigitalocean.app',  # Tu URL de DigitalOcean
     'https://www.tokunize.com',  # Tu dominio personalizado con HTTPS
     'https://tokunize.com',  # Versión sin 'www' también con HTTPS
 ]
@@ -91,15 +91,17 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DATABASE_NAME'),
-        'USER': config('DATABASE_USER'),
-        'PASSWORD': config('DATABASE_PASSWORD'),
-        'HOST': config('DATABASE_HOST', default='localhost'),
-        'PORT': config('DATABASE_PORT', default=5432, cast=int),
+        'NAME': 'db',
+        'USER': 'db',
+        'PASSWORD': 'AVNS_CCnODG4e0aOrhQdLri8',
+        'HOST': 'app-de9184ee-79e4-4d05-860e-815e0319bffc-do-user-17593416-0.k.db.ondigitalocean.com',
+        'PORT': 25060,
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
@@ -149,7 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     'https://www.tokunize.com',  
-    'https://clownfish-app-4beam.ondigitalocean.app',  
+    'https://hammerhead-app-8yrok.ondigitalocean.app',  
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -158,14 +160,13 @@ CORS_ALLOWED_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
 CORS_ALLOWED_HEADERS = ['Authorization', 'Content-Type']
 
 
-#EMAIL SETTINGS
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'eddy.javiieer@gmail.com'
-EMAIL_HOST_PASSWORD = 'mpet jxgy fccd cnby'
+EMAIL_HOST_PASSWORD = 'pbxy pxrk gwbz hugi' 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
