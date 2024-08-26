@@ -146,8 +146,8 @@ export const StepsTimeLine: React.FC = () => {
                             <div className="col-start-1 lg:col-start-4 col-span-1  w-full bg-[#121212] mt-[60px] ">
                             <StepsCard
                                 icon={diagramLogo}
-                                title="Tokenize the SPV"
-                                description="We tokenize the SPV, which means we create digital tokens that represent ownership of the guaranteed income stream."
+                                title="List on Our Platform"
+                                description="We list the digital tokens on our platform, making it easy for you to invest in and sell your tokens."
                             />
                             </div>
                         </div>
