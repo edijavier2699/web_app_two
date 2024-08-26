@@ -10,6 +10,8 @@ djangorestframework = "*"
 django-decouple = "*"
 psycopg2-binary = "*"
 certifi = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
