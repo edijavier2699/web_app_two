@@ -74,7 +74,7 @@ export const ContactForm = () => {
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     const apiUrl = `${import.meta.env.VITE_BACKEND_URL}newsletter/contacted-clients/`;
-
+  
     try {
       const response = await axios.post(apiUrl, {
         email: data.email,
@@ -86,31 +86,39 @@ export const ContactForm = () => {
         property_type: data.property_type,
         property_owner: formType === 'property_owner', // Set property_owner based on formType
       });
-
+  
       if (response.status >= 200 && response.status < 300) {
         toast({
           title: "Thank you!",
           description: "We have received your message and will get back to you soon.",
           action: <ToastAction altText="Undo your submission">Undo</ToastAction>,
         });
-
+  
         form.reset();
         setFormType('investor'); // Reset form type to 'investor' after submission
       }
     } catch (err: unknown) {
       let errorMessage = "An unexpected error occurred.";
+  
       if (axios.isAxiosError(err) && err.response?.data) {
         const errorData = err.response.data;
-        errorMessage = errorData.detail;
+        
+        // If the error is a dictionary of field-specific errors
+        if (typeof errorData === 'object' && !Array.isArray(errorData)) {
+          // Aggregate error messages
+          errorMessage = Object.values(errorData)
+            .flat()
+            .join(' ');
+        } else if (typeof errorData.detail === 'string') {
+          // Directly use the error detail if it's a string
+          errorMessage = errorData.detail;
+        }
       }
-
-      toast({
-        title: "Submission Error",
-        description: errorMessage,
-        variant: "destructive",
-      });
+  
+  
     }
   };
+  
 
   return (
     <Form {...form}>

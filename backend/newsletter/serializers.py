@@ -26,16 +26,16 @@ class ContactedClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactedClient
         fields = [
-            'name', 
-            'surname',  
-            'email', 
-            'phone_number', 
-            'message', 
-            'property_owner', 
+            'name',
+            'surname',
+            'email',
+            'phone_number',
+            'message',
+            'property_owner',
             'property_type',
-            'property_county', 
+            'property_county',
         ]
-    
+
     def validate_email(self, value):
         """
         Validate that the email is in a proper format and that it does not already exist in the ContactedClient model.
@@ -43,13 +43,5 @@ class ContactedClientSerializer(serializers.ModelSerializer):
         # Check if the email has a valid format
         if not serializers.EmailField().run_validation(value):
             raise serializers.ValidationError("Please enter a valid email address.")
-        
-        # Check if the email already exists in the ContactedClient model
-        if ContactedClient.objects.filter(email=value).exists():
-            raise serializers.ValidationError("This email is already registered.")
-        
+
         return value
-    
-    def create(self, validated_data):
-        # The email validation is handled in validate_email, so no need to re-check here
-        return super(ContactedClientSerializer, self).create(validated_data)

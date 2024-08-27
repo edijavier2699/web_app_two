@@ -29,77 +29,48 @@ class UserListView(generics.ListCreateAPIView):
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
-
 class ContactedClientListCreateView(generics.ListCreateAPIView):
     queryset = ContactedClient.objects.all()
     serializer_class = ContactedClientSerializer
 
     def create(self, request, *args, **kwargs):
-        # Validate and sanitize inputs
         serializer = self.get_serializer(data=request.data)
+        print(f"Incoming data: {request.data}")
+
+        # Check if the email already exists in the ContactedClient model
+        email = request.data.get('email')
+        if email and ContactedClient.objects.filter(email=email).exists():
+            # Send email even if the email is already registered
+            contactFormEmail(
+                email=email,
+                name=request.data.get('name', ''),
+                user_message=request.data.get('message', ''),
+                phone_number=request.data.get('phone_number', None),
+                surname=request.data.get('surname', None),
+                property_owner=request.data.get('property_owner', False),
+                property_type=request.data.get('property_type', None),
+                property_county=request.data.get('property_county', None)
+            )
+            # Return a response indicating the email is already registered
+            return Response({"detail": "This email is already registered, but a contact email has been sent."}, status=status.HTTP_200_OK)
+
         try:
             serializer.is_valid(raise_exception=True)
-
-            # Define the required fields and their corresponding error messages
-            required_fields = {
-                'name': "Name field is required.",
-                'phone_number': "Phone number field is required.",
-                'message': "Message field is required.",
-                'surname': "Surname field is required."
-            }
-
-            # Iterate over the required fields, sanitize, and check if they are empty
-            sanitized_data = {}
-            for field, error_message in required_fields.items():
-                value = request.data.get(field, '').strip()
-                if not value:
-                    return Response({"detail": error_message}, status=status.HTTP_400_BAD_REQUEST)
-                sanitized_data[field] = value
-
-            # Extract optional fields
-            surname = request.data.get('surname', '').strip() or None
-            property_owner = request.data.get('property_owner', False)
-            property_type = request.data.get('property_type', '').strip() or None
-            property_county = request.data.get('property_county', '').strip() or None
-
-            # Use the sanitized data
-            name = sanitized_data['name']
-            phone_number = sanitized_data['phone_number']
-            user_message = sanitized_data['message']
-            
-            # After all validations, save the contact and send email
             self.perform_create(serializer)
 
-            # Send email with all fields including optional ones
+            validated_data = serializer.validated_data
             contactFormEmail(
-                email=request.data['email'],
-                name=name,
-                user_message=user_message,
-                phone_number=phone_number,
-                surname=surname,
-                property_owner=property_owner,
-                property_type=property_type,
-                property_county=property_county
+                email=validated_data['email'],
+                name=validated_data['name'],
+                user_message=validated_data['message'],
+                phone_number=validated_data.get('phone_number', None),
+                surname=validated_data.get('surname', None),
+                property_owner=validated_data.get('property_owner', False),
+                property_type=validated_data.get('property_type', None),
+                property_county=validated_data.get('property_county', None)
             )
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-        except serializers.ValidationError as e:
-            # Handle case where email is already registered but still send the contact form email
-            if "This email is already registered." in str(e):
-                contactFormEmail(
-                    email=request.data['email'],
-                    name=request.data['name'],
-                    user_message=request.data['message'],
-                    phone_number=request.data['phone_number'],
-                    surname=surname,
-                    property_owner=property_owner,
-                    property_type=property_type,
-                    property_county=property_county
-                )
-                return Response({"detail": "This email is already registered, but a contact email has been sent."}, status=status.HTTP_200_OK)
-
+        except ValidationError as e:
             return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
-        
-        except ValidationError as ve:
-            return Response({"detail": str(ve)}, status=status.HTTP_400_BAD_REQUEST)

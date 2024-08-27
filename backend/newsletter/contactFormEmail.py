@@ -34,11 +34,13 @@ def contactFormEmail(email, name, user_message, phone_number, surname=None, prop
     Your Website Contact Form
     '''
 
-    from_email = settings.EMAIL_HOST_USER
+    from_email = settings.EMAIL_HOST_USER  # Use your email address for sending
+    recipient_list = [settings.EMAIL_HOST_USER]  # Send the email to your email address
 
     try:
-        send_mail(subject, message, from_email, [email])
+        send_mail(subject, message, from_email, recipient_list)
         return True
     except Exception as e:
-        print(f'Error sending email: {e}')
+        # Log the exception instead of printing it, especially in production
+        print(f'Error sending email: {e}')  # Consider using logging
         return False

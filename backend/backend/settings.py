@@ -31,19 +31,21 @@ ALLOWED_HOSTS = [
     'www.tokunize.com',
     'tokunize.com',
     'hammerhead-app-8yrok.ondigitalocean.app',
-    'http://127.0.0.1:8000'
+    '127.0.0.1',  # Nota que aquí no es necesario el 'http://'
+    'localhost'
 ]
 
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://hammerhead-app-8yrok.ondigitalocean.app',  # Tu URL de DigitalOcean
-    'https://www.tokunize.com',  # Tu dominio personalizado con HTTPS
+    'https://hammerhead-app-8yrok.ondigitalocean.app',
+    'https://www.tokunize.com',
     'https://tokunize.com',
     'http://127.0.0.1:8000',
+    'http://localhost:8000', 
     'http://localhost:5173'
-  # Versión sin 'www' también con HTTPS
 ]
+
 
 # Application definition
 
@@ -63,14 +65,15 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Coma añadida aquí
-    'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -103,9 +106,9 @@ DATABASES = {
         'PASSWORD': config('DATABASE_PWD'),
         'HOST': config('DATABASE_HOST'),
         'PORT': config('DATABASE_PORT', cast=int),
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
+        # 'OPTIONS': {
+        #     'sslmode': 'require',
+        # },
     }
 }
 
