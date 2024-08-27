@@ -6,6 +6,8 @@ from rest_framework import status
 from .serializers import SubscriberSerializer,ContactedClientSerializer
 from .welcomeEmail import send_welcome_email 
 from .contactFormEmail import contactFormEmail
+from django.core.exceptions import ValidationError
+
 
 class UserListView(generics.ListCreateAPIView):
     queryset = Subscriber.objects.all()
@@ -33,16 +35,40 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
     serializer_class = ContactedClientSerializer
 
     def create(self, request, *args, **kwargs):
-        # first, try to validate and create the data
+        # Validate and sanitize inputs
         serializer = self.get_serializer(data=request.data)
         try:
             serializer.is_valid(raise_exception=True)
+
+            # Define the required fields and their corresponding error messages
+            required_fields = {
+                'name': "Name field is required.",
+                'phone_number': "Phone number field is required.",
+                'user_message': "Message field is required."
+            }
+
+            # Iterate over the required fields, sanitize, and check if they are empty
+            sanitized_data = {}
+            for field, error_message in required_fields.items():
+                value = request.data.get(field, '').strip()
+                if not value:
+                    return Response({"detail": error_message}, status=status.HTTP_400_BAD_REQUEST)
+                sanitized_data[field] = value
+
+            # Use the sanitized data
+            name = sanitized_data['name']
+            phone_number = sanitized_data['phone_number']
+            user_message = sanitized_data['user_message']
+            
+            # After all validations, save the contact and send email
             self.perform_create(serializer)
-            contactFormEmail(request.data['email'], request.data['name'],request.data['user_message'],request.data['phone_number'])
+            contactFormEmail(request.data['email'], name, user_message, phone_number)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except serializers.ValidationError as e:
-            # if already exist, we dont save it  but we still we safe the email for us with the form 
+            # Handle case where email is already registered but still send the contact form email
             if "This email is already registered." in str(e):
-                contactFormEmail(request.data['email'], request.data['name'],request.data['user_message'],request.data['phone_number'])
+                contactFormEmail(request.data['email'], request.data['name'], request.data['user_message'], request.data['phone_number'])
                 return Response({"detail": "This email is already registered, but a contact email has been sent."}, status=status.HTTP_200_OK)
             return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        except ValidationError as ve:
+            return Response({"detail": str(ve)}, status=status.HTTP_400_BAD_REQUEST)

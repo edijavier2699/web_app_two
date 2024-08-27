@@ -26,9 +26,16 @@ const FormSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
-  phone_number: z.string().min(10, {
-    message: "Phone number must be at least 10 digits.",
-  }),
+  phone_number: z.string()
+    .regex(/^\d+$/, {
+      message: "Phone number must only contain digits.",
+    })
+    .min(10, {
+      message: "Phone number must be at least 10 digits.",
+    })
+    .max(15, {
+      message: "Phone number must not exceed 15 digits.",
+    }),
   message: z.string().optional(), // No validation on length
   terms: z.boolean().refine((val) => val === true, {
     message: "You must accept the terms and conditions.",
@@ -57,7 +64,7 @@ export const ContactForm = () => {
         email: data.email,
         name: data.name,
         phone_number: data.phone_number,
-        user_message: data.message
+        user_message: data.message,
       });
   
       if (response.status >= 200 && response.status < 300) {
@@ -65,29 +72,26 @@ export const ContactForm = () => {
         toast({
           title: "Thank you!",
           description: "We have received your message and will get back to you soon.",
-          action: (
-            <ToastAction altText="Undo your submission">Undo</ToastAction>
-          ),
+          action: <ToastAction altText="Undo your submission">Undo</ToastAction>,
         });
   
         form.reset();
       }
-    } catch (err) {
+    } catch (err: unknown) {
       let errorMessage = "An unexpected error occurred.";
-  
-      // Verifica si err es una instancia de Error
-      if (err instanceof Error) {
-        errorMessage = err.message;
+      if (axios.isAxiosError(err) && err.response?.data) {
+        const errorData = err.response.data;
+        errorMessage = errorData.detail
       }
   
+      //Show the error on the toast
       toast({
-        title: "Subscription Error",
-        description: errorMessage,  
-        variant: "destructive",    
+        title: "Submission Error",
+        description: errorMessage,
+        variant: "destructive",
       });
     }
   };
-  
   
 
   return (
