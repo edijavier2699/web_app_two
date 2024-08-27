@@ -1,7 +1,7 @@
 from django.core.mail import send_mail
 from django.conf import settings
 
-def send_contact_email(email, name, user_message, phone_number):
+def contactFormEmail(email, name, user_message, phone_number):
     subject = f'New Contact Request from {name}'
 
     message = f'''
@@ -31,3 +31,8 @@ def send_contact_email(email, name, user_message, phone_number):
     except Exception as e:
         print(f'Error sending email: {e}')
         return False
+
+
+
+
+
