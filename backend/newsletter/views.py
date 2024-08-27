@@ -35,7 +35,6 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
-        print(f"Incoming data: {request.data}")
 
         # Check if the email already exists in the ContactedClient model
         email = request.data.get('email')
