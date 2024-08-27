@@ -81,8 +81,8 @@ export const ContactForm = () => {
         name: data.name,
         surname: data.surname,
         phone_number: data.phone_number,
-        user_message: data.message,
-        property_details: data.property_county,
+        message: data.message,
+        property_county: data.property_county,
         property_type: data.property_type,
         property_owner: formType === 'property_owner', // Set property_owner based on formType
       });
