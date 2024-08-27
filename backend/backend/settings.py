@@ -94,11 +94,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db',
-        'USER': 'db',
-        'PASSWORD': 'AVNS_CCnODG4e0aOrhQdLri8',
-        'HOST': 'app-de9184ee-79e4-4d05-860e-815e0319bffc-do-user-17593416-0.k.db.ondigitalocean.com',
-        'PORT': 25060,
+        'NAME': config('DATABASE_NAME'),
+        'USER': config('DATABASE_USER'),
+        'PASSWORD': config('DATABASE_PWD'),
+        'HOST': config('DATABASE_HOST'),
+        'PORT': config('DATABASE_PORT', cast=int),
         'OPTIONS': {
             'sslmode': 'require',
         },
@@ -165,8 +165,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'eddy.javiieer@gmail.com'
-EMAIL_HOST_PASSWORD = 'pbxy pxrk gwbz hugi' 
+EMAIL_HOST_USER = config('EMAIL_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_PWD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
