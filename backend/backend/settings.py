@@ -36,8 +36,6 @@ ALLOWED_HOSTS = [
     'localhost'
 ]
 
-
-
 CSRF_TRUSTED_ORIGINS = [
     'https://hammerhead-app-8yrok.ondigitalocean.app',
     'https://www.tokunize.com',
@@ -65,9 +63,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -107,9 +105,9 @@ DATABASES = {
         'PASSWORD': config('DATABASE_PWD'),
         'HOST': config('DATABASE_HOST'),
         'PORT': config('DATABASE_PORT', cast=int),
-        # 'OPTIONS': {
-        #     'sslmode': 'require',
-        # },
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
@@ -161,7 +159,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     'https://www.tokunize.com',  
     'https://hammerhead-app-8yrok.ondigitalocean.app', 
-    'http://127.0.0.1:8000' ,
+    'http://127.0.0.1:8000',
     'http://localhost:5173'
 ]
 
@@ -179,5 +177,3 @@ EMAIL_USE_SSL = False
 EMAIL_HOST_USER = config('EMAIL_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_PWD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-
