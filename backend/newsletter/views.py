@@ -44,7 +44,7 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
             required_fields = {
                 'name': "Name field is required.",
                 'phone_number': "Phone number field is required.",
-                'user_message': "Message field is required.",
+                'message': "Message field is required.",
                 'surname': "Surname field is required."
             }
 
@@ -65,7 +65,7 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
             # Use the sanitized data
             name = sanitized_data['name']
             phone_number = sanitized_data['phone_number']
-            user_message = sanitized_data['user_message']
+            user_message = sanitized_data['message']
             
             # After all validations, save the contact and send email
             self.perform_create(serializer)
@@ -90,7 +90,7 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
                 contactFormEmail(
                     email=request.data['email'],
                     name=request.data['name'],
-                    user_message=request.data['user_message'],
+                    user_message=request.data['message'],
                     phone_number=request.data['phone_number'],
                     surname=surname,
                     property_owner=property_owner,

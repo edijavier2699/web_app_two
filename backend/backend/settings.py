@@ -30,7 +30,8 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'www.tokunize.com',
     'tokunize.com',
-    'hammerhead-app-8yrok.ondigitalocean.app'
+    'hammerhead-app-8yrok.ondigitalocean.app',
+    'http://127.0.0.1:8000'
 ]
 
 
@@ -38,7 +39,10 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     'https://hammerhead-app-8yrok.ondigitalocean.app',  # Tu URL de DigitalOcean
     'https://www.tokunize.com',  # Tu dominio personalizado con HTTPS
-    'https://tokunize.com',  # Versión sin 'www' también con HTTPS
+    'https://tokunize.com',
+    'http://127.0.0.1:8000',
+    'http://localhost:5173'
+  # Versión sin 'www' también con HTTPS
 ]
 
 # Application definition
@@ -151,7 +155,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     'https://www.tokunize.com',  
-    'https://hammerhead-app-8yrok.ondigitalocean.app',  
+    'https://hammerhead-app-8yrok.ondigitalocean.app', 
+    'http://127.0.0.1:8000' ,
+    'http://localhost:5173'
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True

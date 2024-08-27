@@ -34,9 +34,7 @@ class ContactedClientSerializer(serializers.ModelSerializer):
             'property_owner', 
             'property_type',
             'property_county', 
-            'contacted_at'
         ]
-        read_only_fields = ['contacted_at']
     
     def validate_email(self, value):
         """
