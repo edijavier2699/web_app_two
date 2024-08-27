@@ -1,17 +1,26 @@
 from django.core.mail import send_mail
 from django.conf import settings
 
-def contactFormEmail(email,name,user_message,phone_number):
-    subject = f'{name} Contact Us!'
-    
-    message = f'''
-    This is the message of {name} : 
-    {user_message}
+def send_contact_email(email, name, user_message, phone_number):
+    subject = f'New Contact Request from {name}'
 
-    Personal information:
-    Name: {name}
-    Email: {email}
-    Phone number: {phone_number}
+    message = f'''
+    Dear Team,
+
+    You have received a new contact request. Please find the details below:
+
+    Message:
+    "{user_message}"
+
+    Personal Information:
+    - Name: {name}
+    - Email: {email}
+    - Phone Number: {phone_number}
+
+    Please respond to this inquiry at your earliest convenience.
+
+    Best regards,
+    Your Website Contact Form
     '''
 
     from_email = settings.EMAIL_HOST_USER
