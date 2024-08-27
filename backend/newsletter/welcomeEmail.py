@@ -1,31 +1,39 @@
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.conf import settings
 
 def send_welcome_email(email_address):
     subject = 'Welcome to Tokunize!'
+
+    html_message = '''
+    <html>
+    <body>
     
-    message = f'''
-    Hi there,
+        <p>Welcome to Tokunize!</p>
 
-    Thank you for signing up for Tokunize! We're excited to have you join our community.
+        <p>We are thrilled to have you as a part of our community. As a member of Tokunize, you will have access to:</p>
 
-    Here's what you can expect from us:
-    - **Exclusive updates** on the latest features and offers
-    - **Insights and tips** to help you get the most out of our services
-    - **Information on upcoming events and promotions**
+        <ul>
+            <li><strong>Exclusive Updates:</strong> Stay informed about our latest features and special offers.</li>
+            <li><strong>Insights and Tips:</strong> Learn how to maximize your experience with our services.</li>
+            <li><strong>Information on Upcoming Events:</strong> Be the first to know about our events and promotions.</li>
+        </ul>
 
-    We're here to help you make the most of your experience. If you have any questions or need assistance, feel free to reach out to our support team at support@tokunize.com.
+        <p>Our team is dedicated to ensuring you have a seamless experience. Should you have any questions or need support, please do not hesitate to reach out to us at <a href="mailto:support@tokunize.com">support@tokunize.com</a>.</p>
 
-    Thanks again for joining us!
+        <p>Thank you for joining us. We look forward to helping you achieve your goals.</p>
 
-    Best regards,
-    The Tokunize Team
+        <p>Warm regards,<br>
+        The Tokunize Team</p>
+    </body>
+    </html>
     '''
 
     from_email = settings.EMAIL_HOST_USER
 
     try:
-        send_mail(subject, message, from_email, [email_address])
+        email = EmailMessage(subject, html_message, from_email, [email_address])
+        email.content_subtype = "html"  # Important for HTML emails
+        email.send()
         return True
     except Exception as e:
         print(f'Error sending email: {e}')
