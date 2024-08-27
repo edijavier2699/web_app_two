@@ -25,7 +25,18 @@ class SubscriberSerializer(serializers.ModelSerializer):
 class ContactedClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactedClient
-        fields = ['name', 'email', 'phone_number']
+        fields = [
+            'name', 
+            'surname',  
+            'email', 
+            'phone_number', 
+            'message', 
+            'property_owner', 
+            'property_type',
+            'property_county', 
+            'contacted_at'
+        ]
+        read_only_fields = ['contacted_at']
     
     def validate_email(self, value):
         """

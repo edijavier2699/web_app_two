@@ -1,9 +1,10 @@
 from django.core.mail import send_mail
 from django.conf import settings
 
-def contactFormEmail(email, name, user_message, phone_number):
+def contactFormEmail(email, name, user_message, phone_number, surname=None, property_owner=False, property_type=None, property_county=None):
     subject = f'New Contact Request from {name}'
 
+    # Construct the message body
     message = f'''
     Dear Team,
 
@@ -13,10 +14,20 @@ def contactFormEmail(email, name, user_message, phone_number):
     "{user_message}"
 
     Personal Information:
-    - Name: {name}
+    - Name: {name} {surname if surname else ''}
     - Email: {email}
     - Phone Number: {phone_number}
+    '''
+    
+    # Add optional fields if they are provided
+    if property_owner:
+        message += f'- Property Owner: {"Yes" if property_owner else "No"}\n'
+    if property_type:
+        message += f'- Property Type: {property_type}\n'
+    if property_county:
+        message += f'- Property County: {property_county}\n'
 
+    message += '''
     Please respond to this inquiry at your earliest convenience.
 
     Best regards,
@@ -31,8 +42,3 @@ def contactFormEmail(email, name, user_message, phone_number):
     except Exception as e:
         print(f'Error sending email: {e}')
         return False
-
-
-
-
-

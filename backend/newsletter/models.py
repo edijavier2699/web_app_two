@@ -14,9 +14,13 @@ class Subscriber(models.Model):
 
 class ContactedClient(models.Model):
     name = models.CharField(max_length=100)
+    surname = models.CharField(max_length=100, blank=True, null=True)  # Nuevo campo para el apellido
     email = models.EmailField()
     phone_number = models.CharField(max_length=15, blank=True, null=True)
     message = models.TextField(blank=True, null=True)
+    property_owner = models.BooleanField(default=False) 
+    property_type = models.CharField(max_length=100, blank=True, null=True)  
+    property_county = models.CharField(max_length=100, blank=True, null=True)  
     contacted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
