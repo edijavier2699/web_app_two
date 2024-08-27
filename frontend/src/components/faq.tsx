@@ -59,7 +59,7 @@ export const FAQ: React.FC = () => {
     };
 
     return (
-        <section className="flex flex-col lg:flex-row  items-center py-8 md:py-16 space-y-6 md:space-y-0  mx-[20px] md:mx-[80px]">
+        <section className="flex flex-col lg:flex-row  py-8 md:py-16 space-y-6 md:space-y-0  mx-[20px] md:mx-[80px]">
             <div className="w-full lg:w-[35%]">
                 <h2 className="text-3xl md:text-6xl font-bold text-left">
                     Your Questions, <br /> Answered
