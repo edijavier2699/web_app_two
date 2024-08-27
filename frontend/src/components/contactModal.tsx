@@ -21,8 +21,8 @@ export const ContactModal = () => {
                     <DialogTitle className="text-center font-semibold text-3xl">
                         Contact Us
                     </DialogTitle>
-                    <DialogDescription className="text-center mt-2">
-                        Please fill out the form below to get in touch with us.
+                    <DialogDescription className="text-center text-bold mt-2">
+                        You can reach us anytime via <span  className="text-[#A0CC29]">mohamed.omar@tokunize.com</span>
                     </DialogDescription>
                 </DialogHeader>
                 <ContactForm />
