@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,13 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wiwx%=6-#8b45fs1_3k=p2n4gz67o3v_02t9btwl!0$3fgj)-b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = [
     'www.tokunize.com',
     'tokunize.com',
     'hammerhead-app-8yrok.ondigitalocean.app',
-    '127.0.0.1',  # Nota que aquí no es necesario el 'http://'
+    '127.0.0.1', 
     'localhost'
 ]
 
@@ -148,7 +149,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = [BASE_DIR/ 'staticfiles']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
