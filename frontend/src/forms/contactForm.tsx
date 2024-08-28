@@ -49,9 +49,13 @@ const FormSchema = z.object({
 });
 
 const items = [
-  { id: "residential", label: "Residential" },
-  { id: "commercial", label: "Commercial" },
-  { id: "industrial", label: "Industrial" },
+  { id: "OfficeBuildings", label: "Office Buildings" },
+  { id: "RetailProperties", label: "Retail Properties" },
+  { id: "IndustrialProperties", label: "Industrial Properties" },
+  { id: "MultifamilyResidential", label: "Multifamily Residential" },
+  { id: "Restaurants", label: "Restaurants" },
+  { id: "Self-StorageFacilities", label: "Self-Storage Facilities" },
+
 ];
 
 export const ContactForm = () => {
@@ -114,8 +118,11 @@ export const ContactForm = () => {
           errorMessage = errorData.detail;
         }
       }
-  
-  
+      toast({
+        title: "Error",
+        description: errorMessage,
+        variant: "destructive"
+      });
     }
   };
   
@@ -216,32 +223,33 @@ export const ContactForm = () => {
           {formType === 'property_owner' && (
             <>
               <FormField
-                control={form.control}
-                name="property_type"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Property Type</FormLabel>
-                    <FormControl>
-                      <div className="space-y-2">
-                        {items.map((item) => (
-                          <FormItem key={item.id} className="flex flex-row items-start space-x-3 space-y-0">
-                            <FormControl>
-                              <Checkbox
-                                checked={field.value === item.id}
-                                onCheckedChange={(checked) => {
-                                  field.onChange(checked ? item.id : "")
-                                }}
-                              />
-                            </FormControl>
-                            <FormLabel className="font-normal">{item.label}</FormLabel>
-                          </FormItem>
-                        ))}
-                      </div>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                  control={form.control}
+                  name="property_type"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Property Type</FormLabel>
+                      <FormControl>
+                        <div className="sm:grid sm:grid-cols-2 sm:gap-4 space-y-2 sm:space-y-0">
+                          {items.map((item) => (
+                            <FormItem key={item.id} className="flex flex-row items-start space-x-3">
+                              <FormControl>
+                                <Checkbox
+                                  checked={field.value === item.id}
+                                  onCheckedChange={(checked) => {
+                                    field.onChange(checked ? item.id : "");
+                                  }}
+                                />
+                              </FormControl>
+                              <FormLabel className="font-normal">{item.label}</FormLabel>
+                            </FormItem>
+                          ))}
+                        </div>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
 
               <FormField
                 control={form.control}
