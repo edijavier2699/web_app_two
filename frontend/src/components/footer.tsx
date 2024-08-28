@@ -1,10 +1,9 @@
 // Footer.tsx
 import React from 'react';
 import Logo from "../assets/logo.png"
-import Instagram from "../assets/insta_icon.svg"
-import Linkedin from "../assets/linkedin_icon.svg"
-import X from "../assets/x_twitter_icon.svg"
 import "../styles/footer.css"
+import { BsTwitterX } from "react-icons/bs";
+import { FaInstagram,FaLinkedin } from "react-icons/fa";
 
 export const Footer: React.FC = () => {
     return (
@@ -14,19 +13,19 @@ export const Footer: React.FC = () => {
             <div className='flex flew-row justify-between items-center iconsContainer mt-3'>
                 <div className='flex flew-row '>
                     <ul className='flex space-x-4'>
-                        <li className='iconContainer'>
-                            <a href='https://www.linkedin.com/company/tokunize/' target="_blank" rel="noopener noreferrer">
-                                <img alt='linkedin-icon' src={Linkedin} />
+                        <li className='iconContainer hover:text-[#C8E870]'>
+                            <a className='text-2xl' href='https://www.linkedin.com/company/tokunize/' target="_blank" rel="noopener noreferrer">
+                                <FaLinkedin />
                             </a>
                         </li>
-                        <li className='iconContainer'>
-                            <a href='https://www.instagram.com/tokunize_official/' target="_blank" rel="noopener noreferrer">
-                                <img alt='instagram-icon' src={Instagram} />
+                        <li className='iconContainer  hover:text-[#C8E870]' >
+                            <a className='text-2xl' href='https://www.instagram.com/tokunize_official/' target="_blank" rel="noopener noreferrer">
+                               <FaInstagram />
                             </a>
                         </li>
-                        <li className='iconContainer'>
-                            <a href='https://x.com/tokunize/' target="_blank" rel="noopener noreferrer">
-                                <img alt='twitter-icon' src={X} />
+                        <li className='iconContainer hover:text-[#C8E870]'>
+                            <a className='text-2xl' href='https://x.com/tokunize/' target="_blank" rel="noopener noreferrer">
+                                <BsTwitterX/>
                             </a>                        
                         </li>
                     </ul>
