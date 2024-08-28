@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
                 </div>
             </div>
             <div className="flex flex-col sm:flex-row justify-between mt-[35px] mb-[70px] px-4">
-                <p className='xs text-center sm:text-left'>@2024444 Tokunize. All rights reserved .</p>
+                <p className='xs text-center sm:text-left'>@2024 Tokunize. All rights reserved .</p>
                 <ul className="flex flex-wrap justify-center sm:justify-end space-x-4 text-sm mt-4 sm:mt-0">
                     <li><a href="#" className="hover:text-blue-500 duration-300"><p className='xs'>Privacy Policy</p></a></li>
                     <li><a href="#" className="hover:text-blue-500 duration-300"><p className='xs'>Terms of Service</p></a></li>
