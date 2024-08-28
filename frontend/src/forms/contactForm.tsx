@@ -231,7 +231,7 @@ export const ContactForm = () => {
                       <FormControl>
                         <div className="sm:grid sm:grid-cols-2 sm:gap-4 space-y-2 sm:space-y-0">
                           {items.map((item) => (
-                            <FormItem key={item.id} className="flex flex-row items-start space-x-3">
+                            <FormItem key={item.id} className="flex flex-row -500 items-start space-x-3 mt-0 pt-0">
                               <FormControl>
                                 <Checkbox
                                   checked={field.value === item.id}
