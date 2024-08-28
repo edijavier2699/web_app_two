@@ -136,14 +136,14 @@ export const ContactForm = () => {
             className={`text-[#121212] ${formType === 'investor' ? 'bg-[#C8E870]' : 'bg-white'} hover:bg-[#A0CC28]`}
             onClick={() => setFormType('investor')}
           >
-            I'm an investor
+            I'm an Investor
           </Button>
           <Button
             type="button"
             className={`text-[#121212] ${formType === 'property_owner' ? 'bg-[#C8E870]' : 'bg-white'} hover:bg-[#A0CC28]`}
             onClick={() => setFormType('property_owner')}
           >
-            I'm a property owner
+            I'm a Property Owner
           </Button>
         </div>
 
