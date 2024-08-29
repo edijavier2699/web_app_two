@@ -1,3 +1,33 @@
 .heroVideoBackground{
     height: calc(100vh - 80px);
 }
+/* Asegúrate de que el video ocupe todo el contenedor */
+video {
+  width: 100%;
+  height: 100%;
+}
+
+/* Oculta los controles del video */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+/* Para navegadores que no usan WebKit (por ejemplo, Firefox) */
+video::-moz-media-controls {
+  display: none !important;
+}
+
+/* Para otros navegadores */
+video::-ms-media-controls {
+  display: none !important;
+}
+
+/* Oculta el botón de reproducción */
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+/* Oculta el botón de reproducción en otros navegadores */
+video::cue {
+  display: none !important;
+}
