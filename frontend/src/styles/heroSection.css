@@ -1,33 +1,41 @@
 .heroVideoBackground{
     height: calc(100vh - 80px);
 }
-/* Asegúrate de que el video ocupe todo el contenedor */
-video {
-  width: 100%;
-  height: 100%;
-}
-
-/* Oculta los controles del video */
+/* Añade este CSS a tu archivo heroSection.css */
 video::-webkit-media-controls {
   display: none !important;
+  opacity: 0;
 }
 
-/* Para navegadores que no usan WebKit (por ejemplo, Firefox) */
-video::-moz-media-controls {
-  display: none !important;
-}
-
-/* Para otros navegadores */
-video::-ms-media-controls {
-  display: none !important;
-}
-
-/* Oculta el botón de reproducción */
 video::-webkit-media-controls-play-button {
   display: none !important;
 }
 
-/* Oculta el botón de reproducción en otros navegadores */
-video::cue {
+video::-webkit-media-controls-panel {
   display: none !important;
+  opacity: 1;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+video::-webkit-media-controls-container {
+  display: none !important; 
+  visibility: hidden !important;
+  opacity: 0;
+  -webkit-appearance: none !important;
+}
+
+/* Oculta la imagen de respaldo inicialmente */
+#hero-image-fallback {
+  display: none;
 }
