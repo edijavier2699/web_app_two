@@ -2,12 +2,11 @@ import './App.css'
 import {Navbar} from "./components/navbar"
 import { HeroSection } from './components/heroSection'
 import { Features } from './components/features'
-import { Reviews } from './components/reviews'
 import { FAQ } from './components/faq'
 import { Footer } from './components/footer'
 import { Newsletter } from './components/newsletter'
-import { StepsTimeLine } from './components/stepsTimeLine'
 import { Toaster } from './components/ui/toaster'
+import { WhyTokunize } from './components/whyTokunize'
 
 function App() {
   return (
@@ -16,8 +15,8 @@ function App() {
        <Navbar />
        <HeroSection/>
        <Features />
-       <StepsTimeLine/>
-       <Reviews/>
+       <WhyTokunize/>
+       {/* <Reviews/> */}
        <FAQ/>
        <Newsletter/>
        <Footer />

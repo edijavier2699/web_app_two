@@ -1,41 +1,8 @@
 .heroVideoBackground{
-    height: calc(100vh - 80px);
-}
-/* Añade este CSS a tu archivo heroSection.css */
-video::-webkit-media-controls {
-  display: none !important;
-  opacity: 0;
+    min-height: calc(100vh - 80px);
+    background-image: url("../assets/heroImg.png");
+    background-position: center;
+    background-size: cover;
 }
 
-video::-webkit-media-controls-play-button {
-  display: none !important;
-}
 
-video::-webkit-media-controls-panel {
-  display: none !important;
-  opacity: 1;
-}
-
-video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-  appearance: none !important;
-  -webkit-appearance: none !important;
-}
-
-video::-webkit-media-controls-overlay-play-button {
-  display: none !important;
-  appearance: none !important;
-  -webkit-appearance: none !important;
-}
-
-video::-webkit-media-controls-container {
-  display: none !important; 
-  visibility: hidden !important;
-  opacity: 0;
-  -webkit-appearance: none !important;
-}
-
-/* Oculta la imagen de respaldo inicialmente */
-#hero-image-fallback {
-  display: none;
-}

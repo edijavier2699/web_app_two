@@ -3,22 +3,23 @@ import { FeaturesCard } from './featuresCard'; // Importa correctamente el archi
 
 export const Features: React.FC = () => {
     return (
-        <section className="my-[60px] featuresSection  mx-[20px] sm:mx-[80px]">
+        <section className="mt-[60px] pb-[120px] featuresSection  mx-[20px] sm:mx-[80px] border-b">
+            <p className="mb-[40px] font-semibold">What we offer</p>
             <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                 <FeaturesCard 
                     icon="Feature1" 
-                    title=" See Your Money Grow"
-                    description="Get real-time updates on your rental income, so you can track your returns and make informed decisions."
+                    title="Instant Liquidity"
+                    description="Tokens can be traded instantly on a secondary marketplace, offering real-time liquidity options that individual property REITs typically lack."
                 />
                 <FeaturesCard 
                     icon="Feature2" 
-                    title="Diversify with Ease"
-                    description="Spread your investments across multiple properties, reducing risk and increasing potential returns."
+                    title="Transparency"
+                    description="Blockchain ensures every transaction is secure and transparent, providing investors with real-time data on property performance, unlike traditional REITs."
                 />
                 <FeaturesCard 
                     icon="Feature3" 
-                    title="Invest on Your Terms"
-                    description="Buy and sell tokens easily, without the need for lawyers, paperwork, or hefty fees, so you can adapt to changing market conditions."
+                    title="Lower Fees"
+                    description="We minimise management fees and transaction costs that can erode returns in REITs, offering a more cost-effective alternative with direct exposure to both rental income and capital appreciation."
                 />
             </div>
         </section>

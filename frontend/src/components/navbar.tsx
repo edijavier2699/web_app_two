@@ -5,7 +5,10 @@ import Logo from "../assets/logo.jpg";
 import { ContactModal } from './contactModal';
 
 const navigation: NavigationItem[] = [
-  { name: 'Contact Us', href:"#", current: false }, // No href needed, modal will handle this
+  { name: 'Learn', href:"#", current: false }, 
+  { name: 'How it works', href:"#", current: false }, 
+  { name: 'Are you a property Owner?', href:"#", current: false },
+  { name: 'Contact Us', href:"#", current: false },
 ];
 
 function classNames(...classes: string[]): string {
@@ -26,8 +29,8 @@ export const Navbar: React.FC = () => {
               className='w-[200px] h-[55px]'
             />
           </div>
-          <div className="hidden sm:flex sm:items-center sm:justify-center rounded-md">
-            <div className="flex space-x-4 items-center">
+          <div className="hidden sm:flex ">
+            <div className="flex  items-center">
               {navigation.map((item) => (
                 item.name === 'Contact Us' ? (
                   <div key={item.name} className="flex h-full pb-7 items-center justify-center">
@@ -39,8 +42,8 @@ export const Navbar: React.FC = () => {
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
-                      item.current ? 'bg-[#C8E870] text-black' : 'text-[#121212] hover:bg-[#A0CC28] hover:text-white',
-                      'rounded-md px-9 py-2 text-lg font-medium duration-300 ease-in-out'
+                      item.current ? 'bg-[#C8E870]  text-black' : '  text-[#121212] hover:underline duration-300 ease-in-out',
+                      'rounded-md px-9 py-2 text-sm font-medium duration-300 ease-in-out'
                     )}
                   >
                     {item.name}
