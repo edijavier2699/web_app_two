@@ -5,9 +5,9 @@ import Logo from "../assets/logo.jpg";
 import { ContactModal } from './contactModal';
 
 const navigation: NavigationItem[] = [
-  { name: 'Learn', href:"#", current: false }, 
-  { name: 'How it works', href:"#", current: false }, 
-  { name: 'Are you a property Owner?', href:"#", current: false },
+  // { name: 'Learn', href:"#", current: false }, 
+  // { name: 'How it works', href:"#", current: false }, 
+  // { name: 'Are you a property Owner?', href:"#", current: false },
   { name: 'Contact Us', href:"#", current: false },
 ];
 
@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
-    <nav className={`bg-white text-black border-b ${menuOpen ? 'bg-[#C8E870]' : ''}`}>
+    <nav className={`bg-white text-black ${menuOpen ? 'bg-[#C8E870]' : ''}`}>
       <div className="relative navbar px-[20px] md:px-[80px] flex h-[80px] items-center justify-between">
         <div className="flex flex-1 items-center justify-between">
           <div className="flex flex-shrink-0 items-left">

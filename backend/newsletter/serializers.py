@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Subscriber,ContactedClient
 
-class SubscriberSerializer(serializers.ModelSerializer):
+class DemoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscriber
         fields = "__all__"

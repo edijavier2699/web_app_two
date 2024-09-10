@@ -1,8 +1,12 @@
-.heroVideoBackground{
+.heroVideoBackground {
     min-height: calc(100vh - 80px);
     background-image: url("../assets/heroImg.png");
-    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
-
+@media (max-width:640px) {
+    .heroVideoBackground {
+        background-position-x:35% ;
+    }
+}

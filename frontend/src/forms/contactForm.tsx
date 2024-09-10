@@ -178,11 +178,12 @@ export const ContactForm = () => {
             />
           </div>
 
+          <div className="flex flex-wrap gap-4">
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="flex-1">
                 <FormLabel className="hidden">Email Address</FormLabel>
                 <FormControl>
                   <Input className="border-0" placeholder="Email address*" {...field} />
@@ -196,7 +197,7 @@ export const ContactForm = () => {
             control={form.control}
             name="phone_number"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="flex-1">
                 <FormLabel className="hidden">Phone Number</FormLabel>
                 <FormControl>
                   <Input className="border-0" placeholder="Phone number" {...field} />
@@ -205,6 +206,7 @@ export const ContactForm = () => {
               </FormItem>
             )}
           />
+          </div>
 
           <FormField
             control={form.control}
@@ -273,7 +275,7 @@ export const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <div className="flex items-center text-[#667085] space-x-2 py-[45px]">
+                  <div className="flex items-center text-[#667085] space-x-2 py-[20px]">
                     <Checkbox
                       id="terms"
                       checked={field.value}

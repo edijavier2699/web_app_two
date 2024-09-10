@@ -3,15 +3,15 @@ from .models import Subscriber,ContactedClient
 from rest_framework import generics, serializers
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import SubscriberSerializer,ContactedClientSerializer
+from .serializers import DemoSerializer,ContactedClientSerializer
 from .welcomeEmail import send_welcome_email 
 from .contactFormEmail import contactFormEmail
 from django.core.exceptions import ValidationError
 
 
-class UserListView(generics.ListCreateAPIView):
+class DemoUserListView(generics.ListCreateAPIView):
     queryset = Subscriber.objects.all()
-    serializer_class = SubscriberSerializer
+    serializer_class = DemoSerializer
 
     def post(self, request, *args, **kwargs):
         """

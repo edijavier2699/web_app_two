@@ -7,6 +7,7 @@ import { Footer } from './components/footer'
 import { Newsletter } from './components/newsletter'
 import { Toaster } from './components/ui/toaster'
 import { WhyTokunize } from './components/whyTokunize'
+import { WhyUsTable } from './components/table'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
        <HeroSection/>
        <Features />
        <WhyTokunize/>
+       <WhyUsTable/>
        {/* <Reviews/> */}
        <FAQ/>
        <Newsletter/>
