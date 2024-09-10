@@ -32,13 +32,14 @@ export const WhyUs: React.FC<WhyUsProps> = ({ number, title, description, imageT
             </div>
 
             {/* Imagen */}
-            <div className={`sm:w-[45%] ${imageBackgroundClass} rounded-lg flex items-center justify-center`}>
+            <div className={`w-full sm:w-[45%] ${imageBackgroundClass} rounded-lg flex pt-3 pl-3 pr-3 items-center justify-center`}>
                 <img
                     src={imageTitle}
                     alt="why-us-image"
-                    className="max-w-full max-h-full object-cover rounded-lg pt-3 pl-3 pr-3"
+                    className="w-full h-auto object-cover rounded-lg"
                 />
             </div>
+
         </article>
     );
 };
