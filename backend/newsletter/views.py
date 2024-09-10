@@ -4,7 +4,7 @@ from rest_framework import generics, serializers
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import DemoSerializer,ContactedClientSerializer
-from .welcomeEmail import send_welcome_email 
+from .welcomeEmail import send_demo_booking_email 
 from .contactFormEmail import contactFormEmail
 from django.core.exceptions import ValidationError
 
@@ -23,7 +23,7 @@ class DemoUserListView(generics.ListCreateAPIView):
         
         # Send a welcome email
         email = serializer.validated_data['email']
-        send_welcome_email(email) 
+        send_demo_booking_email(email) 
 
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
