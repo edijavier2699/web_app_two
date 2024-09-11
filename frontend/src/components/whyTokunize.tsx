@@ -49,7 +49,7 @@ export const WhyTokunize: React.FC = () => {
     return (
         <section className="px-8 md:px-[80px] pt-[120px] py-12">
             <div className="text-center mb-12">
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">Why Tokunize</h1>
+                <h1 className="text-3xl md:text-6xl font-bold  mb-4">Why Tokunize</h1>
                 <p className="text-lg text-gray-600">
                     The smart way to build a commercial real estate portfolio.
                 </p>

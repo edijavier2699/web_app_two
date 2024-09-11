@@ -14,7 +14,7 @@ export const HeroSection: React.FC = () => {
             </h1>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3">Secure. Simple. Swift.</h1>
             <p className="text-[#667085] text-lg mb-[50px] sm:w-[450px]">
-              Connecting asset owners and accredited investors on a seamless platform. Start building your commercial real estate portfolio <span className="text-[#C8E870]">with as little as £1,000.</span>
+              Connecting asset owners and accredited investors on a seamless platform. Start building your commercial real estate portfolio <span className="text-[#C8E870] font-bold">with as little as £1,000.</span>
             </p>
             <DemoModal />
           </div>
