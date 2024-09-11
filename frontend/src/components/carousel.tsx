@@ -29,7 +29,7 @@ export const MyCarousel = () => {
         <div className="flex flex-col items- justify-center w-full px-2 border-[0.1px] border-[#344054]  text-white rounded-lg p-3 ">
           <p className="mb-4 text-sm">Passive Income</p>
           <ul className=" space-y-2 text-xs">
-          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <img alt="check-svg" src={miniLogo}/> <img alt="check-svg" src={check} /></li>
+          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <img alt="miniLogo-svg" src={miniLogo}/> <img alt="check-svg" src={check} /></li>
             <li className="flex justify-between  px-3">Traditional Real Estate Funds <img alt="check-svg" src={check} /></li>
             <hr className="border-[0.5px] border-[#344054]" />
             <li className="flex justify-between  px-3">REITs <img alt="check-svg" src={check} /></li>
