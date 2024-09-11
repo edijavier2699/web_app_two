@@ -1,4 +1,4 @@
-import whyUstable from "../assets/ComparisionSection.svg"
+import whyUstable from "../assets/ComparisionSection.png"
 
 export const WhyUsTable = () =>{
     return(
