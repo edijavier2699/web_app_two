@@ -1,9 +1,9 @@
 import React from "react";
-import why1 from "../assets/why_1.svg";
-import why2 from "../assets/why_2.svg";
-import why3 from "../assets/why_3.svg";
-import why4 from "../assets/why_4.svg";
-import why5 from "../assets/why_5.svg";
+import why1 from "../assets/why_1.png";
+import why2 from "../assets/why_2.png";
+import why3 from "../assets/why_3.png";
+import why4 from "../assets/why_4.png";
+import why5 from "../assets/why_5.png";
 
 // Definimos el tipo de props que espera el componente WhyUs
 interface WhyUsProps {
