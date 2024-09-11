@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { NavigationItem } from '../types/types'; 
 import Logo from "../assets/logo.jpg";
-import { ContactModal } from './contactModal';
+import { WaitlistModal } from './waitlist';
 
 const navigation: NavigationItem[] = [
   // { name: 'Learn', href:"#", current: false }, 
@@ -34,7 +34,7 @@ export const Navbar: React.FC = () => {
               {navigation.map((item) => (
                 item.name === 'Waitlist' ? (
                   <div key={item.name} className="flex h-full pb-7 items-center justify-center">
-                    Waitlist
+                    <WaitlistModal/>
                   </div>
                 ) : (
                   <a
@@ -74,7 +74,7 @@ export const Navbar: React.FC = () => {
           {navigation.map((item) => (
             item.name === 'Contact Us' ? (
               <div key={item.name} className="flex items-center justify-start">
-                Waitlist
+                    <WaitlistModal/>
               </div>
             ) : (
               <a

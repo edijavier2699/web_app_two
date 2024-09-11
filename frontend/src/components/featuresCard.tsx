@@ -16,7 +16,7 @@ const iconMap: Record<FeaturesCardProps['icon'], JSX.Element> = {
 
 export const FeaturesCard = ({ icon, title, description }: FeaturesCardProps) => {
     return (
-        <article className="flex-1  bg-white">
+        <article className="flex-1  bg-white mb-5 sm:mb-0">
             <div className="flex items-center justify-center mb-4 bg-[#F4FAE2] p-1 rounded-lg w-20 h-20">
                 {iconMap[icon]} 
             </div>

@@ -8,7 +8,6 @@ import { Newsletter } from './components/newsletter'
 import { Toaster } from './components/ui/toaster'
 import { WhyTokunize } from './components/whyTokunize'
 import { WhyUsTable } from './components/table'
-import { MyCarousel } from './components/carousel'
 
 function App() {
   return (

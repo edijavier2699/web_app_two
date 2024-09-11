@@ -9,10 +9,14 @@ export const HeroSection: React.FC = () => {
         {/* Wrapper for text content */}
         <div className="w-full flex flex-col text-black">
           <div className="flex flex-col lg:items-start text-left lg:px-0 lg:py-8 rounded">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 pt-[35px]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold sm:mb-3 pt-[35px]">
               Invest in Real Estate.
             </h1>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3">Secure. Simple. Swift.</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3">
+              <span className="block sm:inline">Secure.</span>
+              <span className="block sm:inline">Simple.</span>
+              <span className="block sm:inline">Swift.</span>
+            </h1>
             <p className="text-[#667085] text-lg mb-[50px] sm:w-[450px]">
               Connecting asset owners and accredited investors on a seamless platform. Start building your commercial real estate portfolio <span className="text-[#C8E870] font-bold">with as little as £1,000.</span>
             </p>
