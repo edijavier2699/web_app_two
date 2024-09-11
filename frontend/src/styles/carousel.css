@@ -1,0 +1,9 @@
+.custom-landing-carousel .group {
+  display: none;
+}
+
+.custom-landing-carousel button {
+  color: #C8E870;
+  top: 60px;
+  position: relative;
+}

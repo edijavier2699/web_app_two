@@ -8,7 +8,7 @@ const navigation: NavigationItem[] = [
   // { name: 'Learn', href:"#", current: false }, 
   // { name: 'How it works', href:"#", current: false }, 
   // { name: 'Are you a property Owner?', href:"#", current: false },
-  { name: 'Contact Us', href:"#", current: false },
+  { name: 'Waitlist', href:"#", current: false },
 ];
 
 function classNames(...classes: string[]): string {
@@ -32,9 +32,9 @@ export const Navbar: React.FC = () => {
           <div className="hidden sm:flex ">
             <div className="flex  items-center">
               {navigation.map((item) => (
-                item.name === 'Contact Us' ? (
+                item.name === 'Waitlist' ? (
                   <div key={item.name} className="flex h-full pb-7 items-center justify-center">
-                    <ContactModal />
+                    Waitlist
                   </div>
                 ) : (
                   <a
@@ -74,7 +74,7 @@ export const Navbar: React.FC = () => {
           {navigation.map((item) => (
             item.name === 'Contact Us' ? (
               <div key={item.name} className="flex items-center justify-start">
-                <ContactModal />
+                Waitlist
               </div>
             ) : (
               <a
