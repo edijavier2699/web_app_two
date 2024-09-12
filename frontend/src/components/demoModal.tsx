@@ -22,7 +22,7 @@ export const DemoModal = () =>{
                     <DialogDescription className="text-center text-bold mt-2">
                         You can reach us anytime via <span  className="text-[#A0CC29]">mohamed.omar@tokunize.com</span>
                     </DialogDescription>
-                    <DemoForm type={"demo"}/>
+                    <DemoForm/>
                 </DialogHeader>
             </DialogContent>
         </Dialog>

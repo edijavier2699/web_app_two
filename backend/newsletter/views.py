@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import DemoSerializer,ContactedClientSerializer
 from .welcomeEmail import send_demo_booking_email 
+from .waitlistEmail import send_waitlist_email
 from .contactFormEmail import contactFormEmail
 from django.core.exceptions import ValidationError
 
@@ -23,10 +24,11 @@ class DemoUserListView(generics.ListCreateAPIView):
         
         # Send a welcome email
         email = serializer.validated_data['email']
-        send_demo_booking_email(email) 
+        send_waitlist_email(email) 
 
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
 
 
 class ContactedClientListCreateView(generics.ListCreateAPIView):
@@ -35,9 +37,9 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
-
-        # Check if the email already exists in the ContactedClient model
         email = request.data.get('email')
+        is_demo = request.data.get('demo', False) 
+
         if email and ContactedClient.objects.filter(email=email).exists():
             # Send email even if the email is already registered
             contactFormEmail(
@@ -50,7 +52,8 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
                 property_type=request.data.get('property_type', None),
                 property_county=request.data.get('property_county', None)
             )
-            # Return a response indicating the email is already registered
+            if is_demo:
+                send_demo_booking_email(email)  # Send demo email with only the email address
             return Response({"detail": "This email is already registered, but a contact email has been sent."}, status=status.HTTP_200_OK)
 
         try:
@@ -68,6 +71,8 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
                 property_type=validated_data.get('property_type', None),
                 property_county=validated_data.get('property_county', None)
             )
+            if is_demo:
+                send_demo_booking_email(validated_data['email'])  # Send demo email with only the email address
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 

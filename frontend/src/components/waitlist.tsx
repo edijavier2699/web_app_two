@@ -6,7 +6,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
-import { DemoForm } from "./demoForm";
+import { WaitlistForm } from "./waitlistForm";
 
 export const WaitlistModal = () => {
     return (
@@ -24,7 +24,7 @@ export const WaitlistModal = () => {
                     </DialogDescription>
                 </DialogHeader>
                 <div className="flex-1">
-                    <DemoForm type={"waitlist"}/>
+                    <WaitlistForm/>
                 </div>
             </DialogContent>
         </Dialog>

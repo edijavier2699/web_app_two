@@ -72,7 +72,7 @@ export const Navbar: React.FC = () => {
       <div className={`absolute inset-x-0 top-[80px] z-30 ${menuOpen ? 'block bg-[#C8E870]' : 'hidden'} sm:hidden`}>
         <div className="space-y-1 px-2 pt-2 pb-3">
           {navigation.map((item) => (
-            item.name === 'Contact Us' ? (
+            item.name === 'Waitlist' ? (
               <div key={item.name} className="flex items-center justify-start">
                     <WaitlistModal/>
               </div>
