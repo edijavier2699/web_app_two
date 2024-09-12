@@ -1,6 +1,6 @@
-import feature1 from "../assets/feature_icon_1.svg";
-import feature2 from "../assets/feature_icon_2.svg";
-import feature3 from "../assets/feature_icon_3.svg";
+import feature1 from "../assets/cashFlow.png";
+import feature2 from "../assets/security.png";
+import feature3 from "../assets/lowPrice.png";
 
 interface FeaturesCardProps {
     icon: "Feature1" | "Feature2" | "Feature3";

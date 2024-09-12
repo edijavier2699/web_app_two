@@ -6,7 +6,7 @@ import miniLogo from "../assets/miniLogo.svg"
 
 export const MyCarousel = () => {
   return (
-    <div className="w-full  h-[200px] max-w-3xl px-[20px] mt-6" id="mycarousel">
+    <div className="w-[70%] mx-auto  h-[200px] mt-6" id="mycarousel">
       <Carousel
         indicators={true}  // Show indicators for slides
         slide={false}
@@ -41,7 +41,7 @@ export const MyCarousel = () => {
           <p className="mb-4 text-sm">Fees</p>
           <ul className=" space-y-2 text-xs">
           <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <img alt="check-svg" src={miniLogo}/> <span>0.5%</span></li>
-            <li className="flex justify-between  px-3">Traditional Real Estate Funds <span  className=" text-right">2% management ,20% performance</span></li>
+            <li className="flex items-center justify-between  px-3">Traditional Real Estate Funds <span  className="text-right">2% management <span className="block">&20% performance</span></span></li>
             <hr className="border-[0.5px] border-[#344054]" />
             <li className="flex justify-between  px-3">REITs <span>0.5 - 3% management</span></li>
           </ul>
