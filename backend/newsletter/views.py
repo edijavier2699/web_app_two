@@ -34,8 +34,8 @@ class DemoUserListView(generics.ListCreateAPIView):
 class ContactedClientListCreateView(generics.ListCreateAPIView):
     queryset = ContactedClient.objects.all()
     serializer_class = ContactedClientSerializer
-
     def create(self, request, *args, **kwargs):
+        print(request.data)
         serializer = self.get_serializer(data=request.data)
         email = request.data.get('email')
         is_demo = request.data.get('demo', False) 
