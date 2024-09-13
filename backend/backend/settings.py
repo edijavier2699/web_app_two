@@ -32,17 +32,12 @@ ALLOWED_HOSTS = [
     'www.tokunize.com',
     'tokunize.com',
     'hammerhead-app-8yrok.ondigitalocean.app',
-    '127.0.0.1', 
-    'localhost'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://hammerhead-app-8yrok.ondigitalocean.app',
     'https://www.tokunize.com',
     'https://tokunize.com',
-    'http://127.0.0.1:8000',
-    'http://localhost:8000', 
-    'http://localhost:5173'
 ]
 
 
