@@ -15,7 +15,7 @@ interface WhyUsProps {
 
 export const WhyUs: React.FC<WhyUsProps> = ({ number, title, description, imageTitle }) => {
     // Condicional para cambiar el fondo según el número
-    const imageBackgroundClass = number === 3 ? "bg-[#F2F4F7]" : "bg-[#F5FFDC]";
+    const imageBackgroundClass = "bg-[#F5FFDC]";
 
     return (
         <article

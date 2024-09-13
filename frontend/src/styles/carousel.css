@@ -1,3 +1,6 @@
+#tableSection{
+  overflow-y: hidden;
+}
 .custom-landing-carousel .group {
   top: 0;
 }

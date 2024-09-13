@@ -2,7 +2,7 @@ import { Carousel } from 'flowbite-react';
 import "../styles/carousel.css";
 import check from "../assets/check.svg"
 import error from "../assets/error.svg"
-import miniLogo from "../assets/miniLogo.svg"
+import smallLogo from "../assets/smallLogo.svg"
 
 export const MyCarousel = () => {
   return (
@@ -16,10 +16,10 @@ export const MyCarousel = () => {
         <div className="flex flex-col items- justify-center w-full px-2 border-[0.1px] border-[#344054]  text-white rounded-lg p-3 ">
           <p className="mb-4 text-sm">Property Appreciation</p>
           <ul className=" space-y-2 text-xs">
-            <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <img alt="miniLogo-svg" src={miniLogo}/> <img alt="check-svg" src={check} /></li>
-            <li className="flex justify-between  px-3">Traditional Real Estate Funds <img alt="check-svg" src={check} /></li>
+            <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <span className="flex"> Tokunize  <img className="pl-1" alt="check-svg" src={smallLogo} /></span>  <img alt="check-svg" src={check} /></li>
+            <li className="flex justify-between px-3">Traditional Real Estate Funds <img alt="check-svg" src={check} /></li>
 
-            <hr className="border-[0.5px] border-[#344054]" />
+            <hr className="border-[0.5px] border-[#344054]"/>
 
             <li className="flex justify-between  px-3">REITs <img alt="check-svg" src={check} /></li>
           </ul>
@@ -29,8 +29,8 @@ export const MyCarousel = () => {
         <div className="flex flex-col items- justify-center w-full px-2 border-[0.1px] border-[#344054]  text-white rounded-lg p-3 ">
           <p className="mb-4 text-sm">Passive Income</p>
           <ul className=" space-y-2 text-xs">
-          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <img alt="miniLogo-svg" src={miniLogo}/> <img alt="check-svg" src={check} /></li>
-            <li className="flex justify-between  px-3">Traditional Real Estate Funds <img alt="check-svg" src={check} /></li>
+          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <span className="flex"> Tokunize  <img className="pl-1" alt="check-svg" src={smallLogo} /></span>  <img alt="check-svg" src={check} /></li>
+            <li className="flex justify-between  px-3">Traditional Real Estate Funds <img alt="check-svg" src={error} /></li>
             <hr className="border-[0.5px] border-[#344054]" />
             <li className="flex justify-between  px-3">REITs <img alt="check-svg" src={check} /></li>
           </ul>
@@ -40,10 +40,10 @@ export const MyCarousel = () => {
         <div className="flex flex-col items- justify-center w-full px-2 border-[0.1px] border-[#344054]  text-white rounded-lg p-3 ">
           <p className="mb-4 text-sm">Fees</p>
           <ul className=" space-y-2 text-xs">
-          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <img alt="check-svg" src={miniLogo}/> <span>0.5%</span></li>
+          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <span className="flex"> Tokunize  <img className="pl-1" alt="check-svg" src={smallLogo} /></span>  <img alt="check-svg" src={check} /></li>
             <li className="flex  items-center justify-between  px-3">Traditional Real Estate Funds <span  className="text-right">2% management <span className="block">20% performance</span></span></li>
             <hr className="border-[0.5px] border-[#344054]" />
-            <li className="flex justify-between  px-3">REITs <span>0.5 - 3% management</span></li>
+            <li className="flex justify-between  px-3">REITs <span>0.75% - 3% management</span></li>
           </ul>
         </div>
 
@@ -51,8 +51,8 @@ export const MyCarousel = () => {
         <div className="flex flex-col items- justify-center w-full px-2 border-[0.1px] border-[#344054]  text-white rounded-lg p-3 ">
           <p className="mb-4 text-sm">Minimum Entry</p>
           <ul className=" space-y-2 text-xs">
-          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <img alt="check-svg" src={miniLogo}/> <img alt="check-svg" src={check} /></li>
-            <li className="flex justify-between  px-3">Traditional Real Estate Funds <span>+ £50K</span></li>
+          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <span className="flex"> Tokunize  <img className="pl-1" alt="check-svg" src={smallLogo} /></span>  <img alt="check-svg" src={check} /></li>
+            <li className="flex justify-between  px-3">Traditional Real Estate Funds <span>£50K</span></li>
             <hr className="border-[0.5px] border-[#344054]" />
             <li className="flex justify-between  px-3">REITs <span>£1K - £2K</span></li>
           </ul>
@@ -62,7 +62,7 @@ export const MyCarousel = () => {
         <div className="flex flex-col items- justify-center w-full px-2 border-[0.1px] border-[#344054]  text-white rounded-lg p-3 ">
           <p className="mb-4 text-sm">Instant Liquidity</p>
           <ul className=" space-y-2 text-xs">
-          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <img alt="check-svg" src={miniLogo}/> <img alt="check-svg" src={check} /></li>
+          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <span className="flex"> Tokunize  <img className="pl-1" alt="check-svg" src={smallLogo} /></span>  <img alt="check-svg" src={check} /></li>
             <li className="flex justify-between  px-3">Traditional Real Estate Funds <img alt="check-svg" src={error} /></li>
             <hr className="border-[0.5px] border-[#344054]" />
             <li className="flex justify-between  px-3">REITs <img alt="check-svg" src={check} /></li>
@@ -73,7 +73,7 @@ export const MyCarousel = () => {
         <div className="flex flex-col items- justify-center w-full px-2 border-[0.1px] border-[#344054]  text-white rounded-lg p-3 ">
           <p className="mb-4 text-sm">Control Over Investments</p>
           <ul className=" space-y-2 text-xs">
-          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <img alt="check-svg" src={miniLogo}/> <img alt="check-svg" src={check} /></li>
+          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <span className="flex"> Tokunize  <img className="pl-1" alt="check-svg" src={smallLogo} /></span>  <img alt="check-svg" src={check} /></li>
             <li className="flex justify-between  px-3">Traditional Real Estate Funds <img alt="check-svg" src={error} /></li>
             <hr className="border-[0.5px] border-[#344054]" />
             <li className="flex justify-between  px-3">REITs <img alt="check-svg" src={error} /></li>
@@ -84,7 +84,7 @@ export const MyCarousel = () => {
         <div className="flex flex-col items- justify-center w-full px-2 border-[0.1px] border-[#344054]  text-white rounded-lg p-3 ">
           <p className="mb-4 text-sm">24/7 Trading</p>
           <ul className=" space-y-2 text-xs">
-          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <img alt="check-svg" src={miniLogo}/> <img alt="check-svg" src={check} /></li>
+          <li className="flex justify-between bg-[#EBFABE] rounded-lg text-sm font-semibold px-3 py-1 text-black"> <span className="flex"> Tokunize  <img className="pl-1" alt="check-svg" src={smallLogo} /></span>  <img alt="check-svg" src={check} /></li>
             <li className="flex justify-between  px-3">Traditional Real Estate Funds <img alt="check-svg" src={error} /></li>
             <hr className="border-[0.5px] border-[#344054]" />
             <li className="flex justify-between px-3">REITs <img alt="check-svg" src={error} /></li>
