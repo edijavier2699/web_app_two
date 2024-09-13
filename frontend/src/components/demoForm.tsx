@@ -65,7 +65,6 @@ export const DemoForm = () => {
         name: data.name,
         surname: data.surname,
         message: data.message,
-        property_owner: data.userType,
         demo: true 
       });
       console.log("Response:", response);  // Debug line
