@@ -2,14 +2,14 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
-import { useToast } from './ui/use-toast';
+import { useToast } from "@/components/ui/use-toast";
 
 export const BlogSubscriberForm: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
     const [error, setError] = useState<string>('');
     const [success, setSuccess] = useState<string>('');
-    const {toast} = useToast()
+    const { toast } = useToast();
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -21,13 +21,19 @@ export const BlogSubscriberForm: React.FC = () => {
             await axios.post(`${import.meta.env.VITE_BACKEND_URL}blog/subscriber/`, { email });
             setSuccess('Subscription successful!');
             setEmail(''); // Clear the input field
-        } catch (error) {
-            setEmail(''); // Clear the input field
             toast({
                 title: "Error",
                 description: "You are already subscribed, thank you!",
                 variant: "destructive",
               });
+        } catch (error) {
+            toast({
+                title: "Error",
+                description: "You are already subscribed, thank you!",
+                variant: "destructive",
+              });
+            setEmail(''); // Clear the input field
+           
         } finally {
             setIsSubmitting(false);
         }

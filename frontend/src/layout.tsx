@@ -11,11 +11,14 @@ import ProtectedRoute from "./privateRoute";
 import { ArticleList } from "./components/blog/articleList";
 import CreateArticle from "./components/createArticleForm";
 import { SingleArticleView } from "./components/singleArticleView";
+import { Toaster } from "./components/ui/toaster";
 
 const Layout = () => {
 
     return (
         <BrowserRouter>
+            <Toaster />
+
             <Routes>
                 <Route element={<App />} path="/" />
                 <Route element={<Blog />} path="/blog/" />
