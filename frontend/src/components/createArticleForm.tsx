@@ -11,12 +11,12 @@ import { useToast } from "@/components/ui/use-toast";
 interface Article {
   id?: string;
   title: string;
-  subtitle: string;
+  subtitle?: string; 
   first_section: string;
-  second_section: string;
-  third_section: string;
-  fourth_section: string;
-  five_section: string;
+  second_section?: string;  
+  third_section?: string;   
+  fourth_section?: string;  
+  five_section?: string;   
   image_urls?: { url: string; publicId: string }[];
 }
 

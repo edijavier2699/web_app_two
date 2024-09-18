@@ -16,13 +16,17 @@ interface AllArticlesCardProps {
   views: number; 
 }
 interface Article {
-  id: number;
-  slug: string;
+  id?: string;
   title: string;
+  subtitle?: string;  
   first_section: string;
-  image_urls: string[];
-  views: number;
+  second_section?: string; 
+  third_section?: string;   
+  fourth_section?: string;  
+  five_section?: string;    
+  image_urls?: { url: string; publicId: string }[];
 }
+
 export const AllArticlesCard: React.FC<AllArticlesCardProps> = ({ imageSrc, title, link, articleId, onArticleDeleted, views }) => {
   const { getAccessTokenSilently } = useAuth0();
   const [openDialog, setOpenDialog] = useState(false);
@@ -54,6 +58,7 @@ export const AllArticlesCard: React.FC<AllArticlesCardProps> = ({ imageSrc, titl
       console.error('Error fetching article data:', error);
     }
   };
+  
 
   return (
     <>

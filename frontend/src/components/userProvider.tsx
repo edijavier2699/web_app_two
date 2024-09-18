@@ -19,24 +19,25 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const fetchToken = async () => {
       if (isAuthenticated) {
         try {
-          // Obtén los claims del ID token
           const claims = await getIdTokenClaims();
-
-          // Extrae el rol, nombre y apellido del claim personalizado
-          const userRole = claims["https://tokunize.com/role"];
-        
-          if (userRole) {
-            localStorage.setItem("user_role", userRole);
-            setRole(userRole);
+  
+          if (claims) {
+            const userRole = claims["https://tokunize.com/role"];
+  
+            if (userRole) {
+              localStorage.setItem("user_role", userRole);
+              setRole(userRole);
+            }
           }
         } catch (error) {
           console.error("Error fetching ID token claims", error);
         }
       }
     };
-
+  
     fetchToken();
   }, [isAuthenticated, getIdTokenClaims]);
+  
 
   return (
     <UserContext.Provider value={{ role, setRole }}>
