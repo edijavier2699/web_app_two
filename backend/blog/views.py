@@ -16,9 +16,9 @@ import json
 
 from datetime import timedelta
 
+
 class ArticleListView(APIView):
     authentication_classes = [Auth0JWTAuthentication]
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         articles = Article.objects.all()
@@ -48,10 +48,8 @@ class SingleArticleView(APIView):
 
     def get(self, request, pk):
         try:
-            # Use update() with F() expression for safe concurrent updates
             Article.objects.filter(pk=pk).update(views=F('views') + 1)
             
-            # Fetch the updated article to serialize
             article = Article.objects.get(pk=pk)
             
             serializer = ArticleSerializer(article)
@@ -61,7 +59,6 @@ class SingleArticleView(APIView):
 
 class DeleteArticleView(APIView):
     authentication_classes = [Auth0JWTAuthentication]
-    permission_classes = [IsAuthenticated]
 
     def delete(self, request, pk):
         try:
@@ -73,9 +70,9 @@ class DeleteArticleView(APIView):
         return Response({"detail": "Article deleted."}, status=status.HTTP_204_NO_CONTENT)
 
 
+
 class EditArticleView(APIView):
     authentication_classes = [Auth0JWTAuthentication]
-    permission_classes = [IsAuthenticated]
 
     def get_object(self, pk):
         try:

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     'www.tokunize.com',
     'tokunize.com',
     'hammerhead-app-8yrok.ondigitalocean.app',
+    '127.0.0.1'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -172,3 +173,21 @@ EMAIL_USE_SSL = False
 EMAIL_HOST_USER = config('EMAIL_USER')  # Your Gmail address
 EMAIL_HOST_PASSWORD = config('EMAIL_PWD')  # Your Gmail password or app-specific password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+import cloudinary
+
+# Configura tus credenciales de Cloudinary
+cloudinary.config(
+    cloud_name='dhyrv5g3w',
+    api_key='577211589791536',
+    api_secret='LhkuFGSvQWYkISi9a0PONdfj27o'
+)
+
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,  
+}
+

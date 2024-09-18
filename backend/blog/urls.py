@@ -7,7 +7,8 @@ from .views import(
     PublicArticleListView,
     WeeklyVisitStatsView,
     delete_image,
-    SubscriberListCreateView
+    SubscriberListCreateView,
+    
 )
 
 urlpatterns = [
