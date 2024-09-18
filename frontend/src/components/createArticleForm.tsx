@@ -5,15 +5,18 @@ import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import ImageGallery from './imageGallery';
 import { ImageUploaderBlog } from './blog/imageUploaderBlog';
+import { useToast } from "@/components/ui/use-toast";
+
 
 interface Article {
+  id?: string;
   title: string;
   subtitle: string;
   first_section: string;
   second_section: string;
   third_section: string;
-  fourth_section:string;
-  five_section:string;
+  fourth_section: string;
+  five_section: string;
   image_urls?: { url: string; publicId: string }[];
 }
 
@@ -37,6 +40,7 @@ interface CreateArticleProps {
 }
 
 const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
+  const { toast } = useToast();
   const { getAccessTokenSilently } = useAuth0();
   const cloudName = 'dhyrv5g3w';
   const uploadPreset = 'ptwmh2mt';
@@ -96,6 +100,13 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
     const response = await fetch(url, { method: 'POST', body: formData });
     if (response.ok) {
       const data = await response.json();
+      if(data){
+        toast({
+          title: "Success",
+          description: "Your image is uploaded!",
+          variant: "default",
+        });
+      }
       return { url: data.secure_url, publicId: data.public_id };
     } else {
       throw new Error('Failed to upload image');
@@ -111,8 +122,13 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
           'Content-Type': 'application/json',
         }
       });
-
+      toast({
+        title: "Success",
+        description: "You delete the image!",
+        variant: "default",
+      });
       return response.data.success;
+     
     } catch (error) {
       console.error('Error eliminando la imagen:', error);
       return false;
@@ -149,6 +165,11 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
       try {
         if (article) {
           await axios.put(`${import.meta.env.VITE_BACKEND_URL}blog/articles/${article.id}/edit/`, articleDataToSave, config);
+          toast({
+            title: "Success",
+            description: "You created a new article!",
+            variant: "default",
+          });
         } else {
           await axios.post(`${import.meta.env.VITE_BACKEND_URL}blog/articles/`, articleDataToSave, config);
         }

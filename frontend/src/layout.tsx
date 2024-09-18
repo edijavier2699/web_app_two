@@ -43,7 +43,9 @@ const Layout = () => {
                         <Route
                         path="create-article/"
                         element={
-                            <ProtectedRoute roleRequired="blog-admin" element={<CreateArticle />} />
+                            <ProtectedRoute roleRequired="blog-admin" element={<CreateArticle onClose={function (): void {
+                                throw new Error("Function not implemented here.");
+                            } } />} />
                         }
                         />
                 </Route>

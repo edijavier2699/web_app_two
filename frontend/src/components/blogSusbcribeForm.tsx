@@ -22,9 +22,9 @@ export const BlogSubscriberForm: React.FC = () => {
             setSuccess('Subscription successful!');
             setEmail(''); // Clear the input field
             toast({
-                title: "Error",
-                description: "You are already subscribed, thank you!",
-                variant: "destructive",
+                title: "Success",
+                description: "You are now subscribed!",
+                variant: "default",
               });
         } catch (error) {
             toast({
