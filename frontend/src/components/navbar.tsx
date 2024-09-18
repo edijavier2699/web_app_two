@@ -83,7 +83,7 @@ export const Navbar: React.FC = () => {
                 aria-current={item.current ? 'page' : undefined}
                 className={classNames(
                   item.current ? 'text-black hover:underline' : 'text-black-700 ',
-                  'block px-3 py-2 text-base font-medium',
+                  'block px-3 py-2 text-lg text-center font-medium',
                 )}
               >
                 {item.name}
