@@ -88,3 +88,9 @@
 .group:focus-within .group-focus\:ring-4 {
   box-shadow: 0 0 0 1px #344054 !important;
 }
+
+#singleArticleView ul, ol {
+  list-style-type: disc; 
+  padding-left: 50px; 
+}
+
