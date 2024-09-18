@@ -12,6 +12,9 @@ psycopg2-binary = "*"
 certifi = "*"
 gunicorn = "*"
 whitenoise = "*"
+python-jose = "*"
+requests = "*"
+cloudinary = "*"
 
 [dev-packages]
 

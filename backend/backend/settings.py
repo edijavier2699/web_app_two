@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'newsletter',
     'corsheaders',
     'rest_framework',
-    'whitenoise'
+    'whitenoise',
+    'blog'
 ]
 
 MIDDLEWARE = [
