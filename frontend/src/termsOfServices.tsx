@@ -32,6 +32,7 @@ const TermsOfService = () => {
             copyright materials), you may not reproduce, copy, distribute, store or in any other fashion
             re-use material from the Website unless otherwise indicated on the Website or unless
             given express written permission to do so by TSSRCT.
+            
             </p>
 
 
