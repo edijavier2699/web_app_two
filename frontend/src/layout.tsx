@@ -10,6 +10,8 @@ import DashboardLayout from "./dashboardLayout";
 import ProtectedRoute from "./privateRoute";
 import { ArticleList } from "./components/blog/articleList";
 import CreateArticle from "./components/createArticleForm";
+import { SingleArticleView } from "./components/singleArticleView";
+
 const Layout = () => {
 
     return (
@@ -20,6 +22,7 @@ const Layout = () => {
                 <Route element={<LoginPage />} path="/blog-admin/" />
                 <Route element={<PrivacyPolicy />} path="/privacy-policy/" />
                 <Route element={<TermsOfService />} path="/terms-of-services/" />
+                <Route path="blog/article/:id/" element={<SingleArticleView/>} />
                 <Route path="*" element={<NotFound />} />
                 <Route element={<DashboardLayout />}>
                     <Route

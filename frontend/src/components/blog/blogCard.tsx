@@ -3,7 +3,6 @@ import arrowUrl from "../../assets/arrowUrl.svg";
 import { useNavigate } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 
-
 interface BlogCardProps {
   imageUrl: string;
   title: string;

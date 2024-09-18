@@ -5,7 +5,7 @@ import Logo from "../assets/logo.jpg";
 import { WaitlistModal } from './waitlist';
 
 const navigation: NavigationItem[] = [
-  // { name: 'Learn', href:"#", current: false }, 
+  { name: 'Learn', href:"/blog/", current: false }, 
   // { name: 'How it works', href:"#", current: false }, 
   // { name: 'Are you a property Owner?', href:"#", current: false },
   { name: 'Waitlist', href:"#", current: false },
@@ -43,7 +43,7 @@ export const Navbar: React.FC = () => {
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
                       item.current ? 'bg-[#C8E870]  text-black' : '  text-[#121212] hover:underline duration-300 ease-in-out',
-                      'rounded-md px-9 py-2 text-sm font-medium duration-300 ease-in-out'
+                      'rounded-md px-9 py-2  font-medium duration-300 ease-in-out'
                     )}
                   >
                     {item.name}
