@@ -7,7 +7,6 @@ import ImageGallery from './imageGallery';
 import { ImageUploaderBlog } from './blog/imageUploaderBlog';
 import { useToast } from "@/components/ui/use-toast";
 
-
 interface Article {
   id?: string;
   title: string;
@@ -19,7 +18,6 @@ interface Article {
   five_section?: string;   
   image_urls?: { url: string; publicId: string }[];
 }
-
 
 const modules = {
   toolbar: [
@@ -53,7 +51,6 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
     third_section: "",
     fourth_section:"",
     five_section:"",
-
   });
 
   const [images, setImages] = useState<{ file: File, temporaryId: string }[]>([]);
@@ -145,7 +142,8 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
         imageUrls.push({ url, publicId });
       }
 
-      const updatedImageUrls = existingImages.concat(imageUrls);
+      // Combine existing and new image URLs
+      const updatedImageUrls = [...existingImages, ...imageUrls];
 
       const articleDataToSave = {
         ...articleData,
@@ -322,4 +320,3 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
 };
 
 export default CreateArticle;
-

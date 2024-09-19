@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ImageFile {
   file: File;
@@ -13,6 +13,13 @@ interface ImageUploaderProps {
 
 export const ImageUploaderBlog: React.FC<ImageUploaderProps> = ({ onImagesSelected, onImageRemoved }) => {
   const [files, setFiles] = useState<ImageFile[]>([]);
+
+  useEffect(() => {
+    // Cleanup function para liberar URLs de vista previa cuando se eliminan imágenes o el componente se desmonta
+    return () => {
+      files.forEach((file) => URL.revokeObjectURL(file.previewUrl));
+    };
+  }, [files]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = e.target.files;
@@ -30,7 +37,16 @@ export const ImageUploaderBlog: React.FC<ImageUploaderProps> = ({ onImagesSelect
   };
 
   const handleFiles = (newFiles: File[]) => {
-    const filePreviews = newFiles.map((file, index) => ({
+    // Filtrar archivos que ya están en la lista para evitar duplicados
+    const existingFileNames = files.map(file => file.file.name);
+    const validFiles = newFiles.filter(file => !existingFileNames.includes(file.name));
+
+    // Solo permitir imágenes con extensiones válidas
+    const imageFiles = validFiles.filter(file =>
+      file.type.startsWith('image/')
+    );
+
+    const filePreviews = imageFiles.map((file, index) => ({
       file,
       previewUrl: URL.createObjectURL(file),
       temporaryId: `${Date.now()}-${index}` // Asignar un ID único temporal a cada imagen
@@ -41,6 +57,8 @@ export const ImageUploaderBlog: React.FC<ImageUploaderProps> = ({ onImagesSelect
   };
 
   const removeFile = (index: number) => {
+    const fileToRemove = files[index];
+    URL.revokeObjectURL(fileToRemove.previewUrl); // Liberar URL de vista previa
     setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
     onImageRemoved(index); // Notificar al componente padre sobre la eliminación de la imagen
   };
@@ -57,6 +75,7 @@ export const ImageUploaderBlog: React.FC<ImageUploaderProps> = ({ onImagesSelect
           id="upload-file"
           name="uploaded-file"
           multiple
+          accept="image/*" // Asegurarse de que solo se acepten imágenes
           className="hidden"
           onChange={handleFileChange}
         />

@@ -10,6 +10,8 @@ export interface Article {
   first_section: string;
   second_section: string;
   third_section: string;
+  fourth_section?: string;  
+  five_section?: string;  
   image_urls: { url: string }[];  
 }
 
@@ -128,7 +130,7 @@ export const SingleArticleView: React.FC = () => {
         {article.image_urls[3] && (
           <figure className="my-8">
             <img
-              src={article.image_urls[2].url || 'fallback-image-url.jpg'}
+              src={article.image_urls[3].url || 'fallback-image-url.jpg'}
               alt="Third illustrative image"
               className="w-full h-[300px] object-cover"
             />
@@ -136,9 +138,9 @@ export const SingleArticleView: React.FC = () => {
         )}
 
          {/* 4 Section */}
-         {article.third_section && (
+         {article.fourth_section && (
           <article>
-            <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.third_section) }} />
+            <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.fourth_section) }} />
           </article>
         )}
 
@@ -146,7 +148,7 @@ export const SingleArticleView: React.FC = () => {
         {article.image_urls[4] && (
           <figure className="my-8">
             <img
-              src={article.image_urls[2].url || 'fallback-image-url.jpg'}
+              src={article.image_urls[4].url || 'fallback-image-url.jpg'}
               alt="Third illustrative image"
               className="w-full h-[300px] object-cover"
             />
@@ -154,9 +156,9 @@ export const SingleArticleView: React.FC = () => {
         )}
 
          {/* 5 Section */}
-         {article.third_section && (
+         {article.five_section && (
           <article>
-            <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.third_section) }} />
+            <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.first_section) }} />
           </article>
         )}
       </section>
