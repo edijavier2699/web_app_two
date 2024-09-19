@@ -13,6 +13,7 @@ class Article(models.Model):
     third_section = models.TextField(null=True, blank=True)
     fourth_section = models.TextField(null=True, blank=True)
     five_section = models.TextField(null=True, blank=True)
+    conclusion=models.TextField(null=True, blank=True)
     views = models.IntegerField(default=0)
 
     def __str__(self):
