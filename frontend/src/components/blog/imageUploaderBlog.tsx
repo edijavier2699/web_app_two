@@ -7,15 +7,14 @@ interface ImageFile {
 }
 
 interface ImageUploaderProps {
-  onImagesSelected: (files: ImageFile[]) => void; // Notificar al componente padre sobre los archivos seleccionados
-  onImageRemoved: (index: number) => void; // Notificar al componente padre sobre la eliminación de una imagen
+  onImagesSelected: (files: ImageFile[]) => void; 
+  onImageRemoved: (index: number) => void; 
 }
 
 export const ImageUploaderBlog: React.FC<ImageUploaderProps> = ({ onImagesSelected, onImageRemoved }) => {
   const [files, setFiles] = useState<ImageFile[]>([]);
 
   useEffect(() => {
-    // Cleanup function para liberar URLs de vista previa cuando se eliminan imágenes o el componente se desmonta
     return () => {
       files.forEach((file) => URL.revokeObjectURL(file.previewUrl));
     };

@@ -165,11 +165,18 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
           await axios.put(`${import.meta.env.VITE_BACKEND_URL}blog/articles/${article.id}/edit/`, articleDataToSave, config);
           toast({
             title: "Success",
-            description: "You created a new article!",
+            description: "You edited this article successfully!",
             variant: "default",
           });
         } else {
-          await axios.post(`${import.meta.env.VITE_BACKEND_URL}blog/articles/`, articleDataToSave, config);
+          const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}blog/articles/`, articleDataToSave, config);
+          if(response.data){
+            toast({
+              title: "Success",
+              description: "You created a new article successfully!",
+              variant: "default",
+            });
+          }
         }
         handleReset();
         onClose();
