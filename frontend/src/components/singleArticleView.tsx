@@ -158,7 +158,7 @@ export const SingleArticleView: React.FC = () => {
          {/* 5 Section */}
          {article.five_section && (
           <article>
-            <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.first_section) }} />
+            <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.five_section) }} />
           </article>
         )}
       </section>
