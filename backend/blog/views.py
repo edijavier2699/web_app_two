@@ -67,7 +67,7 @@ class DeleteArticleView(APIView):
             return Response({"detail": "Article not found."}, status=status.HTTP_404_NOT_FOUND)
 
         article.delete()
-        return Response({"detail": "Article deleted."}, status=status.HTTP_204_NO_CONTENT)
+        return Response({"detail": "Article deleted."}, status=status.HTTP_200_OK)
 
 
 
