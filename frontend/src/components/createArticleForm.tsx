@@ -16,6 +16,7 @@ interface Article {
   third_section?: string;   
   fourth_section?: string;  
   five_section?: string;   
+  conclusion?:string;
   image_urls?: { url: string; publicId: string }[];
 }
 
@@ -51,6 +52,7 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
     third_section: "",
     fourth_section:"",
     five_section:"",
+    conclusion:"",
   });
 
   const [images, setImages] = useState<{ file: File, temporaryId: string }[]>([]);
@@ -81,7 +83,8 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
       second_section: "",
       third_section: "",
       fourth_section:"",
-      five_section:""
+      five_section:"",
+      conclusion:"",
     });
     setImages([]);
   };
@@ -298,6 +301,17 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
           modules={modules}
           value={articleData.five_section}
           onChange={(value) => handleQuillChange('five_section', value)}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="conclusion" className="block text-sm font-medium text-gray-700">Add Conclusion</label>
+        <ReactQuill
+          id="conclusion"
+          className="mt-1 bg-white"
+          modules={modules}
+          value={articleData.conclusion}
+          onChange={(value) => handleQuillChange('conclusion', value)}
         />
       </div>
 

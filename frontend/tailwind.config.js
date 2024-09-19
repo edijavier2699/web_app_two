@@ -9,7 +9,6 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-    'node_modules/flowbite/**/*.js', // Incluir Flowbite
     flowbite.content(), // Agregar el contenido de Flowbite React
   ],
   prefix: "",
@@ -80,7 +79,6 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    require('flowbite/plugin'), // Plugin de Flowbite
     flowbite.plugin(), // Plugin de Flowbite React
   ],
 }

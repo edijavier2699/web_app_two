@@ -25,7 +25,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, title, description
   const placeholderImage = "https://via.placeholder.com/600x400.png?text=No+Image+Available";
 
   return (
-    <article className="flex flex-col my-5 overflow-hidden transition-transform duration-300">
+    <article onClick={() => navigate(`article/${article_id}`)} className=" cursor-pointer flex flex-col my-5 overflow-hidden transition-transform duration-300">
       <aside className="w-full h-[300px]">
         <img
           alt={title}
@@ -37,17 +37,19 @@ export const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, title, description
         <header>
           <p className="text-[#ADD244] mb-3 font-bold">Investing fundamentals</p>
           <div className="flex justify-between items-start mb-2">
-            <h2 className="text-2xl font-bold text-gray-800">{title}</h2>
-            <span 
-              className="cursor-pointer rounded-full bg-gray-100 hover:bg-gray-300 p-2 inline-flex items-center justify-center"
-              onClick={() => navigate(`article/${article_id}`)}
-            >
-              <img 
-                alt='arrow-url-redirect' 
-                src={arrowUrl} 
-              />
-            </span>
-          </div>
+  <h2 className="text-2xl font-bold text-gray-800 flex-grow">
+    {title}
+  </h2>
+  <div
+    className="cursor-pointer duration-300 ease-in-out rounded-full bg-gray-100 hover:bg-gray-300 p-2 inline-flex items-center justify-center flex-shrink-0">
+    <img
+      alt="arrow-url-redirect"
+      src={arrowUrl}
+      className="w-auto"
+    />
+  </div>
+</div>
+
           <p className="text-gray-600 mb-4 line-clamp-3">
             <span dangerouslySetInnerHTML={{ __html: sanitizedDescription }} />
           </p>

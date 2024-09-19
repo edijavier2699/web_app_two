@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BlogCard } from "@/components/blog/blogCard";
-import BackgroundImage from "./assets/background-blog.png";
 import { BlogSubscriberForm } from './components/blogSusbcribeForm';
 
 interface BlogPost {
@@ -45,7 +44,7 @@ export const Blog = () => {
         </p>
         <div className="flex items-center flex-col justify-center">
           <BlogSubscriberForm />
-          <span className="text-sm text-gray-400 mt-2">We care about your data in our  <a href="#" className="underline">Privacy Policy</a></span>
+          <span className="text-sm text-gray-400 mt-2">We care about your data in our  <a href="/privacy-policy/" className="underline">Privacy Policy</a></span>
         </div>
       </div>
 
@@ -68,30 +67,6 @@ export const Blog = () => {
         </aside>
 
         <article className="w-full">
-          <article className="flex flex-col lg:flex-row overflow-hidden transition-transform duration-300 mb-8">
-            <aside className="w-full lg:w-[60%] h-[250px] lg:h-[380px] mb-4 md:mb-0">
-              <img
-                alt={"tokunize-background"}
-                src={BackgroundImage}
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </aside>
-            <div className="w-full lg:w-[40%] p-4 md:p-6 flex flex-col justify-between">
-              <header className="space-y-4">
-                <p className="text-[#ADD244] font-bold">Investing fundamentals</p>
-                <div className="flex flex-col md:flex-row justify-between items-start mb-2">
-                  <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">{"The Ultimate Guide to Tokenising Real-World Assets (RWAs)"}</h2>
-                </div>
-                <p className="text-gray-600 text-sm mb-4">
-                  Tokenisation is the process of creating digital tokens on a blockchain or distributed ledger that represent ownership, or fractional ownership, of physical or digital assets.
-                </p>
-              </header>
-              <footer>
-                <span className="text-sm text-gray-500 font-bold"></span>
-              </footer>
-            </div>
-          </article>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto">
             {filteredPosts.length > 0 ? (
               filteredPosts.map((post) => {
@@ -112,7 +87,7 @@ export const Blog = () => {
                 );
               })
             ) : (
-              <p className="text-center col-span-2">No blog posts available</p>
+              <p className="text-center col-span-2">No blog posts yet</p>
             )}
           </div>
         </article>

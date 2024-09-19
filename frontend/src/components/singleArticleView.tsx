@@ -165,7 +165,7 @@ export const SingleArticleView: React.FC = () => {
 
         {/*Conclusion */}
         {article.conclusion && (
-          <article>
+          <article className="bg-[#F4FAE2] p-3 rounded-lg">
             <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.conclusion) }} />
           </article>
         )}

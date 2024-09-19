@@ -1,4 +1,4 @@
-import whyUstable from "../assets/ComparisionSection.png";
+import whyUstable from "../assets/ComparisionSection.webp";
 import { MyCarousel } from "./carousel";
 import "../styles/carousel.css"
 

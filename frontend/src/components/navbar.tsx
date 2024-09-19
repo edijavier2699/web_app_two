@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { WaitlistModal } from './waitlist';
-import SmallLogo from "../assets/smallLogo.png"
+import SmallLogo from "../assets/logo.png"
 import { useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';  // Import Auth0 hook
 
@@ -37,7 +37,7 @@ export const Navbar: React.FC = () => {
           <div className="flex flex-1 px-[20px] md:px-0 justify-start sm:items-stretch sm:justify-start">
             <div onClick={() => { navigate("/") }}>
               <img
-                className="h-12 w-auto"
+                className="h-[85px] w-auto"
                 src={SmallLogo}
                 alt="Your Company"
               />
