@@ -1,5 +1,4 @@
 import './App.css'
-import {Navbar} from "./components/navbar"
 import { HeroSection } from './components/heroSection'
 import { Features } from './components/features'
 import { FAQ } from './components/faq'
@@ -13,7 +12,6 @@ function App() {
   return (
     <>
        <Toaster />
-       <Navbar />
        <HeroSection/>
        <Features />
        <WhyTokunize/>

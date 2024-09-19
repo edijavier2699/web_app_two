@@ -49,7 +49,7 @@ export const Blog = () => {
         </div>
       </div>
       <div className="flex flex-col md:flex-row mt-[64px] px-[16px] md:px-[60px]">
-        <aside className="flex w-[30%] flex-col space-y-3 pr-0 md:pr-[64px] mb-8 md:mb-0">
+        <aside className="flex  md:w-[30%] flex-col space-y-3 pr-0 md:pr-[64px] mb-8 md:mb-0">
           <p className="text-[#C8E870] text-sm font-bold">Blog Categories</p>
           {/* Search Bar */}
           <div className="relative mb-4">
@@ -58,7 +58,7 @@ export const Blog = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search blog posts..."
-              className="w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A0CC29] focus:border-transparent"
+              className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-[#A0CC29] focus:border-transparent"
             />
           </div>
           <ul className="space-y-2">

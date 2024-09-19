@@ -12,21 +12,26 @@ import { ArticleList } from "./components/blog/articleList";
 import CreateArticle from "./components/createArticleForm";
 import { SingleArticleView } from "./components/singleArticleView";
 import { Toaster } from "./components/ui/toaster";
+import { Navbar } from "./components/navbar";
+import MainLayout from "./mainLayout";
 
 const Layout = () => {
 
     return (
         <BrowserRouter>
             <Toaster />
-
             <Routes>
-                <Route element={<App />} path="/" />
-                <Route element={<Blog />} path="/blog/" />
-                <Route element={<LoginPage />} path="/blog-admin/" />
-                <Route element={<PrivacyPolicy />} path="/privacy-policy/" />
-                <Route element={<TermsOfService />} path="/terms-of-services/" />
-                <Route path="blog/article/:id/" element={<SingleArticleView/>} />
-                <Route path="*" element={<NotFound />} />
+                <Route element={<MainLayout/>}>
+                    <Route element={<App />} path="/" />
+                    <Route element={<Blog />} path="/blog/" />
+                    <Route element={<LoginPage />} path="/blog-admin/" />
+                    <Route element={<PrivacyPolicy />} path="/privacy-policy/" />
+                    <Route element={<TermsOfService />} path="/terms-of-services/" />
+                    <Route path="blog/article/:id/" element={<SingleArticleView/>} />
+                    <Route path="*" element={<NotFound />} />
+                </Route>
+                
+                
                 <Route element={<DashboardLayout />}>
                     <Route
                         path="dashboard/"
@@ -50,6 +55,9 @@ const Layout = () => {
                         />
                 </Route>
 
+            </Routes>
+            <Routes>
+                
             </Routes>
         </BrowserRouter>
     );
