@@ -12,7 +12,6 @@ import { ArticleList } from "./components/blog/articleList";
 import CreateArticle from "./components/createArticleForm";
 import { SingleArticleView } from "./components/singleArticleView";
 import { Toaster } from "./components/ui/toaster";
-import { Navbar } from "./components/navbar";
 import MainLayout from "./mainLayout";
 
 const Layout = () => {

@@ -33,14 +33,13 @@ const SideMenu: React.FC<SideMenuProps> = ({ data, onMenuClick }) => {
         </div>
         <button onClick={toggleMenu} className="text-2xl">
           {menuOpen ? (
-            <span>&#x2715; {/* X icon to close menu */}</span>
+            <span>&#x2715;</span>
           ) : (
-            <span>&#9776; {/* Hamburger icon to open menu */}</span>
+            <span>&#9776;</span>
           )}
         </button>
       </div>
 
-      {/* Sidebar for large screens and mobile sliding menu */}
       <div
         className={`fixed md:static md:flex z-50 top-0 left-0 h-full w-52 bg-white p-5 border-r shadow-md transform ${
           menuOpen ? "translate-x-0 " : "-translate-x-full"
@@ -54,7 +53,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ data, onMenuClick }) => {
                 className="w-full text-left hover:bg-gray-100 p-2 rounded block"
                 onClick={() => {
                   onMenuClick();
-                  setMenuOpen(false); // Close the menu after clicking on an item
+                  setMenuOpen(false); 
                 }}
               >
                 {item.name}
@@ -64,7 +63,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ data, onMenuClick }) => {
           <li>
             <Button className="w-full" onClick={() => {
               navigate("/");
-              setMenuOpen(false); // Close menu on button click
+              setMenuOpen(false); 
             }}>Marketplace</Button>
           </li>
           <li>
@@ -73,7 +72,6 @@ const SideMenu: React.FC<SideMenuProps> = ({ data, onMenuClick }) => {
         </ul>
       </div>
 
-      {/* Overlay when the menu is open in mobile */}
       {menuOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-40 md:hidden"
