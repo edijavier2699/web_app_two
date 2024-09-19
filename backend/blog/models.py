@@ -4,7 +4,6 @@ from django.utils import timezone
 
 class Article(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
     subtitle = models.TextField(null=True, blank=True)
     first_section = models.TextField()
     day_posted = models.DateTimeField(auto_now_add=True)

@@ -148,7 +148,6 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
       const articleDataToSave = {
         ...articleData,
         image_urls: updatedImageUrls,
-        slug: articleData.title.toLowerCase().replace(/ /g, '-'),
       };
 
       const accessToken = await getAccessTokenSilently();
@@ -201,9 +200,7 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
         const articleDataToSave = {
           ...articleData,
           image_urls: updatedImages,
-          slug: articleData.title.toLowerCase().replace(/ /g, '-'),
         };
-
         const config = {
           headers: {
             'Content-Type': 'application/json',
