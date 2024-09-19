@@ -109,7 +109,7 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
       throw new Error('Failed to upload image');
     }
   };
-
+  
   const deleteFromCloudinary = async (publicId: string) => {
     try {
       const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}blog/delete-image/`, {
@@ -208,7 +208,7 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
           },
         };
 
-        await axios.put(`${import.meta.env.VITE_APP_BACKEND_URL}blog/articles/${article?.id}/edit/`, articleDataToSave, config);
+        await axios.put(`${import.meta.env.VITE_BACKEND_URL}blog/articles/${article?.id}/edit/`, articleDataToSave, config);
         console.log('Artículo actualizado con éxito.');
       }
     } catch (error) {

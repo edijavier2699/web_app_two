@@ -6,6 +6,8 @@ import axios from 'axios';
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import CreateArticle from '../createArticleForm';
+import { useToast } from "@/components/ui/use-toast";
+
 
 interface AllArticlesCardProps {
   imageSrc?: string;  // Make imageSrc optional
@@ -29,6 +31,7 @@ interface Article {
 }
 
 export const AllArticlesCard: React.FC<AllArticlesCardProps> = ({ imageSrc, title, link, articleId, onArticleDeleted, views }) => {
+  const { toast } = useToast();
   const { getAccessTokenSilently } = useAuth0();
   const [openDialog, setOpenDialog] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -41,11 +44,24 @@ export const AllArticlesCard: React.FC<AllArticlesCardProps> = ({ imageSrc, titl
   const handleDelete = async () => {
     try {
       const token = await getAccessTokenSilently();
-      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}blog/articles/${articleId}/delete/`, {
+      const response = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}blog/articles/${articleId}/delete/`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
-      });     
+      }); 
+      if (response.status === 200) {
+        toast({
+          title: "Success",
+          description: "You deleted this article!",
+          variant: "default",
+        });
+      }else {
+        toast({
+          title: "Error",
+          description: "Failed to delete the article.",
+          variant: "destructive",
+        });
+      }   
       onArticleDeleted(articleId);
       setOpenDialog(false);
     } catch (error) {
