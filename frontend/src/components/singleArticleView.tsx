@@ -11,7 +11,8 @@ export interface Article {
   second_section: string;
   third_section: string;
   fourth_section?: string;  
-  five_section?: string;  
+  five_section?: string;
+  conclusion?:string;  
   image_urls: { url: string }[];  
 }
 
@@ -65,7 +66,7 @@ export const SingleArticleView: React.FC = () => {
     DOMPurify.sanitize(html, { USE_PROFILES: { html: true }, ALLOWED_TAGS: ['ol', 'li', 'ul', 'p', 'img'] });
 
   return (
-    <article className="px-8 mt-12" id="singleArticleView">
+    <article className=" mt-12" id="singleArticleView">
       <header className="text-center mb-8">
         <p className="font-bold text-lg text-[#C8E870] mb-4">Investing Fundamentals</p>
         <p className="text-[27px] md:text-[37px]  md:w-[60%] mx-auto font-bold mb-4">{article.title}</p>
@@ -159,6 +160,13 @@ export const SingleArticleView: React.FC = () => {
          {article.five_section && (
           <article>
             <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.five_section) }} />
+          </article>
+        )}
+
+        {/*Conclusion */}
+        {article.conclusion && (
+          <article>
+            <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.conclusion) }} />
           </article>
         )}
       </section>
