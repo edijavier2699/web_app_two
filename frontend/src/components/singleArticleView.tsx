@@ -58,7 +58,7 @@ export const SingleArticleView: React.FC = () => {
   }
 
   if (!article) {
-    return <div className="text-center">No article found</div>;
+    return <div className="text-center">No article found yet</div>;
   }
 
   const sanitizeHTML = (html: string) => 
