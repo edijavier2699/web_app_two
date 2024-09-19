@@ -93,4 +93,8 @@
   list-style-type: disc; 
   padding-left: 50px; 
 }
+#singleArticleView h2 {
+  font-size: 27px; 
+}
+
 

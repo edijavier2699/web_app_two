@@ -68,7 +68,7 @@ export const SingleArticleView: React.FC = () => {
     <article className="px-8 mt-12" id="singleArticleView">
       <header className="text-center mb-8">
         <p className="font-bold text-lg text-[#C8E870] mb-4">Investing Fundamentals</p>
-        <h1 className="text-4xl md:w-[60%] mx-auto font-bold mb-8">{article.title}</h1>
+        <h1 className="md:text-[43px] md:w-[60%] mx-auto font-bold mb-8">{article.title}</h1>
       </header>
 
       {/* Main Image */}
