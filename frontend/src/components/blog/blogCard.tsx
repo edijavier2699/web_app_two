@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 
 interface BlogCardProps {
-  imageUrl: string;
+  imageUrl?: string; // Hacer opcional
   title: string;
   description: string;
   day_posted: string;
@@ -21,13 +21,15 @@ export const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, title, description
 
   const sanitizedDescription = DOMPurify.sanitize(description);
 
+  // Placeholder image in case imageUrl is not provided
+  const placeholderImage = "https://via.placeholder.com/600x400.png?text=No+Image+Available";
 
   return (
     <article className="flex flex-col my-5 overflow-hidden transition-transform duration-300">
       <aside className="w-full h-[300px]">
         <img
           alt={title}
-          src={imageUrl}
+          src={imageUrl || placeholderImage}  // Fallback to placeholder if imageUrl is not available
           className="w-full h-full object-cover rounded-lg"
         />
       </aside>

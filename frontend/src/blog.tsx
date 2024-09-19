@@ -6,7 +6,7 @@ import { BlogSubscriberForm } from './components/blogSusbcribeForm';
 
 interface BlogPost {
   id: number;
-  image_urls: { url: string }[];  
+  image_urls?: { url: string }[];  // Hacer opcional
   title: string;
   first_section: string;
   day_posted: string;
@@ -44,12 +44,13 @@ export const Blog = () => {
           Sign up for the Tokunize platform to gain full access to our product offerings, thought leadership and more.
         </p>
         <div className="flex items-center flex-col justify-center">
-          <BlogSubscriberForm/>
+          <BlogSubscriberForm />
           <span className="text-sm text-gray-400 mt-2">We care about your data in our  <a href="#" className="underline">Privacy Policy</a></span>
         </div>
       </div>
+
       <div className="flex flex-col md:flex-row mt-[64px] px-[16px] md:px-[60px]">
-        <aside className="flex  md:w-[30%] flex-col space-y-3 pr-0 md:pr-[64px] mb-8 md:mb-0">
+        <aside className="flex md:w-[30%] flex-col space-y-3 pr-0 md:pr-[64px] mb-8 md:mb-0">
           <p className="text-[#C8E870] text-sm font-bold">Blog Categories</p>
           {/* Search Bar */}
           <div className="relative mb-4">
@@ -65,6 +66,7 @@ export const Blog = () => {
             <li className="bg-[#F3F4F7] w-full font-semibold rounded-md px-3 py-1">View All</li>
           </ul>
         </aside>
+
         <article className="w-full">
           <article className="flex flex-col lg:flex-row overflow-hidden transition-transform duration-300 mb-8">
             <aside className="w-full lg:w-[60%] h-[250px] lg:h-[380px] mb-4 md:mb-0">
@@ -92,16 +94,23 @@ export const Blog = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto">
             {filteredPosts.length > 0 ? (
-              filteredPosts.map((post) => (
-                <BlogCard
-                  key={post.id}
-                  imageUrl={post.image_urls[0].url}
-                  title={post.title}
-                  description={post.first_section}
-                  day_posted={post.day_posted}
-                  article_id={post.id}
-                />
-              ))
+              filteredPosts.map((post) => {
+                // Verificar si la imagen existe, de lo contrario usar un placeholder
+                const imageUrl = post.image_urls && post.image_urls.length > 0
+                  ? post.image_urls[0].url
+                  : 'https://via.placeholder.com/400';  // Imagen de placeholder
+
+                return (
+                  <BlogCard
+                    key={post.id}
+                    imageUrl={imageUrl}
+                    title={post.title}
+                    description={post.first_section}
+                    day_posted={post.day_posted}
+                    article_id={post.id}
+                  />
+                );
+              })
             ) : (
               <p className="text-center col-span-2">No blog posts available</p>
             )}

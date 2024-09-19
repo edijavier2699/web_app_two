@@ -10,8 +10,8 @@ interface Article {
   slug: string;
   title: string;
   first_section: string;
-  image_urls: { url: string }[];  
-  views: number
+  image_urls?: { url: string }[];  // Hacer opcional
+  views: number;
 }
 
 export const ArticleList = () => {
@@ -64,17 +64,23 @@ export const ArticleList = () => {
         <div className="p-6 text-center text-red-500">{error}</div>
       ) : (
         <div className="p-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
-            <AllArticlesCard
-              key={article.id} 
-              views={article.views}
-              imageSrc={article.image_urls[0].url || 'https://via.placeholder.com/400'}
-              title={article.title}
-              link={`/blog/article/${article.id}`}
-              articleId={article.id} 
-              onArticleDeleted={handleArticleDeleted}
-            />
-          ))}
+          {articles.map((article) => {
+            const imageUrl = article.image_urls && article.image_urls.length > 0
+              ? article.image_urls[0].url // Si existe y tiene al menos un elemento
+              : 'https://via.placeholder.com/400'; // Placeholder
+
+            return (
+              <AllArticlesCard
+                key={article.id} 
+                views={article.views}
+                imageSrc={imageUrl}
+                title={article.title}
+                link={`/blog/article/${article.id}`}
+                articleId={article.id} 
+                onArticleDeleted={handleArticleDeleted}
+              />
+            );
+          })}
         </div>
       )}
     </section>

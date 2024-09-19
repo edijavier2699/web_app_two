@@ -8,13 +8,14 @@ import { Button } from '@/components/ui/button';
 import CreateArticle from '../createArticleForm';
 
 interface AllArticlesCardProps {
-  imageSrc: string;
+  imageSrc?: string;  // Make imageSrc optional
   title: string;
   link: string;
   articleId: number; 
   onArticleDeleted: (id: number) => void;
   views: number; 
 }
+
 interface Article {
   id?: string;
   title: string;
@@ -33,6 +34,9 @@ export const AllArticlesCard: React.FC<AllArticlesCardProps> = ({ imageSrc, titl
   const [isEditing, setIsEditing] = useState(false);
   const [articleData, setArticleData] = useState<Article | null>(null); 
   const navigate = useNavigate();
+
+  // Placeholder image
+  const placeholderImage = "https://via.placeholder.com/300x200.png?text=No+Image+Available";
 
   const handleDelete = async () => {
     try {
@@ -58,12 +62,16 @@ export const AllArticlesCard: React.FC<AllArticlesCardProps> = ({ imageSrc, titl
       console.error('Error fetching article data:', error);
     }
   };
-  
 
   return (
     <>
       <article className="relative bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
-        <img src={imageSrc} alt={title} className="w-full h-48 object-cover" />
+        {/* If imageSrc is not provided, use placeholder image */}
+        <img 
+          src={imageSrc || placeholderImage} 
+          alt={title} 
+          className="w-full h-48 object-cover" 
+        />
 
         {/* Action Buttons */}
         <div className="absolute top-2 right-2 flex items-center space-x-4">
