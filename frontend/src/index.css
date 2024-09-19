@@ -97,4 +97,15 @@
   font-size: 27px; 
 }
 
+@media (max-width:768px) {
+  #singleArticleView h2 {
+    font-size: 23px; 
+  }
+  #singleArticleView ul, ol {
+    list-style-type: disc; 
+    padding-left: 30px; 
+  }
+}
+
+
 
