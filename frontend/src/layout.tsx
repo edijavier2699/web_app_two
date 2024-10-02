@@ -1,18 +1,20 @@
-import App from "./App";
+import App from "./views/App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PrivacyPolicy from "./privacyPolicy";
-import TermsOfService from "./termsOfServices";
-import { Blog } from "./blog";
-import { LoginPage } from "./loginPage";
-import { NotFound } from "./notFound";
+import PrivacyPolicy from "./components/privacyPolicy";
+import TermsOfService from "./components/termsOfServices";
+import { Blog } from "./views/blog";
+import { LoginPage } from "./views/loginPage";
+import { NotFound } from "./components/notFound";
 import { BlogOverview } from "./components/blogOverview";
 import DashboardLayout from "./dashboardLayout";
-import ProtectedRoute from "./privateRoute";
+import ProtectedRoute from "./components/privateRoute";
 import { ArticleList } from "./components/blog/articleList";
 import CreateArticle from "./components/createArticleForm";
 import { SingleArticleView } from "./components/singleArticleView";
 import { Toaster } from "./components/ui/toaster";
 import MainLayout from "./mainLayout";
+import { FAQPage } from "./views/faq";
+import { FaqSinglePage } from "./views/faqSinglePage";
 
 const Layout = () => {
 
@@ -23,6 +25,8 @@ const Layout = () => {
                 <Route element={<MainLayout/>}>
                     <Route element={<App />} path="/" />
                     <Route element={<Blog />} path="/blog/" />
+                    <Route element={<FAQPage />} path="/faq/"/>
+                    <Route path="/faq-category/:id/" element={<FaqSinglePage />} />
                     <Route element={<LoginPage />} path="/blog-admin/" />
                     <Route element={<PrivacyPolicy />} path="/privacy-policy/" />
                     <Route element={<TermsOfService />} path="/terms-of-services/" />

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BlogCard } from "@/components/blog/blogCard";
-import { BlogSubscriberForm } from './components/blogSusbcribeForm';
+import { BlogSubscriberForm } from '../components/blogSusbcribeForm';
 
 interface BlogPost {
   id: number;

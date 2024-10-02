@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { useUser } from './components/userProvider';
+import { useUser } from './userProvider';
 
 interface ProtectedRouteProps {
   element: React.ReactElement;

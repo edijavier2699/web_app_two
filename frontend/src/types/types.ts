@@ -4,3 +4,12 @@ export interface NavigationItem {
     current: boolean;
   }
   
+ export  interface FaqCategory {
+    title: string;
+    description: string;
+    path: string;
+    id:number,
+
+  }
+
+ 

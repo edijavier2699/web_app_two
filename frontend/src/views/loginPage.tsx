@@ -1,4 +1,4 @@
-import { LoginButton } from "./components/loginBtn";
+import { LoginButton } from "../components/loginBtn";
 
 export const LoginPage = () => {
   return (

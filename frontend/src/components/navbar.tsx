@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { WaitlistModal } from './waitlist';
-import SmallLogo from "../assets/logo.png"
+import SmallLogo from "../assets/logo.png";
 import { useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';  // Import Auth0 hook
 
@@ -12,6 +12,7 @@ type NavigationItem = {
 
 const navigation: NavigationItem[] = [
   { name: 'Learn', href: "/blog/", current: false },
+  { name: 'FAQ', href: "/faq/", current: false },
   { name: 'Waitlist', href: '#', current: false }
 ];
 
@@ -30,8 +31,8 @@ export const Navbar: React.FC = () => {
     : navigation;
 
   return (
-    <nav className='md:px-[60px] py-5 border md:border-0 '>
-      <div className="mx-auto ">
+    <nav className='md:px-[60px] py-5 border md:border-0'>
+      <div className="mx-auto">
         <div className="relative flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex flex-1 px-[20px] md:px-0 justify-start sm:items-stretch sm:justify-start">
@@ -45,7 +46,7 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden sm:flex px-[20px] md:px-0 sm:space-x-4 sm:ml-auto">
+          <div className="hidden md:flex px-[20px] md:px-0 sm:space-x-4 sm:ml-auto">
             {authenticatedNavigation.map((item) => (
               item.name === 'Waitlist' ? (
                 <div key={item.name}>
@@ -67,8 +68,8 @@ export const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="absolute right-0 px-[20px]  flex px-2 items-center justify-end sm:hidden">
+          {/* Mobile menu button (visible only on small screens) */}
+          <div className="absolute right-0 px-[20px] flex px-2 items-center justify-end md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-[#C8E870] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -91,7 +92,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-[#C8E870] " id="mobile-menu">
+        <div className="bg-[#C8E870] md:hidden" id="mobile-menu">
           <div className="p-3 space-y-3 w-full">
             {authenticatedNavigation.map((item) => (
               item.name === 'Waitlist' ? (
@@ -105,7 +106,7 @@ export const Navbar: React.FC = () => {
                   aria-current={item.current ? 'page' : undefined}
                   className={classNames(
                     item.current ? 'bg-[#C8E870] text-2xl text-black' : 'flex items-center justify-center text-xl font-semibold mx-auto hover:bg-[#A0CC28] duration-300 ease-in-out',
-                    'rounded-md px-9 py-2   font-medium duration-300 ease-in-out'
+                    'rounded-md px-9 py-2 font-medium duration-300 ease-in-out'
                   )}
                 >
                   {item.name}

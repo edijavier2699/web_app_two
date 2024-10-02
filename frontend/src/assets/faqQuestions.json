@@ -1,0 +1,962 @@
+[
+  {
+    "categoryId": 1,
+    "categoryName": "What We Do",
+    "questions": [
+      {
+        "id": "1",
+        "title": "What is Tokunize?",
+        "content": "Tokunize is an innovative platform that democratizes access to premium real estate investment opportunities for all investors."
+      },
+      {
+        "id": "2",
+        "title": "What is Tokunize offering?",
+        "content": "With Tokunize, you can invest in carefully vetted Commercial Real Estate opportunities, starting with just £1,000."
+      },
+      {
+        "id": "3",
+        "title": "How does Tokunize work?",
+        "content": "Tokunize enables various investors to participate in commercial real estate investments through a vetted platform."
+      },
+      {
+        "id": "4",
+        "title": "What makes Tokunize secure?",
+        "content": "We prioritize security through due diligence, using blockchain technology for secure and transparent transactions."
+      },
+      {
+        "id": "5",
+        "title": "What makes Tokunize different?",
+        "content": "Lower minimum investments and instant liquidity differentiate us from traditional real estate investing."
+      },
+      {
+        "id": "6",
+        "title": "What am I investing in?",
+        "content": "You are purchasing fractional ownership in carefully vetted commercial real estate properties."
+      },
+      {
+        "id": "7",
+        "title": "What happens if Tokunize goes out of business?",
+        "content": "Your investment remains secure due to recorded ownership on the blockchain and independent legal entity structures."
+      },
+      {
+        "id": "8",
+        "title": "What happens when the blockchain goes down?",
+        "content": "We maintain up-to-date transaction and ownership records on our platform to ensure accuracy and accessibility."
+      },
+      {
+        "id": "9",
+        "title": "What’s the legal standing of Property Shareholders in relation to asset ownership?",
+        "content": "Tokens represent a fractional interest in separate legal entities owning real estate assets."
+      },
+      {
+        "id": "10",
+        "title": "Do you have a mobile app?",
+        "content": "The Tokunize marketplace is currently a web app, with plans to develop a mobile app soon."
+      },
+      {
+        "id": "11",
+        "title": "How do I contact Tokunize?",
+        "content": "For inquiries, email Investor@tokunize.com or use our contact form; our team responds within 2 hours."
+      }
+    ]
+  },
+    {
+      "categoryId": 4,
+      "categoryName": "Asset Management",
+      "questions": [
+        {
+          "id": "1",
+          "title": "How are the properties managed?",
+          "content": "Properties are managed by professional management service providers verified and approved by Tokunize."
+        },
+        {
+          "id": "2",
+          "title": "Will Tokunize expand to tokenize property assets in other regions?",
+          "content": "Yes, Tokunize plans to include property assets from other regions within the next three years, starting with the UK market."
+        },
+        {
+          "id": "3",
+          "title": "What happens if the property is destroyed?",
+          "content": "Each property must have appropriate insurance coverage at replacement cost and reserves for such incidents."
+        },
+        {
+          "id": "4",
+          "title": "Who is insured?",
+          "content": "The insurance policy covers the legal entity that owns the property, protecting it in case of damage or loss."
+        }
+      ]
+    },
+    {
+      "categoryId": 5,
+      "categoryName": "Tokenization",
+      "questions": [
+        {
+          "id": "1",
+          "title": "What is tokenization?",
+          "content": "Tokenization is the process of converting traditional equity holdings into digital tokens that represent real, tradeable assets— in our case, ownership of real estate. These digital shares, known as 'tokens', enable investors to buy, sell, and transfer digital assets online efficiently and securely."
+        },
+        {
+          "id": "2",
+          "title": "Why tokenize real estate?",
+          "content": "Tokenizing real estate addresses several challenges in traditional investment management, lowering the monetary barrier to entry for investors, reducing administrative costs for asset owners, and compressing the closing and settlement period from days to mere seconds."
+        },
+        {
+          "id": "3",
+          "title": "How do you tokenize real estate?",
+          "content": "By utilizing a Special Purpose Vehicle (SPV), real estate owners and developers can tokenize their properties through a blockchain-based system, creating digital tokens that represent fractional ownership."
+        },
+        {
+          "id": "4",
+          "title": "What currency is used for transactions?",
+          "content": "All deals are executed using smart contracts with our preferred stablecoin, USDC, which is 1:1 backed by USD and regularly audited for proof of reserves."
+        },
+        {
+          "id": "5",
+          "title": "How do real estate owners, portfolio owners, and fund managers benefit from tokenization?",
+          "content": "Our tokenized model offers several key benefits including superior ROI, increased liquidity, cost reduction, faster settlements, improved management, and resolution of procedural inefficiencies."
+        },
+        {
+          "id": "6",
+          "title": "How do real estate investors benefit from tokenization?",
+          "content": "Investors benefit from enhanced liquidity, lower minimum investment, increased flexibility, enhanced security, automated processing, and streamlined performance analysis."
+        },
+        {
+          "id": "7",
+          "title": "How does tokenization provide liquidity for real estate assets?",
+          "content": "Tokenization allows property owners to break down traditional equity into smaller tokens, attracting a larger pool of investors and increasing market participation, thus enhancing overall liquidity."
+        },
+        {
+          "id": "8",
+          "title": "Is tokenizing real estate legal?",
+          "content": "Yes, tokenizing real estate is legal as we digitize the recordation of ownership interest using digital tokens, similar to shared equity ownership."
+        },
+        {
+          "id": "9",
+          "title": "Who can buy tokenized real estate?",
+          "content": "Currently, only accredited investors can access our platform due to regulatory requirements, but we are working to create a marketplace for a broader range of investors."
+        },
+        {
+          "id": "10",
+          "title": "Who can onboard property onto our marketplace?",
+          "content": "Commercial property owners and/or brokers acting on their behalf."
+        },
+        {
+          "id": "11",
+          "title": "How do traditional REITs differ from a tokenized asset?",
+          "content": "Tokenization allows for direct ownership in single assets, customized diversification, increased cost efficiency, and reduced intermediary costs compared to traditional REITs."
+        },
+        {
+          "id": "12",
+          "title": "Can you refinance an asset through tokenization?",
+          "content": "Tokenization can be an alternative to refinancing, allowing new investors to provide capital to eliminate existing debt obligations."
+        },
+        {
+          "id": "13",
+          "title": "When dealing with digital real estate, who verifies the capital structure?",
+          "content": "Blockchain technology provides an immutable ledger of ownership, ensuring the integrity of each deal, with Tokunize Management acting as an agent for all property shareholders."
+        },
+        {
+          "id": "14",
+          "title": "Are there any restrictions on when holders can sell ownership once an asset is tokenized?",
+          "content": "Tokens are not tradable during the initial offering period, which lasts between 15 to 30 days, after which they become tradeable."
+        },
+        {
+          "id": "15",
+          "title": "Does Tokunize offer tokenization for single-family residences?",
+          "content": "No, Tokunize currently focuses on commercial real estate and lists seven types of properties for tokenization."
+        },
+        {
+          "id": "16",
+          "title": "Does each property have its own unique token?",
+          "content": "Yes, each property is assigned its own unique security tokens representing ownership within that specific property."
+        },
+        {
+          "id": "17",
+          "title": "How long does a crowd sale last?",
+          "content": "Typically, a crowd sale lasts for 15 days or more, defined by the asset owner, or until the minimum goal is met."
+        },
+        {
+          "id": "18",
+          "title": "What happens if a crowd sale goal is not met?",
+          "content": "If the minimum goal is not met, all funds will be returned to investors, and the property will remain with the current owner."
+        },
+        {
+          "id": "19",
+          "title": "What are security tokens?",
+          "content": "Security tokens are financial instruments that represent ownership in an asset, offering enhanced transparency and security on a blockchain."
+        },
+        {
+          "id": "20",
+          "title": "How can I transact in real estate property shares?",
+          "content": "You can buy tokens in the marketplace or sell them through your portfolio by setting a desired price."
+        },
+        {
+          "id": "21",
+          "title": "How does Tokunize ensure financial stability?",
+          "content": "Tokunize has a Capital Reserve Policy with operational and risk management reserves to protect against operational challenges and market risks."
+        },
+        {
+          "id": "22",
+          "title": "Can property tokens be listed outside the Tokunize platform?",
+          "content": "No, property tokens cannot be listed on any securities exchanges or brokers outside of the Tokunize platform."
+        }
+      ]
+    },
+    {
+      "categoryId": 6,
+      "categoryName": "Investing Basics",
+      "questions": [
+        {
+          "id": "1",
+          "title": "Is there a minimum investment?",
+          "content": "Yes, the minimum investment on the platform is £1,000."
+        },
+        {
+          "id": "2",
+          "title": "What is my minimum deposit?",
+          "content": "There is no limit on the amount you can deposit into your account. However, the minimum balance required to make an investment is £1,000."
+        },
+        {
+          "id": "3",
+          "title": "How do I fund my investment?",
+          "content": "The primary way to fund your investment is through an ACH transaction from a linked bank account. You can link your bank account using Stripe for a seamless funding process."
+        },
+        {
+          "id": "4",
+          "title": "How does single direct investment work?",
+          "content": "A single direct investment refers to investing in a single real estate asset, defined as a property excluding residential properties with fewer than four units. Our platform enables you to invest directly in these assets without intermediaries, simplifying the investment process."
+        },
+        {
+          "id": "5",
+          "title": "Can Tokunize provide me investment advice?",
+          "content": "No, Tokunize is a technology services company and is not engaged in providing investment services. We are not authorized to offer investment, tax, legal, or other advice."
+        },
+        {
+          "id": "6",
+          "title": "How do I diversify my investments?",
+          "content": "Tokunize is designed to facilitate greater diversification by allowing you to select from a varied group of property types including office buildings, multifamily properties, mixed-use developments, hospitality, retail, warehouse, and industrial assets."
+        },
+        {
+          "id": "7",
+          "title": "What type of user accounts can you set up?",
+          "content": "Tokunize offers the following types of user accounts: Individual Accounts, Joint Accounts, Trust Accounts, and Entity Accounts."
+        },
+        {
+          "id": "8",
+          "title": "Can my Financial Advisor, broker, or Wealth Manager set up an account on my behalf?",
+          "content": "Yes, your financial advisor or wealth manager can set up an account and trade on your behalf by signing up on the Tokunize platform."
+        }
+      ]
+    },
+    {
+      "categoryId": 7,
+      "categoryName": "Identity Verification",
+      "questions": [
+        {
+          "id": "1",
+          "title": "Who is eligible to invest?",
+          "content": "Currently, only accredited investors can invest with Tokunize. However, we plan to expand access to all retail investors in the future. Tokunize integrates Accreditation Verification, KYC, and AML compliance services to automate the investor background check process."
+        },
+        {
+          "id": "2",
+          "title": "What is KYC & AML?",
+          "content": "KYC (Know Your Customer) and AML (Anti-Money Laundering) are regulatory requirements that help us understand our customers and prevent illegal activities. Our KYC & AML policy combines legal obligations with our team’s measures to ensure compliance. Before using our platform, you must be verified and approved. This entire process is completed online, where you will be prompted to provide or verify the necessary information and electronically acknowledge any requirements related to KYC and AML."
+        },
+        {
+          "id": "3",
+          "title": "Do I need to be accredited to invest?",
+          "content": "Yes, currently you must be a verified accredited investor to invest on our platform. We plan to open our platform to retail investors in the near future."
+        },
+        {
+          "id": "4",
+          "title": "Who can invest with Tokunize?",
+          "content": "Any UK or international citizen can invest with us, provided that our third-party accreditation verification system approves and confirms their accreditation status. Our digital model allows Tokunize to be open to investors all over the world."
+        },
+        {
+          "id": "5",
+          "title": "Why do I need to give my National Insurance Number?",
+          "content": "This requirement applies only to UK investors. We are legally obligated to report your investments to HMRC or the appropriate regulators for tax reporting purposes. Your National Insurance Number is also used to send out tax forms at the end of each period. Additionally, it serves as an identity verification measure for all UK investors."
+        },
+        {
+          "id": "6",
+          "title": "How does Tokunize categorize its security tokens?",
+          "content": "The Tokunize platform uses a security token standard (ERC 3643) for its security token on the Ethereum network. Unlike many companies operating in the digital asset space, we adhere to the principle that all of our property shares constitute 'securities' under applicable UK law. Consequently, each offering conducted through our site is made in accordance with applicable law and relevant exemptions."
+        },
+        {
+          "id": "7",
+          "title": "What authorities regulate Tokunize and its offerings?",
+          "content": "Tokunize operates as a technology services provider and is currently not licensed or regulated by any financial services authorities or self-regulatory organizations, in accordance with applicable regulatory exemptions and guidance. However, all issuances and offerings made available through our platform are subject to securities laws and the regulations administered by the Financial Conduct Authority (FCA). Tokunize is in the process of registering as an Appointed Representative."
+        }
+      ]
+    },
+    {
+      "categoryId": 8,
+      "categoryName": "Deposits & Withdrawals",
+      "questions": [
+        {
+          "id": "1",
+          "title": "What sources can I use to deposit money into my account?",
+          "content": "Investors can deposit money into their digital wallets by connecting a debit card, bank account, or using a third-party payment provider."
+        },
+        {
+          "id": "2",
+          "title": "Why do I need to connect a bank account?",
+          "content": "Connecting a bank account enables you to transfer funds to and from your online wallet/account. The primary method for these transactions is through ACH transfers from your linked bank account. To fund your account or withdraw money, having a linked bank account is necessary."
+        },
+        {
+          "id": "3",
+          "title": "How do I add or remove a bank account?",
+          "content": "To Add a Bank Account:\n1. Navigate to the 'Wallet' section of your dashboard.\n2. Click the 'Deposit' tab and select the 'Continue' button.\n3. Enter the required information for your bank account and click 'Submit.'\n\nTo Remove a Bank Account:\n1. Go to your bank information section.\n2. Select the account you wish to remove.\n3. Click the trash icon to delete the account."
+        }
+      ]
+    },
+    {
+      "categoryId": 9,
+      "categoryName": "Fees",
+      "questions": [
+        {
+          "id": "1",
+          "title": "What fees does Tokunize charge?",
+          "content": "Tokunize currently charges a 0.5% fee to investors and property owners on the initial transaction, as well as a 0.15% secondary marketplace fee for instant sales."
+        }
+      ]
+    },
+    {
+      "categoryId": 10,
+      "categoryName": "Account Management - Account Basics",
+      "questions": [
+        {
+          "id": "1",
+          "title": "What Is a Wallet?",
+          "content": "Your Tokunize digital wallet securely holds information related to all your transactions on our platform. It allows you to view your account balance, deposit funds, withdraw dividends, and access your transaction history. Additionally, your wallet stores your tokens, representing your ownership in various properties, enabling you to manage and trade these assets within our marketplace."
+        },
+        {
+          "id": "2",
+          "title": "Who has access to my wallet?",
+          "content": "Your wallet and account are secure and accessible only by you. Tokunize will only access your account when you request support for specific issues."
+        },
+        {
+          "id": "3",
+          "title": "What if I lose my private key?",
+          "content": "While cryptocurrencies are notorious for being lost if you lose the private key, Tokunize can ensure the safety of your investment. You don’t ever have to worry about losing access to your payment method; it’s stored permanently, so you mostly need to keep access to your account."
+        },
+        {
+          "id": "4",
+          "title": "What if my wallet gets hacked?",
+          "content": "In the event of a hack, our token standard allows administrators to recover and reverse any tokens that have been improperly transacted. Additionally, our smart contracts include a whitelisting feature that restricts transactions to wallets that have completed KYC verification, minimizing the risk of unauthorized transfers to external accounts. Furthermore, our robust data protection and security procedures are designed to significantly reduce the likelihood of such incidents occurring."
+        },
+        {
+          "id": "5",
+          "title": "How do I withdraw my money?",
+          "content": "To withdraw your money, simply navigate to your Tokunize wallet and select the 'Withdraw' tab. Enter the amount you wish to withdraw and click 'Submit.' It’s that easy!"
+        },
+        {
+          "id": "6",
+          "title": "Can I reinvest my dividends?",
+          "content": "Tokunize’s platform permits reinvestment of dividends in accordance with the terms of a given offering."
+        },
+        {
+          "id": "7",
+          "title": "Can I sell property shares that I own?",
+          "content": "Yes, you can sell your property shares instantly for a 0.5% fee, or you can list and sell them to other users through our secondary marketplace for a 0.15% fee. However, you must wait until the initial offering period for a particular property is complete and the property has reached its funding goal before you can sell your shares."
+        },
+        {
+          "id": "8",
+          "title": "Can I buy property tokens owned by someone else?",
+          "content": "Yes, you can buy property tokens from other users on the Tokunize platform through our secondary marketplace. Simply navigate to the asset you’re interested in to see if any property shares are currently for sale. If a user has listed their property tokens, you can purchase them at the asking price or submit a counteroffer of your choosing."
+        },
+        {
+          "id": "9",
+          "title": "Is the list price on a property share negotiable?",
+          "content": "The price listed by Tokunize for the initial offering is fixed and not negotiable. However, if a user has listed property tokens they already own, you can either purchase those shares at their asking price or submit a counteroffer."
+        },
+        {
+          "id": "10",
+          "title": "How long do I have to negotiate on a property share that is available?",
+          "content": "Each party can make a maximum of two counteroffers per trade. After four counteroffers (two from each party), a decision must be made on the fifth counteroffer to either accept or reject it. Additionally, offers will expire after 24 hours of inactivity."
+        },
+        {
+          "id": "11",
+          "title": "How long are property shares transferred after an accepted offer?",
+          "content": "Property shares are transferred immediately upon acceptance of an offer. We utilize smart contracts to ensure that the process is easy and secure."
+        },
+        {
+          "id": "12",
+          "title": "How quickly will I get my money after selling property tokens?",
+          "content": "Once you sell your property tokens, it takes just a few seconds to minutes for the transactions to be confirmed. After confirmation, you will have immediate access to your funds."
+        },
+        {
+          "id": "13",
+          "title": "Where can I see property shares trading in real time?",
+          "content": "After you’ve invested in an asset, you can view current property tokens being traded in the 'Trade' section of that property. From there, you can counter any offers that you find attractive."
+        },
+        {
+          "id": "14",
+          "title": "What's the difference between traditional redemption and Tokunize?",
+          "content": "With Tokunize, there is no concept of redemptions. Traditional redemptions are typically managed by an issuer and occur in periodic or limited amounts. In contrast, our platform is designed to eliminate redemptions as the primary source of liquidity for investors. Instead, Tokunize connects you directly with other investors for negotiation and transactions, or you can sell instantly for a 0.5% fee."
+        },
+        {
+          "id": "15",
+          "title": "How can I sell my property tokens?",
+          "content": "To sell your property tokens, list your shares by clicking the 'List Tokens' tab within your portfolio. Select the asset you wish to list, specify the quantity of property tokens, and set the price you’re willing to accept. Once you’re satisfied, choose whether to sell instantly for a 0.5% fee or list them for other investors at no fee."
+        },
+        {
+          "id": "16",
+          "title": "How do I withdraw my dividends or sale proceeds?",
+          "content": "Any dividends you receive from a property will be added to your account balance, along with any funds garnered through sales. To withdraw, simply navigate to your Tokunize wallet, select the 'Withdraw' tab, enter the amount you wish to withdraw, and click 'Submit.' It’s that easy!"
+        },
+        {
+          "id": "17",
+          "title": "How long does it take to process a sale?",
+          "content": "Sales are processed quickly, and any dividends you receive will be added to your account balance immediately, along with any funds from sales."
+        },
+        {
+          "id": "18",
+          "title": "How long does it take for money to reach my bank account from my wallet?",
+          "content": "Funds will be transferred from your digital wallet immediately. For a fee, you can choose to withdraw to your bank account immediately. However, if you opt for the standard withdrawal process which has 0% fees, it may take 24-48 hours for the funds to be available in your bank account."
+        },
+        {
+          "id": "19",
+          "title": "How do I make an investment?",
+          "content": "Tokunize is designed to make buying property-backed tokens as easy as a few clicks. Before investing, carefully consider your investment objectives, as Tokunize does not provide financial advice. You can browse our marketplace listings page to view various investment opportunities, filtering by asset type, location, or property token price. Once you’ve chosen an asset, simply click 'Buy' and enter the number of tokens you wish to purchase."
+        },
+        {
+          "id": "20",
+          "title": "How long does it take for my investment to close/order to complete?",
+          "content": "Once an offer is accepted or an investment is placed, it typically takes less than 60 seconds for the sale to process."
+        },
+        {
+          "id": "21",
+          "title": "Is there a maximum amount I can invest per asset?",
+          "content": "Currently, there is no maximum investment limit. However, you should carefully consider the risks associated with over-concentration in any single asset and consult with third-party advisors as necessary."
+        }
+        ,{
+          "id": "22",
+          "title": "What is the sign-up process like?",
+          "content": "You can start the sign-up process by clicking the “Sign-up” button to create your account. You must select ‘Yes’ to the question ‘Are You an Accredited Investor?’ as Tokunize is currently only available to accredited investors or as an ‘Asset Owner/Broker’. Then, complete our streamlined process to finalize your registration."
+        },
+        {
+          "id": "23",
+          "title": "Can I change the name on my account?",
+          "content": "To change the name on your account, please contact the investor relations team at investor@Tokunize.com. Please note that identity verification measures may need to be repeated."
+        },
+        {
+          "id": "24",
+          "title": "Can I transfer my property from one account to another?",
+          "content": "Once you invest in and purchase property shares from a listed property, you cannot transfer that investment. However, you can transact your property tokens with other investors or sell them instantly through our secondary marketplace, which offers instant liquidity."
+        },
+        {
+          "id": "25",
+          "title": "How do I add a beneficiary?",
+          "content": "To add a beneficiary to your account, please contact our investor relations team at investor@Tokunize.com."
+        },
+        {
+          "id": "26",
+          "title": "Can I set up inheritance measures?",
+          "content": "For inheritance, we will need to have the appropriate paperwork and legal proceedings to make sure the rightful heirs have access to your investment. If you’d like to set up inheritance measures, please contact our investor relations team at investor@Tokunize.com for support."
+        },
+        {
+          "id": "27",
+          "title": "How do I change my email address?",
+          "content": "You can change your email address by navigating to your account settings on your dashboard and editing your profile information. Be sure to check for a verification email and follow the instructions to complete the process."
+        },
+        {
+          "id": "28",
+          "title": "How do I update my address?",
+          "content": "To update your address, go to your account settings on your dashboard and edit your profile information accordingly."
+        },
+        {
+          "id": "29",
+          "title": "Where are my account statements?",
+          "content": "Account statements can be found in the 'Documents' section of your dashboard under 'Statements.'"
+        },
+        {
+          "id": "30",
+          "title": "Can I see all my investments at a glance?",
+          "content": "Yes, you can view all of your current investments at a glance by checking the 'Overview' tab on your dashboard. For a more detailed record of your investments, click the 'Assets' tab located in your portfolio."
+        },
+        {
+          "id": "31",
+          "title": "How long does it take to convert the digital currency into USD/GBP?",
+          "content": "Conversion is typically processed quickly, often within a few hours, by our third-party partner."
+        },
+        {
+          "id": "32",
+          "title": "How long does it take to withdraw fiat currency?",
+          "content": "Regular withdrawals are usually completed within 1-3 business days, with same-day transfers available for a small fee."
+        },
+        {
+          "id": "33",
+          "title": "Who has access to the backing money?",
+          "content": "The backing money is held in a secure bank account designed for automated transactions, minimizing human interaction and ensuring security."
+        }
+
+      ]
+    },
+    {
+      "categoryId": 11,
+      "categoryName": "The Wallet",
+      "questions": [
+        {
+          "id": "1",
+          "title": "What Is a Wallet?",
+          "content": "Your Tokunize digital wallet securely holds information related to all your transactions on our platform. It allows you to view your account balance, deposit funds, withdraw dividends, and access your transaction history. Additionally, your wallet stores your tokens, representing your ownership in various properties, enabling you to manage and trade these assets within our marketplace."
+        },
+        {
+          "id": "2",
+          "title": "Who has access to my wallet?",
+          "content": "Your wallet and account are secure and accessible only by you. Tokunize will only access your account when you request support for specific issues."
+        },
+        {
+          "id": "3",
+          "title": "What if I lose my private key?",
+          "content": "While cryptocurrencies are notorious for being lost if you lose the private key, Tokunize can ensure the safety of your investment. You don’t ever have to worry about losing access to your payment method; it’s stored permanently, so you mostly need to keep access to your account."
+        },
+        {
+          "id": "4",
+          "title": "What if my wallet gets hacked?",
+          "content": "In the event of a hack, our token standard allows administrators to recover and reverse any tokens that have been improperly transacted. Additionally, our smart contracts include a whitelisting feature that restricts transactions to wallets that have completed KYC verification, minimizing the risk of unauthorized transfers to external accounts. Furthermore, our robust data protection and security procedures are designed to significantly reduce the likelihood of such incidents occurring."
+        },
+        {
+          "id": "5",
+          "title": "How do I withdraw my money?",
+          "content": "To withdraw your money, simply navigate to your Tokunize wallet and select the 'Withdraw' tab. Enter the amount you wish to withdraw and click 'Submit.' It’s that easy!"
+        },
+        {
+          "id": "6",
+          "title": "Can I reinvest my dividends?",
+          "content": "Tokunize’s platform permits reinvestment of dividends in accordance with the terms of a given offering."
+        },
+        {
+          "id": "7",
+          "title": "Can I sell property shares that I own?",
+          "content": "Yes, you can sell your property shares instantly for a 0.5% fee, or you can list and sell them to other users through our secondary marketplace for a 0.15% fee. However, you must wait until the initial offering period for a particular property is complete and the property has reached its funding goal before you can sell your shares."
+        },
+        {
+          "id": "8",
+          "title": "Can I buy property tokens owned by someone else?",
+          "content": "Yes, you can buy property tokens from other users on the Tokunize platform through our secondary marketplace. Simply navigate to the asset you’re interested in to see if any property shares are currently for sale. If a user has listed their property tokens, you can purchase them at the asking price or submit a counteroffer of your choosing."
+        },
+        {
+          "id": "9",
+          "title": "Is the list price on a property share negotiable?",
+          "content": "The price listed by Tokunize for the initial offering is fixed and not negotiable. However, if a user has listed property tokens they already own, you can either purchase those shares at their asking price or submit a counteroffer."
+        },
+        {
+          "id": "10",
+          "title": "How long do I have to negotiate on a property share that is available?",
+          "content": "Each party can make a maximum of two counteroffers per trade. After four counteroffers (two from each party), a decision must be made on the fifth counteroffer to either accept or reject it. Additionally, offers will expire after 24 hours of inactivity."
+        },
+        {
+          "id": "11",
+          "title": "How long are property shares transferred after an accepted offer?",
+          "content": "Property shares are transferred immediately upon acceptance of an offer. We utilize smart contracts to ensure that the process is easy and secure."
+        },
+        {
+          "id": "12",
+          "title": "How quickly will I get my money after selling property tokens?",
+          "content": "Once you sell your property tokens, it takes just a few seconds to minutes for the transactions to be confirmed. After confirmation, you will have immediate access to your funds."
+        },
+        {
+          "id": "13",
+          "title": "Where can I see property shares trading in real time?",
+          "content": "After you’ve invested in an asset, you can view current property tokens being traded in the 'Trade' section of that property. From there, you can counter any offers that you find attractive."
+        },
+        {
+          "id": "14",
+          "title": "What's the difference between traditional redemption and Tokunize?",
+          "content": "With Tokunize, there is no concept of redemptions. Traditional redemptions are typically managed by an issuer and occur in periodic or limited amounts. In contrast, our platform is designed to eliminate redemptions as the primary source of liquidity for investors. Instead, Tokunize connects you directly with other investors for negotiation and transactions, or you can sell instantly for a 0.5% fee."
+        },
+        {
+          "id": "15",
+          "title": "How can I sell my property tokens?",
+          "content": "To sell your property tokens, list your shares by clicking the 'List Tokens' tab within your portfolio. Select the asset you wish to list, specify the quantity of property tokens, and set the price you’re willing to accept. Once you’re satisfied, choose whether to sell instantly for a 0.5% fee or list them for other investors at no fee."
+        },
+        {
+          "id": "16",
+          "title": "How do I withdraw my dividends or sale proceeds?",
+          "content": "Any dividends you receive from a property will be added to your account balance, along with any funds garnered through sales. To withdraw, simply navigate to your Tokunize wallet, select the 'Withdraw' tab, enter the amount you wish to withdraw, and click 'Submit.' It’s that easy!"
+        },
+        {
+          "id": "17",
+          "title": "How long does it take to process a sale?",
+          "content": "Sales are processed quickly, and any dividends you receive will be added to your account balance immediately, along with any funds from sales."
+        },
+        {
+          "id": "18",
+          "title": "How long does it take for money to reach my bank account from my wallet?",
+          "content": "Funds will be transferred from your digital wallet immediately. For a fee, you can choose to withdraw to your bank account immediately. However, if you opt for the standard withdrawal process which has 0% fees, it may take 24-48 hours for the funds to be available in your bank account."
+        },
+        {
+          "id": "19",
+          "title": "How do I make an investment?",
+          "content": "Tokunize is designed to make buying property-backed tokens as easy as a few clicks. Before investing, carefully consider your investment objectives, as Tokunize does not provide financial advice. You can browse our marketplace listings page to view various investment opportunities, filtering by asset type, location, or property token price. Once you’ve chosen an asset, simply click 'Buy' and enter the number of tokens you wish to purchase."
+        },
+        {
+          "id": "20",
+          "title": "How long does it take for my investment to close/order to complete?",
+          "content": "Once an offer is accepted or an investment is placed, it typically takes less than 60 seconds for the sale to process."
+        },
+        {
+          "id": "21",
+          "title": "Is there a maximum amount I can invest per asset?",
+          "content": "Currently, there is no maximum investment limit. However, you should carefully consider the risks associated with over-concentration in any single asset and consult with third-party advisors as necessary."
+        }
+      ]
+    },
+    {
+      "categoryId": 12,
+      "categoryName": "Asset Owners",
+      "questions": [
+        {
+          "id": "1",
+          "title": "I am a property owner. How can I list my property for sale?",
+          "content": "To list your property, simply visit our Property Owners homepage and click the 'Submit Your Property' button. Fill out our online listing questionnaire, which takes less than five minutes. A member of the Tokunize team will contact you within 48 hours of your submission. If you need further assistance, please reach out to our support team."
+        },
+        {
+          "id": "2",
+          "title": "How is my property evaluated?",
+          "content": "Tokunize employs AI and real estate experts in our due diligence team to thoroughly evaluate properties before approval for our platform. After passing the initial due diligence, property owners will need to submit financial documents, undergo a site inspection, provide market analysis, and meet any additional specific requirements. For more details on property evaluation, feel free to email assetrelations@Tokunize.com."
+        },
+        {
+          "id": "3",
+          "title": "How long does due diligence and evaluation take?",
+          "content": "After submitting your property, Tokunize will initiate due diligence and contact you within 48 hours. The overall process may vary based on the time it takes for the owner to provide necessary documentation. Typically, the process lasts between 3 to 12 days."
+        },
+        {
+          "id": "4",
+          "title": "What Kind of Properties Does Tokunize List?",
+          "content": "Tokunize lists Commercial Real Estate in the following seven categories: Office, Multifamily, Mixed Use, Hospitality, Retail, Warehouse, and Industrial."
+        },
+        {
+          "id": "5",
+          "title": "I am a developer. How can I get my project listed on the platform?",
+          "content": "To list your project, visit our Property Owners homepage and click the 'Submit Your Property' button. Complete our online listing questionnaire, which takes less than five minutes. A member of the Tokunize team will contact you within 24 hours. For further assistance, please contact our support team."
+        },
+        {
+          "id": "6",
+          "title": "Do I have to sell all of my asset or can I retain partial ownership?",
+          "content": "No, you do not have to sell the entire asset. When the asset is tokenized, the owner or developer can sell shares while retaining some equity if desired."
+        },
+        {
+          "id": "7",
+          "title": "How can I Tokenize my existing property with investors?",
+          "content": "If your property has existing investors, there’s no problem as long as they are accredited investors. They can easily be onboarded to our platform."
+        },
+        {
+          "id": "8",
+          "title": "How can tokenization help my existing asset/project?",
+          "content": "Tokenization offers numerous benefits, including increased liquidity, elimination of costly intermediaries, reduced time horizon, potential for quicker and easier closing due to more buyers and smaller shares, flexible entry and exit, significantly lower listing fees, robust property data and information, and increased security, reducing the risk of fraud."
+        },
+        {
+          "id": "9",
+          "title": "How long does an initial offering period last?",
+          "content": "The initial offering period typically lasts between 10 to 15 days or until the minimum goal of property shares sold is met. This duration can vary; higher-priced properties or projects may remain open longer to increase the chances of successful funding."
+        },
+        {
+          "id": "10",
+          "title": "What happens after an offering reaches its goal?",
+          "content": "Once the minimum number of shares has been sold, the funds are released to Tokunize Management LTD. They will perform a traditional closing, and the asset will be transferred to the SPV, which is wholly owned by the property shareholders. Tokunize Management acts on their behalf and appoints new management for the asset."
+        },
+        {
+          "id": "11",
+          "title": "Who is responsible for all FCA offering compliance?",
+          "content": "Tokunize will provide the necessary due diligence and facilitate any required registrations or filings to ensure compliance before listing on the marketplace and starting the offering period."
+        },
+        {
+          "id": "12",
+          "title": "Can the property owner market the sale?",
+          "content": "Yes, the sale is on a public platform, and property owners are encouraged to share the listing profile and market it as they choose."
+        }
+      ]
+    },
+    {
+      "categoryId": 13,
+      "categoryName": "Developers / Asset Managers",
+      "questions": [
+        {
+          "id": "1",
+          "title": "How can we tokenize a portfolio with multiple investors?",
+          "content": "If the investors in your portfolio meet the applicable legal and regulatory requirements (e.g., are accredited investors), they can be onboarded to our platform, allowing your portfolio to be tokenized accordingly."
+        },
+        {
+          "id": "2",
+          "title": "Is there a mechanism for offering redemptions in the form of property shares for assets being tokenized?",
+          "content": "Tokunize’s technology does not support redemptions for investors. Our platform is designed to ensure stable cash flow for projects without the challenges associated with redemptions."
+        },
+        {
+          "id": "3",
+          "title": "Who holds funds during development?",
+          "content": "During development, funds are held by Tokunize Management LTD in a Special Purpose Vehicle (SPV) created for the asset once it is tokenized. Funds are released in tranches as work progresses."
+        },
+        {
+          "id": "4",
+          "title": "How do redemptions affect a project’s financing?",
+          "content": "Since Tokunize’s platform does not support redemptions for investors, you can buy and sell your property tokens on our secondary market as needed, without impacting project financing."
+        },
+        {
+          "id": "5",
+          "title": "How is funding released to a developer?",
+          "content": "For development projects, Tokunize releases funds in tranches that are directly linked to completed work, verified via site inspections. Funds remain in the SPV account during this process."
+        },
+        {
+          "id": "6",
+          "title": "What control mechanisms exist for development funds?",
+          "content": "We protect development funding by implementing tranches. Funds are only released after a specified percentage of materials or work is completed on-site, with progress verified through inspections."
+        },
+        {
+          "id": "7",
+          "title": "Will I be managing an asset even after selling it?",
+          "content": "After a sale, the SPV is wholly owned by the property shareholders, and Tokunize Management will appoint new management for the asset. If your asset was previously owned or managed by an institutional expert, we will not take that management away from you unless you choose to do so. If the asset lacked management or oversight, Tokunize will appoint new management."
+        },
+        {
+          "id": "8",
+          "title": "Will I retain control of the development?",
+          "content": "Yes, you will maintain full control over the direction, construction, and completion of the development project."
+        },
+        {
+          "id": "9",
+          "title": "Is there a minimum amount or percentage the developer needs to participate in the capital stack of an asset being tokenized?",
+          "content": "Yes, every developer is required to invest a certain percentage in the project. This amount varies based on factors such as the developer's experience, project size, and current project stage."
+        },
+        {
+          "id": "10",
+          "title": "What happens after the completion of a project?",
+          "content": "What happens post-completion depends on the type of project. However, the asset remains wholly owned by the property shareholders, who retain their ownership rights."
+        },
+        {
+          "id": "11",
+          "title": "Do I continue to own the asset in the development entity or is there a new entity required?",
+          "content": "A new entity will be required. We create a Special Purpose Vehicle (SPV) for the asset once it is tokenized."
+        },
+        {
+          "id": "12",
+          "title": "Can anyone list a project?",
+          "content": "Anyone can list a project as long as it meets Tokunize’s standards and passes the due diligence process, including identity and verification checks."
+        },
+        {
+          "id": "13",
+          "title": "What are the various project sizes that can be listed?",
+          "content": "There is no minimum or maximum size for projects."
+        },
+        {
+          "id": "14",
+          "title": "Can I list my 'fix and flip' to raise funds?",
+          "content": "No, our services are not designed for single-family rentals. We only list commercial properties, including stable-income properties, redevelopment and ground-up developments, and value-add properties."
+        },
+        {
+          "id": "15",
+          "title": "I am a first-time developer. Can I list my project?",
+          "content": "Unfortunately, no. For development projects, developers must meet certain criteria and have relevant experience."
+        },
+        {
+          "id": "16",
+          "title": "What geographic locations does Tokunize operate in?",
+          "content": "Tokunize currently operates and lists properties solely in the United Kingdom."
+        },
+        {
+          "id": "17",
+          "title": "What is Tokunize’s underwriting process?",
+          "content": "We conduct a thorough underwriting process before listing a property, which includes site inspection, appraisal, and potentially more specific requirements based on the project. For more information, feel free to email assetrelations@Tokunize.com."
+        },
+        {
+          "id": "18",
+          "title": "What is the Tokunize due diligence process?",
+          "content": "Our extensive due diligence process includes document submission, site inspection, and potentially more specific requirements based on the project. Tokunize combines over 50 years of real estate expertise with AI to leverage alternative real-time data. For more information, feel free to email assetrelations@Tokunize.com."
+        },
+        {
+          "id": "19",
+          "title": "Who holds the deed to the asset?",
+          "content": "The deed is held by the SPV created for the asset."
+        },
+        {
+          "id": "20",
+          "title": "How do you ensure each SPV owns the deed on its property?",
+          "content": "We perform a traditional closing when the minimum goal of tokens sold is achieved."
+        },
+        {
+          "id": "21",
+          "title": "What happens if the tenants do not pay rent?",
+          "content": "The management company appointed at the end of the sale will handle day-to-day issues, including rent collection."
+        },
+        {
+          "id": "22",
+          "title": "What happens if there is a major repair needed who foots the bill?",
+          "content": "Tokunize will maintain a capital reserve to address major repairs and other unforeseen expenses."
+        }
+      ]
+    },
+    {
+      "categoryId": 14,
+      "categoryName": "Personal Information & Security",
+      "questions": [
+        {
+          "id": "1",
+          "title": "What information does Tokunize see?",
+          "content": "Tokunize prioritizes user privacy and data security. We utilize pseudo-anonymized identifiers for storing user interactions, minimizing the exposure of personally identifiable information. While we collect additional signup data, we implement robust encryption measures to protect this data both at rest and in transit, ensuring that user information remains secure and confidential."
+        },
+        {
+          "id": "2",
+          "title": "What information does Tokunize retain?",
+          "content": "We retain essential personal information to ensure compliance and smooth operation, including: \n\n- Basic Personal Information: Name, email address, and phone number for account management and communication.\n- Identity Verification Data: Information necessary for KYC (Know Your Customer) compliance, such as government-issued identification and proof of address.\n- Transaction History: Records of user transactions, including token purchases and sales, to maintain accurate ownership and facilitate reporting.\n\nAll retained personal information is stored securely on an isolated server, with strict measures in place to protect user privacy and data security."
+        },
+        {
+          "id": "3",
+          "title": "How secure is my information?",
+          "content": "Your information is highly secure with Tokunize. We employ industry-leading security measures to protect personal data, including:\n\n- Encryption: All personal information is encrypted both in transit and at rest, ensuring that data is inaccessible to unauthorized parties.\n- Secure Storage: User data is stored on isolated servers, separate from our business systems, minimizing the risk of exposure.\n- Advanced Authentication: We utilize Auth0, an industry-standard authentication protocol, which incorporates multi-factor authentication (MFA) for an added layer of security.\n- Regular Security Audits: Our systems undergo periodic security assessments and updates to identify and mitigate potential vulnerabilities.\n\nBy implementing these robust security protocols, we ensure that your data remains confidential and protected against unauthorized access and breaches."
+        },
+        {
+          "id": "4",
+          "title": "What is your privacy policy?",
+          "content": "We are compliant with the General Data Protection Regulation (GDPR). To view our Privacy Policy, click here."
+        },
+        {
+          "id": "5",
+          "title": "What is 2FA?",
+          "content": "Two-Factor Authentication (2FA) is an additional layer of security designed to protect online accounts beyond just a username and password. It requires two forms of verification to access your account, minimizing the risk of unauthorized access."
+        },
+        {
+          "id": "6",
+          "title": "What kinds of 2FA does Tokunize offer?",
+          "content": "Tokunize offers two options for 2FA:\n\n- Authentication Apps: A time-based one-time password (TOTP) generated by the Google or Microsoft Authenticator app.\n- Text Authentication: Verification codes sent to your registered phone number."
+        },
+        {
+          "id": "7",
+          "title": "How do I enable 2FA?",
+          "content": "2FA is mandatory for accessing our platform and is enabled during the onboarding process. You will receive guidance on setting it up as part of your account creation."
+        },
+        {
+          "id": "8",
+          "title": "How do I disable 2FA?",
+          "content": "2FA cannot be disabled on your account. To enhance security, this feature is permanently enabled."
+        },
+        {
+          "id": "9",
+          "title": "What if I lose access to my virtual key app or device?",
+          "content": "If you lose access to your authentication method, you will not lose your funds. However, you will need to verify your identity through our security measures. Once ownership is confirmed, we will burn your existing property tokens and reissue new ones. If you suspect you may have lost access, please contact Tokunize support for assistance."
+        }
+      ]
+    },
+    {
+      "categoryId": 15,
+      "categoryName": "Key Terminology",
+      "questions": [
+        {
+          "id": "1",
+          "title": "What is an inspection contingency?",
+          "content": "Also known as a 'due diligence contingency,' the inspection contingency is a clause sometimes offered in a purchase agreement that grants buyers a predetermined amount of time during escrow to perform any necessary inspections."
+        },
+        {
+          "id": "2",
+          "title": "What is an inspection?",
+          "content": "An inspection happens when buyers pay a licensed professional inspector to visit the home and prepare a report on its condition and any needed repairs. The inspection often happens as part of the due diligence period, so buyers can fully assess if they want to buy a particular home as is, or ask the seller to either complete or pay for certain repairs."
+        },
+        {
+          "id": "3",
+          "title": "What is an earnest money deposit?",
+          "content": "An earnest money deposit (EMD), sometimes referred to as a 'good faith deposit', is the initial funds that a buyer is asked to put down once a seller accepts the buyer’s offer. It shows not only that the buyer is serious about buying, but that they are also willing to put their money where their mouth is. The amount of the EMD can vary between 1 to 5 percent of the sales price. The EMD is often held by an escrow company."
+        },
+        {
+          "id": "4",
+          "title": "What is a purchase and sale agreement (PSA)?",
+          "content": "A purchase and sale agreement is commonly referred to as a written contract between the buyer and seller, which outlines the terms of the parties to sell and purchase real property. When a home is 'under contract', it usually signifies that the buyer and seller have formalized their commitment to sell and purchase the real property."
+        },
+        {
+          "id": "5",
+          "title": "What does IRR mean?",
+          "content": "IRR stands for Internal Rate of Return, which is an annualized return for equity investments that includes cash distributions and appreciation."
+        },
+        {
+          "id": "6",
+          "title": "What is cash on cash return (CoC)?",
+          "content": "The cash return on an investment compared to the amount of cash invested. For example, an investment with cash distributions of £50 on a £1,000 investment has a 5% cash on cash return."
+        },
+        {
+          "id": "7",
+          "title": "What is appreciation?",
+          "content": "A measure of the estimated increase in value of an asset over a time period."
+        },
+        {
+          "id": "8",
+          "title": "What is cap rate?",
+          "content": "The cap rate is the Net Operating Income (NOI) divided by the purchase price. The cap rate is an indicator of the risk and return of a property. It tells you the return of an investment before financing costs."
+        },
+        {
+          "id": "9",
+          "title": "What is Net Operating Income (NOI)?",
+          "content": "Net Operating Income (NOI) is the gross profit of a rental property. It’s calculated as gross rents minus all expenses other than interest."
+        },
+        {
+          "id": "10",
+          "title": "What does CapEx mean?",
+          "content": "CapEx, or Capital Expenditures, are defined as new purchases or major improvements/renovations that extend the life of a property, such as replacing a roof, adding an extension, or finishing the basement. This term also covers equipment and supplies required to make these improvements. Generally, these are one-time, major expenses."
+        },
+        {
+          "id": "11",
+          "title": "What is a single-family home?",
+          "content": "A type of rental property that is designed for just one family to live in. This can be a typical house or townhouse. Duplexes and apartment buildings are considered to be 'multi-family' housing because the property can house multiple families."
+        },
+        {
+          "id": "12",
+          "title": "What is a duplex?",
+          "content": "A duplex is a multi-family home that has two units in the same building. These two units always share a common wall, but the floor plan can vary. Units can be arranged either side by side or stacked on top of one another, each occupying an entire floor or two of the building. Each unit has a separate entrance and there is no interior connection between the two units."
+        },
+        {
+          "id": "13",
+          "title": "What is a triplex?",
+          "content": "A triplex is a multi-family home that has three units in the same building. These three units always share a common wall, but the floor plan can vary. Units can be arranged either side by side or stacked on top of one another, each occupying an entire floor or two of the building. Each unit has a separate entrance and there is no interior connection between the three units."
+        },
+        {
+          "id": "14",
+          "title": "What is diversification?",
+          "content": "The process of investing in different investments to reduce a portfolio's overall risk."
+        },
+        {
+          "id": "15",
+          "title": "What is land?",
+          "content": "Includes undeveloped property, vacant land, and agricultural land (farms, orchards, ranches, and timberland)."
+        },
+        {
+          "id": "16",
+          "title": "What are operating expenses?",
+          "content": "Operating Expenses include all of the anticipated costs for operating the rental property. Some expenses include Insurance, Property Tax, Vacancy, Maintenance, and Property Management."
+        },
+        {
+          "id": "17",
+          "title": "What is residential real estate?",
+          "content": "Any property used for residential purposes. Examples include single-family homes, condos, cooperatives, duplexes, townhouses, and multifamily residences with fewer than five individual units/flats."
+        },
+        {
+          "id": "18",
+          "title": "What is commercial real estate?",
+          "content": "Any property used exclusively for business purposes, such as apartment complexes, gas stations, grocery stores, hospitals, hotels, offices, parking facilities, restaurants, shopping centers, stores, and theaters."
+        },
+        {
+          "id": "19",
+          "title": "What is industrial real estate?",
+          "content": "Any property used for manufacturing, production, distribution, storage, and research and development. Examples include factories, power plants, and warehouses."
+        },
+        {
+          "id": "20",
+          "title": "What is special purpose property?",
+          "content": "Property used by the public, such as cemeteries, government buildings, libraries, parks, places of worship, and schools."
+        },
+        {
+          "id": "21",
+          "title": "What is capital gains tax?",
+          "content": "Capital gain or loss is the difference in the value of a property compared to its purchase price. If there is a gain, it is realised after the asset is sold. A short-term capital gain is one year or less; a long-term gain is more than a year. Both must be claimed on your income taxes, but short-term capital gains have a higher tax rate than long-term capital gains."
+        },
+        {
+          "id": "22",
+          "title": "What are closing costs?",
+          "content": "Closing costs are the fees paid at the end of a real estate transaction. These fees vary depending on where you live, the property you buy, and the type of loan you choose. There are costs associated with inspections, transfer of title, loan origination fees, etc."
+        },
+        {
+          "id": "23",
+          "title": "What is HVAC?",
+          "content": "Heating, Ventilating, and Air Conditioning (HVAC) systems are used to heat and cool a house. Sometimes HVAC units have integrated heating and cooling systems, while other times the HVAC system of a rental property may consist of an air conditioning unit and a separate furnace unit."
+        }
+      ]
+    }
+    
+]
