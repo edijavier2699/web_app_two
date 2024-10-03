@@ -16,6 +16,7 @@ import MainLayout from "./mainLayout";
 import { FAQPage } from "./views/faq";
 import { FaqSinglePage } from "./views/faqSinglePage";
 
+
 const Layout = () => {
 
     return (
