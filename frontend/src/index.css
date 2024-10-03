@@ -96,7 +96,27 @@
 #singleArticleView h2 {
   font-size: 27px; 
 }
+/* Remove default list styles */
+li {
+  list-style: none; /* Removes bullet points */
+  display: inline-flex; /* Allows for proper alignment and spacing */
+  align-items: center; /* Vertically centers items */
+}
 
+/* Optional: Style for separators */
+li + li:before {
+  content: ''; /* Separator between items */
+  display: inline-block; /* Ensures the separator is treated as an inline block */
+}
+
+/* Example styles for your SVG icon */
+li svg {
+  margin-right: 4px; /* Space between the SVG and text */
+}
+
+.pre-line {
+  white-space: pre-line;
+}
 @media (max-width:768px) {
   #singleArticleView h2 {
     font-size: 23px; 

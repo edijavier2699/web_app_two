@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "title": "What We Do",
+    "description": "Learn about our mission and vision.",
+    "path": "/faq/1"
+  },
+  {
+    "id": "4",
+    "title": "Asset Management",
+    "description": "Guide to deposits, withdrawals, and fees.",
+    "path": "/faq/4"
+  },
+  {
+    "id": "5",
+    "title": "Tokenization",
+    "description": "Understanding blockchain and token security.",
+    "path": "/faq/5"
+  },
+  {
+    "id": "6",
+    "title": "Investing Basics",
+    "description": "Introduction to token standards and investment.",
+    "path": "/faq/6"
+  },
+  {
+    "id": "7",
+    "title": "Identity Verification",
+    "description": "Process for AML/KYC compliance.",
+    "path": "/faq/7"
+  },
+  {
+    "id": "8",
+    "title": "Deposits & Withdrawals",
+    "description": "Details on managing your bank accounts.",
+    "path": "/faq/8"
+  },
+  {
+    "id": "9",
+    "title": "Fees",
+    "description": "Overview of applicable fees.",
+    "path": "/faq/9"
+  },
+  {
+    "id": "10",
+    "title": "Account Management",
+    "description": "Basics of managing your account.",
+    "path": "/faq/10"
+  },
+  {
+    "id": "12",
+    "title": "Asset Owners",
+    "description": "Information for asset owners.",
+    "path": "/faq/12"
+  },
+  {
+    "id": "13",
+    "title": "Developers  & Asset Managers",
+    "description": "Resources and information for developers and asset managers.",
+    "path": "/faq/13"
+  },
+  {
+    "id": "14",
+    "title": "Personal Information & Security",
+    "description": "Keeping your personal info secure.",
+    "path": "/faq/14"
+  },
+  {
+    "id": "15",
+    "title": "Key Terminology",
+    "description": "Essential terms for understanding real estate.",
+    "path": "/faq/15"
+  }
+]

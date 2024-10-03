@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect, ReactNode } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
-import { ContactModal } from './contactModal';
+import { Button } from './ui/button';
+import { useNavigate } from 'react-router-dom';
+
 // AccordionItem types
 interface AccordionItemProps {
     title: string;
@@ -53,6 +55,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ title, content, is
 
 export const FAQ: React.FC = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(1);
+    const navigate = useNavigate();
 
     const toggleOpen = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -65,7 +68,7 @@ export const FAQ: React.FC = () => {
                     Your Questions, <br /> Answered
                 </h2>
                 <div className="w-[40%]">
-                    <ContactModal/>
+                    <Button onClick={()=> navigate("/faq/")} className="bg-[#C8E870] mt-5 text-black font-bold  hover:bg-[#A0CC28]">View More</Button>
                 </div>
             </div>
             <div className="w-full lg:w-[65%] space-y-4">

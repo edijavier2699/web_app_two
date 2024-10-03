@@ -1,0 +1,12 @@
+@media (max-width: 767px) {  
+    .titleSide {
+      order: -1; /* Mueve titleSide al principio en pantallas móviles */
+      margin-bottom: 20px; /* Espaciado después de titleSide */
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd; /* Línea divisoria para mejor visualización */
+    }
+  
+    .articleSide {
+      order: 1; /* Mantiene articleSide después de titleSide */
+    }
+  }
