@@ -10,7 +10,7 @@ export const HeroSection: React.FC = () => {
         <div className="w-full flex flex-col text-black">
           <div className="flex flex-col lg:items-start text-left lg:px-0 lg:py-8 rounded">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold sm:mb-3 pt-[35px]">
-              Invest in Comercial Real Estate.
+              Invest in Commercial Real Estate.
             </h1>
             <h1 className="text-4xl sm:text-5xl md:text-[55px] font-bold mb-3">
               <span>Tomorrow's Real Estate.  Today.</span>
