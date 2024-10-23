@@ -8,6 +8,12 @@ from .welcomeEmail import send_demo_booking_email
 from .waitlistEmail import send_waitlist_email
 from .contactFormEmail import contactFormEmail
 from django.core.exceptions import ValidationError
+from rest_framework.views import APIView
+import requests
+from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+
 
 
 class DemoUserListView(generics.ListCreateAPIView):
@@ -78,3 +84,129 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
 
         except ValidationError as e:
             return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+class SendNewsletter(APIView):
+
+    def post(self, request):
+        try:
+            # Obtén los datos del cuerpo de la solicitud
+            recipient_email = request.data.get('recipientEmail')
+            first_title = request.data.get('firstTitle')
+            first_description = request.data.get('firstDescription')
+            second_category = request.data.get('secondCategory')
+            second_title = request.data.get('secondTitle')
+            second_image_url = request.data.get('secondImageUrl')
+            second_description = request.data.get('secondDescription')
+            second_link = request.data.get('secondLink')
+            third_category = request.data.get('thirdCategory')
+            third_title = request.data.get('thirdTitle')
+            third_image_url = request.data.get('thirdImageUrl')
+            third_description = request.data.get('thirdDescription')
+            third_link = request.data.get('thirdLink')
+            fourth_category = request.data.get('fourthCategory')
+            fourth_title = request.data.get('fourthTitle')
+            fourth_image_url = request.data.get('fourthImageUrl')
+            fourth_description = request.data.get('fourthDescription')
+            fourth_link = request.data.get('fourthLink')
+            article_url_one = request.data.get('articleUrlOne')
+            article_link_title_one = request.data.get('articleLinkTitleOne')
+            article_url_two = request.data.get('articleUrlTwo')
+            article_link_title_two = request.data.get('articleLinkTitleTwo')
+            article_url_three = request.data.get('articleUrlThree')
+            article_link_title_three = request.data.get('articleLinkTitleThree')
+            article_url_four = request.data.get('articleUrlFour')
+            article_link_title_four = request.data.get('articleLinkTitleFour')
+            conclusion = request.data.get('conclusion')
+
+            # Validar que se recibieron los parámetros obligatorios
+            if not recipient_email:
+                return Response({"error": "Faltan parámetros 'email'."}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Cargar y renderizar la plantilla HTML
+            html_content = render_to_string('newsletter01.html', {
+                'first_title': first_title,
+                'first_description': first_description,
+                'second_category': second_category,
+                'second_title': second_title,
+                'second_image_url': second_image_url,
+                'second_description': second_description,
+                'second_link': second_link,
+                'third_category': third_category,
+                'third_title': third_title,
+                'third_image_url': third_image_url,
+                'third_description': third_description,
+                'third_link': third_link,
+                'fourth_category': fourth_category,
+                'fourth_title': fourth_title,
+                'fourth_image_url': fourth_image_url,
+                'fourth_description': fourth_description,
+                'fourth_link': fourth_link,
+                'article_url_one': article_url_one,
+                'article_link_title_one': article_link_title_one,
+                'article_url_two': article_url_two,
+                'article_link_title_two': article_link_title_two,
+                'article_url_three': article_url_three,
+                'article_link_title_three': article_link_title_three,
+                'article_url_four': article_url_four,
+                'article_link_title_four': article_link_title_four,
+                'conclusion': conclusion
+            })
+
+            # Configura el correo
+            subject = "Tokunize Newsletter"
+            from_email = 'tokunizeinfo@gmail.com'  # Cambia esto a tu correo
+            to_email = recipient_email
+
+            # Crea el mensaje
+            email = EmailMultiAlternatives(
+                subject=subject,
+                body='Este es el cuerpo en texto plano (opcional)',  # Este es el cuerpo del correo en texto plano
+                from_email=from_email,
+                to=[to_email]
+            )
+            email.attach_alternative(html_content, "text/html")  # Adjunta el contenido HTML
+
+            # Envía el correo
+            email.send()
+
+            return Response({"message": "Correo enviado con éxito"}, status=status.HTTP_200_OK)
+
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+    
+def show_newsletter(request):
+    # Sample data to pass to the template
+    context = {
+        'recipient_name': 'John',  # Recipient's name
+        'firstTitle': 'Welcome to Our Newsletter',
+        'firstDescription': 'Here you will find the latest updates and special offers.',
+        'secondCategory': 'Market Insights',
+        'secondTitle': 'Our Latest Product',
+        'secondImage': 'https://images.unsplash.com/photo-1481026469463-66327c86e544?q=80&w=1216&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',  # Random image
+        'secondDescription': 'Discover our new product that will revolutionize your daily routine.',
+        'secondLink': 'https://www.example.com/new-product',
+        'thirdCategory': 'Blogs',
+        'thirdTitle': 'Tips to Enhance Your Experience',
+        'thirdImage': 'https://images.unsplash.com/photo-1481897083252-7024610f34d0?q=80&w=1237&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',  # Random image
+        'thirdDescription': 'Follow these simple tips to enjoy the most.',
+        'fourthCategory': 'Recommended Reads',
+        'fourthTitle': 'Top 5 Books for 2024',
+        'fourthImage': 'https://images.unsplash.com/photo-1481897083252-7024610f34d0?q=80&w=1237&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',  # Random image
+        'fourthDescription': 'Expand your knowledge with these must-read books this year.',
+        'fourthLink': 'https://www.example.com/top-books',
+        # Additional article links
+        'articleUrlOne': 'https://www.example.com/article-one',
+        'articleLinkTitleOne': 'Understanding the Basics of Product Design',
+        'articleUrlTwo': 'https://www.example.com/article-two',
+        'articleLinkTitleTwo': 'The Future of Tech Innovation',
+        'articleUrlThree': 'https://www.example.com/article-three',
+        'articleLinkTitleThree': 'How to Enhance Your Skills',
+        'articleUrlFour': 'https://www.example.com/article-four',
+        'articleLinkTitleFour': 'Networking Tips for Success',
+    }
+
+    return render(request, 'newsletter01.html', context)

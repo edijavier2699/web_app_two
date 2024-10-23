@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
 import { AllArticlesCard } from './allArticlesCard'; 
 import { Button } from '../ui/button';
+import { LoadingSpinner } from '../loadingSpinner';
 
 interface Article {
   id: number; 
@@ -33,12 +34,9 @@ export const ArticleList = () => {
         },
       };
       const response = await axios.get<Article[]>(apiUrl, config);
-      setArticles(response.data);
-      console.log(response.data);
-      
+      setArticles(response.data);      
     } catch (err) {
       setError('Error fetching articles. Please try again later.');
-      console.error(err);
     } finally {
       setLoading(false);
     }
@@ -53,13 +51,13 @@ export const ArticleList = () => {
   };
 
   return (
-    <section className="bg-gray-100 rounded">
+    <section className="bg-gray-100 min-h-screen rounded">
       <Button onClick={() => navigate('/blog/')} className="m-6">
         Go to the Blog
       </Button>
 
       {loading ? (
-        <div className="p-6 text-center">Loading...</div>
+        <LoadingSpinner/>
       ) : error ? (
         <div className="p-6 text-center text-red-500">{error}</div>
       ) : (

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/newsletter.css';
-import { NewsletterForm } from '../forms/newsletterForm'; // Asegúrate de que este archivo esté en TypeScript también
+import { NewsletterSubscribeForm } from '@/forms/newsletterSubscribeForm';
 
 // Si no hay props que pasar al componente, no es necesario definir interfaces
 export const Newsletter: React.FC = () => {
@@ -11,7 +11,7 @@ export const Newsletter: React.FC = () => {
                 Stay up to date with Tokunize. Update, invest, learn and more.
             </p>
             <div className="md:mx-auto">
-                <NewsletterForm />
+                <NewsletterSubscribeForm/>
             </div>
         </section>
     );

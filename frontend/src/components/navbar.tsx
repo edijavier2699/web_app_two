@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { WaitlistModal } from './waitlist';
-import SmallLogo from "../assets/logo.png";
+import SmallLogo from "../assets/logoSVG.svg";
 import { useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';  // Import Auth0 hook
+
 
 type NavigationItem = {
   name: string;
@@ -13,7 +14,7 @@ type NavigationItem = {
 const navigation: NavigationItem[] = [
   { name: 'Learn', href: "/blog/", current: false },
   { name: 'FAQ', href: "/faq/", current: false },
-  { name: 'Waitlist', href: '#', current: false }
+  { name: 'Request Invitation', href: '/request-invitation/', current: false }
 ];
 
 function classNames(...classes: string[]) {
@@ -31,14 +32,14 @@ export const Navbar: React.FC = () => {
     : navigation;
 
   return (
-    <nav className='md:px-[60px] py-5 border md:border-0'>
+    <nav className='md:px-[60px] py-1 border md:border-0'>
       <div className="mx-auto">
         <div className="relative flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex flex-1 px-[20px] md:px-0 justify-start sm:items-stretch sm:justify-start">
             <div onClick={() => { navigate("/") }}>
               <img
-                className="h-[85px] w-auto"
+                className="h-12 w-auto cursor-pointer"
                 src={SmallLogo}
                 alt="Your Company"
               />
@@ -48,23 +49,19 @@ export const Navbar: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex px-[20px] md:px-0 sm:space-x-4 sm:ml-auto">
             {authenticatedNavigation.map((item) => (
-              item.name === 'Waitlist' ? (
-                <div key={item.name}>
-                  <WaitlistModal />
-                </div>
-              ) : (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'text-white' : 'text-xl hover:bg-[#C8E870] duration-300 ease-in-out',
-                    'px-3 py-1 rounded-md text-sm font-medium'
-                  )}
+               <a
+               key={item.name}
+               href={item.href}
+               className={classNames(
+                 item.name === 'Request Invitation' ? 'bg-[#C8E870] hover:bg-[#A0CC29] duration-300' : '', // Add green border for Request Invitation
+                 item.current ? 'text-white' : 'text-xl hover:bg-[#C8E870] duration-300 ease-in-out',
+                 'px-3 py-1 rounded-md text-sm font-medium'
+               )}
                   aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
                 </a>
-              )
+              
             ))}
           </div>
 

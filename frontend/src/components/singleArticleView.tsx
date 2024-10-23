@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import DOMPurify from "dompurify";
-
+import { LoadingSpinner } from "./loadingSpinner";
 export interface Article {
   id: number;
   title: string;
@@ -32,9 +32,7 @@ export const SingleArticleView: React.FC = () => {
 
       const apiUrl = `${import.meta.env.VITE_BACKEND_URL}blog/articles/${id}/`;
       try {
-        const response = await axios.get<Article>(apiUrl); 
-        console.log(response.data);
-               
+        const response = await axios.get<Article>(apiUrl);                
         setArticle(response.data);
       } catch (error) {
         if (axios.isAxiosError(error)) {
@@ -51,7 +49,7 @@ export const SingleArticleView: React.FC = () => {
   }, [id]);
 
   if (isLoading) {
-    return <div className="text-center">Loading...</div>;
+    return <LoadingSpinner/>;
   }
 
   if (error) {
@@ -165,7 +163,7 @@ export const SingleArticleView: React.FC = () => {
 
         {/*Conclusion */}
         {article.conclusion && (
-          <article className="bg-[#F4FAE2] p-3 rounded-lg">
+          <article className="bg-[#F4FAE2] p-5 rounded-lg">
             <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(article.conclusion) }} />
           </article>
         )}

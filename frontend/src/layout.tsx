@@ -15,7 +15,9 @@ import { Toaster } from "./components/ui/toaster";
 import MainLayout from "./mainLayout";
 import { FAQPage } from "./views/faq";
 import { FaqSinglePage } from "./views/faqSinglePage";
-
+import { NewsletterEmailFormFlow } from "./forms/newsletterEmailForm";
+import { RequestInvitation } from "./views/requestInvitation";
+import { LegalNotices } from "./components/legalNotices";
 
 const Layout = () => {
 
@@ -30,12 +32,14 @@ const Layout = () => {
                     <Route path="/faq-category/:id/" element={<FaqSinglePage />} />
                     <Route element={<LoginPage />} path="/blog-admin/" />
                     <Route element={<PrivacyPolicy />} path="/privacy-policy/" />
+                    <Route element={<LegalNotices />} path="/legal-notices/" />
                     <Route element={<TermsOfService />} path="/terms-of-services/" />
                     <Route path="blog/article/:id/" element={<SingleArticleView/>} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
-                
-                
+
+                <Route element={<RequestInvitation />} path="/request-invitation/"/>
+  
                 <Route element={<DashboardLayout />}>
                     <Route
                         path="dashboard/"
@@ -57,6 +61,12 @@ const Layout = () => {
                             } } />} />
                         }
                         />
+                    <Route
+                        path="email-create/"
+                        element={
+                            <ProtectedRoute roleRequired="blog-admin" element={<NewsletterEmailFormFlow />} />
+                        }
+                        />
                 </Route>
 
             </Routes>
@@ -66,7 +76,6 @@ const Layout = () => {
         </BrowserRouter>
     );
 };
-
 export default Layout;
 
 

@@ -6,7 +6,8 @@ import { Newsletter } from '../components/newsletter';
 import { Toaster } from '../components/ui/toaster';
 import { Suspense } from 'react';
 import React from 'react';
-
+import { HeroBanner } from '@/components/heroBanner';
+import { MarketplaceRepresentation } from '@/components/marketplaceRepresentation';
 // Lazy loading de los componentes
 const FAQ = React.lazy(() => import('../components/faq').then(module => ({ default: module.FAQ })));
 const WhyTokunize = React.lazy(() => import('../components/whyTokunize').then(module => ({ default: module.WhyTokunize })));
@@ -17,6 +18,8 @@ function App() {
     <>
       <Toaster />
       <HeroSection />
+      <HeroBanner/>
+      <MarketplaceRepresentation/>
       <Features />
       
       <Suspense fallback={<div>Loading WhyTokunize...</div>}>

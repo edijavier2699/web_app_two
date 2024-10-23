@@ -1,8 +1,8 @@
 .heroVideoBackground {
     min-height: calc(100vh - 80px);
-    background-image: url("../assets/heroImg.webp");
+    /* background-image: url("../assets/heroImg.webp");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 @media (max-width:640px) {

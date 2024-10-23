@@ -11,6 +11,8 @@ const DashboardLayout: React.FC = () => {
     { name: 'Overview', link: '/dashboard/' },
     { name: 'All Articles', link: '/articles-list/' },
     { name: 'Create Articles', link: '/create-article/' },
+    { name: 'Create Newsletter', link: '/email-create/' },
+
   ]:[];
 
   return (

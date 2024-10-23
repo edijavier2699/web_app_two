@@ -37,19 +37,18 @@ export const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, title, description
         <header>
           <p className="text-[#ADD244] mb-3 font-bold">Investing fundamentals</p>
           <div className="flex justify-between items-start mb-2">
-  <h2 className="text-2xl font-bold text-gray-800 flex-grow">
-    {title}
-  </h2>
-  <div
-    className="cursor-pointer duration-300 ease-in-out rounded-full bg-gray-100 hover:bg-gray-300 p-2 inline-flex items-center justify-center flex-shrink-0">
-    <img
-      alt="arrow-url-redirect"
-      src={arrowUrl}
-      className="w-auto"
-    />
-  </div>
-</div>
-
+            <h2 className="text-2xl font-bold text-gray-800 flex-grow">
+              {title}
+            </h2>
+            <div
+              className="cursor-pointer duration-300 ease-in-out rounded-full bg-gray-100 hover:bg-gray-300 p-2 inline-flex items-center justify-center flex-shrink-0">
+              <img
+                alt="arrow-url-redirect"
+                src={arrowUrl}
+                className="w-auto"
+              />
+            </div>
+          </div>
           <p className="text-gray-600 mb-4 line-clamp-3">
             <span dangerouslySetInnerHTML={{ __html: sanitizedDescription }} />
           </p>
