@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BlogCard } from "@/components/blog/blogCard";
-import { BlogSubscriberForm } from '../components/blogSusbcribeForm';
+import { BlogSubscriberForm } from '../forms/blogSusbcribeForm';
 import { LoadingSpinner } from '@/components/loadingSpinner';
 
 interface BlogPost {

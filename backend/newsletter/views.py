@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Subscriber,ContactedClient,RequestInvitationClients
+from .models import Subscriber,ContactedClient,RequestedInvitation
 from rest_framework import generics, serializers
 from rest_framework.response import Response
 from rest_framework import status
@@ -13,13 +13,14 @@ import requests
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
-
+from django_ratelimit.decorators import ratelimit
 
 
 class DemoUserListView(generics.ListCreateAPIView):
     queryset = Subscriber.objects.all()
     serializer_class = DemoSerializer
 
+    @ratelimit(key='ip', rate='5/m', block=True)
     def post(self, request, *args, **kwargs):
         """
         Override the post method to handle custom validation and send a welcome email.
@@ -40,8 +41,9 @@ class DemoUserListView(generics.ListCreateAPIView):
 class ContactedClientListCreateView(generics.ListCreateAPIView):
     queryset = ContactedClient.objects.all()
     serializer_class = ContactedClientSerializer
+
+    @ratelimit(key='ip', rate='5/m', method='POST', block=True)
     def create(self, request, *args, **kwargs):
-        print(request.data)
         serializer = self.get_serializer(data=request.data)
         email = request.data.get('email')
         is_demo = request.data.get('demo', False) 
@@ -178,9 +180,33 @@ class SendNewsletter(APIView):
         
 
 class InvitationRequestListView(APIView):
+    @ratelimit(key='ip', rate='5/m', block=True)
     def post(self, request):
-        serializer = RequestInvitationSerializer(data=request.data)
+        # Extraer los datos enviados
+        email_address = request.data.get('emailAddress')
+
+        # Buscar si ya existe una solicitud con el mismo email
+        existing_request = RequestedInvitation.objects.filter(email_address=email_address).first()
+
+        # Si ya existe, actualiza el registro
+        if existing_request:
+            existing_request.first_name = request.data.get('firstName')
+            existing_request.last_name = request.data.get('lastName')
+            existing_request.how_heard_about_us = request.data.get('howHeardAboutUs')
+            existing_request.save()  # Guarda los cambios
+            return Response({"message": "Invitation request updated successfully."}, status=status.HTTP_200_OK)
+        
+        # Si no existe, crea un nuevo registro
+        data = {
+            'first_name': request.data.get('firstName'),
+            'last_name': request.data.get('lastName'),
+            'email_address': email_address,
+            'how_heard_about_us': request.data.get('howHeardAboutUs')
+        }
+
+        serializer = RequestInvitationSerializer(data=data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        serializer.save()  # Si es necesario guardar el objeto en la base de datos
-        return Response({"message": "Invitation request successfully send."}, status=status.HTTP_200_OK)
+
+        serializer.save()  # Guardar el nuevo objeto
+        return Response({"message": "Invitation request successfully sent."}, status=status.HTTP_201_CREATED)

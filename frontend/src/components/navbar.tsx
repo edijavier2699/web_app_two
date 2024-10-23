@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { WaitlistModal } from './waitlist';
 import SmallLogo from "../assets/logoSVG.svg";
 import { useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';  // Import Auth0 hook
@@ -92,11 +91,6 @@ export const Navbar: React.FC = () => {
         <div className="bg-[#C8E870] md:hidden" id="mobile-menu">
           <div className="p-3 space-y-3 w-full">
             {authenticatedNavigation.map((item) => (
-              item.name === 'Waitlist' ? (
-                <div key={item.name} className="flex h-full items-center justify-center">
-                  <WaitlistModal />
-                </div>
-              ) : (
                 <a
                   key={item.name}
                   href={item.href}
@@ -108,7 +102,6 @@ export const Navbar: React.FC = () => {
                 >
                   {item.name}
                 </a>
-              )
             ))}
           </div>
         </div>
