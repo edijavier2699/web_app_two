@@ -14,8 +14,12 @@ import {
 import backgroundImage from "../assets/background.png"
 import logo from "../assets/logoSVG.svg"
 import { useNavigate } from "react-router-dom"
+import { useToast } from "@/components/ui/use-toast"
+import axios from "axios"
+
 
 export const RequestInvitation: React.FC = () => {
+    const {toast} = useToast()
     const [formValues, setFormValues] = useState({
         firstName: "",
         lastName: "",
@@ -89,13 +93,43 @@ export const RequestInvitation: React.FC = () => {
         return valid
     }
 
-    const handleFormSubmit = (event: React.FormEvent) => {
-        event.preventDefault()
-        if (validateForm()) {
-            // Lógica para enviar el formulario
-            console.log("Form Submitted", formValues)
+    const handleFormSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();        
+        if (!validateForm()) return;    
+        const config = {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        };
+        const apiUrl = `${import.meta.env.VITE_BACKEND_UR}newsletter/api/subscribe/`;
+        
+        try {
+            const response = await axios.post(apiUrl, formValues, config);
+            toast({
+                title: "Thank you for your request!",
+                description: response.data.message || 'The invitation request was successfully send.',
+                variant: "default"
+            });
+            setFormValues({
+                firstName: "",
+                lastName: "",
+                emailAddress: "",
+                howHeardAboutUs: ""
+            })    
+        } catch (error: any) {
+            // Manejo del error
+            const errorMessage = error.response?.data?.message || 'Error send the request invitation form.';
+            
+            toast({
+                title: "Error",
+                description: errorMessage,
+                variant: "destructive"
+            });
+
+            console.error('Error send the request invitation form:', error);
         }
-    }
+    };
+    
 
     const handleInputsOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target
@@ -119,7 +153,7 @@ export const RequestInvitation: React.FC = () => {
 
     return (
         <section
-            className="w-full h-screen py-0 px-[20px] sm:px-[60px]"
+            className="w-full h-screen px-[20px] sm:px-[60px]"
             style={{
                 backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: 'cover',
@@ -129,7 +163,7 @@ export const RequestInvitation: React.FC = () => {
         >   
             <img alt="tokunize" src={logo} className="h-12 w-auto mt-3  cursor-pointer" onClick={()=>{navigate("/")}} />
             
-            <form onSubmit={handleFormSubmit} className="space-y-6 max-w-lg p-6  mx-auto rounded-lg bg-white shadow-lg">
+            <form onSubmit={handleFormSubmit} className="space-y-6 mt-5 max-w-lg p-6  mx-auto rounded-lg bg-white shadow-lg">
                 <h3 className="text-center text-2xl font-bold">Request an Invitation</h3>
                 <p className="text-center text-gray-600 text-sm">Join us by requesting an invitation. Complete the form below to get started and get all the benefits.</p>
                 

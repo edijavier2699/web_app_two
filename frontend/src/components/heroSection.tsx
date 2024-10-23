@@ -52,7 +52,7 @@ export const HeroSection: React.FC = () => {
             Tomorrow's Real Estate. Today.
           </h1>
           <p className="text-[#667085] text-base lg:text-lg mb-12 sm:w-[90%]">
-            Experience the future of commercial real estate investing. Tokunize connects property developers with accredited and institutional investors, providing unparalleled access to premium properties. Invest with confidence and efficiency, with fractional ownership starting from <span className="text-[#C8E870] font-bold"> £1,000 - no lock-ins or hassle. </span>
+            Offering early access to premium commercial real estate developments, buy and sell equity effortlessly. Diversify across property types starting at just <span className="text-[#C8E870] font-bold"> £1000 and access liquidity instantly</span>
           </p>
         </div>
         <div className='w-full pt-[80px] flex items-center justify-center'>
