@@ -40,12 +40,31 @@ export const Footer: React.FC = () => {
                 <p className='xs text-center sm:text-left'>@2024 TSSRCT. All rights reserved .</p>
                 <ul className="flex flex-wrap justify-center sm:justify-end space-x-4 text-sm mt-4 sm:mt-0">
                     <li onClick={()=>{
-                        navigate("/privacy-policy")
-                    }}><a  className="hover:text-blue-500 duration-300"><p className='xs'>Privacy Policy</p></a></li>
+                        navigate("/privacy-policy/");
+                        window.scrollTo(0, 0);
+                    }}>
+                        <a className="hover:text-blue-500 duration-300 cursor-pointer">
+                            <p className='xs'>Privacy Policy</p>
+                        </a>
+                    </li>
                     <li onClick={()=>{
-                        navigate("/terms-of-services")
-                    }}><a className="hover:text-blue-500 duration-300"><p className='xs'>Terms of Service</p></a></li>
+                        navigate("/terms-of-services/");
+                        window.scrollTo(0, 0);
+                    }}>
+                        <a className="hover:text-blue-500 duration-300 cursor-pointer">
+                            <p className='xs'>Terms of Service</p>
+                        </a>
+                    </li>
+                    <li onClick={()=>{
+                        navigate("/legal-notices/");
+                        window.scrollTo(0, 0);
+                    }}>
+                        <a className="hover:text-blue-500 duration-300 cursor-pointer">
+                            <p className='xs'>Legal Notices</p>
+                        </a>
+                    </li>
                 </ul>
+
             </div>
         </section>
     );

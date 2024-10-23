@@ -1,7 +1,7 @@
 
 const PrivacyPolicy = () => {
     return (
-      <div id="privacy-policy">
+      <div id="privacy-policy" className="bg-gray-100 ">
           <div className="max-w-4xl mx-auto my-10 p-5">
           <h1 className="text-2xl md:text-3xl underline font-bold mb-6">PRIVACY POLICY</h1>
           <h2 className="text-lg md:text-xl font-semibold mb-4">Last updated May 07, 2024</h2>
@@ -156,6 +156,9 @@ const PrivacyPolicy = () => {
                   save or protect an individual’s vital interest, such as to prevent harm.
               </li>
               </ul>
+
+
+              
               <h2 id="legal-bases" className="text-xl md:text-2xl font-semibold mt-6 mb-4">3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?</h2>
               <p className="mb-4"><i><strong>In Short:</strong> We only process your personal information when we believe it is necessary and we have a valid
               legal reason (i.e., legal basis) to do so under applicable law, like with your consent, to comply with laws, to

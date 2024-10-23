@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BlogCard } from "@/components/blog/blogCard";
 import { BlogSubscriberForm } from '../components/blogSusbcribeForm';
+import { LoadingSpinner } from '@/components/loadingSpinner';
 
 interface BlogPost {
   id: number;
@@ -14,15 +15,17 @@ interface BlogPost {
 export const Blog = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(true); // Estado de carga
 
   useEffect(() => {
     const fetchBlogPosts = async () => {
       try {
         const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}blog/articles/public/`);
-        console.log(response.data);
         setBlogPosts(response.data);
       } catch (error) {
         console.error('Error fetching blog posts:', error);
+      } finally {
+        setIsLoading(false); // Cambiar a false después de cargar
       }
     };
 
@@ -68,7 +71,11 @@ export const Blog = () => {
 
         <article className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto">
-            {filteredPosts.length > 0 ? (
+            {isLoading ? ( // Mostrar el spinner si está cargando
+              <div className="col-span-2 flex justify-center items-center">
+                <LoadingSpinner />
+              </div>
+            ) : filteredPosts.length > 0 ? (
               filteredPosts.map((post) => {
                 // Verificar si la imagen existe, de lo contrario usar un placeholder
                 const imageUrl = post.image_urls && post.image_urls.length > 0

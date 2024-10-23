@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import CreateArticle from '../createArticleForm';
 import { useToast } from "@/components/ui/use-toast";
 
-
 interface AllArticlesCardProps {
   imageSrc?: string;  // Make imageSrc optional
   title: string;
