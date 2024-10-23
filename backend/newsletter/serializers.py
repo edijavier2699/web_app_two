@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Subscriber,ContactedClient,RequestInvitationClients
+from .models import Subscriber,ContactedClient,RequestedInvitation
 
 class DemoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -48,5 +48,5 @@ class ContactedClientSerializer(serializers.ModelSerializer):
     
 class RequestInvitationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = RequestInvitationClients  # Especifica tu modelo
+        model = RequestedInvitation  # Especifica tu modelo
         fields = '__all__'  # Incluye todos los campos del modelo

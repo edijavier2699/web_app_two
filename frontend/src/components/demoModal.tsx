@@ -6,7 +6,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
-import { DemoForm } from "./demoForm";
+import { DemoForm } from "../forms/demoForm";
 
 export const DemoModal = () =>{
     return(

@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
-import { Input } from './ui/input';
-import { Button } from './ui/button';
+import { Input } from '../components/ui/input';
+import { Button } from '../components/ui/button';
 import { useToast } from "@/components/ui/use-toast";
 
 export const BlogSubscriberForm: React.FC = () => {

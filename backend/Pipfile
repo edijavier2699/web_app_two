@@ -15,6 +15,7 @@ whitenoise = "*"
 python-jose = "*"
 requests = "*"
 cloudinary = "*"
+django-ratelimit = "*"
 
 [dev-packages]
 

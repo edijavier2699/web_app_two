@@ -29,15 +29,16 @@ class ContactedClient(models.Model):
     class Meta:
         ordering = ['contacted_at']
 
-class RequestInvitationClients(models.Model):
-    first_name = models.CharField(max_length=100, verbose_name="First Name", null=True, blank=True)
-    last_name = models.CharField(max_length=100, verbose_name="Last Name",  null=True, blank=True)
-    email_address = models.EmailField(verbose_name="Email Address",  null=True, blank=True)
-    how_heard_about_us = models.CharField(max_length=200, verbose_name="How Heard About Us",  null=True, blank=True)
+
+class RequestedInvitation(models.Model):
+    first_name = models.CharField(max_length=100, verbose_name="First Name")
+    last_name = models.CharField(max_length=100, verbose_name="Last Name")
+    email_address = models.EmailField(verbose_name="Email Address")
+    how_heard_about_us = models.CharField(max_length=200, verbose_name="How Heard About Us")
     contacted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.first_name} ({self.last_name})'
-
+        return f"{self.first_name}"
+    
     class Meta:
-        ordering = ['contacted_at']
+        ordering = ["contacted_at"]
