@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Subscriber,ContactedClient
+from .models import Subscriber,ContactedClient,RequestInvitationClients
 from rest_framework import generics, serializers
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import DemoSerializer,ContactedClientSerializer
+from .serializers import DemoSerializer,ContactedClientSerializer,RequestInvitationSerializer
 from .welcomeEmail import send_demo_booking_email 
 from .waitlistEmail import send_waitlist_email
 from .contactFormEmail import contactFormEmail
@@ -89,7 +89,6 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
 
 
 class SendNewsletter(APIView):
-
     def post(self, request):
         try:
             # Obtén los datos del cuerpo de la solicitud
@@ -177,36 +176,11 @@ class SendNewsletter(APIView):
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
-    
-def show_newsletter(request):
-    # Sample data to pass to the template
-    context = {
-        'recipient_name': 'John',  # Recipient's name
-        'firstTitle': 'Welcome to Our Newsletter',
-        'firstDescription': 'Here you will find the latest updates and special offers.',
-        'secondCategory': 'Market Insights',
-        'secondTitle': 'Our Latest Product',
-        'secondImage': 'https://images.unsplash.com/photo-1481026469463-66327c86e544?q=80&w=1216&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',  # Random image
-        'secondDescription': 'Discover our new product that will revolutionize your daily routine.',
-        'secondLink': 'https://www.example.com/new-product',
-        'thirdCategory': 'Blogs',
-        'thirdTitle': 'Tips to Enhance Your Experience',
-        'thirdImage': 'https://images.unsplash.com/photo-1481897083252-7024610f34d0?q=80&w=1237&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',  # Random image
-        'thirdDescription': 'Follow these simple tips to enjoy the most.',
-        'fourthCategory': 'Recommended Reads',
-        'fourthTitle': 'Top 5 Books for 2024',
-        'fourthImage': 'https://images.unsplash.com/photo-1481897083252-7024610f34d0?q=80&w=1237&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',  # Random image
-        'fourthDescription': 'Expand your knowledge with these must-read books this year.',
-        'fourthLink': 'https://www.example.com/top-books',
-        # Additional article links
-        'articleUrlOne': 'https://www.example.com/article-one',
-        'articleLinkTitleOne': 'Understanding the Basics of Product Design',
-        'articleUrlTwo': 'https://www.example.com/article-two',
-        'articleLinkTitleTwo': 'The Future of Tech Innovation',
-        'articleUrlThree': 'https://www.example.com/article-three',
-        'articleLinkTitleThree': 'How to Enhance Your Skills',
-        'articleUrlFour': 'https://www.example.com/article-four',
-        'articleLinkTitleFour': 'Networking Tips for Success',
-    }
 
-    return render(request, 'newsletter01.html', context)
+class InvitationRequestListView(APIView):
+    def post(self, request):
+        serializer = RequestInvitationSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer.save()  # Si es necesario guardar el objeto en la base de datos
+        return Response({"message": "Invitation request successfully send."}, status=status.HTTP_200_OK)

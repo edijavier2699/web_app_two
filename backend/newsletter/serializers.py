@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Subscriber,ContactedClient
+from .models import Subscriber,ContactedClient,RequestInvitationClients
 
 class DemoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -45,3 +45,8 @@ class ContactedClientSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Please enter a valid email address.")
 
         return value
+    
+class RequestInvitationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RequestInvitationClients  # Especifica tu modelo
+        fields = '__all__'  # Incluye todos los campos del modelo
