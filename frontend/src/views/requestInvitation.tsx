@@ -101,7 +101,7 @@ export const RequestInvitation: React.FC = () => {
                 "Content-Type": "application/json"
             }
         };
-        const apiUrl = `${import.meta.env.VITE_BACKEND_UR}newsletter/api/subscribe/`;
+        const apiUrl = `${import.meta.env.VITE_BACKEND_UR}newsletter/api/invitation-request/`;
         
         try {
             const response = await axios.post(apiUrl, formValues, config);
