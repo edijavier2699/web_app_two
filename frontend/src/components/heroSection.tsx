@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/heroSection.css';
 import { DemoModal } from './demoModal';
-import hotelCard from "../assets/hotelCard.svg";
-import officeCard from "../assets/officeCard.svg";
-import multifamilyCard from "../assets/multifamilyCard.svg";
-import hotelCardMobile from "../assets/hotelCardMobile.svg"
-import officeCardMobile from "../assets/officeCardMobile.svg"
-import multifamilyCardMobile from "../assets/multifamilyCardMobile.svg"
+import hotelCard from "../assets/hotelCard.png";
+import officeCard from "../assets/officeCard.png";
+import multifamilyCard from "../assets/multifamilyCard.png";
+import hotelCardMobile from "../assets/hotelCardMobile.png"
+import officeCardMobile from "../assets/officeCardMobile.png"
+import multifamilyCardMobile from "../assets/multifamilyCardMobile.png"
 
 // Arrays de imágenes normales y móviles
 const imagesDesktop: string[] = [hotelCard, officeCard, multifamilyCard];
@@ -59,7 +59,7 @@ export const HeroSection: React.FC = () => {
           <DemoModal />
         </div>
       </article>
-      <aside className="w-full md:w-1/3 flex p-0 m-0 items-center justify-end">
+      <aside className=" w-full md:w-1/3 flex p-0 m-0 items-center justify-end">
         <img
           src={images[currentImageIndex]} // Cambia la imagen según sea móvil o no
           alt="property images"
