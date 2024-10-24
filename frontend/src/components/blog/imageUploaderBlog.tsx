@@ -94,6 +94,7 @@ export const ImageUploaderBlog: React.FC<ImageUploaderProps> = ({ onImagesSelect
                 className="relative rounded-lg border border-gray-200 overflow-hidden shadow-sm"
               >
                 <img
+                  loading="lazy"
                   src={file.previewUrl}
                   alt={`Preview ${index}`}
                   className="object-cover w-full h-24"

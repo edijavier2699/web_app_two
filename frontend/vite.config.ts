@@ -1,9 +1,18 @@
 import path from 'path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import { visualizer } from 'rollup-plugin-visualizer'; // Importamos correctamente el plugin
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    visualizer({ // Agregamos el plugin visualizer
+      open: true, // Abre automáticamente el informe en el navegador
+      filename: 'stats.html', // Nombre del archivo de reporte
+      gzipSize: true, // Muestra el tamaño gzip
+      brotliSize: true, // Muestra el tamaño brotli
+    }),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -21,4 +30,3 @@ export default defineConfig({
     },
   },
 });
-

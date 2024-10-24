@@ -14,6 +14,7 @@ export const WhyUsTable = () => {
         </div>
         <div className="hidden sm:block">
           <img
+            loading="lazy"
             alt="tokunize-comparison-table"
             src={whyUstable}
             className="w-full"
