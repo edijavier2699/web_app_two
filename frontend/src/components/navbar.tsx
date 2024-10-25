@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SmallLogo from "../assets/logoSVG.svg";
 import { useNavigate } from 'react-router-dom';
-import { useAuth0 } from '@auth0/auth0-react';  // Import Auth0 hook
+import { useAuth0 } from '@auth0/auth0-react'; 
 
 
 type NavigationItem = {
@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
     : navigation;
 
   return (
-    <nav className='md:px-[60px] py-1 border md:border-0'>
+    <nav className='md:px-[60px] py-1 border bg-[white] text-black md:border-0'>
       <div className="mx-auto">
         <div className="relative flex h-16 items-center justify-between">
           {/* Logo */}
