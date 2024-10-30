@@ -1,7 +1,6 @@
 import React, { useState, useRef, FormEvent, ChangeEvent } from "react";
 import axios from 'axios';
 import { useToast } from "@/components/ui/use-toast"
-import { ToastAction } from "@/components/ui/toast"
 
 // Define the type for form data
 interface FormData {
@@ -40,9 +39,6 @@ export const NewsletterSubscribeForm: React.FC = () => {
                 toast({
                     title: "Thank you for subscribing!",
                     description: "You're now subscribed to our newsletter. Stay tuned for updates in your inbox!",
-                    action: (
-                      <ToastAction altText="Undo your subscription">Undo</ToastAction>
-                    ),
                 });
                     
                 setFormData({ userEmail: "" });

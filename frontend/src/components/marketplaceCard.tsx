@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import smallLogo from "../assets/logo_only_black.png";
-import { RiInformation2Fill } from "react-icons/ri";
-import { IoMdCloseCircle } from "react-icons/io";
 import { LineChartMarketplace } from "./lineChartMarketplace";
 
 interface MarketplaceCardProps {
@@ -59,7 +57,8 @@ export const MarketplaceCard: React.FC<MarketplaceCardProps> = ({
 
   return (
     <article
-      style={{ borderWidth: "0.1px" }}
+      onMouseEnter={toggleInfo}
+      onMouseLeave={toggleInfo}
       className="relative flex flex-col h-full border rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out bg-white overflow-hidden"
     >
       <div className="relative w-full h-60 px-6 pt-6">
@@ -88,22 +87,17 @@ export const MarketplaceCard: React.FC<MarketplaceCardProps> = ({
             <p className="font-semibold text-gray-500 text-xs">£ {propertyPrice}</p>
           </div>
         </div>
-
-        <div onClick={toggleInfo} className="p-3 rounded-full cursor-pointer">
-          <RiInformation2Fill className="text-black text-4xl text-[#C8E869] hover:text-[#A0CC28] duration-300" />
-        </div>
       </div>
 
       {/* Overlay div that appears when showInfo is true */}
       <div
-        className={`absolute inset-0 bg-white shadow-xl rounded-lg p-8 transition-transform duration-500 ease-in-out transform ${
+        className={`absolute  inset-0 bg-[#C8E869] shadow-xl rounded-lg p-8 transition-transform duration-500 ease-in-out transform ${
           showInfo ? "translate-y-0" : "translate-y-full"
         }`}
       >
         {/* Título */}
-        <span className="flex justify-between items-center border-b pb-3 mb-5">
+        <span className="flex  justify-between items-center border-b pb-3 mb-5">
             <h2 className="text-xl font-bold text-gray-900">{title}</h2>
-            <IoMdCloseCircle className="cursor-pointer text-2xl "  onClick={toggleInfo}/>
         </span>
       
         {/* Tabla para la información */}
@@ -135,7 +129,7 @@ export const MarketplaceCard: React.FC<MarketplaceCardProps> = ({
             </tbody>
           </table>
         </div>
-        <LineChartMarketplace index={index} /> 
+          <LineChartMarketplace index={index} /> 
       </div>
     </article>
   );

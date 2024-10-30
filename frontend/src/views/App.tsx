@@ -7,6 +7,7 @@ import { Toaster } from '../components/ui/toaster';
 import { Suspense } from 'react';
 import React from 'react';
 import { HeroBanner } from '@/components/heroBanner';
+import { LoadingSpinner } from '@/components/loadingSpinner';
 import { MarketplaceRepresentation } from '@/components/marketplaceRepresentation';
 // Lazy loading de los componentes
 const FAQ = React.lazy(() => import('../components/faq').then(module => ({ default: module.FAQ })));
@@ -21,19 +22,15 @@ function App() {
       <HeroBanner/>
       <MarketplaceRepresentation/>
       <Features />
-      
-      <Suspense fallback={<div>Loading WhyTokunize...</div>}>
+      <Suspense fallback={<LoadingSpinner/>}>
         <WhyTokunize />
       </Suspense>
-      
-      <Suspense fallback={<div>Loading Why Us Table...</div>}>
+      <Suspense fallback={<LoadingSpinner/>}>
         <WhyUsTable />
       </Suspense>
-      
-      <Suspense fallback={<div>Loading FAQ...</div>}>
+      <Suspense fallback={<LoadingSpinner/>}>
         <FAQ />
-      </Suspense>
-      
+      </Suspense>  
       <Newsletter />
     </>
   );

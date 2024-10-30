@@ -4,7 +4,6 @@ import { Toaster } from "./components/ui/toaster";
 import MainLayout from "./mainLayout";
 import ProtectedRoute from "./components/privateRoute";
 import { LoadingSpinner } from './components/loadingSpinner';
-
 const App = lazy(() => import('./views/App'));
 const Blog = lazy(() => import('./views/blog').then(module => ({ default: module.Blog })));
 const FAQPage = lazy(() => import('./views/faq').then(module => ({ default: module.FAQPage })));
@@ -21,6 +20,10 @@ const CreateArticle = lazy(() => import('./components/createArticleForm'));
 const NewsletterEmailFormFlow = lazy(() => import('./forms/newsletterEmailForm').then(module => ({ default: module.NewsletterEmailFormFlow })));
 const RequestInvitation = lazy(() => import('./views/requestInvitation').then(module => ({ default: module.RequestInvitation })));
 const LegalNotices = lazy(() => import('./components/legalNotices').then(module => ({ default: module.LegalNotices })));
+const AboutUs = lazy(()=> import ('./views/aboutUs').then(module =>({default: module.AboutUs})))
+const HowItWorks = lazy(()=> import ('./views/howItWorks').then(module =>({default: module.HowItWorks})))
+const Marketplace = lazy(()=> import ('./views/marketplace').then(module =>({default: module.Marketplace})))
+const PropertyDetails = lazy(()=> import ('./views/propertyDetailts').then(module =>({default: module.PropertyDetails})))
 
 const Layout = () => {
     return (
@@ -32,13 +35,17 @@ const Layout = () => {
                     <Route element={<MainLayout />}>
                         <Route element={<App />} path="/" />
                         <Route element={<Blog />} path="/blog/" />
+                        <Route element={<Marketplace />} path="/marketplace/" />
                         <Route element={<FAQPage />} path="/faq/" />
                         <Route path="/faq-category/:id/" element={<FaqSinglePage />} />
                         <Route element={<LoginPage />} path="/blog-admin/" />
                         <Route element={<PrivacyPolicy />} path="/privacy-policy/" />
                         <Route element={<LegalNotices />} path="/legal-notices/" />
                         <Route element={<TermsOfService />} path="/terms-of-services/" />
-                        <Route path="blog/article/:id/" element={<SingleArticleView />} />
+                        <Route path="/blog/article/:id/" element={<SingleArticleView />} />
+                        <Route path="/about-us/" element={<AboutUs/>}/>
+                        <Route path="/how-it-works/" element={<HowItWorks/>}/>
+                        <Route path="/property/details/:id/" element={<PropertyDetails/>} />
                         <Route path="*" element={<NotFound />} />
                     </Route>
 
