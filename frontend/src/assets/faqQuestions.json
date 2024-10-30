@@ -312,15 +312,31 @@
     },
     {
       "categoryId": 9,
-      "categoryName": "Fees",
+      "categoryName": "Fees & Taxes",
       "questions": [
         {
           "id": "1",
           "title": "What fees does Tokunize charge?",
-          "content": "Tokunize currently charges a 0.5% fee to investors and property owners on the initial transaction, as well as a 0.15% secondary marketplace fee for instant sales."
+          "content": "Tokunize currently charges a 0.5% fee to both investors and property owners on the initial transaction. Additionally, there is a 0.15% fee for instant sales in the secondary marketplace."
+        },
+        {
+          "id": "2",
+          "title": "Corporation Tax (payable by SPVs)",
+          "content": "At Tokunize, investments are made through a UK Limited Company, known as an “SPV” (Special Purpose Vehicle), which is created specifically for purchasing a given property through the acquisition of token(s) in the Marshall Islands DAO LLC. The SPV pays corporation tax on any taxable profit it generates, with the current UK Corporation Tax rate set at 19%. If the property’s value appreciates, Corporation Tax will also apply to the gain upon disposal. This future Corporation Tax liability is accounted for as Deferred Tax in the SPV’s valuation, ensuring it is reflected in the estimated share value Tokunize publishes for the property. \n\nFor example, if the property value increases by £10,000 over five years, a £1,900 Deferred Tax liability (£10,000 x 19%) would be recognized. This approach ensures that the investors who benefit from property appreciation are also responsible for the associated Corporation Tax."
+        },
+        {
+          "id": "3",
+          "title": "Stamp Duty Land Tax (SDLT)",
+          "content": "The structure Tokunize uses to purchase properties results in an additional 3% SDLT (the SDLT surcharge) on property purchases. In cases where multiple units are purchased in a single or linked transaction, the purchase may qualify for multiple dwellings relief, which can reduce the total SDLT liability. For the latest information, please consult the UK Government’s guidance here: https://www.gov.uk/stamp-duty-land-tax. \n\nAdditional Information: \nTokunize provides all investors with tax statements in the Account section of the platform, summarizing dividends and capital gains over a specified period to assist with tax filings. Note that tax rates are subject to change, and the information provided here does not constitute tax advice."
+        },
+        {
+          "id": "4",
+          "title": "What is Stamp Duty Reserve Tax?",
+          "content": "Stamp Duty Reserve Tax (SDRT) is usually payable to HM Revenue & Customs when acquiring securities. However, due to the structure Tokunize uses for property purchases, no SDRT is incurred when selling tokens on the platform."
         }
       ]
-    },
+    }    
+    ,
     {
       "categoryId": 10,
       "categoryName": "Account Management - Account Basics",

@@ -28,6 +28,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, title, description
     <article onClick={() => navigate(`article/${article_id}`)} className=" cursor-pointer flex flex-col my-5 overflow-hidden transition-transform duration-300">
       <aside className="w-full h-[300px]">
         <img
+          loading="lazy"
           alt={title}
           src={imageUrl || placeholderImage}  // Fallback to placeholder if imageUrl is not available
           className="w-full h-full object-cover rounded-lg"
@@ -43,6 +44,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, title, description
             <div
               className="cursor-pointer duration-300 ease-in-out rounded-full bg-gray-100 hover:bg-gray-300 p-2 inline-flex items-center justify-center flex-shrink-0">
               <img
+                loading="lazy"
                 alt="arrow-url-redirect"
                 src={arrowUrl}
                 className="w-auto"

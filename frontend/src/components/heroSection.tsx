@@ -42,17 +42,15 @@ export const HeroSection: React.FC = () => {
   const images = isMobile ? imagesMobile : imagesDesktop;
 
   return (
-    <div className="relative flex flex-col md:flex-row w-full overflow-hidden px-[20px] sm:px-[60px]" style={{ minHeight: '95vh' }}>
+    <div className="relative flex flex-col md:flex-row w-full bg-[#EBF9BE] overflow-hidden px-[20px] sm:px-[60px]" style={{ minHeight: '92vh' }}>
       <article className="flex flex-col items-center justify-center w-full md:w-2/3 ">
         <div className='space-y-4 w-full '>
-          <h1 className="text-4xl mt-[35px] sm:text-4xl md:text-4xl lg:text-[53px] font-bold">
-            Invest in Commercial Real Estate.
+          <h1 className="text-5xl mt-[35px] sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
+            Invest in Premium Commercial Real Estate.
           </h1>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
-            Tomorrow's Real Estate. Today.
-          </h1>
-          <p className="text-[#667085] text-base lg:text-lg mb-12 sm:w-[90%]">
-            Offering early access to premium commercial real estate developments, buy and sell equity effortlessly. Diversify across property types starting at just <span className="text-[#C8E870] font-bold"> £1000 and access liquidity instantly</span>
+      
+          <p className="text-black tracking-wider text-base lg:text-xl mb-12 sm:w-[90%]">
+            Offering early access to premium commercial real estate developments, buy and sell equity effortlessly. Diversify across property types starting at just <span className="text-black font-bold "> £1000 and access liquidity instantly</span>
           </p>
         </div>
         <div className='w-full pt-[80px] flex items-center justify-center'>

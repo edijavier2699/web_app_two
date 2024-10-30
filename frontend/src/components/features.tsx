@@ -4,22 +4,22 @@ import { FeaturesCard } from './featuresCard'; // Importa correctamente el archi
 export const Features: React.FC = () => {
     return (
         <section className="mt-[60px] pb-[120px] featuresSection  mx-[20px] sm:mx-[80px] border-b">
-            <p className="mb-[40px] font-semibold">What we offer</p>
+            <p className="text-3xl font-bold text-gray-800 mb-4">What we offer</p>
             <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                <FeaturesCard 
+                    icon="Feature2" 
+                    title="Premium CRE"
+                    description="Access diverse properties across asset classes, risk profiles and markets to build a portfolio focused on compelling, risk-adjusted returns."
+                />
+                <FeaturesCard 
+                    icon="Feature3" 
+                    title="Full Legal Compliance"
+                    description="We utilise a decentralised aoutonomous organisation (DAO) structure through LLCs, created for each listed property. This ensures compliance with laws and regulations governing fractional real estate investments. "
+                />
                 <FeaturesCard 
                     icon="Feature1" 
                     title="Instant Liquidity"
                     description="Tokens can be traded instantly on a secondary marketplace, offering real-time liquidity options that individual property REITs typically lack."
-                />
-                <FeaturesCard 
-                    icon="Feature2" 
-                    title="Transparency"
-                    description="Blockchain ensures every transaction is secure and transparent, providing investors with real-time data on property performance, unlike traditional REITs."
-                />
-                <FeaturesCard 
-                    icon="Feature3" 
-                    title="Lower Fees"
-                    description="We minimise management fees and transaction costs that can erode returns in REITs, offering a more cost-effective alternative with direct exposure to both rental income and capital appreciation."
                 />
             </div>
         </section>

@@ -1,11 +1,12 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
-import ReactQuill from 'react-quill';
+import React, { useState, ChangeEvent, FormEvent,Suspense } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import ImageGallery from './imageGallery';
 import { ImageUploaderBlog } from './blog/imageUploaderBlog';
 import { useToast } from "@/components/ui/use-toast";
+import { LoadingSpinner } from './loadingSpinner';
+const ReactQuill = React.lazy(() => import('react-quill'));
 
 interface Article {
   id?: string;
@@ -220,6 +221,7 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
   };
 
   return (
+    <Suspense fallback={<LoadingSpinner/>}>
     <form id="create-article" onSubmit={handleSubmit} className="space-y-6 p-5 rounded bg-gray-100">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
@@ -334,6 +336,7 @@ const CreateArticle: React.FC<CreateArticleProps> = ({ article, onClose }) => {
         </button>
       </div>
     </form>
+  </Suspense>
   );
 };
 

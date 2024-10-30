@@ -1,6 +1,7 @@
 import feature1 from "../assets/cashFlow.png";
-import feature2 from "../assets/security.png";
-import feature3 from "../assets/lowPrice.png";
+import { IoDocumentsOutline } from "react-icons/io5";
+import { FaChartPie } from "react-icons/fa6";
+
 
 interface FeaturesCardProps {
     icon: "Feature1" | "Feature2" | "Feature3";
@@ -10,8 +11,8 @@ interface FeaturesCardProps {
 
 const iconMap: Record<FeaturesCardProps['icon'], JSX.Element> = {
     "Feature1": <img src={feature1} alt="Feature 1" className="h-16 w-16" />,
-    "Feature2": <img src={feature2} alt="Feature 2" className="h-16 w-16" />,
-    "Feature3": <img src={feature3} alt="Feature 3" className="h-16 w-16" />,
+    "Feature2":  <FaChartPie className="h-16 w-16 text-[#375B0A]"/>,
+    "Feature3": <IoDocumentsOutline className="h-16 w-16 text-[#375B0A]"/>,
 };
 
 export const FeaturesCard = ({ icon, title, description }: FeaturesCardProps) => {

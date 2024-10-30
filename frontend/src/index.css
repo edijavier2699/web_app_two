@@ -96,18 +96,16 @@
 #singleArticleView h2 {
   font-size: 27px; 
 }
-/* Remove default list styles */
-li {
-  list-style: none; /* Removes bullet points */
-  display: inline-flex; /* Allows for proper alignment and spacing */
-  align-items: center; /* Vertically centers items */
-}
+/* li {
+  list-style: none; 
+  display: inline-flex; 
+  align-items: center; 
+} */
 
-/* Optional: Style for separators */
-li + li:before {
-  content: ''; /* Separator between items */
-  display: inline-block; /* Ensures the separator is treated as an inline block */
-}
+/* li + li:before {
+  content: ''; 
+  display: inline-block;
+} */
 
 /* Example styles for your SVG icon */
 li svg {
@@ -127,5 +125,9 @@ li svg {
   }
 }
 
+/* *{
+  border: 1px solid red;
+}
+ */
 
 

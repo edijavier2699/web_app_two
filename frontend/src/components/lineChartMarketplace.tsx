@@ -65,7 +65,7 @@ export const LineChartMarketplace: React.FC<LineChartMarketplaceProps> = ({ inde
   const chartData = chartDataSets[index];
 
   return (
-    <Card className="border-0 shadow-none">
+    <Card className="border-0 shadow-none my-2">
       <CardHeader>
         <CardTitle className="hidden">Chart {index + 1}</CardTitle>
         <CardDescription>
