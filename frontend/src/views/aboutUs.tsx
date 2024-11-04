@@ -125,7 +125,7 @@ export const AboutUs: React.FC = () => {
       </div>
 
       <div className='space-y-[30px] mb-12 rounded-lg'>
-                <h4 className="text-4xl font-semibold">The Tokunize Difference</h4>
+                <h4 className="text-3xl font-semibold">The Tokunize Difference</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                     {cardsData.map((card, index) => (
                         <HowItWorksCard key={index} title={card.title} description={card.description} />

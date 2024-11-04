@@ -66,7 +66,7 @@ export const LiquidityPool = () => {
     return (
         <section className="mx-[20px] md:mx-[60px] py-10">
            <header className=" mx-[-20px] md:mx-[-60px]  flex flex-col items-center justify-start h-[87vh] bg-cover bg-center text-center mb-10">
-                <h4 className="text-5xl md:text-[75px] font-bold mb-4 mt-[60px] text-animated-gradient max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">
+                <h4 className="text-5xl md:text-[75px] font-bold mb-4 mt-[15px] lg:mt-[60px] text-animated-gradient max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">
                     Instant liquidity in real estate is here
                 </h4>
                 <span className="font-semibold text-xl sm:text-2xl max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">

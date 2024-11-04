@@ -26,14 +26,14 @@ export const Footer: React.FC = () => {
                                 Sign Up
                             </a>
                         </li>
-                        <li onClick={()=>{
+                        {/* <li onClick={()=>{
                             navigate("/marketplace/");
                             window.scrollTo(0, 0);
                         }}>
                             <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
                                 Marketplace
                             </a>
-                        </li>
+                        </li> */}
                         <li onClick={()=>{
                             navigate("/liquidity-pools/");
                             window.scrollTo(0, 0);
