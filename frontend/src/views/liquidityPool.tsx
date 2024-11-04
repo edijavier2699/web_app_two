@@ -83,7 +83,7 @@ export const LiquidityPool = () => {
 
             <main >
             <div className="min-h-[80vh] flex flex-col items-center justify-center">
-                <h4 className="text-5xl font-semibold text-gray-800 mb-6">Reimagining Real Estate Investing</h4>
+                <h4 className="text-3xl text-center md:text-5xl font-semibold text-gray-800 mb-6">Reimagining Real Estate Investing</h4>
                 <p className="text-gray-600 text-lg mt-2 mb-6">
                     Explore new possibilities in real estate investments with secure and transparent solutions.
                 </p>
@@ -115,8 +115,8 @@ export const LiquidityPool = () => {
             </div>
 
             <div className="flex flex-col my-12 md:flex-row items-center text-center md:text-left"> 
-                <div className="md:w-1/2 bg-black rounded-lg">
-                <img src={liquidityPool} alt="Descripción de la imagen" className="w-full object-cover  h-[400px] rounded-lg" />
+                <div className="mb-12 md:mb-0 w-full md:w-1/2 bg-black rounded-lg">
+                    <img src={liquidityPool} alt="Liquidity Pool" className="w-full object-cover  h-[400px] rounded-lg" />
                 </div>     
                 <div className="md:w-1/2 md:pl-8">
                     <h4 className="text-3xl font-semibold text-gray-800 mb-6">
@@ -132,8 +132,8 @@ export const LiquidityPool = () => {
                 
             </div>
             <div className="flex flex-col items-center text-center py-10 mb-12 bg-gray-50 rounded-lg">
-                <h4 className="text-6xl font-bold mb-4">Let Your Crypto Work for You</h4> {/* Aumentar tamaño y margen inferior */}
-                <div className="flex flex-row items-end  space-x-[100px] mb-6"> {/* Espacio entre imágenes */}
+                <h4 className=" text-3xl md:text-6xl font-bold mb-4">Let Your Crypto Work for You</h4> {/* Aumentar tamaño y margen inferior */}
+                <div className="flex flex-row items-end   space-x-[40px] md:space-x-[100px] mb-6"> {/* Espacio entre imágenes */}
                     <div className="flex flex-col items-center">
                         <img alt="Tokunize" src={tokunize} className="my-2 h-16" />
                         <span className="font-semibold text-lg">Tokunize</span> {/* Tamaño de fuente para el título */}
