@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { NavigationMenuNav } from "./navigationMenuNav";
 
 type NavigationItem = {
   name: string;
@@ -18,8 +19,9 @@ type NavigationItem = {
 };
 
 const navigation: NavigationItem[] = [
-  { name: 'How It Works', href: "/how-it-works/", current: false },
+  // { name: 'Marketplace', href: "/marketplace/", current: false },
   { name: 'About Us', href: "/about-us/", current: false },
+  { name: 'Liquidity Pools', href: "/liquidity-pools/", current: false },
   { name: 'Learn', href: "/blog/", current: false },
   { name: 'FAQ', href: "/faq/", current: false },
   { name: 'Request Invitation', href: '/request-invitation/', current: false },
@@ -55,14 +57,15 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex px-[20px] md:px-0 sm:space-x-4 sm:ml-auto">
+          <NavigationMenuNav/>
             {authenticatedNavigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 className={classNames(
                   item.name === 'Request Invitation' ? 'bg-[#C8E870] hover:bg-[#A0CC29] duration-300' : '',
-                  item.current ? 'text-white' : 'text-[17px] hover:bg-[#C8E870] duration-300 ease-in-out',
-                  'px-1 py-2 rounded-md text-sm font-medium'
+                  item.current ? '' : 'text-[17px] hover:bg-[#C8E870] duration-300 ease-in-out',
+                  'px-3 flex items-center rounded-md text-sm font-medium'
                 )}
                 aria-current={item.current ? 'page' : undefined}
               >
@@ -87,6 +90,7 @@ export const Navbar: React.FC = () => {
                   <SheetTitle>Menu</SheetTitle>
                 </SheetHeader>
                 <div className="py-3  space-y-4 ">
+                <NavigationMenuNav/>
                   {authenticatedNavigation.map((item) => (
                     <a
                       key={item.name}

@@ -1,10 +1,9 @@
 import React from "react";
 import why1 from "../assets/why_1.png";
-import why2 from "../assets/why_2.png";
-import why3 from "../assets/why_3.png";
+import why2 from "../assets/mlModel.png";
+import why3 from "../assets/premiumRCE.png";
 import why4 from "../assets/why_4.png";
 import why5 from "../assets/why_5.png";
-
 // Definimos el tipo de props que espera el componente WhyUs
 interface WhyUsProps {
     number: number;
@@ -27,7 +26,7 @@ export const WhyUs: React.FC<WhyUsProps> = ({ number, title, description, imageT
                 <span className="flex mb-3 items-center justify-center w-6 h-6 rounded-full bg-[#EAFBBE] text-sm text-gray-800">
                     {number}
                 </span>
-                <h3 className="text-3xl font-bold text-gray-900 mb-3">{title}</h3>
+                <h3 className="text-3xl sm:text-xl md:text-2xl lg:text-3xl  font-bold text-gray-900 mb-3">{title}</h3>
                 <p className="text-gray-600 mb-5">{description}</p>
             </div>
 
@@ -48,7 +47,7 @@ export const WhyUs: React.FC<WhyUsProps> = ({ number, title, description, imageT
 // Componente principal WhyTokunize
 export const WhyTokunize: React.FC = () => {
     return (
-        <section className="px-8 md:px-[80px] pt-[120px] py-12">
+        <section className="px-[20px] md:px-[60px] pt-[120px] py-12">
             <div className="text-center mb-12">
                 <h1 className="text-3xl md:text-6xl font-bold  mb-4">Why Tokunize</h1>
                 <p className="text-lg text-gray-600">
@@ -66,14 +65,14 @@ export const WhyTokunize: React.FC = () => {
             <WhyUs
                 number={2}
                 imageTitle={why2}
-                title="End-to-end account management."
-                description="Create a secure account that is protected by powerful KYC/AML screening tools and allows you to customise notification preferences to manage alerts for offers and your priority listings. Your account always maintains a full history of transactions for complete traceability."
+                title="An Advanced ML Data Model."
+                description="We analyze millions of data points to narrow down the most indicative factors, from demographics and digital interest trends to price growth in similar assets. We then utilise public and private data sets to predict growth rates for each asset, giving you unrivalled access to premium commercial real estate optimised to outperform the market."
             />
             <WhyUs
                 number={3}
                 imageTitle={why3}
-                title="Secure and seamless cash in and out wallet (USDC to GBP or USD)."
-                description="An integrated digital wallet lets you send incoming wire transfers to fund your account, transact with confidence using USDC which is pegged 1:1 with the US dollar, and send outgoing wire transfers to convert your on-platform funds to cash."
+                title="Our Commercial Real Estate Insiders and Experts."
+                description="Premium CRE deals are often off-market traded on a handshake. We've built a diverse network to access premium CRE deals off-market. We've sourced more than 68% of our assets privately, allowing us to minimize third party transaction costs, and maximize investor value."
             />
             <WhyUs
                 number={4}
@@ -84,7 +83,7 @@ export const WhyTokunize: React.FC = () => {
             <WhyUs
                 number={5}
                 imageTitle={why5}
-                title="Dashboard and market analytics."
+                title="Detailed market analytics."
                 description="Access all the features you need to manage your commercial real estate investments and potential acquisitions with a single click. Updated market data on commercial real estate values fuel every view, providing insights that let you take action."
             />
         </section>

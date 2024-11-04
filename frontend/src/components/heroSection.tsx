@@ -42,15 +42,18 @@ export const HeroSection: React.FC = () => {
   const images = isMobile ? imagesMobile : imagesDesktop;
 
   return (
-    <div className="relative flex flex-col md:flex-row w-full bg-[#EBF9BE] overflow-hidden px-[20px] sm:px-[60px]" style={{ minHeight: '92vh' }}>
+    <div className="relative flex flex-col md:flex-row w-full bg-[#EBF9BE] overflow-hidden px-[20px] md:px-[60px]" style={{ minHeight: '92vh' }}>
       <article className="flex flex-col items-center justify-center w-full md:w-2/3 ">
         <div className='space-y-4 w-full '>
           <h1 className="text-5xl mt-[35px] sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
-            Invest in Premium Commercial Real Estate.
+            Invest in Premium Commercial Real Estate, from Anywhere.
           </h1>
+          <h4 className="font-bold text-4xl">
+            In Minutes, Not Months.
+          </h4>
       
           <p className="text-black tracking-wider text-base lg:text-xl mb-12 sm:w-[90%]">
-            Offering early access to premium commercial real estate developments, buy and sell equity effortlessly. Diversify across property types starting at just <span className="text-black font-bold "> £1000 and access liquidity instantly</span>
+            Offering early access to premium commercial real estate, buy and sell equity effortlessly. Diversify across property types starting at just <span className="text-black font-bold "> £1000 and access liquidity instantly.</span>
           </p>
         </div>
         <div className='w-full pt-[80px] flex items-center justify-center'>

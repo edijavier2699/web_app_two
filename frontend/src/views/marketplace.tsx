@@ -55,7 +55,7 @@ export const Marketplace = () => {
     useEffect(() => {
         const fetchProperties = async () => {
             try {
-                const apiUrl = `${import.meta.env.VITE_APP_BACKEND_URL}property/properties/public/`;
+                const apiUrl = `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/properties/public/`;
                 const response = await axios.get(apiUrl);
 
                 const publishedProperties: Property[] = response.data.filter(

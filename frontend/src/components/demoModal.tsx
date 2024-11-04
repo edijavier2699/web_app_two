@@ -12,7 +12,7 @@ export const DemoModal = () =>{
     return(
         <Dialog >
             <DialogTrigger className="w-[47%] sm:w-[35%] mb-[50px] mx-auto sm:mx-0 text-center bg-black text-white mt-6 md:mt-8 font-semibold px-4 py-3  rounded hover:bg-primary duration-300">
-                Book A Demo
+                Request Invitation
             </DialogTrigger>
             <DialogContent className="bg-[#F9FAFB] w-[90%]  mx-auto rounded">
                 <DialogHeader>

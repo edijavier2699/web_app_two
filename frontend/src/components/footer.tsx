@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
     return (
         <section className="text-[#667085] footerSection font-medium  px-4 sm:px-6 lg:px-8">
             <hr className="border-gray-300" />
-            <div className="grid space-y-5  grid-cols-1 sm:grid-cols-4 md:grid-cols-5   items-start md:flex-row justify-between mt-[35px]  px-4">
+            <div className="grid space-y-5  grid-cols-1 sm:grid-cols-4 md:grid-cols-5   items-start md:flex-row justify-between mt-[35px]">
                 <div className='flex'>
                     <img alt='logo-icon' className='h-16'  src={Logo} />
                 </div>
@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
                             window.scrollTo(0, 0);
                         }}>
                             <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
-                                Sign Up/Demo
+                                Sign Up
                             </a>
                         </li>
                         <li onClick={()=>{
@@ -32,6 +32,14 @@ export const Footer: React.FC = () => {
                         }}>
                             <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
                                 Marketplace
+                            </a>
+                        </li>
+                        <li onClick={()=>{
+                            navigate("/liquidity-pools/");
+                            window.scrollTo(0, 0);
+                        }}>
+                            <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
+                                Liquidity Pools
                             </a>
                         </li>
                     </ul>
@@ -56,11 +64,19 @@ export const Footer: React.FC = () => {
                             </a>
                         </li>
                         <li onClick={()=>{
-                            navigate("/how-it-works/");
+                            navigate("/investors/");
                             window.scrollTo(0, 0);
                         }}>
                             <a className="hover:text-blue-500  text-xs text-gray-450 duration-300 cursor-pointer">
-                                How It Works
+                                For Investors
+                            </a>
+                        </li>
+                        <li onClick={()=>{
+                            navigate("/assets-owners/");
+                            window.scrollTo(0, 0);
+                        }}>
+                            <a className="hover:text-blue-500  text-xs text-gray-450 duration-300 cursor-pointer">
+                                For Assets Owners
                             </a>
                         </li>
                     </ul>

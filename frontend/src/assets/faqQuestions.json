@@ -855,122 +855,72 @@
     },
     {
       "categoryId": 15,
-      "categoryName": "Key Terminology",
+      "categoryName": "Liquidity Pools & EMM",
       "questions": [
         {
           "id": "1",
-          "title": "What is an inspection contingency?",
-          "content": "Also known as a 'due diligence contingency,' the inspection contingency is a clause sometimes offered in a purchase agreement that grants buyers a predetermined amount of time during escrow to perform any necessary inspections."
+          "title": "How does Tokunize’s EMM (Efficient Market Maker) and Liquidity Pools work?",
+          "content": "Tokunize's Efficient Market Maker (EMM) is an algorithm that relies on users to provide funding for market-making through what’s called a liquidity pool.\n\nWhen you stake assets such as property tokens, USDC, or both into the liquidity pool, you’re essentially lending these assets to the algorithm.\n\nThe algorithm utilizes the USDC in the liquidity pool to facilitate the buying and selling of property tokens, directly interacting with users who place market orders (as opposed to limit orders).\n\nTokunize’s EMM is designed to offer users, for the first time, the ability to directly buy and sell ownership in commercial property—not a fund or a REIT—with the ease and familiarity of trading a share in a company like Nvidia.\n\nBenefits for Investors with EMM and Liquidity Pools:\n- Instantly buy and sell tokens using market orders, similar to trading stocks or cryptocurrencies.\n- Earn additional returns by lending out property tokens.\n- Earn additional returns by lending USDC, collateralized by property assets.\n\nStart lending today at https://tokunize.com/liquiditypools"
         },
         {
           "id": "2",
-          "title": "What is an inspection?",
-          "content": "An inspection happens when buyers pay a licensed professional inspector to visit the home and prepare a report on its condition and any needed repairs. The inspection often happens as part of the due diligence period, so buyers can fully assess if they want to buy a particular home as is, or ask the seller to either complete or pay for certain repairs."
-        },
+          "title": "Understanding Tokunize’s EMM and Liquidity Pools",
+          "content": "The market maker and liquidity pools within Tokunize operate as separate entities, allowing users the flexibility to engage with either one independently. In traditional financial markets, a market maker is an entity that continuously buys and sells assets to create a spot market price—the live price you see when trading stocks. This entity profits from the difference between the buying and selling prices, known as the spread.\n\nDue to regulatory limitations, Tokunize cannot act as a market maker directly. To address this, we’ve implemented a decentralized finance (DeFi) solution that emulates traditional market-making but leverages an algorithm instead of a single company. Funding for this market-making process comes from individual investors who contribute to “liquidity pools,” rather than from a centralized source.\n\nWhen you stake assets like property tokens, USDC, or both into a liquidity pool, you’re essentially lending them to the algorithm. This algorithm uses the USDC to buy property tokens and sells property tokens in exchange for USDC, directly interacting with users who place “market orders” instead of “limit orders.” The algorithm charges a fee on top of the standard Tokunize secondary market fee, akin to how traditional market makers earn through spreads.\n\nThese fees generate revenue for the market-making activities and are passed on to users who have provided assets to the liquidity pools, allowing them to earn a yield—the basis for the displayed APR values. This model enables individuals to provide liquidity for trading real-world assets, moving beyond assets valued solely through digital means or speculation.\n\nYou have the option to interact exclusively with the EMM by buying and selling property tokens via “market orders” without staking any assets. Alternatively, you can focus solely on providing liquidity by staking your assets, never directly interacting with the EMM through “market orders.” This system is highly flexible and entirely opt-in. Traditional limit orders remain available and are not affected by the EMM by default. Future updates may allow the EMM to trade directly against open limit orders.\n\nAll EMM fees are transparently displayed on the order confirmation page, and lending yields are shown on their respective liquidity pool pages. If you attempt to unstake or withdraw liquidity when there’s an existing imbalance in the pool, you may incur a penalty—sometimes significant and calculated on a sliding scale. This penalty is redistributed as rewards to other liquidity providers, incentivizing them to maintain their stakes. The last participant in a pool receives substantial additional rewards and yields. This mechanism helps prevent sudden withdrawals that could lead to volatile asset prices, addressing a key risk in traditional Automated Market Maker (AMM) architectures.\n\nBy staking property tokens, you can continue to receive rental income while also earning yield from staking, potentially enhancing your overall returns. However, your property ownership may fluctuate as your assets in the pool are traded over time, affecting your rental income accordingly. In some scenarios, you might temporarily earn only staking yields without rental income, while in others, you could receive most of your rental income plus staking yields, achieving higher returns than traditional rental property investments. Deciding whether to accept increased risk for the potential of greater rewards is entirely up to you.\n\nOur smart contracts enforce a maximum staking limit of 20% of a property’s circulating token supply in the pool, making staking opportunities available on a first-come, first-served basis. If a pool is full, you can attempt to deposit when space becomes available. There is no cap on the amount of USDC that can be staked in a pool. When placing large “market” orders relative to the pool’s supply, users may experience slippage, meaning their order could influence the market price. It’s important to be aware that large orders may not receive the initially quoted price per token due to this potential slippage."
+        },        
         {
           "id": "3",
-          "title": "What is an earnest money deposit?",
-          "content": "An earnest money deposit (EMD), sometimes referred to as a 'good faith deposit', is the initial funds that a buyer is asked to put down once a seller accepts the buyer’s offer. It shows not only that the buyer is serious about buying, but that they are also willing to put their money where their mouth is. The amount of the EMD can vary between 1 to 5 percent of the sales price. The EMD is often held by an escrow company."
+          "title": "What are Liquidity Pool Tokens (LP Tokens)?",
+          "content": "When you lend assets to a liquidity pool, you receive Liquidity Pool (LP) tokens in return. These LP tokens act as a “receipt” for your deposit, similar to a bank receipt that shows your deposited amount. The pool uses LP tokens to track the amount it owes you upon withdrawal.\n\nEach liquidity pool generates its own unique LP tokens, corresponding to the specific assets within that pool:\n- For Property Token Y → LP tokens for Property Token Y\n- For the USDC-Property Token Y pool → LP tokens for USDC in the Property Token Y pool\n\nThis structure means that each liquidity pool has a unique set of tokens, with LP tokens specific to that pool. Tokens from one pool cannot be used to interact with other liquidity pools.\n\nIt’s essential to keep your LP tokens secure. If they are lost, you won’t be able to retrieve your staked assets, and unfortunately, Tokunize cannot recover lost LP tokens. Since your assets are stored in a smart contract—a digital vault on the blockchain—Tokunize has no access to reclaim them if lost.\n\nYour LP tokens will be stored in your Tokunize Wallet if using Tokunize’s platform wallet, or in your external wallet if connected. You can view your LP tokens within the “Wallets” dashboard on Tokunize."
         },
         {
           "id": "4",
-          "title": "What is a purchase and sale agreement (PSA)?",
-          "content": "A purchase and sale agreement is commonly referred to as a written contract between the buyer and seller, which outlines the terms of the parties to sell and purchase real property. When a home is 'under contract', it usually signifies that the buyer and seller have formalized their commitment to sell and purchase the real property."
+          "title": "How to Claim Rewards for Lending Your Assets",
+          "content": "When you lend your assets, whether in property tokens or USDC, you earn rewards (yield), which are available for you to claim at any time.\n\nAs users make transactions through the new Market order feature, they pay higher fees compared to Limit orders. These additional fees are distributed to users who have lent assets to the liquidity pool, providing the source of your lending yield.\n\nYour share of the earned fees is proportional to the amount of liquidity you’ve contributed relative to other lenders in the pool.\n\nTo view and claim your rewards, navigate to the “Account” page. Rewards must be claimed manually; otherwise, they remain secured in the smart contract. Once claimed, you’re free to decide how to use these funds.\n\nYou may choose to reinvest your rewards to increase your earnings over time, or you can use them to acquire more real estate.\n\nAutomatic compounding of returns is not currently supported, so the displayed APY values don’t account for compounding. If you wish to compound, you’ll need to claim your rewards regularly and reinvest them to boost your returns over time.\n\nThe APY shown on your dashboard is the combined APY earned from staking. If you’re lending both property tokens and USDC, you’ll see the aggregated APY across both assets.\n\nRewards are issued in USDC, as transaction fees in the liquidity pool are collected in USDC.\n\nNote that USDC and property tokens may have varying rates based on trading supply and demand, as well as the assets available on each side of the pool."
         },
         {
           "id": "5",
-          "title": "What does IRR mean?",
-          "content": "IRR stands for Internal Rate of Return, which is an annualized return for equity investments that includes cash distributions and appreciation."
+          "title": "Will I still receive daily rent if I stake my tokens?",
+          "content": "Yes, if you stake your tokens in a liquidity pool, you will continue to earn daily rent as usual."
         },
         {
           "id": "6",
-          "title": "What is cash on cash return (CoC)?",
-          "content": "The cash return on an investment compared to the amount of cash invested. For example, an investment with cash distributions of £50 on a £1,000 investment has a 5% cash on cash return."
+          "title": "Why can’t I withdraw all of my tokens staked in a liquidity pool?",
+          "content": "Currently, you can only withdraw your full property token position if the liquidity pool’s balance aligns proportionally with your position. If your LP tokens’ value is lower than the current LP redemption rate, you may not be able to withdraw 100% of your staked tokens temporarily. You will, however, be able to withdraw the remainder when the pool balance returns to match your LP token position."
         },
         {
           "id": "7",
-          "title": "What is appreciation?",
-          "content": "A measure of the estimated increase in value of an asset over a time period."
+          "title": "Why does the liquidity pool APY update frequently?",
+          "content": "APY rates adjust in real time as Market trades occur against assets staked in the liquidity pool."
         },
         {
           "id": "8",
-          "title": "What is cap rate?",
-          "content": "The cap rate is the Net Operating Income (NOI) divided by the purchase price. The cap rate is an indicator of the risk and return of a property. It tells you the return of an investment before financing costs."
+          "title": "Why can’t I stake tokens in a liquidity pool for a property I own?",
+          "content": "A maximum of 20% of a property’s total token supply can be staked in a liquidity pool at one time. Once this limit is reached, no further deposits are accepted. However, additional staking becomes available when property tokens are bought via Market Buy Orders or when other users unstake their tokens."
         },
         {
           "id": "9",
-          "title": "What is Net Operating Income (NOI)?",
-          "content": "Net Operating Income (NOI) is the gross profit of a rental property. It’s calculated as gross rents minus all expenses other than interest."
+          "title": "Can I use my rental income to stake?",
+          "content": "Yes, you can withdraw your rental income balance into your Tokunize Wallet as USDC, which can then be staked in a liquidity pool."
         },
         {
           "id": "10",
-          "title": "What does CapEx mean?",
-          "content": "CapEx, or Capital Expenditures, are defined as new purchases or major improvements/renovations that extend the life of a property, such as replacing a roof, adding an extension, or finishing the basement. This term also covers equipment and supplies required to make these improvements. Generally, these are one-time, major expenses."
+          "title": "Will I receive property tokens as yield if I stake USDC or property tokens?",
+          "content": "No. If you stake USDC or property tokens, your returns will be paid in USDC only. Property tokens can only be acquired directly from the Marketplace."
         },
         {
           "id": "11",
-          "title": "What is a single-family home?",
-          "content": "A type of rental property that is designed for just one family to live in. This can be a typical house or townhouse. Duplexes and apartment buildings are considered to be 'multi-family' housing because the property can house multiple families."
+          "title": "Why am I unable to place a Market (instant) order on a specific property?",
+          "content": "Market Orders are only available if there is an active liquidity pool for the property. If a liquidity pool is not available, you can still trade your tokens using Limit Orders. Liquidity pools for all properties will be rolled out gradually."
         },
         {
           "id": "12",
-          "title": "What is a duplex?",
-          "content": "A duplex is a multi-family home that has two units in the same building. These two units always share a common wall, but the floor plan can vary. Units can be arranged either side by side or stacked on top of one another, each occupying an entire floor or two of the building. Each unit has a separate entrance and there is no interior connection between the two units."
+          "title": "Can I help launch a liquidity pool if my property doesn’t have one?",
+          "content": "Yes. If you own at least 5% of a property’s tokens, you can launch a liquidity pool. By seeding a pool with both property tokens and USDC (5% of each), you earn yield on your staked assets and gain the ability to sell tokens instantly at market price. This setup balances the liquidity pool, reducing price volatility.\n\nFor instance, to launch a pool for a property with a $14,000,565 market cap, you would need to seed it with 5% of the tokens and USDC, e.g., 120 property tokens and 700,029 USDC.\n\nIf you’re interested in seeding a liquidity pool, please reach out to support@tokunize.com with the property details, and we’ll help set up your pool promptly."
         },
         {
           "id": "13",
-          "title": "What is a triplex?",
-          "content": "A triplex is a multi-family home that has three units in the same building. These three units always share a common wall, but the floor plan can vary. Units can be arranged either side by side or stacked on top of one another, each occupying an entire floor or two of the building. Each unit has a separate entrance and there is no interior connection between the three units."
-        },
-        {
-          "id": "14",
-          "title": "What is diversification?",
-          "content": "The process of investing in different investments to reduce a portfolio's overall risk."
-        },
-        {
-          "id": "15",
-          "title": "What is land?",
-          "content": "Includes undeveloped property, vacant land, and agricultural land (farms, orchards, ranches, and timberland)."
-        },
-        {
-          "id": "16",
-          "title": "What are operating expenses?",
-          "content": "Operating Expenses include all of the anticipated costs for operating the rental property. Some expenses include Insurance, Property Tax, Vacancy, Maintenance, and Property Management."
-        },
-        {
-          "id": "17",
-          "title": "What is residential real estate?",
-          "content": "Any property used for residential purposes. Examples include single-family homes, condos, cooperatives, duplexes, townhouses, and multifamily residences with fewer than five individual units/flats."
-        },
-        {
-          "id": "18",
-          "title": "What is commercial real estate?",
-          "content": "Any property used exclusively for business purposes, such as apartment complexes, gas stations, grocery stores, hospitals, hotels, offices, parking facilities, restaurants, shopping centers, stores, and theaters."
-        },
-        {
-          "id": "19",
-          "title": "What is industrial real estate?",
-          "content": "Any property used for manufacturing, production, distribution, storage, and research and development. Examples include factories, power plants, and warehouses."
-        },
-        {
-          "id": "20",
-          "title": "What is special purpose property?",
-          "content": "Property used by the public, such as cemeteries, government buildings, libraries, parks, places of worship, and schools."
-        },
-        {
-          "id": "21",
-          "title": "What is capital gains tax?",
-          "content": "Capital gain or loss is the difference in the value of a property compared to its purchase price. If there is a gain, it is realised after the asset is sold. A short-term capital gain is one year or less; a long-term gain is more than a year. Both must be claimed on your income taxes, but short-term capital gains have a higher tax rate than long-term capital gains."
-        },
-        {
-          "id": "22",
-          "title": "What are closing costs?",
-          "content": "Closing costs are the fees paid at the end of a real estate transaction. These fees vary depending on where you live, the property you buy, and the type of loan you choose. There are costs associated with inspections, transfer of title, loan origination fees, etc."
-        },
-        {
-          "id": "23",
-          "title": "What is HVAC?",
-          "content": "Heating, Ventilating, and Air Conditioning (HVAC) systems are used to heat and cool a house. Sometimes HVAC units have integrated heating and cooling systems, while other times the HVAC system of a rental property may consist of an air conditioning unit and a separate furnace unit."
+          "title": "Will I Receive a Tax Document for My Staking Transactions?",
+          "content": "If you are an existing Tokunize user, your staking activity will be included in the tax form you receive.\n\nIf you are not a Tokunize user and only stake USDC using an external wallet, then it is up to you to self-report your transactions."
         }
       ]
     }
