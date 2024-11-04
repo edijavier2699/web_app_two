@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import smallLogo from "../assets/logo_only_black.png";
 import { LineChartMarketplace } from "./lineChartMarketplace";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 interface MarketplaceCardProps {
     title: string;
@@ -26,7 +26,7 @@ export const MarketplaceCard: React.FC<MarketplaceCardProps> = ({
 }) => {
   // State to control if the information overlay is active
   const [showInfo, setShowInfo] = useState(false);
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   // Toggle the state when the info button is clicked
   const toggleInfo = () => {
@@ -93,7 +93,7 @@ export const MarketplaceCard: React.FC<MarketplaceCardProps> = ({
 
       {/* Overlay div that appears when showInfo is true */}
       <div
-        onClick={()=> navigate("property/details/1")}
+        // onClick={()=> navigate("property/details/1")}
         className={`absolute cursor-pointer  inset-0 bg-[#C8E869] shadow-xl rounded-lg p-8 transition-transform duration-500 ease-in-out transform ${
           showInfo ? "translate-y-0" : "translate-y-full"
         }`}
