@@ -74,10 +74,17 @@
         }
         .social-link {
             margin: 0 10px;
-            color: gray;
+            padding: 10px !important;
+            border-radius: 50%;
+            background-color:#C8E870;
             text-decoration: none;
+            display: flex;
+            align-items: center !important;
+            justify-content: center !important;
         }
         .social-icon {
+            color: white;
+            background-color: white;
             height: 20px;
             width: 20px;
             vertical-align: middle;
@@ -87,17 +94,7 @@
             border-radius: 50%;
             transition: transform 0.2s; /* Animación al pasar el mouse */
         }
-        .social-icon-container{
-            background-color: white;
-            height: 45px;
-            width: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            object-fit: cover;
-            padding: 5px;
-        }
+     
         .linkdin{
             width: 20px !important;
             height: 20px !important;
@@ -106,9 +103,6 @@
             text-align: center;
             justify-content: center;
             font-size: 5px;
-        }
-        .social-icon-container a:hover .social-icon {
-            transform: scale(1.1); /* Escala el icono al pasar el mouse */
         }
         /* Styles for the overlay */
         .overlay-container {
@@ -222,21 +216,15 @@
             <p>&copy; 2024 Tokunize. All rights reserved.</p>
             <p style="color: #C8E870;">Follow Us On</p>
             <div class="social-links">
-                <span class="social-icon-container">
                     <a href="https://www.instagram.com/tokunize_official/" class="social-link" target="_blank">
                         <img src="https://res.cloudinary.com/dhyrv5g3w/image/upload/v1729271439/hvxbcvhw73or5dl58pb0.png" alt="Instagram" class="social-icon" />
                     </a>
-                </span>
-                <span class="social-icon-container">
-                    <a href="https://www.linkedin.com/company/tokunize/" class="linkdin" target="_blank">
-                        <img src="https://res.cloudinary.com/dhyrv5g3w/image/upload/v1729272319/fd2vif1gzqkb9anrpzr7.png" class="linkdin" alt="LinkedIn"  />
+                    <a href="https://www.linkedin.com/company/tokunize/" class="social-link" target="_blank">
+                        <img src="https://res.cloudinary.com/dhyrv5g3w/image/upload/v1729272319/fd2vif1gzqkb9anrpzr7.png" class="linkdin" alt="linkdin"  />
                     </a>
-                </span>
-                <span class="social-icon-container">
                     <a href="https://x.com/tokunize/" class="social-link" target="_blank">
                         <img src="https://res.cloudinary.com/dhyrv5g3w/image/upload/v1729271436/phruf0ig171e4phkikew.png" alt="Twitter" class="social-icon" />
                     </a>
-                </span>
             </div>
             <p>London, UK</p>
             <div>

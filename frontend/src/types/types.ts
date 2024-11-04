@@ -17,3 +17,8 @@ export interface NavigationItem {
     path: string;
     id:number,
   }
+
+ export interface HowItWorksCardProps {
+    title: string;
+    description: string;
+}

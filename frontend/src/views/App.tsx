@@ -23,10 +23,10 @@ function App() {
       <MarketplaceRepresentation/>
       <Features />
       <Suspense fallback={<LoadingSpinner/>}>
-        <WhyTokunize />
+        <WhyUsTable />
       </Suspense>
       <Suspense fallback={<LoadingSpinner/>}>
-        <WhyUsTable />
+        <WhyTokunize />
       </Suspense>
       <Suspense fallback={<LoadingSpinner/>}>
         <FAQ />

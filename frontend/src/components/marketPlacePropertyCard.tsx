@@ -79,7 +79,7 @@ export const MarketPlacePropertyCard: React.FC<MarketPlacePropertyCardProps> = (
       {/* Share Icon */}
       {status === "published" && (
         <Link
-          to={`/property-details/${id}`}
+          to={`/property/details/${id}`}
           className="absolute top-4 right-4 h-8 w-8 p-2 bg-white bg-opacity-50 rounded-full hover:bg-accent hover:text-accent-foreground shadow-lg duration-300 z-10"
         >
           <img src={shareIcon} alt="share" className="h-full" />
@@ -87,7 +87,7 @@ export const MarketPlacePropertyCard: React.FC<MarketPlacePropertyCardProps> = (
       )}
 
       {/* Link for Image Carousel */}
-      <Link to={`/property-details/${id}`} className="h-64 relative block hover:opacity-80 transition-opacity duration-300">
+      <Link to={`/property/details/${id}`} className="h-64 relative block hover:opacity-80 transition-opacity duration-300">
         <Carousel
           indicators={true}  // Show indicators for slides
           slide={false}

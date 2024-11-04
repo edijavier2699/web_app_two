@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import smallLogo from "../assets/logo_only_black.png";
 import { LineChartMarketplace } from "./lineChartMarketplace";
+import { useNavigate } from "react-router-dom";
 
 interface MarketplaceCardProps {
     title: string;
@@ -25,6 +26,7 @@ export const MarketplaceCard: React.FC<MarketplaceCardProps> = ({
 }) => {
   // State to control if the information overlay is active
   const [showInfo, setShowInfo] = useState(false);
+  const navigate = useNavigate()
 
   // Toggle the state when the info button is clicked
   const toggleInfo = () => {
@@ -91,7 +93,8 @@ export const MarketplaceCard: React.FC<MarketplaceCardProps> = ({
 
       {/* Overlay div that appears when showInfo is true */}
       <div
-        className={`absolute  inset-0 bg-[#C8E869] shadow-xl rounded-lg p-8 transition-transform duration-500 ease-in-out transform ${
+        onClick={()=> navigate("property/details/1")}
+        className={`absolute cursor-pointer  inset-0 bg-[#C8E869] shadow-xl rounded-lg p-8 transition-transform duration-500 ease-in-out transform ${
           showInfo ? "translate-y-0" : "translate-y-full"
         }`}
       >
@@ -106,7 +109,7 @@ export const MarketplaceCard: React.FC<MarketplaceCardProps> = ({
             <thead>
               <tr className="bg-gray-100">
                 <th className="px-4 py-2 text-left text-gray-600 text-sm font-semibold">Category</th>
-                <th className="px-4 py-2 text-left text-gray-600 text-sm font-semibold">Value</th>
+                <th className="px-4 py-2 text-left text-gray-600 text-sm font-semibold">{investmentCategory}</th>
               </tr>
             </thead>
             <tbody>

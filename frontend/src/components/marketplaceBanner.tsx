@@ -7,7 +7,7 @@ export const MarketplaceBanner = () =>{
                 style={{ backgroundImage: `url(${bannerImg})` }}
                 >
                 <h3 className="text-white tracking-wide font-bold text-3xl leading-relaxed">
-                    Invest in commercial<br/> real estate with <span className="text-[#C8E870]">ease </span>
+                    Invest in <span className="text-animated-gradient">premium </span> commercial <br/>  real estate with <span className="text-animated-gradient">ease </span>
                 </h3>
             </article>
     )

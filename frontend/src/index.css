@@ -127,7 +127,27 @@ li svg {
 
 /* *{
   border: 1px solid red;
+} */
+
+
+.text-animated-gradient {
+  background: radial-gradient( #a1d06b, #dff39e, #cef564, #97bf27, #363636);
+  background-size: 300% 300%; /* Aumenta el tamaño del fondo para el movimiento */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveGradient 12s linear infinite; /* Animación suave e infinita */
+  display: inline-block; /* Cambiar de inline a inline-block */
 }
- */
 
-
+@keyframes moveGradient {
+  0% {
+      background-position: 0% 50%; /* Posición inicial */
+  }
+  50% {
+      background-position: 100% 50%; /* Posición final en la mitad de la animación */
+  }
+  100% {
+      background-position: 0% 50%; /* Regresa a la posición inicial para crear un bucle suave */
+  }
+}

@@ -1,0 +1,233 @@
+{
+    "coreLuxuryApartments": {
+      "overview": {
+        "additionalFinancialInformation": {
+          "IRR": "11.8%",
+          "NOI": "£613,554",
+          "totalTenants": 14,
+          "minimumInvestment": "£1,000",
+          "daysRemaining": "30 Days",
+          "offeringDuration": "1 Month",
+          "offeringEndDate": "May 18, 2024",
+          "exchangeOpensOn": "April 17, 2024"
+        }
+      },
+      "financials": {
+        "totalInvestmentValue": {
+          "value": "£8,217,500",
+          "percentageOfAssetPrice": "(95% of the asset price)"
+        },
+        "underlyingAssetPrice": "£8,650,000",
+        "closingCosts": "£30,000",
+        "upfrontFees": "£750",
+        "operatingReserve": {
+          "amount": "£173,000",
+          "percentage": "2%"
+        },
+        "tokunizeListingFee": {
+          "amount": "£43,250",
+          "percentage": "0.5%"
+        },
+        "investmentOptions": {
+          "startingPrice": "£1,000 per token",
+          "totalTokensAvailable": 8218,
+          "currentAvailability": "85% sold, 1,233 tokens remaining"
+        },
+        "projectedReturns": {
+          "projectedAnnualReturn": "11.8%",
+          "projectedRentalYield": "8%",
+          "rentalYield": "8%",
+          "totalAnnualGrossRents": "£692,000"
+        },
+        "expenses": {
+          "propertyTaxes": "£28,000",
+          "homeownersInsurance": "£18,000",
+          "propertyManagement": "£30,946",
+          "annualFees": "£1,500",
+          "totalOperatingExpenses": "£78,446"
+        },
+        "cashFlow": {
+          "annualCashFlow": "£613,554",
+          "monthlyCashFlow": "£51,130",
+          "projectedAnnualCashFlow": "£613,554"
+        }
+      }
+    },
+    "firstHome": {
+      "overview": {
+        "additionalFinancialInformation": {
+          "IRR": "7.8%",
+          "NOI": "£707,174",
+          "totalTenants": 14,
+          "minimumInvestment": "£1,000",
+          "daysRemaining": "0 Days",
+          "offeringDuration": "1 Month",
+          "offeringEndDate": "February 18, 2024",
+          "exchangeOpensOn": "January 17, 2024"
+        }
+      },
+      "financials": {
+        "totalInvestmentValue": {
+          "value": "£14,231,000",
+          "percentageOfAssetPrice": "(95% of the asset price)"
+        },
+        "underlyingAssetPrice": "£14,980,000",
+        "closingCosts": "£50,000",
+        "upfrontFees": "£1,000",
+        "operatingReserve": {
+          "amount": "£299,600",
+          "percentage": "2%"
+        },
+        "tokunizeListingFee": {
+          "amount": "£149,800",
+          "percentage": "1%"
+        },
+        "investmentOptions": {
+          "startingPrice": "£1,000 per token",
+          "totalTokensAvailable": 14231,
+          "currentAvailability": "85% sold, 2,135 tokens remaining"
+        },
+        "projectedReturns": {
+          "projectedAnnualReturn": "7.5%",
+          "projectedRentalYield": "5.5%",
+          "rentalYield": "5.5%",
+          "totalAnnualGrossRents": "£824,120"
+        },
+        "expenses": {
+          "propertyTaxes": "£40,000",
+          "homeownersInsurance": "£25,000",
+          "propertyManagement": "£49,446",
+          "annualFees": "£2,500",
+          "totalOperatingExpenses": "£116,946"
+        },
+        "cashFlow": {
+          "annualCashFlow": "£707,174",
+          "monthlyCashFlow": "£58,931",
+          "projectedAnnualCashFlow": "£707,174"
+        }
+      }
+    },
+    "opportunisticDataCentre": {
+      "overview": {
+        "additionalFinancialInformation": {
+          "IRR": "16.9%",
+          "NOI": "£392,080",
+          "note": "(projected based on future income once operational)",
+          "debt": "71%",
+          "minimumInvestment": "£1,000",
+          "daysRemaining": "0 Days",
+          "totalTenants": 0,
+          "offeringDuration": "1 Month",
+          "offeringEndDate": "February 18, 2024",
+          "exchangeOpensOn": "January 17, 2024"
+        }
+      },
+      "financials": {
+        "sponsorOverview": {
+          "description": "AMMI Investments LLP was established in 2003 to develop and revitalize data centres, mixed-use, multifamily, single-family, and commercial real estate in urban infill locations. Headquartered in New York, AMMI manages over £500 million in assets and is committed to producing luxury residential and commercial properties. AMMI collaborates exclusively with Overseas Management Group for contracting and Kiyu Design for interior designing, creating a cohesive team environment under one roof. Their portfolio spans data centres, boutique single-family homes to large mixed-use buildings, generating over $50M in development revenue annually."
+        },
+        "totalInvestmentValue": {
+          "value": "£2,488,000",
+          "underlyingAssetPrice": "£22,320,000",
+          "closingCosts": "£56,000",
+          "upfrontFees": "£2,000",
+          "operatingReserve": {
+            "amount": "£446,400",
+            "percentage": "2%"
+          },
+          "tokunizeListingFee": {
+            "amount": "£111,600",
+            "percentage": "0.5%"
+          }
+        },
+        "capitalStack": {
+          "tokenSaleEquity": {
+            "amount": "£5,447,680",
+            "percentage": "24.4%"
+          },
+          "seniorDebt": {
+            "amount": "£15,870,720",
+            "percentage": "71.1%"
+          },
+          "sponsorEquity": {
+            "amount": "£1,001,600",
+            "percentage": "4.5%"
+          }
+        },
+        "investmentOptions": {
+          "startingPrice": "£1,000 per token",
+          "availability": "85% sold, 817 tokens remaining"
+        },
+        "projectedReturns": {
+          "projectedAnnualReturn": "16.9%",
+          "note": "(based on expected future income and appreciation potential)"
+        },
+        "projectedExpensesUponStabilization": {
+          "propertyTaxes": "£20,000",
+          "homeownersInsurance": "£15,000",
+          "propertyManagement": "£25,000",
+          "annualFees": "£1,500",
+          "totalProjectedOperatingExpenses": "£61,500"
+        },
+        "projectedCashFlowUponStabilization": {
+          "projectedAnnualCashFlow": "£392,080",
+          "projectedMonthlyCashFlow": "£32,673"
+        },
+        "sourcesAndUsesTable": {
+          "projectBudget": {
+            "totalProjectCost": "£22,320,000",
+            "acquisitionCosts": "£3,571,200 (16%)",
+            "softCostExpenses": "£1,562,400 (7%)",
+            "hardCostExpenses": "£13,392,000 (60%)",
+            "contingency": "£1,116,000 (5%)",
+            "holdingAndLeaseUpCost": "£2,678,400 (12%)"
+          }
+        },
+        "projectTeam": {
+          "rolesAndCompanies": [
+            {
+              "role": "Developer",
+              "company": "OMMI Investments LLP"
+            },
+            {
+              "role": "Architect",
+              "company": "Plate Architecture"
+            },
+            {
+              "role": "Engineering Team",
+              "company": "Marque Engineering"
+            },
+            {
+              "role": "Designer",
+              "company": "Kiyu Design"
+            },
+            {
+              "role": "LEED Professional",
+              "company": "SL Consulting"
+            },
+            {
+              "role": "Legal Team",
+              "company": "Feya Law"
+            },
+            {
+              "role": "Accounting",
+              "company": "EYC"
+            },
+            {
+              "role": "Property Manager",
+              "company": "Ker William"
+            }
+          ]
+        },
+        "sponsorProjects": {
+          "totalInvestmentProperties": 7,
+          "totalAmountInvested": "£74,260,000",
+          "totalRevenueGenerated": "£188,350,000",
+          "profit": "£21,810,000",
+          "ROI": "~35%",
+          "valueOfAssetsOnHand": "£54,800,000"
+        }
+      }
+    }
+  }
+  

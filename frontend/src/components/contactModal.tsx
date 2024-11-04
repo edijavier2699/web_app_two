@@ -12,7 +12,7 @@ import { ContactForm } from "@/forms/contactForm";
 export const ContactModal = () => {
     return (
         <Dialog>
-            <DialogTrigger className="button-navbar text-center bg-[#C8E870] text-black mt-6 md:mt-8 px-4 py-3 font-bold rounded hover:bg-[#A0CC28] w-full md:w-auto">
+            <DialogTrigger className="button-navbar duration-300 text-center bg-[#C8E870] text-black mt-6 md:mt-8 px-4 py-3 font-bold rounded hover:bg-[#A0CC28] w-full md:w-auto">
                 Contact Us
             </DialogTrigger>
             <DialogContent className="bg-[#F9FAFB] w-[90%] max-w-[600px] max-h-[95vh] my-auto mx-auto rounded overflow-y-auto p-4 flex flex-col">
