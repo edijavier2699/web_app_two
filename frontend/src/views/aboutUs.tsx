@@ -83,9 +83,9 @@ export const AboutUs: React.FC = () => {
   }
   
   return (
-    <section className="pt-16 px-[20px] md:px-[60px]">
+    <section className="md:pt-16 px-[20px] md:px-[60px]">
       {/* Quiénes Somos */}
-      <div className="text-center mb-12 py-5 flex flex-col md:flex-row items-center gap-8 md:h-[350px]">
+      <div className="text-center mb-12 py-5  flex flex-col md:flex-row items-center gap-8 md:h-[350px]">
         <div className="w-full md:w-1/2">
           <img
             src="https://images.unsplash.com/photo-1525438160292-a4a860951216?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
