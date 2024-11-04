@@ -65,8 +65,8 @@ export const LiquidityPool = () => {
 
     return (
         <section className="mx-[20px] md:mx-[60px] py-10">
-           <header className="relative mx-[-20px] md:mx-[-60px]  flex flex-col items-center justify-start h-[87vh] bg-cover bg-center text-center mb-10">
-                <h4 className="text-5xl md:text-[75px] font-bold mb-4 mt-[70px] text-animated-gradient max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">
+           <header className=" mx-[-20px] md:mx-[-60px]  flex flex-col items-center justify-start h-[87vh] bg-cover bg-center text-center mb-10">
+                <h4 className="text-5xl md:text-[75px] font-bold mb-4 mt-[60px] text-animated-gradient max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">
                     Instant liquidity in real estate is here
                 </h4>
                 <span className="font-semibold text-xl sm:text-2xl max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">
@@ -76,7 +76,6 @@ export const LiquidityPool = () => {
                     Experience real estate liquidity pools, powered by Ethereum, combining the resilience of real estate with the dynamic upside of DeFi.
                 </p>
                 <MyButton label="Get Started" parentMethod={getStartedLink} />
-                
                 <img src={liquidityPoolBack} className="absolute bottom-0 left-0 w-full h-[400px] object-cover sm:h-[300px] md:h-[350px] lg:h-[400px]" />
             </header>
 
@@ -99,8 +98,7 @@ export const LiquidityPool = () => {
                     ))}
                 </div>
             </div>
-            {/* Sección de beneficios adicionales */}
-            <div className="mt-16 flex flex-col md:flex-row h-[400px] items-center text-center md:text-left">
+             <div className="mt-16 flex flex-col md:flex-row min-h-[400px] items-center text-center md:text-left">
                 <div className="md:w-1/2 md:pl-8">
                     <h4 className="text-3xl font-semibold text-gray-800 mb-6">
                         Combining DeFi & Real Estate to Deliver <span className="text-animated-gradient">Instant Liquidity </span>  & <span className="text-animated-gradient"> Enhanced Returns</span>
@@ -112,7 +110,7 @@ export const LiquidityPool = () => {
                 <div className="md:w-1/2 h-full flex items-center rounded-lg p-7 bg-black">
                 <h4 className="text-4xl font-bold text-animated-gradient  text-center ">Enabling the world’s most liquid <br/> commercial real estate trading ever.</h4>
                 </div>
-            </div>
+            </div> 
 
             <div className="flex flex-col my-12 md:flex-row items-center text-center md:text-left"> 
                 <div className="mb-12 md:mb-0 w-full md:w-1/2 bg-black rounded-lg">
@@ -132,11 +130,11 @@ export const LiquidityPool = () => {
                 
             </div>
             <div className="flex flex-col items-center text-center py-10 mb-12 bg-gray-50 rounded-lg">
-                <h4 className=" text-3xl md:text-6xl font-bold mb-4">Let Your Crypto Work for You</h4> {/* Aumentar tamaño y margen inferior */}
-                <div className="flex flex-row items-end   space-x-[40px] md:space-x-[100px] mb-6"> {/* Espacio entre imágenes */}
+                <h4 className=" text-3xl md:text-6xl font-bold mb-4">Let Your Crypto Work for You</h4> 
+                <div className="flex sm:space-x-20 flex-col sm:flex-row space-y-5 md:space-y-0 sm:items-end  mb-6">
                     <div className="flex flex-col items-center">
                         <img alt="Tokunize" src={tokunize} className="my-2 h-16" />
-                        <span className="font-semibold text-lg">Tokunize</span> {/* Tamaño de fuente para el título */}
+                        <span className="font-semibold text-lg">Tokunize</span> 
                     </div>
                     <MyButton
                     label="Get Started"
@@ -144,18 +142,18 @@ export const LiquidityPool = () => {
                     />
                     <div className="flex flex-col items-center">
                         <FaEthereum className="text-3xl my-2 h-16" />
-                        <span className="font-semibold text-lg">Ethereum</span> {/* Tamaño de fuente para el título */}
+                        <span className="font-semibold text-lg">Ethereum</span> 
                     </div>
                 </div>
             </div>
         </main>
-        <footer className="flex flex-col md:flex-row ">
-            <div className="sticky top-0 h-[fit-content] z-10 bg-white p-4"> {/* Asegúrate de tener un fondo y suficiente espacio */}
+        <footer className="flex flex-col lg:flex-row ">
+            <div className="sticky top-0  h-[fit-content] z-10 bg-white p-4 order-2 lg:order-1"> 
                 <h4 className="text-3xl font-bold">Still have questions?</h4>
                 <p>Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
                 <ContactModal />
             </div>
-            <div className="md:w-2/3">
+            <div className="lg:w-2/3 order-1 lg:order-2">
             <AccordionItem
                     title="What is Tokunize Trade"
                     content="Tokunize Trade serves as a decentralized liquidity pool, aggregating contributions from anonymous sources to support seamless property trading within the Tokunize Marketplace. Powered by an automated market maker (AMM), Tokunize Trade allows property prices to be set dynamically through algorithmic adjustments, bypassing traditional order books. This setup maintains fluid market transactions, with prices automatically fine-tuned in response to shifts in supply and demand."
