@@ -2,9 +2,8 @@ import { MarketPlacePropertyCard } from "@/components/marketPlacePropertyCard";
 import { MarketplaceBanner } from "@/components/marketplaceBanner";
 import { useEffect, useState, useMemo } from 'react';
 import axios from "axios";
-import { LoadingSpinner } from "@/components/loadingSpinner";
 import { PropertyFilters } from "@/components/propertyFilters";
-
+import { PropertySkeleton } from "@/skeletons/marketplaceSkeleton";
 
 // Define la interfaz Property
 interface Token {
@@ -26,8 +25,8 @@ interface Property {
   image: string[];
   investment_category:string;
 }
-
 export const Marketplace = () => {
+    // Función de ordenación de propiedades
     const sortProperties = (properties: Property[], sortBy: string) => {
         return properties.sort((a, b) => {
             switch (sortBy) {
@@ -45,6 +44,7 @@ export const Marketplace = () => {
         });
     };
 
+    // Estados de propiedades, carga, error y filtros
     const [properties, setProperties] = useState<Property[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -54,6 +54,7 @@ export const Marketplace = () => {
         sort_by: ''
     });
 
+    // Efecto para cargar las propiedades
     useEffect(() => {
         const fetchProperties = async () => {
             try {
@@ -63,8 +64,7 @@ export const Marketplace = () => {
                 const publishedProperties: Property[] = response.data.filter(
                     (property: Property) => property.status === "published" || property.status === "coming_soon"
                 );
-                console.log(publishedProperties);
-                
+
                 setProperties(publishedProperties);
             } catch (err) {
                 setError('Failed to fetch properties');
@@ -83,7 +83,7 @@ export const Marketplace = () => {
         }));
     };
 
-    // Memoize filtered properties
+    // Filtrar propiedades con `useMemo`
     const filteredProperties = useMemo(() => {
         return properties.filter(property => {
             const meetsLocation = !filters.location || property.location === filters.location;
@@ -92,11 +92,21 @@ export const Marketplace = () => {
         });
     }, [properties, filters.location, filters.property_type]);
 
-    // Memoize sorted properties
+    // Ordenar propiedades con `useMemo`
     const sortedProperties = useMemo(() => {
         return sortProperties(filteredProperties, filters.sort_by);
     }, [filteredProperties, filters.sort_by]);
 
+    // Renderizar solo el Skeleton en pantalla completa mientras está cargando
+    if (loading) {
+        return (
+            <div className="h-screen w-full">
+                <PropertySkeleton />
+            </div>
+        );
+    }
+
+    // Renderizar el contenido principal después de cargar los datos
     return (
         <section className="px-[20px] lg:px-[60px]">
             <MarketplaceBanner />
@@ -106,11 +116,7 @@ export const Marketplace = () => {
                     onFilterChange={handleFilterChange}
                     propertyTypes={[...new Set(properties.map(p => p.property_type))]}
                 />
-                {loading ? (
-                    <div className="flex items-center justify-center h-40">
-                        <LoadingSpinner />
-                    </div>
-                ) : error ? (
+                {error ? (
                     <p>{error}</p>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
