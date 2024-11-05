@@ -26,14 +26,14 @@ export const Footer: React.FC = () => {
                                 Sign Up
                             </a>
                         </li>
-                        {/* <li onClick={()=>{
+                        <li onClick={()=>{
                             navigate("/marketplace/");
                             window.scrollTo(0, 0);
                         }}>
                             <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
                                 Marketplace
                             </a>
-                        </li> */}
+                        </li>
                         <li onClick={()=>{
                             navigate("/liquidity-pools/");
                             window.scrollTo(0, 0);
@@ -139,6 +139,7 @@ export const Footer: React.FC = () => {
                     </ul>
                 </div>
             </div>
+            <p className="text-xs mt-12">TSSRCT Technologies (“Tokunize”) maintains a commercial real estate (CRE) technology platform through which companies and individuals who own CRE properties can offer tokenized interests of their properties to qualified investors for investment. Investments involve risk, including principal loss, and, unless otherwise stated, are not guaranteed. Targeted returns are subject to change and are based on modelling performed by the sponsor. Be sure to first consult with a qualified financial adviser and/or tax professional before implementing any strategy discussed herein. There is currently not an active secondary market for digital assets of the type featured on Tokunize. The investor’s ability to liquidate will be dependent on market conditions, and there is no guarantee that a buyer will be available that can offer a price deemed acceptable by the seller. Tokunize is not yet authorised by the FCA and is in the process of acquiring relevant FCA authorisation.</p>
             <p className='text-center font-medium text-sm my-[50px]'>@2024 TSSRCT. All rights reserved .</p>
         </section>
     );

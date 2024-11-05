@@ -124,20 +124,17 @@ li svg {
     padding-left: 30px; 
   }
 }
-/* 
-*{
-  border: 1px solid red;
-} */
+
 
 
 .text-animated-gradient {
   background: radial-gradient( #a1d06b, #dff39e, #cef564, #97bf27, #363636);
-  background-size: 300% 300%; /* Aumenta el tamaño del fondo para el movimiento */
+  background-size: 300% 300%; 
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: moveGradient 12s linear infinite; /* Animación suave e infinita */
-  display: inline-block; /* Cambiar de inline a inline-block */
+  animation: moveGradient 12s linear infinite; 
+  display: inline-block;
 }
 
 @keyframes moveGradient {
@@ -150,4 +147,12 @@ li svg {
   100% {
       background-position: 0% 50%; /* Regresa a la posición inicial para crear un bucle suave */
   }
+}
+
+
+.featureContainer{
+    padding-top:40px ;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
 }

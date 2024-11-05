@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { FaBath, FaBed, FaRulerCombined } from 'react-icons/fa';
-// import { Progress } from "@/components/ui/progress";
-// import "../styles/singleProperty.css";
-// import { Graphic } from './graph';
+import { Progress } from '../ui/progress';
+import { HistoricalPriceGraph } from './historicalPriceGraph';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { LoadingSpinner } from '../loadingSpinner';
 import { FaHouse } from "react-icons/fa6";
 import propertyExtraData from "../../assets/propertyExtraDetails.json"
+import { PropertyMap } from './propertyMap';
+import { FormatCurrency } from './currencyFormatter'; 
 
 interface AdditionalFinancialInformation {
   IRR: string;
@@ -34,18 +35,18 @@ interface PropertyData {
   amenities?: string[] ;
   video_urls?: string[];
   property_type?:string
+  price:number
 }
 
 interface PropertyOverviewProps {
-  propertyType: 'coreLuxuryApartments' | 'firstHome' | 'opportunisticDataCentre';
+  propertyType: 'Multifamily' | 'Offices' | 'Data Center';
 }
-
 
 export const PropertyOverview: React.FC<PropertyOverviewProps> = ({ propertyType }) => {
   const [property, setProperty] = useState<PropertyData | null>(null);
-  // const [progress, setProgress] = useState<number>(0);
+  const [progress, setProgress] = useState<number>(0);
   const { id } = useParams<{ id: string }>();
-  const [valueAmount, setValueAmount] = useState<string>("0")
+  const [valueAmount, setValueAmount] = useState<React.ReactNode>(null); // Cambiar a React.ReactNode
   const [propertyExtra, setPropertyExtra] = useState<AdditionalFinancialInformation>({
     IRR: "",
     NOI: "",
@@ -57,14 +58,15 @@ export const PropertyOverview: React.FC<PropertyOverviewProps> = ({ propertyType
     exchangeOpensOn: ""
   });
   
+  
   useEffect(() => {
     const fetchProperty = async () => {
       try {
         const apiUrl = `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/${id}/?view=overview`;
         const response = await axios.get<PropertyData>(apiUrl);                
-        setProperty(response.data);
-        // setProgress(50); 
-        setValueAmount("1,503,000")
+        setProperty(response.data);        
+        setProgress(50); 
+        setValueAmount( <FormatCurrency amount={response.data.price} />        )
         const extraPropertyDetails = propertyExtraData[propertyType]?.overview.additionalFinancialInformation;
         if (extraPropertyDetails) {
           setPropertyExtra(extraPropertyDetails);
@@ -82,75 +84,103 @@ export const PropertyOverview: React.FC<PropertyOverviewProps> = ({ propertyType
   < LoadingSpinner/>
  </div>;
 
+    const minPrice = property.price * 0.8;
+    const maxPrice = property.price * 1.2;
+
   return (
-    <section className='pl-5'> 
-        <div className="border-b pb-5">
-          <h4 className="text-lg font-semibold mb-2">{property.title}</h4>
+    <section className='md:pl-5 text-lg'> 
+        <div className="border-b py-5">
+          <h4 className="text-xl font-semibold mb-2">{property.title}</h4>
           <p className="text-medium text-gray-500">{property.location}, {property.post_code} </p>
         </div> 
-        <div className="mt-6 space-y-6">
+        <div className="mt-6 space-y-6  bg-[#F4FAE2] rounded-lg p-4 ">
           <div className="flex items-center space-x-5">
             <FaBath className="text-xl" />
-            <span className="text-lg">{property.bathrooms || 'N/A'} Bath</span>
+            <span className="text-xl">{property.bathrooms || 'N/A'} Bath</span>
           </div>
   
           <div className="flex items-center space-x-5">
             <FaBed className="text-xl" />
-            <span className="text-lg">{property.bedrooms || 'N/A'} Beds</span>
+            <span className="text-xl">{property.bedrooms || 'N/A'} Beds</span>
           </div>
   
           <div className="flex items-center space-x-5">
             <FaRulerCombined className=" text-xl" />
-            <span className="text-lg">{property.size || 'N/A'} sq ft</span>
+            <span className="text-xl">{property.size || 'N/A'} sq ft</span>
           </div>
           <div className="flex items-center space-x-5">
             <FaHouse className=" text-xl" />
-            <span className="text-lg">{property.property_type || 'N/A'}</span>
+            <span className="text-xl">{property.property_type || 'N/A'}</span>
           </div>
         </div>
 
-        <div className="mt-[40px]">
-          <h2 className="text-lg font-semibold mb-2">Financial Information Resume</h2>
+        <div className="mt-[40px] featureContainer  bg-[#F4FAE2] rounded-lg p-4 ">
+          <h2 className="text-2xl font-semibold mb-2">Financial Information Resume</h2>
           <ul className="space-y-2">
-            <li className="text-gray-600 text-base">IRR (Internal Rate of Return): {propertyExtra.IRR}</li>
-            <li className="text-gray-600 text-base">NOI (Net Operating Income): {propertyExtra.NOI}</li>
-            <li className="text-gray-600 text-base">Total Tenants:  {propertyExtra.totalTenants}</li>
-            <li className="text-gray-600 text-base">Minimum Investment:  {propertyExtra.minimumInvestment}</li>
-            <li className="text-gray-600 text-base">Days Remaining:  {propertyExtra.daysRemaining}</li>
-            <li className="text-gray-600 text-base">Offering Duration:  {propertyExtra.offeringDuration}</li>
-            <li className="text-gray-600 text-base">Offering End Date:  {propertyExtra.offeringEndDate}</li>
-            <li className="text-gray-600 text-base">Exchange Opens On:  {propertyExtra.exchangeOpensOn}</li>
+              <li className="flex justify-between">
+                  <span >IRR (Internal Rate of Return)</span>
+                  <span className="font-semibold">{propertyExtra.IRR}</span>
+              </li>
+              <li className="flex justify-between">
+                  <span>NOI (Net Operating Income)</span>
+                  <span className="font-semibold">{propertyExtra.NOI}</span>
+              </li>
+              <li className="flex justify-between">
+                  <span>Total Tenants</span>
+                  <span className="font-semibold">{propertyExtra.totalTenants}</span>
+              </li>
+              <li className="flex justify-between">
+                  <span>Minimum Investment</span>
+                  <span className="font-semibold">{propertyExtra.minimumInvestment}</span>
+              </li>
+              <li className="flex justify-between">
+                  <span>Days Remaining</span>
+                  <span className="font-semibold">{propertyExtra.daysRemaining}</span>
+              </li>
+              <li className="flex justify-between">
+                  <span>Offering Duration</span>
+                  <span className="font-semibold ">{propertyExtra.offeringDuration}</span>
+              </li>
+              <li className="flex justify-between">
+                  <span>Offering End Date</span>
+                  <span className="font-semibold">{propertyExtra.offeringEndDate}</span>
+              </li>
+              <li className="flex justify-between">
+                  <span>Exchange Opens On</span>
+                  <span className="font-semibold">{propertyExtra.exchangeOpensOn}</span>
+              </li>
           </ul>
+
         </div>
   
-        <div className="mt-[40px] featureContainer">
-          <h4 className="text-lg font-semibold mb-2">Estimated Value</h4>
-          <p className="text-sm text-gray-500">
+        <div className="mt-[40px] featureContainer  bg-[#F4FAE2] rounded-lg p-4   ">
+          <h4 className="text-2xl font-semibold mb-2">Estimated Value</h4>
+          <p className="text-base text-gray-500">
             Based on recent sales data, market trends, and property conditions.
           </p>
   
-          <div className="relative flex items-center justify-center mt-[60px]">
-            {/* <Progress value={progress} className="w-3/5" /> */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 mb-[60px] text-lg font-semibold text-gray-800">
-              £{valueAmount}
+          <div className="relative flex items-center justify-center mt-[60px] ">
+            <Progress value={progress} className="w-3/5" />
+            <div className="absolute left-1/2 transform -translate-x-1/2 mb-[60px] text-2xl font-semibold text-gray-800">
+              {valueAmount}
             </div>
           </div>
   
-          <div className="flex justify-between text-sm text-gray-500 mt-2 w-3/5 mx-auto">
-            <span>£1.4M</span>
-            <span>£1.8M</span>
+          <div className="flex justify-between text-base text-gray-500 mt-2 w-3/5 mx-auto">
+            <span>{<FormatCurrency amount={minPrice} />}</span>
+            <span>{<FormatCurrency amount={maxPrice} />}</span>
           </div>
         </div>
   
-        <div className="featureContainer break-words">
-          <h4 className="text-lg font-semibold mb-4">Description</h4>
+        <div className="featureContainer break-words   bg-[#F4FAE2] rounded-lg p-4  py-5">
+          <h4 className="text-2xl font-semibold mb-4">Description</h4>
           <p className="text-gray-700 mb-5">
             {property.description || 'Description not available'}
           </p>
         </div>
   
-        <div className="mt-[40px] featureContainer">
-          <h2 className="text-lg font-semibold mb-4">Key Features</h2>
+        <div className="mt-[40px] featureContainer   bg-[#F4FAE2] rounded-lg p-4  ">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc pl-5 space-y-1 text-gray-700 break-words">
             {property.amenities ? (
               property.amenities.map((item: string, index: number) => (
@@ -162,17 +192,52 @@ export const PropertyOverview: React.FC<PropertyOverviewProps> = ({ propertyType
           </ul>
         </div>
   
-        <div className="my-8 featureContainer">
-          <h2 className="text-lg font-semibold mb-4">Neighborhood Highlight</h2>
-          <p className="text-gray-700 mb-4">
-            {property.details || 'Description not available'}
-          </p>
-          {/* <PropertyModal /> */}
+        <div className="featureContainer  bg-[#F4FAE2] rounded-lg p-4 ">
+            <h2 className="text-2xl  font-bold mb-4">Area  Overview</h2>   
+            <ul className=" info-section mb-5">
+                <li className="info-item flex justify-between py-2">
+                    <span>Population</span>
+                    <span className="font-semibold">983,944</span>
+                </li>
+                <li className="info-item flex justify-between py-2">
+                    <span>Household Income</span>
+                    <span className="font-semibold">£130,277</span>
+                </li>
+                <li className="info-item flex justify-between py-2">
+                    <span>Median Property Value</span>
+                    <span className="font-semibold">£1,065,200</span>
+                </li>
+                <li className="info-item flex justify-between py-2">
+                    <span>Median Age</span>
+                    <span className="font-semibold">37.8</span>
+                </li>
+                <li className="info-item flex justify-between py-2">
+                    <span>Unemployment Rate</span>
+                    <span className="font-semibold">3.8%</span>
+                </li>
+            </ul>
+          </div>
+
+            <div className="featureContainer  bg-[#F4FAE2] rounded-lg p-4 ">
+
+            <h3 className="text-2xl font-bold mb-2">Market Analysis</h3>
+            <p className="mb-4">
+                <strong>{property.location} Overview:</strong>
+                <br />
+                Ranked among the top 25 fastest-growing regions in the UK, {property.location} boasts a strong job market, affordability, and consistent upward rental growth. 
+                From 2012 to 2019, equity growth in 3-bedroom homes appreciated by 35%.
+            </p>
+
+            <p>
+                Rated as a top neighbourhood, the {property.location} area offers amenities 
+                such as restaurants, shopping, access to the tennis grounds, and entertainment, 
+                with proximity to corporate offices.
+            </p>
         </div>
-  
-        <div className="featureContainer">
-          <h4 className="text-lg font-semibold">Historical sold prices in {property.location}</h4>
-          {/* <HistoricalPrice /> */}
+          <PropertyMap location={property.location} />
+        <div className="featureContainer  bg-[#F4FAE2] rounded-lg p-4 ">
+          <h4 className="text-2xl font-semibold">Historical sold prices in {property.location}</h4>
+          <HistoricalPriceGraph />
         </div>
     </section>
   );

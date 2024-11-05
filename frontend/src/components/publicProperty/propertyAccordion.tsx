@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { PropertyOverview } from './propertyOverview';
 import { PropertyFinancial } from './propertyFinancial';
 import useFetchPropertyDetails from '@/hooks/useFetchPropertyDetails';
+import { SignUpRequired } from './signUpRequired';
+import { LoadingSpinner } from '../loadingSpinner';
 
 interface PropertyAccordionProps {
   property_id: number;
@@ -14,11 +16,22 @@ export const PropertyAccordion: React.FC<PropertyAccordionProps> = ({ property_i
   const viewTypes = ['overview', 'financial', 'activity', 'documents'];
   const viewType = viewTypes[activeIndex ?? 0];
 
-  const { data, loading, error } = useFetchPropertyDetails(property_id,viewType,);
+  // Only fetch data if the selected viewType is either 'overview' or 'financial'
+  const shouldFetchData = viewType === 'overview' || viewType === 'financial';
+  const { data, loading, error } = useFetchPropertyDetails(property_id, viewType, shouldFetchData);
 
   const handleClick = (index: number) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
+
+  // Manejo de la carga y errores
+  if (loading && shouldFetchData) {
+    return <LoadingSpinner />; // Muestra un mensaje de carga mientras se obtienen los datos
+  }
+
+  if (error && shouldFetchData) {
+    return <div>Error: {error}</div>; // Muestra un mensaje de error si hay un problema al obtener datos
+  }
 
   return (
     <div>
@@ -37,14 +50,14 @@ export const PropertyAccordion: React.FC<PropertyAccordionProps> = ({ property_i
           Financial
         </button>
         <button
-          className={`p-2 border-b-2 transition-all ease-in-out duration-300 ${activeIndex === 3 ? 'border-black' : 'border-transparent'}`}
-          onClick={() => handleClick(3)}
+          className={`p-2 border-b-2 transition-all ease-in-out duration-300 ${activeIndex === 2 ? 'border-black' : 'border-transparent'}`}
+          onClick={() => handleClick(2)}
         >
           Activity
         </button>
         <button
-          className={`p-2 border-b-2 transition-all ease-in-out duration-300 ${activeIndex === 4 ? 'border-black' : 'border-transparent'}`}
-          onClick={() => handleClick(4)}
+          className={`p-2 border-b-2 transition-all ease-in-out duration-300 ${activeIndex === 3 ? 'border-black' : 'border-transparent'}`}
+          onClick={() => handleClick(3)}
         >
           Documents
         </button>
@@ -52,12 +65,15 @@ export const PropertyAccordion: React.FC<PropertyAccordionProps> = ({ property_i
 
       {/* Accordion Content */}
       <div>
-        {activeIndex === 0 && (
-          <PropertyOverview propertyType='coreLuxuryApartments'/>
-        )}     
-       {activeIndex === 1 && (
-          <PropertyFinancial data={data} propertyType='coreLuxuryApartments' loading={loading} error={error} />
-       )}
+        {activeIndex === 0 && data && (
+          <PropertyOverview propertyType={data.property_type} />
+        )}
+        {activeIndex === 1 && data && (
+          <PropertyFinancial data={data} loading={loading} error={error} />
+        )}
+        {(activeIndex === 2 || activeIndex === 3) && (
+          <SignUpRequired />
+        )}
       </div>
     </div>
   );

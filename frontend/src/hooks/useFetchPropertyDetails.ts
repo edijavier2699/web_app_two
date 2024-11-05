@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosRequestConfig } from 'axios';
 
+type PropertyType = "Multifamily" | "Offices" | "Data Center";
 
 interface PropertyDetails {
   annual_cash_flow: string;
@@ -24,8 +25,8 @@ interface PropertyDetails {
   total_tokens: number;
   underlying_asset_price: string;
   upfront_fees: string;
+  property_type: PropertyType;
 }
-
 
 interface FetchState<T> {
   data: T | null;
@@ -33,29 +34,32 @@ interface FetchState<T> {
   error: string | null;
 }
 
-const useFetchPropertyDetails = (property_id: number, viewType: string): FetchState<PropertyDetails> => {
+const useFetchPropertyDetails = (
+  property_id: number,
+  viewType: string,
+  shouldFetch: boolean
+): FetchState<PropertyDetails> => {
   const [data, setData] = useState<PropertyDetails | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Solo ejecuta el fetch si shouldFetch es verdadero
+    if (!shouldFetch) return;
+
     const fetchPropertyDetails = async () => {
       setLoading(true);
       setError(null);  
 
       try {
-
         const apiUrl = `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/${property_id}/landing-page/?view=${viewType}`;
-
         const config: AxiosRequestConfig = {
           headers: {
             'Content-Type': 'application/json',
           }
         };
 
-        const response = await axios.get<PropertyDetails>(apiUrl, config);  
-        console.log(response.data);
-              
+        const response = await axios.get<PropertyDetails>(apiUrl, config);                        
         setData(response.data);
       } catch (err) {
         setError('Failed to fetch property details.');
@@ -66,7 +70,7 @@ const useFetchPropertyDetails = (property_id: number, viewType: string): FetchSt
     };
 
     fetchPropertyDetails();
-  }, [property_id, viewType]);
+  }, [property_id, viewType, shouldFetch]);
 
   return { data, loading, error };
 };

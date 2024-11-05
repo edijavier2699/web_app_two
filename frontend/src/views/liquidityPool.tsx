@@ -66,7 +66,7 @@ export const LiquidityPool = () => {
     return (
         <section className="mx-[20px] md:mx-[60px] py-10">
            <header className=" mx-[-20px] md:mx-[-60px]  flex flex-col items-center justify-start h-[87vh] bg-cover bg-center text-center mb-10">
-                <h4 className="text-5xl md:text-[75px] font-bold mb-4 mt-[15px] lg:mt-[60px] text-animated-gradient max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">
+                <h4 className="text-5xl md:text-[75px] font-bold mb-4 mt-[15px] lg:mt-[60px] 2xl:text-9xl 2xl:mt-[140px] text-animated-gradient max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">
                     Instant liquidity in real estate is here
                 </h4>
                 <span className="font-semibold text-xl sm:text-2xl max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">
@@ -75,13 +75,18 @@ export const LiquidityPool = () => {
                 <p className="text-gray-500 mb-6 max-w-[90%] text-md sm:text-normal mt-3 sm:max-w-[80%] lg:max-w-[50%] mx-auto">
                     Experience real estate liquidity pools, powered by Ethereum, combining the resilience of real estate with the dynamic upside of DeFi.
                 </p>
-                <MyButton label="Get Started" parentMethod={getStartedLink} />
+                <MyButton
+                    label="Get Started"
+                    personalizedStyles= "z-20"
+                    parentMethod={getStartedLink}
+                    
+                />                
                 <img src={liquidityPoolBack} className="absolute bottom-0 left-0 w-full h-[400px] object-cover sm:h-[300px] md:h-[350px] lg:h-[400px]" />
             </header>
 
 
             <main >
-            <div className="min-h-[80vh] flex flex-col items-center justify-center">
+            <div className="min-h-[67vh] flex flex-col items-center justify-center">
                 <h4 className="text-3xl text-center md:text-5xl font-semibold text-gray-800 mb-6">Reimagining Real Estate Investing</h4>
                 <p className="text-gray-600 text-lg mt-2 mb-6">
                     Explore new possibilities in real estate investments with secure and transparent solutions.
@@ -98,8 +103,8 @@ export const LiquidityPool = () => {
                     ))}
                 </div>
             </div>
-             <div className="mt-16 flex flex-col md:flex-row min-h-[400px] items-center text-center md:text-left">
-                <div className="md:w-1/2 md:pl-8">
+             <div className="mt-16 flex flex-col md:flex-row h-[500px] items-center text-center md:text-left">
+                <div className="md:w-1/2 md:px-8">
                     <h4 className="text-3xl font-semibold text-gray-800 mb-6">
                         Combining DeFi & Real Estate to Deliver <span className="text-animated-gradient">Instant Liquidity </span>  & <span className="text-animated-gradient"> Enhanced Returns</span>
                     </h4>
@@ -114,7 +119,7 @@ export const LiquidityPool = () => {
 
             <div className="flex flex-col my-12 md:flex-row items-center text-center md:text-left"> 
                 <div className="mb-12 md:mb-0 w-full md:w-1/2 bg-black rounded-lg">
-                    <img src={liquidityPool} alt="Liquidity Pool" className="w-full object-cover  h-[400px] rounded-lg" />
+                    <img src={liquidityPool} alt="Liquidity Pool" className="w-full object-cover  h-[450px] rounded-lg" />
                 </div>     
                 <div className="md:w-1/2 md:pl-8">
                     <h4 className="text-3xl font-semibold text-gray-800 mb-6">

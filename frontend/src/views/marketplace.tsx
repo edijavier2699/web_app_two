@@ -5,6 +5,7 @@ import axios from "axios";
 import { LoadingSpinner } from "@/components/loadingSpinner";
 import { PropertyFilters } from "@/components/propertyFilters";
 
+
 // Define la interfaz Property
 interface Token {
   token_price: number;
@@ -23,6 +24,7 @@ interface Property {
   created_at: string;
   tokens: Token[];
   image: string[];
+  investment_category:string;
 }
 
 export const Marketplace = () => {
@@ -55,12 +57,14 @@ export const Marketplace = () => {
     useEffect(() => {
         const fetchProperties = async () => {
             try {
-                const apiUrl = `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/properties/public/`;
+                const apiUrl = `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/marketplace-list/`;
                 const response = await axios.get(apiUrl);
 
                 const publishedProperties: Property[] = response.data.filter(
                     (property: Property) => property.status === "published" || property.status === "coming_soon"
                 );
+                console.log(publishedProperties);
+                
                 setProperties(publishedProperties);
             } catch (err) {
                 setError('Failed to fetch properties');
@@ -94,7 +98,7 @@ export const Marketplace = () => {
     }, [filteredProperties, filters.sort_by]);
 
     return (
-        <section className="px-[50px]">
+        <section className="px-[20px] lg:px-[60px]">
             <MarketplaceBanner />
             <div className="py-10">
                 <PropertyFilters
@@ -109,7 +113,7 @@ export const Marketplace = () => {
                 ) : error ? (
                     <p>{error}</p>
                 ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {sortedProperties.map((property, index) => (
                             <MarketPlacePropertyCard
                                 key={index}
@@ -124,6 +128,7 @@ export const Marketplace = () => {
                                 createdDay={property.created_at}
                                 status={property.status}
                                 tokens_available={property.tokens[0].tokens_available}
+                                investment_category={property.investment_category}
                             />
                         ))}
                     </div>
