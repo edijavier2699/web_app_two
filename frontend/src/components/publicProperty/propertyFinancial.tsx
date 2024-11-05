@@ -165,36 +165,96 @@ export const PropertyFinancial: React.FC<PropertyFinancialProps> = ({ data, load
        {data.investment_category === import.meta.env.VITE_IC_FINANCIAL && (
         <>
         {/* Sources & Uses Section */}
-            <section className="mb-8 bg-[#F4FAE2] rounded-lg p-4">
-              <h3 className="text-xl font-bold mb-4">Sources & Uses</h3>
-              <table className="min-w-full border-collapse">
-                <thead>
-                  <tr>
-                    <th className="border-b-2 border-gray-300 py-2 text-left">Name</th>
-                    <th className="border-b-2 border-gray-300 py-2 text-left">Type</th>
-                    <th className="border-b-2 border-gray-300 py-2 text-left">Amount</th>
-                    <th className="border-b-2 border-gray-300 py-2 text-left">Rate</th>
-                    <th className="border-b-2 border-gray-300 py-2 text-left">Ratio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border-b border-gray-200 py-2">Investment</td>
-                    <td className="border-b border-gray-200 py-2">Sponsor & Token Holders</td>
-                    <td className="border-b border-gray-200 py-2">$1,623,000</td>
-                    <td className="border-b border-gray-200 py-2">0%</td>
-                    <td className="border-b border-gray-200 py-2">29%</td>
-                  </tr>
-                  <tr>
-                    <td className="border-b border-gray-200 py-2">Debt</td>
-                    <td className="border-b border-gray-200 py-2">Construction Finance</td>
-                    <td className="border-b border-gray-200 py-2">$4,000,000</td>
-                    <td className="border-b border-gray-200 py-2">4% interest</td>
-                    <td className="border-b border-gray-200 py-2">71%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
+        <section className="mb-8 bg-[#F4FAE2] rounded-lg p-4">
+  <h3 className="text-xl font-bold mb-4">Sources & Uses</h3>
+
+  {/* Mostrar como tabla en pantallas grandes */}
+  <div className="hidden lg:block">
+    <table className="min-w-full border-collapse">
+      <thead>
+        <tr>
+          <th className="border-b-2 border-gray-300 py-2 text-left">Name</th>
+          <th className="border-b-2 border-gray-300 py-2 text-left">Type</th>
+          <th className="border-b-2 border-gray-300 py-2 text-left">Amount</th>
+          <th className="border-b-2 border-gray-300 py-2 text-left">Rate</th>
+          <th className="border-b-2 border-gray-300 py-2 text-left">Ratio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td className="border-b border-gray-200 text-sm md:text-base py-2">Investment</td>
+          <td className="border-b border-gray-200 text-sm md:text-base py-2">Sponsor & Token Holders</td>
+          <td className="border-b border-gray-200 text-sm md:text-base py-2">$1,623,000</td>
+          <td className="border-b border-gray-200 text-sm md:text-base py-2">0%</td>
+          <td className="border-b border-gray-200 text-sm md:text-base py-2">29%</td>
+        </tr>
+        <tr>
+          <td className="border-b border-gray-200 text-sm  md:text-base py-2">Debt</td>
+          <td className="border-b border-gray-200  text-sm md:text-base py-2">Construction Finance</td>
+          <td className="border-b border-gray-200  text-sm  md:text-base py-2">$4,000,000</td>
+          <td className="border-b border-gray-200 text-sm md:text-base py-2">4% interest</td>
+          <td className="border-b border-gray-200 text-sm md:text-base py-2">71%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  {/* Mostrar en formato de tarjetas en pantallas móviles */}
+      <div className="lg:hidden space-y-4">
+      <div className=" p-5 rounded-lg  border-gray-200">
+        <h4 className="text-lg font-semibold mb-2 text-gray-800">Investment Details</h4>
+        <div className="text-base space-y-1">
+          <p className="flex items-center justify-between">
+            <span className="text-gray-500">Name:</span>
+            <span className="font-medium text-gray-700">Investment</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span className="text-gray-500">Type:</span>
+            <span className="font-medium text-gray-700">Sponsor & Token Holders</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span className="text-gray-500">Amount:</span>
+            <span className="font-medium text-green-600">$1,623,000</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span className="text-gray-500">Rate:</span>
+            <span className="font-medium text-gray-700">0%</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span className="text-gray-500">Ratio:</span>
+            <span className="font-medium text-gray-700">29%</span>
+          </p>
+        </div>
+      </div>
+      <hr/>
+      <div className=" p-5 rounded-lgborder-gray-200">
+        <h4 className="text-lg font-semibold mb-2 text-gray-800">Debt Details</h4>
+        <div className="text-base space-y-1">
+          <p className="flex items-center justify-between">
+            <span className="text-gray-500">Name:</span>
+            <span className="font-medium text-gray-700">Debt</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span className="text-gray-500">Type:</span>
+            <span className="font-medium text-gray-700">Construction Finance</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span className="text-gray-500">Amount:</span>
+            <span className="font-medium text-green-600">$4,000,000</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span className="text-gray-500">Rate:</span>
+            <span className="font-medium text-gray-700">4% interest</span>
+          </p>
+          <p className="flex items-center justify-between">
+            <span className="text-gray-500">Ratio:</span>
+            <span className="font-medium text-gray-700">71%</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    </section>
+
 
             {/* Capital Calls Section */}
             <section className="mb-8 bg-[#F4FAE2] rounded-lg p-4">

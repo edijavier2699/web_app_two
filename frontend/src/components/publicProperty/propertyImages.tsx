@@ -75,7 +75,7 @@ export const PropertyImages: React.FC<PropertyImagesProps> = ({ images }) => {
           />
         )}    
       </div>
-      <div className="absolute bottom-5 right-0 px-[20px] flex px-2 items-center justify-end lg:hidden">
+      <div className="relative bottom-14 right-0 px-[20px] flex px-2 items-center justify-end lg:hidden">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline">
@@ -93,9 +93,9 @@ export const PropertyImages: React.FC<PropertyImagesProps> = ({ images }) => {
                   </svg>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="bottom" className="h-screen">
-                <SheetHeader>
-                  <SheetTitle>Property Images</SheetTitle>
+              <SheetContent side="bottom" className="h-[90%]">
+              <SheetHeader>
+                  <SheetTitle className="mt-5">Property Images</SheetTitle>
                 </SheetHeader>
               <div className="grid grid-cols-2 mt-5 gap-4">
                 {images.slice(1).map((image, index) => (
