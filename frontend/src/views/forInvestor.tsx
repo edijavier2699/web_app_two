@@ -1,7 +1,7 @@
 import { HowItWorksSteps } from "@/components/howItWorksSteps";
 import singUpImage from "../assets/signUpInvestor.webp"
-import earnImage from "../assets/earnImage.png"
-import investImage from "../assets/investImage.png"
+import earnImage from "../assets/earnImage.webp"
+import investImage from "../assets/investImage.webp"
 import ourTech from "../assets/ourTech2.png"
 import { TokunizeAdvantages } from "@/components/tokunizeAdvantages";
 import { FaChartPie } from "react-icons/fa";

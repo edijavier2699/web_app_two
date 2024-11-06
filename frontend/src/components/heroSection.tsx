@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/heroSection.css';
 import { DemoModal } from './demoModal';
-import hotelCard from "../assets/hotelCard.png";
-import officeCard from "../assets/officeCard.png";
-import multifamilyCard from "../assets/multifamilyCard.png";
-import hotelCardMobile from "../assets/hotelCardMobile.png"
-import officeCardMobile from "../assets/officeCardMobile.png"
+import hotelCard from "../assets/hotelCard.webp";
+import officeCard from "../assets/officeCard.webp";
+import multifamilyCard from "../assets/multifamilyCard.webp";
+import hotelCardMobile from "../assets/hotelCardMobile.webp"
+import officeCardMobile from "../assets/officeCardMobile.webp"
 import multifamilyCardMobile from "../assets/multifamilyCardMobile.png"
 
 // Arrays de imágenes normales y móviles

@@ -1,17 +1,17 @@
 import { MyButton } from "@/components/signUpBtn";
 import { useNavigate } from "react-router-dom";
-import liquidityPool from "../assets/liquidityPool.png"
+import liquidityPool from "../assets/liquidityPool.png";
 import { FaEthereum } from "react-icons/fa";
-import tokunize from "../assets/logo_only_black.png"
+import tokunize from "../assets/logo_only_black.png";
 import { AccordionItem } from "@/components/myAccordion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GiPadlock } from "react-icons/gi";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { FaArrowTrendDown } from "react-icons/fa6";
 import { AiOutlineStock } from "react-icons/ai";
 import { ContactModal } from "@/components/contactModal";
-import liquidityPoolBack from "../assets/liquidityPoolBack.png"
-
+import liquidityPoolBack from "../assets/liquidityPoolBack.png";
+import { LoadingSpinner } from "@/components/loadingSpinner";
 
 // Datos de las tarjetas
 const liquidityPoolCards = [
@@ -47,25 +47,43 @@ const LiquidityPoolBlock: React.FC<{ title: string; description: string; icon: R
     );
 };
 
-
-
-// Componente principal
 export const LiquidityPool = () => {
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
+    const navigate = useNavigate();
+    const [openIndex, setOpenIndex] = useState<number | null>(1);
+
+    const handleImageLoad = () => {
+        setIsImageLoaded(true);
+    };
+
+    const handleImageError = () => {
+        setIsImageLoaded(true);  // Aunque falle, lo marcaremos como cargado
+    };
 
     const getStartedLink = () => {
         navigate("/request-invitation/");
     };
 
-    const [openIndex, setOpenIndex] = useState<number | null>(1);
-    const navigate = useNavigate();
-
     const toggleOpen = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
+    useEffect(() => {
+        const img = new Image();
+        img.src = liquidityPoolBack;
+        img.onload = handleImageLoad;
+        img.onerror = handleImageError;
+    }, []);
+
+    if (!isImageLoaded) {
+        return <LoadingSpinner />;  // Show spinner while loading
+    }
+
+
+
     return (
         <section className="mx-[20px] md:mx-[60px] py-10">
-           <header className=" mx-[-20px] md:mx-[-60px]  flex flex-col items-center justify-start h-[87vh] bg-cover bg-center text-center mb-10">
+           <header className="mx-[-20px] md:mx-[-60px]  flex flex-col items-center justify-start h-[87vh] bg-cover bg-center text-center mb-10">
                 <h4 className="text-5xl md:text-[75px] font-bold mb-4 mt-[15px] lg:mt-[60px] 2xl:text-9xl 2xl:mt-[140px] text-animated-gradient max-w-[90%] sm:max-w-[80%] lg:max-w-[70%]">
                     Instant liquidity in real estate is here
                 </h4>
@@ -81,7 +99,11 @@ export const LiquidityPool = () => {
                     parentMethod={getStartedLink}
                     
                 />                
-                <img src={liquidityPoolBack} className="absolute bottom-0 left-0 w-full h-[400px] object-cover sm:h-[300px] md:h-[350px] lg:h-[400px]" />
+                <img src={liquidityPoolBack}
+                    alt="Liquidity Pool Background"
+                    className="absolute bottom-0 left-0 w-full h-[400px] object-cover sm:h-[300px] md:h-[350px] lg:h-[400px]"
+                    onLoad={handleImageLoad}  // Cuando la imagen se carga
+                    />
             </header>
 
 

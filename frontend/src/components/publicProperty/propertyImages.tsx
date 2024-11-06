@@ -93,7 +93,7 @@ export const PropertyImages: React.FC<PropertyImagesProps> = ({ images }) => {
                   </svg>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="bottom" className="h-[90%]">
+              <SheetContent side="bottom" className="h-[100%]">
               <SheetHeader>
                   <SheetTitle className="mt-5">Property Images</SheetTitle>
                 </SheetHeader>
