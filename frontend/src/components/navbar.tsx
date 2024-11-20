@@ -20,8 +20,8 @@ type NavigationItem = {
 
 const navigation: NavigationItem[] = [
   { name: 'Marketplace', href: "/marketplace/", current: false },
+  { name: 'Liquidity Pools', href: "http://www.tokun.co.uk/", current: false },
   { name: 'About Us', href: "/about-us/", current: false },
-  { name: 'Liquidity Pools', href: "/liquidity-pools/", current: false },
   { name: 'Learn', href: "/blog/", current: false },
   { name: 'FAQ', href: "/faq/", current: false },
   { name: 'Request Invitation', href: '/request-invitation/', current: false },
@@ -30,7 +30,6 @@ const navigation: NavigationItem[] = [
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
-
 export const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth0();
@@ -39,6 +38,9 @@ export const Navbar: React.FC = () => {
   const authenticatedNavigation = isAuthenticated
     ? [...navigation, { name: 'Dashboard', href: "/dashboard/", current: false }]
     : navigation;
+
+  // Find the index of "Liquidity Pools"
+  const liquidityPoolsIndex = authenticatedNavigation.findIndex(item => item.name === 'Liquidity Pools');
 
   return (
     <nav className='lg:px-[60px] py-1 border bg-[white] text-black md:border-0'>
@@ -57,8 +59,27 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex px-[20px] md:px-0 sm:space-x-4 sm:ml-auto">
-          <NavigationMenuNav/>
-            {authenticatedNavigation.map((item) => (
+            {/* Render items before Liquidity Pools */}
+            {authenticatedNavigation.slice(0, liquidityPoolsIndex +1).map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className={classNames(
+                  item.name === 'Request Invitation' ? 'bg-[#C8E870] hover:bg-[#A0CC29] duration-300' : '',
+                  item.current ? '' : 'text-[17px] hover:bg-[#C8E870] duration-300 ease-in-out',
+                  'px-3 flex items-center rounded-md text-sm font-medium'
+                )}
+                aria-current={item.current ? 'page' : undefined}
+              >
+                {item.name}
+              </a>
+            ))}
+            
+            {/* Insert NavigationMenuNav */}
+            <NavigationMenuNav />
+
+            {/* Render items after Liquidity Pools */}
+            {authenticatedNavigation.slice(liquidityPoolsIndex + 1).map((item) => (
               <a
                 key={item.name}
                 href={item.href}
@@ -89,21 +110,24 @@ export const Navbar: React.FC = () => {
                 <SheetHeader>
                   <SheetTitle>Menu</SheetTitle>
                 </SheetHeader>
-                <div className="py-3  space-y-4 ">
-                <NavigationMenuNav/>
+                <div className="py-3 space-y-4">
+                  {/* Mobile version of the menu */}
                   {authenticatedNavigation.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
                       aria-current={item.current ? 'page' : undefined}
                       className={classNames(
-                        item.current ? 'text-xl text-black' : 'flex  font-semibold  hover:bg-[#A0CC28] duration-300 ease-in-out',
+                        item.current ? 'text-xl text-black' : 'flex font-semibold hover:bg-[#A0CC28] duration-300 ease-in-out',
                         'rounded-md p-2 font-medium duration-300 ease-in-out'
                       )}
                     >
                       {item.name}
                     </a>
                   ))}
+
+                  {/* Mobile NavigationMenuNav */}
+                  <NavigationMenuNav />
                 </div>
               </SheetContent>
             </Sheet>

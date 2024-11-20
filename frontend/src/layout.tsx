@@ -27,7 +27,6 @@ const ForInvestors = lazy(()=> import ('./views/forInvestor').then(module =>({de
 const ForOwners = lazy(()=> import ('./views/forOwner').then(module =>({default:module.ForOwners})))
 const LiquidityPool = lazy(()=> import ('./views/liquidityPool').then(module =>({default:module.LiquidityPool})))
 
-
 const Layout = () => {
     return (
         <BrowserRouter>
@@ -52,7 +51,6 @@ const Layout = () => {
                         <Route path="liquidity-pools/" element={<LiquidityPool/>}/>
                         <Route path="/property/details/:id/" element={<PropertyDetails/>} />
                         <Route path="*" element={<NotFound />} />
-
                     </Route>
 
                     <Route element={<RequestInvitation />} path="/request-invitation/" />

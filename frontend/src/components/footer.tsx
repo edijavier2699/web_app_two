@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 export const Footer: React.FC = () => {
     const navigate = useNavigate()
     return (
-        <section className="text-[#667085] footerSection font-medium  px-4 sm:px-6 lg:px-8">
+        <section className="text-[#667085] footerSection font-medium   px-4 sm:px-6 lg:px-8">
             <hr className="border-gray-300" />
             <div className="grid space-y-5  grid-cols-1 sm:grid-cols-4 md:grid-cols-5   items-start md:flex-row justify-between mt-[35px]">
                 <div className='flex'>

@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { FaBath, FaBed, FaRulerCombined } from 'react-icons/fa';
 import { Progress } from '../ui/progress';
 import { HistoricalPriceGraph } from './historicalPriceGraph';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import { LoadingSpinner } from '../loadingSpinner';
 import { FaHouse } from "react-icons/fa6";
 import propertyExtraData from "../../assets/propertyExtraDetails.json"
 import { PropertyMap } from './propertyMap';
@@ -20,32 +17,28 @@ interface AdditionalFinancialInformation {
   offeringEndDate: string;
   exchangeOpensOn: string;
 }
-
 interface PropertyData {
-  title: string;
-  location: string;
-  post_code:string;
-  image: string[];
-  annual_gross_rents: string;
-  bedrooms?: number;
-  bathrooms?: string;
-  size?: string;
-  description?: string;
-  details?: string;
-  amenities?: string[] ;
-  video_urls?: string[];
-  property_type?:string
-  price:number
+  overviewData: {
+    title: string;
+    location: string;
+    post_code: string; // Asegúrate de incluir post_code
+    image: string[];
+    annual_gross_rents: string; // Asegúrate de incluir annual_gross_rents
+    bedrooms?: number;
+    bathrooms?: string;
+    size?: string;
+    description?: string;
+    details?: string;
+    amenities?: string[];
+    video_urls?: string[];
+    property_type?: string;
+    price: number; // Asegúrate de incluir price
+  };
 }
 
-interface PropertyOverviewProps {
-  propertyType: 'Multifamily' | 'Offices' | 'Data Center';
-}
 
-export const PropertyOverview: React.FC<PropertyOverviewProps> = ({ propertyType }) => {
-  const [property, setProperty] = useState<PropertyData | null>(null);
-  const [progress, setProgress] = useState<number>(0);
-  const { id } = useParams<{ id: string }>();
+export const PropertyOverview = ({ overviewData }:PropertyData) => {
+
   const [valueAmount, setValueAmount] = useState<React.ReactNode>(null); // Cambiar a React.ReactNode
   const [propertyExtra, setPropertyExtra] = useState<AdditionalFinancialInformation>({
     IRR: "",
@@ -58,59 +51,44 @@ export const PropertyOverview: React.FC<PropertyOverviewProps> = ({ propertyType
     exchangeOpensOn: ""
   });
   
-  
   useEffect(() => {
-    const fetchProperty = async () => {
-      try {
-        const apiUrl = `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/${id}/?view=overview`;
-        const response = await axios.get<PropertyData>(apiUrl);                
-        setProperty(response.data);        
-        setProgress(50); 
-        setValueAmount( <FormatCurrency amount={response.data.price} />        )
-        const extraPropertyDetails = propertyExtraData[propertyType]?.overview.additionalFinancialInformation;
-        if (extraPropertyDetails) {
-          setPropertyExtra(extraPropertyDetails);
-        }
-
-      } catch (error) {
-        console.error('Failed to fetch property data:', error);
+    if (overviewData && overviewData.property_type) {
+      const extraPropertyDetails = propertyExtraData[overviewData.property_type as keyof typeof propertyExtraData]?.overview?.additionalFinancialInformation;
+      if (extraPropertyDetails) {
+        setPropertyExtra(extraPropertyDetails);
+        setValueAmount(<FormatCurrency amount={overviewData.price} />)
       }
-    };
+    }
+  }, [overviewData]);  
+  
 
-    fetchProperty();
-  }, [id]);
-
-  if (!property) return <div className="flex items-center justify-center h-screen">
-  < LoadingSpinner/>
- </div>;
-
-    const minPrice = property.price * 0.8;
-    const maxPrice = property.price * 1.2;
+    const minPrice = overviewData.price * 0.8;
+    const maxPrice = overviewData.price * 1.2;
 
   return (
     <section className='md:pl-5 text-lg'> 
         <div className="border-b py-5">
-          <h4 className="text-xl font-semibold mb-2">{property.title}</h4>
-          <p className="text-medium text-gray-500">{property.location}, {property.post_code} </p>
+          <h4 className="text-xl font-semibold mb-2">{overviewData.title}</h4>
+          <p className="text-medium text-gray-500">{overviewData.location}, {overviewData.post_code} </p>
         </div> 
         <div className="mt-6 space-y-6  bg-[#F4FAE2] rounded-lg p-4 ">
           <div className="flex items-center space-x-5">
             <FaBath className="text-xl" />
-            <span className="text-xl">{property.bathrooms || 'N/A'} Bath</span>
+            <span className="text-xl">{overviewData.bathrooms || 'N/A'} Bath</span>
           </div>
   
           <div className="flex items-center space-x-5">
             <FaBed className="text-xl" />
-            <span className="text-xl">{property.bedrooms || 'N/A'} Beds</span>
+            <span className="text-xl">{overviewData.bedrooms || 'N/A'} Beds</span>
           </div>
   
           <div className="flex items-center space-x-5">
             <FaRulerCombined className=" text-xl" />
-            <span className="text-xl">{property.size || 'N/A'} sq ft</span>
+            <span className="text-xl">{overviewData.size || 'N/A'} sq ft</span>
           </div>
           <div className="flex items-center space-x-5">
             <FaHouse className=" text-xl" />
-            <span className="text-xl">{property.property_type || 'N/A'}</span>
+            <span className="text-xl">{overviewData.property_type || 'N/A'}</span>
           </div>
         </div>
 
@@ -160,7 +138,7 @@ export const PropertyOverview: React.FC<PropertyOverviewProps> = ({ propertyType
           </p>
   
           <div className="relative flex items-center justify-center mt-[60px] ">
-            <Progress value={progress} className="w-3/5" />
+            <Progress value={50} className="w-3/5" />
             <div className="absolute left-1/2 transform -translate-x-1/2 mb-[60px] text-2xl font-semibold text-gray-800">
               {valueAmount}
             </div>
@@ -175,15 +153,15 @@ export const PropertyOverview: React.FC<PropertyOverviewProps> = ({ propertyType
         <div className="featureContainer break-words   bg-[#F4FAE2] rounded-lg p-4  py-5">
           <h4 className="text-2xl font-semibold mb-4">Description</h4>
           <p className="text-gray-700 mb-5">
-            {property.description || 'Description not available'}
+            {overviewData.description || 'Description not available'}
           </p>
         </div>
   
         <div className="mt-[40px] featureContainer   bg-[#F4FAE2] rounded-lg p-4  ">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc pl-5 space-y-1 text-gray-700 break-words">
-            {property.amenities ? (
-              property.amenities.map((item: string, index: number) => (
+            {overviewData.amenities ? (
+              overviewData.amenities.map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))
             ) : (
@@ -222,21 +200,21 @@ export const PropertyOverview: React.FC<PropertyOverviewProps> = ({ propertyType
 
             <h3 className="text-2xl font-bold mb-2">Market Analysis</h3>
             <p className="mb-4">
-                <strong>{property.location} Overview:</strong>
+                <strong>{overviewData.location} Overview:</strong>
                 <br />
-                Ranked among the top 25 fastest-growing regions in the UK, {property.location} boasts a strong job market, affordability, and consistent upward rental growth. 
+                Ranked among the top 25 fastest-growing regions in the UK, {overviewData.location} boasts a strong job market, affordability, and consistent upward rental growth. 
                 From 2012 to 2019, equity growth in 3-bedroom homes appreciated by 35%.
             </p>
 
             <p>
-                Rated as a top neighbourhood, the {property.location} area offers amenities 
+                Rated as a top neighbourhood, the {overviewData.location} area offers amenities 
                 such as restaurants, shopping, access to the tennis grounds, and entertainment, 
                 with proximity to corporate offices.
             </p>
         </div>
-          <PropertyMap location={property.location} />
+          <PropertyMap location={overviewData.location} />
         <div className="featureContainer  bg-[#F4FAE2] rounded-lg p-4 ">
-          <h4 className="text-2xl font-semibold">Historical sold prices in {property.location}</h4>
+          <h4 className="text-2xl font-semibold">Historical sold prices in {overviewData.location}</h4>
           <HistoricalPriceGraph />
         </div>
     </section>

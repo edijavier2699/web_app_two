@@ -40,7 +40,7 @@ export const PropertyFinancial: React.FC<PropertyFinancialProps> = ({ data, load
       </div>
     );
   }
-
+  
   if (error) {
     return (
       <div className="flex items-center justify-center h-screen">
@@ -48,7 +48,7 @@ export const PropertyFinancial: React.FC<PropertyFinancialProps> = ({ data, load
       </div>
     );
   }
-
+  
   if (!data) {
     return (
       <div className="flex items-center justify-center h-screen">
@@ -99,7 +99,7 @@ export const PropertyFinancial: React.FC<PropertyFinancialProps> = ({ data, load
          <div className='bg-[#F4FAE2] rounded-lg p-4'>
 
          <h3 className="text-xl font-semibold  ">Sponsor Projects in the Last 30 Months</h3>
-         <ul className="list-none mt-2  xl:w-[50%] ">
+         <ul className="list-none mt-2  2xl:w-[50%] ">
            <li className="info-item flex justify-between py-2">
              <span>Total Investment Properties</span>
              <span className="font-semibold">39</span>
@@ -133,7 +133,7 @@ export const PropertyFinancial: React.FC<PropertyFinancialProps> = ({ data, load
       {/* Projected Annual Returns Section */}
       <div className="featureContainer bg-[#F4FAE2] rounded-lg p-4">
         <h3 className="text-xl font-bold mb-2">Projected Annual Returns</h3>
-        <ul className="space-y-2  xl:w-[50%]">
+        <ul className="space-y-2  2xl:w-[50%]">
           {renderFinancialItem("Projected Annual Yield", data.projected_annual_yield)}
           {renderFinancialItem("Projected Appreciation", data.projected_annual_return)}
           {data?.projected_rental_yield !== null && renderFinancialItem("Rental Yield", data.projected_rental_yield)}
@@ -144,7 +144,7 @@ export const PropertyFinancial: React.FC<PropertyFinancialProps> = ({ data, load
       {/* Annual and Monthly Expenses Section */}
       <div className="featureContainer bg-[#F4FAE2] rounded-lg p-4">
         <h3 className="text-xl font-bold mb-2">Annual and Monthly Expenses</h3>
-        <ul className="space-y-2  xl:w-[50%]">
+        <ul className="space-y-2  2xl:w-[50%]">
           {renderFinancialItem("Annual Cash Flow", data.annual_cash_flow)}
           {renderFinancialItem("Homeowners Insurance", data.homeowners_insurance)}
           {renderFinancialItem("Property Management", data.property_management)}
@@ -267,7 +267,7 @@ export const PropertyFinancial: React.FC<PropertyFinancialProps> = ({ data, load
             {/* Project Team Section */}
             <section className="mb-8  featureContainer bg-[#F4FAE2] rounded-lg p-4">
               <h3 className="text-xl font-bold mb-4">Project Team</h3>
-              <ul className="list-disc  xl:w-[50%]">
+              <ul className="list-disc  2xl:w-[50%]">
                 <li className="info-item flex justify-between py-2">
                   <span>Developer</span>
                   <span className="font-semibold">AMMI Investments LLP</span>
@@ -306,7 +306,7 @@ export const PropertyFinancial: React.FC<PropertyFinancialProps> = ({ data, load
             {/* Project Budget Section */}
             <section className="featureContainer bg-[#F4FAE2] rounded-lg p-4">
               <h3 className="text-xl font-bold mb-4">Project Budget</h3>
-              <ul className="list-disc  xl:w-[50%]">
+              <ul className="list-disc 2xl:w-[50%]">
                 <li className="info-item flex justify-between py-2">
                   <span>Acquisition Costs</span>
                   <span className="font-semibold">£750,000 (13%)</span>

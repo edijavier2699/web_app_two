@@ -128,7 +128,7 @@ li svg {
 
 
 .text-animated-gradient {
-  background: radial-gradient( #a1d06b, #dff39e, #cef564, #97bf27, #363636);
+  background: radial-gradient( #a1d06b, #e2fc8e, #cef564, #97bf27, #363636);
   background-size: 300% 300%; 
   background-clip: text;
   -webkit-background-clip: text;

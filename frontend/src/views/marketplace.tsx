@@ -4,27 +4,9 @@ import { useEffect, useState, useMemo } from 'react';
 import axios from "axios";
 import { PropertyFilters } from "@/components/propertyFilters";
 import { PropertySkeleton } from "@/skeletons/marketplaceSkeleton";
+import { Property } from "@/types/types";
 
-// Define la interfaz Property
-interface Token {
-  token_price: number;
-  tokensSold: number;
-  total_tokens: number;
-  tokens_available: number;
-}
 
-interface Property {
-  id: string;
-  title: string;
-  location: string;
-  property_type: string;
-  projected_annual_return: number;
-  status: string;
-  created_at: string;
-  tokens: Token[];
-  image: string[];
-  investment_category:string;
-}
 export const Marketplace = () => {
     // Función de ordenación de propiedades
     const sortProperties = (properties: Property[], sortBy: string) => {
