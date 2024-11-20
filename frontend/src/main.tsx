@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import Layout from './layout';
 import './index.css';
 import 'leaflet/dist/leaflet.css';
-
 import { Auth0Provider } from '@auth0/auth0-react';
 import { UserProvider } from './components/userProvider';
 
