@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { UserProvider } from './components/userProvider';
 
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Auth0Provider
