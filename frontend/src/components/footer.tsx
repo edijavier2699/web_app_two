@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
                             navigate("/request-invitation/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 Sign Up
                             </a>
                         </li>
@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
                             navigate("/marketplace/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 Marketplace
                             </a>
                         </li>
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
                             navigate("/liquidity-pools/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 Liquidity Pools
                             </a>
                         </li>
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
                             navigate("/blog/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 Learn
                             </a>
                         </li>
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
                             navigate("/faq/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 FAQ
                             </a>
                         </li>
@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
                             navigate("/investors/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500  text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870]  text-xs text-gray-450 duration-300 cursor-pointer">
                                 For Investors
                             </a>
                         </li>
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
                             navigate("/assets-owners/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500  text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870]  text-xs text-gray-450 duration-300 cursor-pointer">
                                 For Assets Owners
                             </a>
                         </li>
@@ -88,7 +88,7 @@ export const Footer: React.FC = () => {
                             navigate("/about-us/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 About Us 
                             </a>
                         </li>
@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
                             navigate("/privacy-policy/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 Privacy Policy
                             </a>
                         </li>
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
                             navigate("/legal-notices/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 Legal Notice
                             </a>
                         </li>
@@ -112,7 +112,7 @@ export const Footer: React.FC = () => {
                             navigate("/terms-of-services/");
                             window.scrollTo(0, 0);
                         }}>
-                            <a className="hover:text-blue-500 text-xs text-gray-450 duration-300 cursor-pointer">
+                            <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 Terms Of Services
                             </a>
                         </li>
