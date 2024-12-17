@@ -10,7 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { NavigationMenuNav } from "./navigationMenuNav";
+// import { NavigationMenuNav } from "./navigationMenuNav";
 
 type NavigationItem = {
   name: string;
@@ -20,7 +20,7 @@ type NavigationItem = {
 
 const navigation: NavigationItem[] = [
   { name: 'Marketplace', href: "/marketplace/", current: false },
-  { name: 'Liquidity Pools', href: "http://www.tokun.co.uk/", current: false },
+  { name: 'How It Works', href: "/investors/", current: false },
   { name: 'About Us', href: "/about-us/", current: false },
   { name: 'Learn', href: "/blog/", current: false },
   { name: 'FAQ', href: "/faq/", current: false },
@@ -39,8 +39,6 @@ export const Navbar: React.FC = () => {
     ? [...navigation, { name: 'Dashboard', href: "/dashboard/", current: false }]
     : navigation;
 
-  // Find the index of "Liquidity Pools"
-  const liquidityPoolsIndex = authenticatedNavigation.findIndex(item => item.name === 'Liquidity Pools');
 
   return (
     <nav className='lg:px-[60px] py-1 border bg-[white] text-black md:border-0'>
@@ -58,35 +56,18 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Menu */}
+          {/* Desktop Menu */}
           <div className="hidden lg:flex px-[20px] md:px-0 sm:space-x-4 sm:ml-auto">
-            {/* Render items before Liquidity Pools */}
-            {authenticatedNavigation.slice(0, liquidityPoolsIndex +1).map((item) => (
+            {authenticatedNavigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 className={classNames(
-                  item.name === 'Request Invitation' ? 'bg-[#C8E870] hover:bg-[#A0CC29] duration-300' : '',
-                  item.current ? '' : 'text-[17px] hover:bg-[#C8E870] duration-300 ease-in-out',
-                  'px-3 flex items-center rounded-md text-sm font-medium'
-                )}
-                aria-current={item.current ? 'page' : undefined}
-              >
-                {item.name}
-              </a>
-            ))}
-            
-            {/* Insert NavigationMenuNav */}
-            <NavigationMenuNav />
-
-            {/* Render items after Liquidity Pools */}
-            {authenticatedNavigation.slice(liquidityPoolsIndex + 1).map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={classNames(
-                  item.name === 'Request Invitation' ? 'bg-[#C8E870] hover:bg-[#A0CC29] duration-300' : '',
-                  item.current ? '' : 'text-[17px] hover:bg-[#C8E870] duration-300 ease-in-out',
-                  'px-3 flex items-center rounded-md text-sm font-medium'
+                  item.name === 'Request Invitation' 
+                    ? 'bg-[#C8E870] hover:bg-[#A0CC29] duration-300' 
+                    : 'text-[17px] hover:bg-[#C8E870] duration-300 ease-in-out',
+                  'px-4 py-2 flex items-center rounded-md text-sm font-medium', // Ajustes de padding y diseño general
+                  item.current ? 'font-bold text-black' : 'text-gray-700' // Estilo para el elemento activo
                 )}
                 aria-current={item.current ? 'page' : undefined}
               >
@@ -94,6 +75,7 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
           </div>
+
 
           {/* Mobile menu button using Sheet */}
           <div className="absolute right-0 px-[20px] flex px-2 items-center justify-end lg:hidden">
@@ -125,9 +107,6 @@ export const Navbar: React.FC = () => {
                       {item.name}
                     </a>
                   ))}
-
-                  {/* Mobile NavigationMenuNav */}
-                  <NavigationMenuNav />
                 </div>
               </SheetContent>
             </Sheet>

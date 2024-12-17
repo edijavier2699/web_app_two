@@ -1,67 +1,99 @@
 import React, { useState, useEffect } from 'react';
+import CircularProgress from './CircularProgess';
 
-interface SectionDescription {
-    header: string;
-    details: string[];
-    detailClarification?: string;
-}
 
 interface HowItWorksStepsProps {
     sectionTitles: string[];
     sectionImages: string[];
-    sectionDescriptions: SectionDescription[];
 }
 
-interface CircularProgressProps {
-    progress: number;
-    index: number;
-    isActive: boolean;
-}
-
-const CircularProgress: React.FC<CircularProgressProps> = ({ progress, index, isActive }) => {
-    const radius = 13;
-    const strokeWidth = 4;
-    const circumference = 2 * Math.PI * radius;
-    const offset = circumference - (progress / 100) * circumference;
-
+export const SignUp = () => {
     return (
-        <div className="flex flex-col items-center">
-            <svg width="40" height="40" className="relative">
-                <circle
-                    cx="20"
-                    cy="20"
-                    r={radius}
-                    stroke="#577B14"
-                    strokeWidth={strokeWidth}
-                    fill="none"
-                />
-                <circle
-                    cx="20"
-                    cy="20"
-                    r={radius}
-                    stroke="#C8E870"
-                    strokeWidth={strokeWidth}
-                    fill="none"
-                    strokeDasharray={circumference}
-                    strokeDashoffset={isActive ? offset : circumference}
-                    style={{ transition: "stroke-dashoffset 0.3s ease" }}
-                />
-                <text
-                    x="20"
-                    y="26"
-                    textAnchor="middle"
-                    fontSize="17px"
-                    fontWeight="bold"
-                    fill={isActive ? "#000" : "#777"}
-                >
-                    {index + 1}
-                </text>
-            </svg>
-        </div>
+        <section className="py-8">
+            <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">
+                    Set Up Your Tokunize Account
+                </h3>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                    <li>
+                        <span className="font-semibold">Verify Your Identity: </span>
+                        Pass KYC checks and accreditation approval to ensure compliance and security.
+                    </li>
+                    <li>
+                        <span className="font-semibold">List Assets or Invest: </span>
+                        Begin listing your assets or explore curated investment opportunities tailored to your goals.
+                    </li>
+                </ul>
+            </div>
+        </section>
     );
 };
 
-export const HowItWorksSteps: React.FC<HowItWorksStepsProps> = ({ sectionTitles, sectionDescriptions, sectionImages, }) => {
+export const TrackAndEarn = () => {
+    return (
+        <section className="py-8">
+            <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">Earn</h3>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                    <li>
+                        <span className="font-semibold">Benefit from the tax advantages</span> of real estate transactions, allowing you to reinvest strategically and grow your portfolio.
+                    </li>
+                    <li>
+                        Access <span className="font-semibold">curated premium commercial real estate opportunities</span> designed to maximize returns.
+                    </li>
+                    <li>
+                        Leverage <span className="font-semibold">rental income</span>, <span className="font-semibold">property appreciation</span>, and exclusive market insights to optimize your investments.
+                    </li>
+                </ul>
+            </div>
+        </section>
+    );
+};
+
+
+export const InvestSell = () => {
+    return (
+        <section className="">
+            {/* Invest Section */}
+            <div className="mb-8">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Invest</h3>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                    <li>
+                        <span className="font-semibold">Explore curated real estate opportunities </span> 
+                        by filtering asset type, location, or risk profile.
+                    </li>
+                    <li>
+                        Access market data, financial insights, and due diligence tools—all in one place.
+                    </li>
+                    <li>
+                        Build a portfolio aligned with your long-term goals, supported by tax-efficient strategies and ongoing reviews.
+                    </li>
+                </ul>
+            </div>
+
+            <hr className="my-8 border-gray-300" />
+
+            {/* Sell Section */}
+            <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Sell</h3>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                    <li>
+                        Sell full or partial economic rights in your assets efficiently and hassle-free.
+                    </li>
+                    <li>
+                        No need for showings or inspections—Tokunize handles the legals, accounting, and payment settlement seamlessly.
+                    </li>
+                </ul>
+                <p className="text-sm text-gray-500 mt-4">
+                    <strong>*Liquidity Not Guaranteed:</strong> Marketplace listings are illiquid, and there is no guarantee of exit opportunities or pricing on the Secondary Market.
+                </p>
+            </div>
+        </section>
+    );
+};
+
+
+export const HowItWorksSteps: React.FC<HowItWorksStepsProps> = ({ sectionTitles, sectionImages}) => {
     const [currentSection, setCurrentSection] = useState(0);
     const [fade, setFade] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -103,7 +135,7 @@ export const HowItWorksSteps: React.FC<HowItWorksStepsProps> = ({ sectionTitles,
                         onClick={() => setCurrentSection(index)}
                     >
                         <h2
-                            className={`text-lg sm:text-sm md:text-normal lg:text-lg w-1/2 text-center ${currentSection === index ? 'font-bold' : 'text-gray-500'} mb-1`}
+                            className={`text-lg sm:text-sm min-w-[150px] md:text-normal lg:text-lg w-1/2 text-center ${currentSection === index ? 'font-bold' : 'text-gray-500'} mb-1`}
                         >
                             {title}
                         </h2>
@@ -117,13 +149,12 @@ export const HowItWorksSteps: React.FC<HowItWorksStepsProps> = ({ sectionTitles,
             </div>
     
             <div className="flex-grow flex flex-col justify-center">
-                <ul className="list-disc list-inside space-y-3">
-                    <h3 className="font-semibold text-md mb-2">{sectionDescriptions[currentSection].header}</h3>
-                    {sectionDescriptions[currentSection].details.map((desc, index) => (
-                        <li key={index} className="text-gray-600 text-md pl-5">{desc}</li>
-                    ))}
-                    <p className="text-[9px] mt-5">{sectionDescriptions[currentSection].detailClarification}</p>
-                </ul>
+            <div className="flex-grow flex flex-col justify-center">
+                {currentSection === 0 && <SignUp />}
+                {currentSection === 1 && <InvestSell />}
+                {currentSection === 2 && <TrackAndEarn />}
+            </div>
+
             </div>
         </div>
     

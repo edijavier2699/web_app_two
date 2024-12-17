@@ -50,7 +50,7 @@ interface HowItWorksCardProps {
 const HowItWorksCard: React.FC<HowItWorksCardProps> = ({ title, description }) => {
   return (
       <div className="shadow-md  bg-black hover:shadow-lg transition-shadow duration-300 rounded-lg p-6 flex flex-col items-start ">
-          <h3 className="text-xl md:text-[26px] lg:text-[35px]  text-white font-semibold mb-2 ">{title}</h3>
+          <h3 className="text-xl  text-white font-semibold mb-3 ">{title}</h3>
           <p className="text-white leading-relaxed">{description}</p>
       </div>
   );

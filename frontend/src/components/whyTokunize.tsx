@@ -1,9 +1,9 @@
 import React from "react";
 import why1 from "../assets/why_1.png";
-import why2 from "../assets/mlModel.png";
 import why3 from "../assets/premiumRCE.png";
 import why4 from "../assets/why_4.png";
 import why5 from "../assets/why_5.png";
+
 // Definimos el tipo de props que espera el componente WhyUs
 interface WhyUsProps {
     number: number;
@@ -59,33 +59,33 @@ export const WhyTokunize: React.FC = () => {
             <WhyUs
                 number={1}
                 imageTitle={why1}
-                title="Liquidity through a secondary marketplace to execute buy and sell offers."
-                description="List tokens on the secondary marketplace and field offers from a wide network of investors. Reselling to Tokunize and outright asset sale offer further liquidity opportunities."
+                title="Capital Preservation Through Tax Efficiency "
+                description="Reallocate the value of your existing real estate assets into new opportunities without the burden of immediate capital gains taxes or stamp duty. Tokunize allows you to optimize your portfolio while preserving more of your capital for future growth. "
             />
             <WhyUs
                 number={2}
-                imageTitle={why2}
-                title="An Advanced ML Data Model."
-                description="We analyze millions of data points to narrow down the most indicative factors, from demographics and digital interest trends to price growth in similar assets. We then utilise public and private data sets to predict growth rates for each asset, giving you unrivalled access to premium commercial real estate optimised to outperform the market."
+                imageTitle={why5}
+                title="Strategic Portfolio Diversification"
+                description="Diversify across premium commercial real estate with precision and ease. Tokunize allows you to allocate capital into fractional ownership of high-value assets, enhancing risk management and aligning with your long-term investment goals. "
             />
             <WhyUs
                 number={3}
                 imageTitle={why3}
-                title="Our Commercial Real Estate Insiders and Experts."
-                description="Premium CRE deals are often off-market traded on a handshake. We've built a diverse network to access premium CRE deals off-market. We've sourced more than 68% of our assets privately, allowing us to minimize third party transaction costs, and maximize investor value."
+                title="Access to Exclusive Opportunities"
+                description="Invest in previously off-market commercial real estate deals that were typically inaccessible. Tokunize provides a platform to participate in premium return-yielding assets, offering a unique way to enhance your portfolio. "
             />
             <WhyUs
                 number={4}
                 imageTitle={why4}
-                title="Complete portfolio management of assets."
-                description="A portfolio provides a comprehensive view of your investments. Track your portfolio’s growth alongside market comparables as Tokunize refreshes market data, and deep dive into your investments to zone in on property-level activity and transaction options."
+                title="Flexible Liquidity Management"
+                description="Manage liquidity strategically without the constraints of traditional real estate. Tokunize’s tokenized marketplace offers the flexibility to rebalance your portfolio or capitalize on new opportunities when the time is right, ensuring alignment with your investment horizon. "
             />
-            <WhyUs
+            {/* <WhyUs
                 number={5}
                 imageTitle={why5}
                 title="Detailed market analytics."
                 description="Access all the features you need to manage your commercial real estate investments and potential acquisitions with a single click. Updated market data on commercial real estate values fuel every view, providing insights that let you take action."
-            />
+            /> */}
         </section>
     );
 };

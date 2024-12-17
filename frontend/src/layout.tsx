@@ -24,7 +24,7 @@ const AboutUs = lazy(()=> import ('./views/aboutUs').then(module =>({default: mo
 const Marketplace = lazy(()=> import ('./views/marketplace').then(module =>({default: module.Marketplace})))
 const PropertyDetails = lazy(()=> import ('./views/propertyDetailts').then(module =>({default: module.PropertyDetails})))
 const ForInvestors = lazy(()=> import ('./views/forInvestor').then(module =>({default:module.ForInvestor})))
-const ForOwners = lazy(()=> import ('./views/forOwner').then(module =>({default:module.ForOwners})))
+// const ForOwners = lazy(()=> import ('./views/forOwner').then(module =>({default:module.ForOwners})))
 const LiquidityPool = lazy(()=> import ('./views/liquidityPool').then(module =>({default:module.LiquidityPool})))
 
 const Layout = () => {
@@ -47,7 +47,7 @@ const Layout = () => {
                         <Route path="/blog/article/:id/" element={<SingleArticleView />} />
                         <Route path="/about-us/" element={<AboutUs/>}/>
                         <Route path="investors/" element={<ForInvestors/>}/>
-                        <Route path="assets-owners/" element={<ForOwners/>}/>
+                        {/* <Route path="assets-owners/" element={<ForOwners/>}/> */}
                         <Route path="liquidity-pools/" element={<LiquidityPool/>}/>
                         <Route path="/property/details/:id/" element={<PropertyDetails/>} />
                         <Route path="*" element={<NotFound />} />

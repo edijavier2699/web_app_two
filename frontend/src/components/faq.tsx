@@ -25,42 +25,57 @@ export const FAQ: React.FC = () => {
             <div className="w-full lg:w-[65%] space-y-4">
                 <AccordionItem
                     title="What is Tokunize?"
-                    content="Tokunize is an innovative platform that democratizes access to premium real estate investment opportunities. A fully managed process where we handle all aspects of the acquisitions and management process, providing investors with a hassle-free experience."
+                    content="Tokunize is a platform for tokenizing premium commercial real estate, enabling investors to own fractional economic rights in high-value properties. By facilitating asset-to-asset transactions and strategic reinvestment, Tokunize empowers investors to diversify their portfolios, optimize returns, and maintain tax efficiency—all within a seamless and innovative ecosystem."
                     isOpen={openIndex === 1}
                     onClick={() => toggleOpen(1)}
                 />
                 <AccordionItem
                     title="What am I investing in?"
-                    content="You are purchasing fractional ownership in carefully vetted premium commercial real estate. Benefit from a streamlined investment process, ensuring that managing your portfolio is straightforward."
+                    content="You are investing in fractional economic rights to premium commercial real estate assets. Tokunize allows you to seamlessly access curated opportunities, enabling portfolio diversification and income generation without the complexities of direct ownership."
                     isOpen={openIndex === 2}
                     onClick={() => toggleOpen(2)}
                 />
                 <AccordionItem
                     title="How does investing work on the platform?"
-                    content="Sign up - Easily create an account with Tokunize for access to institutional-quality offerings
-                        Invest - Select investments that meet your long-term goals to benefit from steady income streams and long-term price appreciation, diversification with assets uncoupled from market movements, unique tax advantages
-                        Earn - Enjoy the ease of our high-tech platform, automatic deposits of investment earnings, real time investment performance, and access instant liquidity.
-                        The platform enables you to invest directly in premium commercial real estate without intermediaries, simplifying the investment process.
-                        What’s the legal standing of Property Shareholders in relation to asset ownership?
-                        Tokens represent a fractional ownership in a DAO LLC legal entity owning the underlying asset. Your investment represents a proportional ownership in the asset, e.g. a 1% investment in the total value of an asset would represent 1% ownership of the asset."
+                    content={
+                        <>
+                            <strong>Sign up</strong> - Easily create an account with Tokunize for access to institutional-quality offerings.<br />
+                            <strong>Invest</strong> - Select investments that meet your long-term goals to benefit from steady income streams and long-term price appreciation, diversification with assets uncoupled from market movements, unique tax advantages.<br />
+                            <strong>Earn</strong> - Enjoy the ease of our high-tech platform, automatic deposits of investment earnings, real-time investment performance, and access instant liquidity.<br />
+                            The platform enables you to invest directly in premium commercial real estate without intermediaries, simplifying the investment process.<br />
+                            <strong>What’s the legal standing of Property Shareholders in relation to asset ownership?</strong><br />
+                            Tokens represent a fractional ownership in a DAO LLC legal entity owning the underlying asset. Your investment represents a proportional ownership in the asset, e.g. a 1% investment in the total value of an asset would represent 1% ownership of the asset.
+                        </>
+                    }
                     isOpen={openIndex === 3}
                     onClick={() => toggleOpen(3)}
                 />
-                
+
                 <AccordionItem
-                    title="How do I sell my investments?"
+                    title="What’s the legal standing of Property Shareholders in relation to asset ownership? "
                     content="Tokunize provides there exit strategies:
-                        Sell instantly on the secondary market (2% fee).
-                        List on the secondary market for other investors to bid and buy your tokens (0% fee).
-                        Asset is sold and returns distributed."
+                       When you invest through Tokunize, you are purchasing fractional economic rights to the underlying asset, rather than direct property ownership. These rights entitle you to a proportional share of the asset’s income and potential value appreciation, secured via blockchain tokens. The property itself is held within a legal entity, and your investment reflects your economic interest in the asset’s performance, offering a streamlined and tax-efficient way to participate in premium real estate opportunities. "
                     isOpen={openIndex === 4}
                     onClick={() => toggleOpen(4)}
                 />
                 <AccordionItem
-                    title="How are the properties managed?"
-                    content="Properties are managed by professional management service providers verified and approved by Tokunize."
+                    title="How do I sell my investments?"
+                    content={
+                        <>
+                            <strong>Asset-to-Asset Trading</strong>: Exchange your tokens for economic rights in other assets, seamlessly diversifying or reallocating your portfolio.<br />
+                            <strong>Secondary Market</strong>: List your tokens for other investors to buy, providing an efficient and cost-effective way to exit.<br />
+                            <strong>Asset Sale</strong>: When the underlying property is sold, returns are distributed proportionally to token holders.
+                        </>
+                    }
                     isOpen={openIndex === 5}
                     onClick={() => toggleOpen(5)}
+                />
+
+                <AccordionItem
+                    title="How are the properties managed? "
+                    content="Properties are overseen by professional management firms vetted and approved by Tokunize. These experts ensure the operational and financial performance of each asset aligns with the platform’s high standards, maximizing value for token holders."
+                    isOpen={openIndex === 6}
+                    onClick={() => toggleOpen(6)}
                 />
             </div>
         </section>

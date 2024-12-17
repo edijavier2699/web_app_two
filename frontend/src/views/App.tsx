@@ -6,7 +6,6 @@ import { Newsletter } from '../components/newsletter';
 import { Toaster } from '../components/ui/toaster';
 import { Suspense } from 'react';
 import React from 'react';
-import { HeroBanner } from '@/components/heroBanner';
 import { LoadingSpinner } from '@/components/loadingSpinner';
 import { MarketplaceRepresentation } from '@/components/marketplaceRepresentation';
 // Lazy loading de los componentes
@@ -19,7 +18,7 @@ function App() {
     <>
       <Toaster />
       <HeroSection />
-      <HeroBanner/>
+      {/* <HeroBanner/> */}
       <MarketplaceRepresentation/>
       <Features />
       <Suspense fallback={<LoadingSpinner/>}>

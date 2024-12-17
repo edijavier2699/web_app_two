@@ -46,13 +46,13 @@ export const HeroSection: React.FC = () => {
       <article className="flex flex-col items-center justify-center w-full md:w-2/3 ">
         <div className='space-y-4 w-full '>
           <h1 className="text-5xl mt-[35px] sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
-            Invest in Premium Commercial Real Estate Globally.
+            Invest in Premium <br/>  Real Estate Globally.
           </h1>
-          <h4 className="font-bold text-4xl">
-            In Minutes, Not Months.
+          <h4 className="font-bold text-3xl">
+            The Deals You Couldn’t Access—Now in Your Portfolio.
           </h4>
       
-          <p className="text-black tracking-wider text-base lg:text-xl mb-12 sm:w-[90%]">Diversify across premium CRE assets starting at just  <span className="font-bold"> £1,000</span> and <span className="font-bold">access liquidity instantly.</span></p>
+          <p className="text-black tracking-wider text-base lg:text-xl mb-12 sm:w-[90%]"><span>Leverage your assets to unlock access to an exclusive network of premium investments, designed for <span className="font-bold">exceptional diversification</span> and  <span className="font-bold">long-term growth.</span> </span></p>
 
         </div>
         <div className='w-full pt-[80px] flex items-center justify-center'>
