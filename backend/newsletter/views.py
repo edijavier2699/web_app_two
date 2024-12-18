@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import DemoSerializer,ContactedClientSerializer,RequestInvitationSerializer
 from .welcomeEmail import send_demo_booking_email 
-from .waitlistEmail import send_waitlist_email
+from .subscribeEmail import send_subscribe_email
 from .contactFormEmail import contactFormEmail
 from django.core.exceptions import ValidationError
 from rest_framework.views import APIView
@@ -31,7 +31,7 @@ class DemoUserListView(generics.ListCreateAPIView):
         
         # Send a welcome email
         email = serializer.validated_data['email']
-        send_waitlist_email(email) 
+        send_subscribe_email(email) 
 
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)

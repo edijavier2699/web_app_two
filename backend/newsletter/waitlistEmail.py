@@ -10,9 +10,8 @@ def send_waitlist_email(email_address):
     
         <p>Thank you for your interest in Tokunize!</p>
 
-        <p>We are currently experiencing high demand for our demo sessions, and we want to inform you that you have been added to our waitlist. We appreciate your patience and will notify you as soon as a slot becomes available.</p>
 
-        <p>In the meantime, feel free to explore our platform and learn more about how Tokunize can help you unlock new opportunities in real estate investing:</p>
+        <p>Feel free to explore our platform and learn more about how Tokunize can help you unlock new opportunities in real estate investing:</p>
         <ul>
             <li>Discover the benefits of using Tokunize.</li>
             <li>Learn how to start investing in real estate assets.</li>
