@@ -25,7 +25,6 @@ const Marketplace = lazy(()=> import ('./views/marketplace').then(module =>({def
 const PropertyDetails = lazy(()=> import ('./views/propertyDetailts').then(module =>({default: module.PropertyDetails})))
 const ForInvestors = lazy(()=> import ('./views/forInvestor').then(module =>({default:module.ForInvestor})))
 
-
 const Layout = () => {
     return (
         <BrowserRouter>
