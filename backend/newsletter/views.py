@@ -13,9 +13,11 @@ import requests
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+from rest_framework.permissions import AllowAny
 
 
 class DemoUserListView(generics.ListCreateAPIView):
+    permission_classes = [AllowAny]  # Allow access to everyone (no authentication required)
     queryset = Subscriber.objects.all()
     serializer_class = DemoSerializer
 
@@ -37,6 +39,7 @@ class DemoUserListView(generics.ListCreateAPIView):
 
 
 class ContactedClientListCreateView(generics.ListCreateAPIView):
+    permission_classes = [AllowAny]  # Allow access to everyone (no authentication required)
     queryset = ContactedClient.objects.all()
     serializer_class = ContactedClientSerializer
 

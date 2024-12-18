@@ -32,7 +32,12 @@ export const NewsletterSubscribeForm: React.FC = () => {
         try {
             const response = await axios.post(apiUrl, {
                 email: formData.userEmail
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',  // Ensure the correct content type
+                }
             });
+            
     
             // Check if the response status is in the range of 200-299
             if (response.status >= 200 && response.status < 300) {
