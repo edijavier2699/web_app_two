@@ -48,7 +48,6 @@ export default defineConfig({
             if (id.includes('recharts')) return 'recharts';
             if (id.includes('axios')) return 'axios';
             if (id.includes('zod')) return 'zod';
-            if (id.includes('react-hook-form')) return 'react-hook-form';
             if (id.includes('@heroicons/react') || id.includes('lucide-react')) return 'icons';
             if (id.includes('react') || id.includes('react-dom')) return 'react';
 
