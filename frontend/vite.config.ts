@@ -41,12 +41,6 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            // Dependencias más grandes o usadas frecuentemente
-            if (id.includes('@radix-ui')) return 'radix-ui';
-            if (id.includes('recharts')) return 'recharts';
-            if (id.includes('@heroicons/react') || id.includes('lucide-react')) return 'icons';
-
-            // Agrupa otras dependencias en un vendor general
             return 'vendor';
           }
         },
