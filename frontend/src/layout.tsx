@@ -27,6 +27,7 @@ const ForInvestors = lazy(()=> import ('./views/forInvestor').then(module =>({de
 // const ForOwners = lazy(()=> import ('./views/forOwner').then(module =>({default:module.ForOwners})))
 const LiquidityPool = lazy(()=> import ('./views/liquidityPool').then(module =>({default:module.LiquidityPool})))
 
+
 const Layout = () => {
     return (
         <BrowserRouter>
