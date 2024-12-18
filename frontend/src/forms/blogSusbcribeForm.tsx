@@ -7,19 +7,14 @@ import { useToast } from "@/components/ui/use-toast";
 export const BlogSubscriberForm: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-    const [error, setError] = useState<string>('');
-    const [success, setSuccess] = useState<string>('');
     const { toast } = useToast();
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setIsSubmitting(true);
-        setError('');
-        setSuccess('');
 
         try {
             await axios.post(`${import.meta.env.VITE_BACKEND_URL}blog/subscriber/`, { email });
-            setSuccess('Subscription successful!');
             setEmail(''); // Clear the input field
             toast({
                 title: "Success",
@@ -59,8 +54,6 @@ export const BlogSubscriberForm: React.FC = () => {
             <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting ? 'Submitting...' : 'Sign Up'}
             </Button>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            {success && <p style={{ color: 'green' }}>{success}</p>}
         </form>
     );
 };
