@@ -43,11 +43,7 @@ export default defineConfig({
           if (id.includes('node_modules')) {
             // Dependencias más grandes o usadas frecuentemente
             if (id.includes('@radix-ui')) return 'radix-ui';
-            if (id.includes('react-leaflet') || id.includes('leaflet')) return 'leaflet';
-            if (id.includes('react-quill')) return 'react-quill';
             if (id.includes('recharts')) return 'recharts';
-            if (id.includes('axios')) return 'axios';
-            if (id.includes('zod')) return 'zod';
             if (id.includes('@heroicons/react') || id.includes('lucide-react')) return 'icons';
 
             // Agrupa otras dependencias en un vendor general
