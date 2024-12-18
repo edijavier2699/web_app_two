@@ -10,33 +10,6 @@ import { IoDocumentText } from "react-icons/io5";
 import { MdOutlineSecurity } from "react-icons/md";
 
 const sectionTitles = ["Sign Up", "Sell", "Earn"];
-const sectionDescriptions = [
-    {
-        header: "Set Up Your Tokunize Account",
-        details: [
-            "Verify Your Identity: Pass KYC checks and accreditation approval.",
-            "Begin Listing Assets Today.",
-        ]
-    },
-    {
-        header: "Sell full or partial equity in an asset at the price you want.",
-        details: [
-            "£1.5bn in accredited and institutional investors to sell to.",
-            "Sell investments quickly - 2 weeks to close.",
-            "Efficient & Hassle Free: No inconvenient showings and multiple inspections.",
-            "We take care of the legals, accounting, and payment settlement all in one place"
-        ],
-    },
-    {
-        header: "Track Your  Performance",
-        details: [
-            "Monitor performance and track your sales in real-time with detailed insights.",
-            "Build a real estate portfolio tailored to your long terms goals.",
-            "Unique Tax Advantages.",
-            "Ongoing portfolio reviews with your personal AI Agent"
-        ],
-    }
-];
 
 const tokunizeProcess = [
     {
@@ -83,7 +56,6 @@ export const ForOwners = () =>{
              <p className="text-gray-500 text-center pb-5  sm:w-[65%] mx-auto mx-[20px] md:px-[60px]">Tokunize makes it beyond simple to sell equity in your asset with minimal friction and a low fee of only 0.5%. No more dealing with banks, lenders, agents, title companies, closing costs, and more. The process couldn’t be simpler and faster. We’ve launched properties on the Marketplace within the same week as having the initial call with an asset owner, and everything is facilitated for you via our white-glove service.</p>
             <HowItWorksSteps
                 sectionTitles={sectionTitles}
-                sectionDescriptions={sectionDescriptions}
                 sectionImages={sectionImages}
             />
             <TokunizeAdvantages componentFor="owners"/>
