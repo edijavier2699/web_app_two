@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Subscriber,ContactedClient,RequestedInvitation
-from rest_framework import generics, serializers
+from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import DemoSerializer,ContactedClientSerializer,RequestInvitationSerializer
@@ -13,14 +13,12 @@ import requests
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
-from django_ratelimit.decorators import ratelimit
 
 
 class DemoUserListView(generics.ListCreateAPIView):
     queryset = Subscriber.objects.all()
     serializer_class = DemoSerializer
 
-    @ratelimit(key='ip', rate='5/m', block=True)
     def post(self, request, *args, **kwargs):
         """
         Override the post method to handle custom validation and send a welcome email.
@@ -42,7 +40,6 @@ class ContactedClientListCreateView(generics.ListCreateAPIView):
     queryset = ContactedClient.objects.all()
     serializer_class = ContactedClientSerializer
 
-    @ratelimit(key='ip', rate='5/m', method='POST', block=True)
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         email = request.data.get('email')
