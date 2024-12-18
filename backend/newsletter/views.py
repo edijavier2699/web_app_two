@@ -180,7 +180,6 @@ class SendNewsletter(APIView):
         
 
 class InvitationRequestListView(APIView):
-    @ratelimit(key='ip', rate='5/m', block=True)
     def post(self, request):
         # Extraer los datos enviados
         email_address = request.data.get('emailAddress')
