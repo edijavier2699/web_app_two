@@ -1,23 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { MyButton } from "./signUpBtn";
 import forInvestorImage from "../assets/LegalStructure.png";
-import forOwnersImage from "../assets/asset-owner-legal-structure.webp";
 
-export const TokunizeAdvantages: React.FC<{ componentFor: "investors" | "owners" }> = ({ componentFor }) => {
+export const TokunizeAdvantages = () => {
     const navigate = useNavigate();
 
     const getStartedLink = () => {
         navigate("/request-invitation/");
     };
-
-    // Mapa de imágenes
-    const images = {
-        investors: forInvestorImage,
-        owners: forOwnersImage,
-    };
-
-    const selectedImage = images[componentFor] || forInvestorImage; 
-
 
     return (
         <article className="min-h-screen flex flex-col my-12 text-gray-800">
@@ -44,8 +34,8 @@ export const TokunizeAdvantages: React.FC<{ componentFor: "investors" | "owners"
                 <div className="w-full lg:w-1/2 min-h-[800px] flex justify-center lg:justify-end">
                     <img
                         loading="lazy"
-                        alt={`${componentFor === "investors" ? "Investors" : "Owners"} Legal compliance illustration`}
-                        src={selectedImage}
+                        alt="Legal compliance illustration"
+                        src={forInvestorImage}
                         className="h-[800px] object-contain"
                     />
                 </div>

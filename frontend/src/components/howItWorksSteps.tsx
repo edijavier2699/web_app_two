@@ -55,23 +55,23 @@ export const InvestSell = () => {
     return (
         <section className="">
             {/* Invest Section */}
-            <div className="mb-8">
+            <div className="mb-4">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Invest</h3>
                 <ul className="space-y-2 text-gray-600 text-sm">
                     <li>
                         <span className="font-semibold">Explore curated real estate opportunities </span> 
                         by filtering asset type, location, or risk profile.
                     </li>
-                    <li>
+                    {/* <li>
                         Access market data, financial insights, and due diligence tools—all in one place.
-                    </li>
+                    </li> */}
                     <li>
                         Build a portfolio aligned with your long-term goals, supported by tax-efficient strategies and ongoing reviews.
                     </li>
                 </ul>
             </div>
 
-            <hr className="my-8 border-gray-300" />
+            <hr className="my-4 border-gray-300" />
 
             {/* Sell Section */}
             <div>
@@ -84,8 +84,8 @@ export const InvestSell = () => {
                         No need for showings or inspections—Tokunize handles the legals, accounting, and payment settlement seamlessly.
                     </li>
                 </ul>
-                <p className="text-sm text-gray-500 mt-4">
-                    <strong>*Liquidity Not Guaranteed:</strong> Marketplace listings are illiquid, and there is no guarantee of exit opportunities or pricing on the Secondary Market.
+                <p className="text-xs text-gray-500 mt-4">
+                    *Liquidity Not Guaranteed: Marketplace listings are illiquid, and there is no guarantee of exit opportunities or pricing on the Secondary Market.
                 </p>
             </div>
         </section>
@@ -131,11 +131,11 @@ export const HowItWorksSteps: React.FC<HowItWorksStepsProps> = ({ sectionTitles,
                 {sectionTitles.map((title, index) => (
                     <div
                         key={index}
-                        className="relative w-full flex items-center cursor-pointer"
+                        className="relative w-full flex flex-col items-center cursor-pointer"
                         onClick={() => setCurrentSection(index)}
                     >
                         <h2
-                            className={`text-lg sm:text-sm min-w-[150px] md:text-normal lg:text-lg w-1/2 text-center ${currentSection === index ? 'font-bold' : 'text-gray-500'} mb-1`}
+                            className={`text-lg sm:text-sm min-w-[120px]  md:text-normal lg:text-lg w-1/2 text-center ${currentSection === index ? 'font-bold' : 'text-gray-500'} mb-1`}
                         >
                             {title}
                         </h2>

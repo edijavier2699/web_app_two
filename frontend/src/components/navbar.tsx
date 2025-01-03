@@ -19,7 +19,7 @@ type NavigationItem = {
 };
 
 const navigation: NavigationItem[] = [
-  { name: 'Marketplace', href: "/marketplace/", current: false },
+  // { name: 'Marketplace', href: "/marketplace/", current: false },
   { name: 'How It Works', href: "/how-it-works/", current: false },
   { name: 'About Us', href: "/about-us/", current: false },
   { name: 'Learn', href: "/blog/", current: false },
