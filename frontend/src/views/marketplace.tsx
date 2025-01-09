@@ -43,11 +43,8 @@ export const Marketplace = () => {
                 const apiUrl = `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/marketplace-list/`;
                 const response = await axios.get(apiUrl);
 
-                const publishedProperties: Property[] = response.data.filter(
-                    (property: Property) => property.status === "published" || property.status === "coming_soon"
-                );
-
-                setProperties(publishedProperties);
+                console.log(response.data);
+                setProperties(response.data);
             } catch (err) {
                 setError('Failed to fetch properties');
                 console.error(err);
@@ -110,7 +107,7 @@ export const Marketplace = () => {
                                 minTokenPrice={property.tokens[0].token_price}
                                 estAnnualReturn={property.projected_annual_return}
                                 propertyImgs={property.image}
-                                id={property.id}
+                                reference_number={property.reference_number}
                                 tokensSold={property.tokens[0].tokensSold}
                                 totalTokens={property.tokens[0].total_tokens}
                                 createdDay={property.created_at}

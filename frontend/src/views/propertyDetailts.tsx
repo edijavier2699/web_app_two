@@ -12,11 +12,11 @@ import { Property } from "@/types/types";
 
 export const PropertyDetails = () => {
   const navigate = useNavigate();
-  const { id } = useParams<{ id: string }>();
-  const numericId = id ? parseInt(id, 10) : undefined;
+  const { reference_number } = useParams();
+
 
   const { data, loading, error } = useGetAxiosRequest<Property>(
-    `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/${id}/landing-page/?view=overview`
+    `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/single/${reference_number}/?view=overview`
   );
 
   if (loading) {
@@ -51,7 +51,7 @@ export const PropertyDetails = () => {
       <PropertyImages images={images} />
       <div className="flex justify-between mt-8 space-x-7">
         <article className="w-full md:w-2/3">
-          {numericId && <PropertyAccordion overviewData={data} property_id={numericId} />}
+          {reference_number && <PropertyAccordion overviewData={data} property_id={reference_number} />}
         </article>
 
         <aside className="hidden md:block md:w-1/3 space-y-4 py-4">

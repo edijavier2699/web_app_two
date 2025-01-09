@@ -26,6 +26,7 @@ export interface NavigationItem {
 
 export interface Property {
   id: string;
+  reference_number:string;
   title: string;
   location: string;
   property_type: string;

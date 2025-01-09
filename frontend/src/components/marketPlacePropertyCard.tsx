@@ -11,7 +11,7 @@ interface MarketPlacePropertyCardProps {
   minTokenPrice: number;
   estAnnualReturn: number;
   propertyImgs: string[];
-  id: string;
+  reference_number: string;
   tokensSold: number | undefined;  // Permitir undefined temporalmente
   totalTokens: number | undefined;  // Permitir undefined temporalmente
   createdDay: string;
@@ -26,7 +26,7 @@ export const MarketPlacePropertyCard: React.FC<MarketPlacePropertyCardProps> = (
   minTokenPrice,
   estAnnualReturn,
   propertyImgs,
-  id,
+  reference_number,
   totalTokens = 0,  // Asignar 0 como valor predeterminado
   createdDay,
   status,
@@ -38,7 +38,7 @@ export const MarketPlacePropertyCard: React.FC<MarketPlacePropertyCardProps> = (
   const navigate = useNavigate()
 
   const checkDetailsLink = () =>{
-    navigate(`/property/details/${id}`)
+    navigate(`/property/${reference_number}/`)
   }
   useEffect(() => {
     const createdDate = new Date(createdDay);

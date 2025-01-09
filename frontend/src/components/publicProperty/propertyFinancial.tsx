@@ -131,15 +131,26 @@ export const PropertyFinancial: React.FC<PropertyFinancialProps> = ({ data, load
       ) }
       
       {/* Projected Annual Returns Section */}
-      <div className="featureContainer bg-[#F4FAE2] rounded-lg p-4">
+      <div className="featureContainer my-[40px] bg-[#F4FAE2] rounded-lg p-4">
         <h3 className="text-xl font-bold mb-2">Projected Annual Returns</h3>
         <ul className="space-y-2  2xl:w-[50%]">
-          {renderFinancialItem("Projected Annual Yield", data.projected_annual_yield)}
-          {renderFinancialItem("Projected Appreciation", data.projected_annual_return)}
-          {data?.projected_rental_yield !== null && renderFinancialItem("Rental Yield", data.projected_rental_yield)}
+          <li className="flex justify-between ">
+            <span>Projected Annual Yield</span>
+            <span className="font-bold">{data.projected_annual_yield}%</span>
+          </li>
+          <li className="flex justify-between">
+            <span>Projected Appreciation</span>
+            <span className="font-bold">{data.projected_annual_return}%</span>
+          </li>
+          <li className="flex justify-between">
+            <span>Rental Yield</span>
+            <span className="font-bold">{data?.projected_rental_yield !== null && data.projected_rental_yield} %   </span>    
+          </li>
+
           {renderFinancialItem("Total Investment Value", data.total_investment_value)}
         </ul>
       </div>
+
 
       {/* Annual and Monthly Expenses Section */}
       <div className="featureContainer bg-[#F4FAE2] rounded-lg p-4">

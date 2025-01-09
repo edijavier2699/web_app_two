@@ -7,7 +7,7 @@ import { DataAccordion } from '../dataAccordion/DataAccordion';
 import { SignUpRequired } from './signUpRequired';
 
 interface PropertyAccordionProps {
-  property_id: number;
+  property_id: string;
   overviewData: Property; 
 }
 
@@ -20,7 +20,7 @@ export const PropertyAccordion = ({ property_id, overviewData }: PropertyAccordi
 
   // Obtener datos financieros usando el hook
   const { data, loading, error } = useGetAxiosRequest<PropertyFinancialData>(
-    `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/${property_id}/landing-page/?view=${viewType}`, 
+    `${import.meta.env.VITE_BACKEND_URL_MARKETPLACE}property/single/${property_id}/?view=${viewType}`, 
     requiresAuth
   );
 

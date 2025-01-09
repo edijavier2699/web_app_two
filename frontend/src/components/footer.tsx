@@ -26,14 +26,14 @@ export const Footer: React.FC = () => {
                                 Sign Up
                             </a>
                         </li>
-                        {/* <li onClick={()=>{
+                        <li onClick={()=>{
                             navigate("/marketplace/");
                             window.scrollTo(0, 0);
                         }}>
                             <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 Marketplace
                             </a>
-                        </li> */}
+                        </li>
                         <li>
                             <a href='https://www.tokun.co.uk/' className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
                                 Liquidity Pools
@@ -61,19 +61,11 @@ export const Footer: React.FC = () => {
                             </a>
                         </li>
                         <li onClick={()=>{
-                            navigate("/investors/");
+                            navigate("/how-it-works/");
                             window.scrollTo(0, 0);
                         }}>
                             <a className="hover:text-[#C8E870]  text-xs text-gray-450 duration-300 cursor-pointer">
-                                For Investors
-                            </a>
-                        </li>
-                        <li onClick={()=>{
-                            navigate("/assets-owners/");
-                            window.scrollTo(0, 0);
-                        }}>
-                            <a className="hover:text-[#C8E870]  text-xs text-gray-450 duration-300 cursor-pointer">
-                                For Assets Owners
+                                How It Works
                             </a>
                         </li>
                     </ul>

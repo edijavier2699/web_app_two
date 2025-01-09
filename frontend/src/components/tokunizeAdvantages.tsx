@@ -15,8 +15,8 @@ export const TokunizeAdvantages = () => {
             <p className="text-gray-500 md:text-center pb-5 md:w-[60%] lg:w-[45%]  mx-auto mb-5 px-5 md:px-0">Combining full legal compliance with tax-efficient reinvestment and seamless asset-to-asset transactions in premium commercial real estate.</p>
 
             {/* Section 1 */}
-            <section className="flex flex-col lg:flex-row items-center px-[20px] md:px-[60px] bg-black">
-                <aside className="w-full lg:w-1/2 py-[120px] px-5 space-y-4 sm:space-y-6 flex flex-col justify-center">
+            <section className="flex flex-col py-[100px] space-y-10 lg:space-y-0 lg:flex-row items-center px-[20px] md:px-[60px] bg-black">
+                <aside className="w-full lg:w-1/2  px-5 space-y-4 sm:space-y-6 flex flex-col justify-center">
                     <h3 className="text-2xl sm:text-3xl font-semibold text-animated-gradient">Regulatory Compliant & Legally Secure</h3>
                     <p className="text-white leading-relaxed">
                         Every property listed on our platform is owned by an LLP, ensuring full compliance with fractional real estate regulations. As an investor in collateralized tokens, you hold the economic rights to the asset, including its income and appreciation.
@@ -31,12 +31,12 @@ export const TokunizeAdvantages = () => {
                         Invest confidently with a secure, seamless, and flexible way to participate in premium real estate opportunities.
                     </p>
                 </aside>
-                <div className="w-full lg:w-1/2 min-h-[800px] flex justify-center lg:justify-end">
+                <div className="w-full lg:w-1/2  flex justify-center lg:justify-end">
                     <img
                         loading="lazy"
                         alt="Legal compliance illustration"
                         src={forInvestorImage}
-                        className="h-[800px] object-contain"
+                        className="h-full  object-cover"
                     />
                 </div>
             </section>

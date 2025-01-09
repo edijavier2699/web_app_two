@@ -54,8 +54,8 @@ export const ForInvestor = () => {
             </div>
 
             {/* Video Section */}
-                <div className="flex flex-col items-center my-12 space-y-5 px-[20px] md:px-[60px]">
-                    <h4 className="text-4xl font-semibold">Watch Tokunize in Action</h4>
+                <div className="flex flex-col items-center my-12  space-y-5 px-[20px] md:px-[60px]">
+                    <h4 className="text-4xl text-center font-semibold">Watch Tokunize in Action</h4>
                     <p className="text-gray-500 md:w-[60%] mb-4 text-center">
                         Discover how Tokunize simplifies premium commercial real estate investments with cutting-edge technology and seamless processes.
                     </p>
@@ -79,7 +79,7 @@ export const ForInvestor = () => {
                 <p className="text-gray-500 md:w-[60%] mb-4">
                     With Tokunize, every investment is backed by innovation, rigorous standards, and a commitment to transparency.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {tokunizeProcess.map((card, index) => (
                         <HowItWorksCard index={index} key={index} icon={card.icon} title={card.title} description={card.description} />
                     ))}
