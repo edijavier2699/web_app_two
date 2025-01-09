@@ -17,4 +17,3 @@ const MainLayout: React.FC = () => {
 
 export default MainLayout;
 
-
