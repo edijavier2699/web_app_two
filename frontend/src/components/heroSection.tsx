@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import '../styles/heroSection.css';
 import { DemoModal } from './demoModal';
 import hotelCard from "../assets/hotelCard.webp";
@@ -12,7 +12,13 @@ import multifamilyCardMobile from "../assets/multifamilyCardMobile.png"
 const imagesDesktop: string[] = [hotelCard, officeCard, multifamilyCard];
 const imagesMobile: string[] = [hotelCardMobile, officeCardMobile, multifamilyCardMobile];
 
-export const HeroSection: React.FC = () => {
+interface Props{
+  heroSectionTitle:string;
+  heroSubtitle:string;
+  description?:string;
+}
+
+export const HeroSection = ({heroSectionTitle,heroSubtitle,description}:Props) => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768); // Detectar si es móvil
 
@@ -46,13 +52,13 @@ export const HeroSection: React.FC = () => {
       <article className="flex flex-col items-center justify-center w-full md:w-2/3 ">
         <div className='space-y-4 w-full '>
           <h1 className="text-5xl mt-[35px] sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
-            Invest in Premium <br/>  Real Estate Globally.
+            {heroSectionTitle}
           </h1>
           <h4 className="font-bold text-3xl">
-            The Deals You Couldn’t Access—Now in Your Portfolio.
+            {heroSubtitle}
           </h4>
       
-          <p className="text-black tracking-wider text-base lg:text-xl mb-12 sm:w-[90%]"><span>Leverage your assets to unlock access to an exclusive network of premium investments, designed for <span className="font-bold">exceptional diversification</span> and  <span className="font-bold">long-term growth.</span> </span></p>
+          <p className="text-black tracking-wider text-base lg:text-xl mb-12 sm:w-[90%]">{description}</p>
 
         </div>
         <div className='w-full pt-[80px] flex items-center justify-center'>

@@ -17,7 +17,11 @@ function App() {
   return (
     <>
       <Toaster />
-      <HeroSection />
+      <HeroSection 
+        heroSectionTitle='Invest in Premium Real Estate Globally.'
+        heroSubtitle=' The Deals You Couldn’t Access—Now in Your Portfolio.'
+        description="Leverage your assets to unlock access to an exclusive network of premium investments, designed for exceptional diversification and long-term growth."
+      />
       {/* <HeroBanner/> */}
       <MarketplaceRepresentation/>
       <Features />

@@ -5,7 +5,10 @@ interface LazyVideoProps {
 }
 
 const LazyVideo = ({ src }: LazyVideoProps) => {
-    const videoRef = useRef<HTMLDivElement | null>(null);
+    // ref para el div que observa la visibilidad
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    // ref para el video
+    const videoRef = useRef<HTMLVideoElement | null>(null);
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
     useEffect(() => {
@@ -18,26 +21,36 @@ const LazyVideo = ({ src }: LazyVideoProps) => {
             { threshold: 0.1 }
         );
 
-        if (videoRef.current) {
-            observer.observe(videoRef.current);
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
         }
 
         return () => {
-            if (videoRef.current) {
-                observer.unobserve(videoRef.current);
+            if (containerRef.current) {
+                observer.unobserve(containerRef.current);
             }
         };
     }, []);
 
+    const handleVideoEnd = () => {
+        if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play();
+        }
+    };
+
     return (
-        <div ref={videoRef} className="video-container">
+        <div ref={containerRef} className="video-container">
             {isVisible && (
                 <video
+                    ref={videoRef}
+                    loop
                     autoPlay
                     muted
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     className="w-full rounded-lg"
+                    onEnded={handleVideoEnd}
                 >
                     <source src={src} type="video/mp4" />
                     Your browser does not support the video.

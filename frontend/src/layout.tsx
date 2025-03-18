@@ -4,7 +4,7 @@ import { Toaster } from "./components/ui/toaster";
 import MainLayout from "./mainLayout";
 import ProtectedRoute from "./components/privateRoute";
 import { LoadingSpinner } from './components/loadingSpinner';
-const App = lazy(() => import('./views/App'));
+const SolutionThree = lazy(() => import('./views/SolutionThree'));
 const Blog = lazy(() => import('./views/blog').then(module => ({ default: module.Blog })));
 const FAQPage = lazy(() => import('./views/faq').then(module => ({ default: module.FAQPage })));
 const FaqSinglePage = lazy(() => import('./views/faqSinglePage').then(module => ({ default: module.FaqSinglePage })));
@@ -24,7 +24,8 @@ const AboutUs = lazy(()=> import ('./views/aboutUs').then(module =>({default: mo
 const Marketplace = lazy(()=> import ('./views/marketplace').then(module =>({default: module.Marketplace})))
 const PropertyDetails = lazy(()=> import ('./views/propertyDetailts').then(module =>({default: module.PropertyDetails})))
 const ForInvestors = lazy(()=> import ('./views/forInvestor').then(module =>({default:module.ForInvestor})))
-
+import SolutionOne from './views/SolutionOne';
+import SolutionTwo from './views/SolutionTwo';
 
 const Layout = () => {
     return (
@@ -34,7 +35,10 @@ const Layout = () => {
             <Suspense fallback={<LoadingSpinner/>}>
                 <Routes>
                     <Route element={<MainLayout />}>
-                        <Route element={<App />} path="/" />
+                        <Route element={<SolutionOne />} path="/" />
+                        <Route element={<SolutionTwo />} path="/managment/" />
+                        <Route element={<SolutionThree />} path="/invest/" />
+
                         <Route element={<Blog />} path="/blog/" />
                         <Route element={<Marketplace />} path="/marketplace/" />
                         <Route element={<FAQPage />} path="/faq/" />

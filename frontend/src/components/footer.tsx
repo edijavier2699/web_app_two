@@ -26,19 +26,6 @@ export const Footer: React.FC = () => {
                                 Sign Up
                             </a>
                         </li>
-                        <li onClick={()=>{
-                            navigate("/marketplace/");
-                            window.scrollTo(0, 0);
-                        }}>
-                            <a className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
-                                Marketplace
-                            </a>
-                        </li>
-                        <li>
-                            <a href='https://www.tokun.co.uk/' className="hover:text-[#C8E870] text-xs text-gray-450 duration-300 cursor-pointer">
-                                Liquidity Pools
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 <div>   
