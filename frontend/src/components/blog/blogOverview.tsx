@@ -2,8 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
-import { SubscribersTableList } from "./blog/subscribersTableList";
-import { LoadingSpinner } from "./loadingSpinner";
+import { SubscribersTableList } from "./subscribersTableList";
+import { LoadingSpinner } from "../loadingSpinner";
 
 interface BlogVisits {
   dates: string[];

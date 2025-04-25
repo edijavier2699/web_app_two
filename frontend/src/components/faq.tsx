@@ -16,8 +16,9 @@ export const FAQ: React.FC = () => {
         <section className="flex flex-col lg:flex-row  py-8 md:py-16 space-y-6 md:space-y-0  mx-[20px] md:mx-[80px]">
             <div className="w-full lg:w-[35%]">
                 <h2 className="text-3xl md:text-6xl font-bold text-left">
-                    Your Questions, <br /> Answered
+                    FAQ
                 </h2>
+                <p>Reach out to us to learn more about what Tokunize can do for you as a homeowner, as a loan originator, or as an institutional investor.</p>
                 <div className="w-[40%]">
                     <Button onClick={()=> navigate("/faq/")} className="bg-[#C8E870] mt-5 text-black font-bold  hover:bg-[#A0CC28]">View More</Button>
                 </div>

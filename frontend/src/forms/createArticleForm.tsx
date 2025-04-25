@@ -2,10 +2,10 @@ import React, { useState, ChangeEvent, FormEvent,Suspense } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
-import ImageGallery from './imageGallery';
-import { ImageUploaderBlog } from './blog/imageUploaderBlog';
+import ImageGallery from '../components/imageGallery';
+import { ImageUploaderBlog } from '../components/blog/imageUploaderBlog';
 import { useToast } from "@/components/ui/use-toast";
-import { LoadingSpinner } from './loadingSpinner';
+import { LoadingSpinner } from '../components/loadingSpinner';
 const ReactQuill = React.lazy(() => import('react-quill'));
 
 interface Article {

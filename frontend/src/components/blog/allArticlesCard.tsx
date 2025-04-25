@@ -5,7 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import CreateArticle from '../createArticleForm';
+import CreateArticle from '../../forms/createArticleForm';
 import { useToast } from "@/components/ui/use-toast";
 
 interface AllArticlesCardProps {

@@ -1,8 +1,8 @@
 
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { useUser } from "./components/userProvider";
-import SideMenu from "./components/blog/sideMenu";
+import { useUser } from "../components/userProvider";
+import SideMenu from "../components/blog/sideMenu";
 
 const DashboardLayout: React.FC = () => {
   const { role } = useUser(); 

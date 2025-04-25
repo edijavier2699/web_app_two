@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Layout from './layout';
+import Layout from './layouts/layout';
 import './index.css';
 import 'leaflet/dist/leaflet.css';
 import { Auth0Provider } from '@auth0/auth0-react';
